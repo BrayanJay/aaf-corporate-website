@@ -5,7 +5,7 @@ const CardsAbout = ({ stats }) => {  // Destructure stats from props
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="flex justify-center items-center px-5 sm:px-40 py-10 -mt-24">
+    <div className="flex justify-center items-center px-5 lg:px-40 py-10 -mt-12 lg:-mt-24">
       <div className="relative w-full max-w-4xl flex shadow-md overflow-visible">
         {stats.map(({ stat, text, icon }, idx) => (
           <div
@@ -19,9 +19,9 @@ const CardsAbout = ({ stats }) => {  // Destructure stats from props
             onMouseLeave={() => setHoveredIndex(null)}
             style={{ zIndex: hoveredIndex === idx ? 20 : 10 }}
           >
-            <FontAwesomeIcon icon={icon} className="text-white text-3xl sm:text-4xl mb-3" />
-            <div className="font-bold text-lg sm:text-3xl text-white">{stat}</div>
-            <div className="mt-2 text-sm sm:text-base text-white uppercase text-center font-thin">{text}</div>
+            <FontAwesomeIcon icon={icon} className="text-white text-xl md:text-2xl lg:text-4xl mb-3" />
+            <div className="font-bold text-sm md:text-xl lg:text-3xl text-white">{stat}</div>
+            <div className="mt-2 text-xs md:text-sm lg:text-base text-white uppercase text-center font-thin">{text}</div>
           </div>
         ))}
       </div>

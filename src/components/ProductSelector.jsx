@@ -50,9 +50,9 @@ const ProductSelector = () => {
   const isEvenIndex = selectedIdx % 2 === 0;
 
   return (
-    <div className={`w-full h-full flex flex-col items-start px-10 md:px-40 py-20 transition-colors duration-700 ease-in-out ${isEvenIndex ? 'bg-bluegradient' : 'bg-darkbluegradient'}`}>
+    <div className={`w-full h-full flex flex-col items-start px-10 lg:px-20 xl:px-40 py-20 transition-colors duration-700 ease-in-out ${isEvenIndex ? 'bg-bluegradient' : 'bg-darkbluegradient'}`}>
       {/* Main container */}
-      <div className="flex flex-col md:flex-row gap-10 items-start justify-between w-full max-w-[1200px]">
+      <div className="flex flex-col md:flex-row lg:gap-10 items-start justify-between w-full max-w-auto">
         
         {/* Left Section - Titles and Features */}
         <div className="w-full md:w-[60%] flex flex-col">
@@ -61,7 +61,7 @@ const ProductSelector = () => {
             {Object.keys(products).map((product) => (
               <div
                 key={product}
-                className={`cursor-pointer py-1 text-left text-white font-black uppercase transition-all duration-300 ${selectedProduct === product ? 'pl-2 border-l-4 border-amber-400 text-white text-3xl md:text-5xl' : 'text-2xl md:text-4xl'}`}
+                className={`cursor-pointer py-1 text-left text-white font-black uppercase transition-all duration-300 ${selectedProduct === product ? 'pl-2 border-l-4 border-amber-400 text-white text-2xl md:text-3xl lg:text-5xl' : 'text-xl md:text-2xl lg:text-4xl'}`}
                 style={{
                   borderLeftWidth: selectedProduct === product ? (window.innerWidth >= 768 ? '4px' : '2px') : '0px',
                 }}
@@ -73,11 +73,11 @@ const ProductSelector = () => {
           </div>
 
           {/* Product Features */}
-          <div className="mt-10 pl-5 flex flex-col gap-5">
+          <div className="my-10 px-10 flex flex-col gap-5">
             {products[selectedProduct].features.map((feature, index) => (
               <div key={index}>
-                <div className="text-white text-lg md:text-xl font-bold">{feature.title}</div>
-                <div className="text-white text-sm md:text-base">{feature.description}</div>
+                <div className="text-white text-sm md:text-lg lg:text-xl font-bold">{feature.title}</div>
+                <div className="text-white text-xs md:text-sm lg:text-base">{feature.description}</div>
               </div>
             ))}
           </div>

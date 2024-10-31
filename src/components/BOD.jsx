@@ -27,30 +27,30 @@ const BOD = () => {
 
   return (
     <div className="w-full h-auto flex flex-col">
-      <div className='relative text-center pt-10 px-20' data-aos="fade-up">
-                <h1 className='inline-block px-5 border-b-4 border-blue-500 text-4xl font-normal text-blue-900'> Board of <span className='font-black text-blue-700'> Directors </span></h1>
-                <p className='pt-1 text-md font-light italic text-blue-500'>Guiding Our Vision with Expertise and Integrity</p>
-                <p className='pb-5 pt-5 text-sm font-normal text-black/50 text-center'>Our Board of Directors comprises seasoned professionals with diverse backgrounds and extensive experience in the financial industry. Their leadership and strategic insights are instrumental in steering Asia Asset Finance towards sustainable growth and success.</p>
+      <div className='relative text-center pt-5 lg:pt-10 px-10 lg:px-20' data-aos="fade-up">
+                <h1 className='inline-block px-5 border-b-2 lg:border-b-4 border-blue-500 text-xl md:text-2xl lg:text-4xl font-normal text-blue-900'> Board of <span className='font-black text-blue-700'> Directors </span></h1>
+                <p className='pt-1 text-xs md:text-sm lg:text-lg font-light italic text-blue-500'>Guiding Our Vision with Expertise and Integrity</p>
+                <p className='pb-5 pt-5 text-xs lg:text-sm font-normal text-black/50 text-center'>Our Board of Directors comprises seasoned professionals with diverse backgrounds and extensive experience in the financial industry. Their leadership and strategic insights are instrumental in steering Asia Asset Finance towards sustainable growth and success.</p>
             </div>
       <div className="flex flex-row md:gap-40">
         <img src={goldellipse} className="h-72 md:h-96" />
         <div className="absolute pl-20">
           <img
             src={mrPrasanth}
-            className="rounded-full h-36 md:h-52 mt-20 shadow-xl border-8 border-blue-500"
+            className="rounded-full h-32 md:h-52 mt-20 shadow-xl border-4 md:border-8 border-blue-500"
           />
         </div>
 
-        <div className="flex basis-1/3">
-          <div className="text-right pr-5 flex flex-col pt-20">
-            <div className="text-6xl font-black text-blue-700 pr-5 border-r-4 border-blue-500">
-              “ <span className="text-4xl font-black text-blue-700 pt-2">V. A. Prasanth</span>
+        <div className="flex md:basis-1/3">
+          <div className="text-right pl-20 md:pl-0 pr-5 flex flex-col pt-20">
+            <div className="text-4xl md:text-6xl font-black text-blue-700 pr-5 border-r-4 border-blue-500">
+              “ <span className="text-xl md:text-2xl lg:text-4xl font-black text-blue-700 pt-2">V. A. Prasanth</span>
             </div>
-            <div className="text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
+            <div className="text-xs md:text-sm lg:text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
               Chairman
             </div>
 
-            <div className="pt-5 text-sm font-medium text-black/40 pr-5 text-justify">
+            <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               V.A Prasanth is a commercial banker with over 37 years of all-round exposure in
               Retail & Corporate banking, Treasury Operations and Information Security. Formerly
               he worked with Indian Bank – acclaimed as one of the best...
@@ -63,16 +63,16 @@ const BOD = () => {
       </div>
 
       <div className="flex flex-row md:gap-40 justify-end">
-        <div className="flex basis-1/3">
-          <div className="text-left pl-5 flex flex-col pt-20">
-            <div className="text-6xl font-black text-amber-500 pl-5 border-l-4 border-amber-400">
-              <span className="text-4xl font-black text-amber-500 pt-2">R.J. A. Gunawardena</span> ” 
+        <div className="flex md:basis-1/3">
+          <div className="text-left pl-5 pr-20 md:pr-0 flex flex-col pt-20">
+            <div className="text-4xl md:text-6xl font-black text-amber-500 pl-5 border-l-4 border-amber-400">
+              <span className="text-xl md:text-2xl lg:text-4xl font-black text-amber-500 pt-2">R.J. A. Gunawardena</span> ” 
             </div>
-            <div className="text-xl font-black text-amber-400 pl-5 border-l-4 border-amber-400">
+            <div className="text-xs md:text-sm lg:text-xl font-black text-amber-400 pl-5 border-l-4 border-amber-400">
               Director / Chief Executive Officer
             </div>
 
-            <div className="pt-5 text-sm font-medium text-black/40 pr-5 text-justify">
+            <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               Mr. Rajiv Gunawardena, the Chief Executive Officer / Director of Asia Asset Finance PLC was appointed to the Board in December 2009. A visionary leader, responsible for setting and implementing the organization’s vision...
               <span className="font-medium italic text-amber-400 hover:cursor-pointer hover:text-amber-500 transition transform ease-in-out duration-300">
                 See more
@@ -84,7 +84,7 @@ const BOD = () => {
         <div className="absolute pr-20">
           <img
             src={mrRajiv}
-            className="rounded-full h-36 md:h-52 mt-20 shadow-xl border-8 border-amber-400"
+            className="rounded-full h-32 md:h-52 mt-20 shadow-xl border-4 md:border-8 border-amber-400"
           />
         </div>
       </div>

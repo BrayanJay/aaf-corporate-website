@@ -6,7 +6,7 @@ import ProductLuckewallet from '../components/ProductLuckewallet';
 
 const image = {
   src: banner1,
-  title: "About us",
+  title: "Products and services",
   intro: "Empowering Your Financial Future ",
   specialnote: "since 1981",
   description: "“ Empowering People and Transforming Lives “",

@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ProductsAndServicesPage from './pages/ProductsAndServicesPage';
+import InvesterRelations from './pages/InvesterRelations';
 
 
 function App() {

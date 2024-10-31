@@ -59,11 +59,11 @@ const InquiriesForm = () => {
   );
 
   return (
-    <div className='justify-center relative bg-bgdesign bg-cover text-roboto'>
+    <div className='justify-center relative bg-bgdesign bg-cover text-roboto px-10 py-10 lg:px-40'>
       <div className='absolute inset-0 bg-white/80 bg-cover'></div>
-      <div className='relative pl-40 pr-40 z-10' data-aos="fade-up"> {/* Added pl-40 and pr-40 here */}
-        <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-4xl font-semibold text-blue-700'> Get in Touch with Us Today </h1>
-        <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-xl font-md text-blue-500 italic'>Bringing Financial Solutions Closer to You</p>
+      <div className='relative z-10' data-aos="fade-up"> {/* Added pl-40 and pr-40 here */}
+        <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> Get in Touch with Us Today </h1>
+        <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-sm lg:text-xl font-md text-blue-500 italic'>Bringing Financial Solutions Closer to You</p>
       </div>
       <div className="z-10 relative max-w-lg p-4 md:max-w-4xl mx-auto">
         <form onSubmit={handleSubmit} className="md:flex md:gap-4">

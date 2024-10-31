@@ -22,12 +22,12 @@ const Testimonials = ({ data }) => {
 
   return (
     <>
-      <div className="w-full h-full relative pl-40 pr-40 pb-20 bg-blue-950/75 backdrop-blur-sm">
+      <div className="w-full h-full relative px-10 lg:px-40 pb-20 bg-blue-950/75 backdrop-blur-sm">
       
-      <div className='gap-2 pt-10'>
+      <div className='lg:gap-2 pt-10'>
         <div className='relative ' data-aos="fade-up">
-                <h1 className='border-l-8 border-blue-500 pl-5 pr-5 text-4xl font-black italic text-amber-400'> What Our Clients Say </h1>
-                <p className='border-l-8 border-blue-500 pl-5 pr-5 pt-1 text-lg font-md text-white/70'>Real Stories of Success and Satisfaction</p>
+                <h1 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black italic text-amber-400'> What Our Clients Say </h1>
+                <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>Real Stories of Success and Satisfaction</p>
         </div>
       </div>
 
@@ -35,19 +35,18 @@ const Testimonials = ({ data }) => {
         <div className="mb-16"></div>
 
         {/* Quote container along with person details */}
-        <div className="relative mx-auto w-[500px] h-[280px] border-l-4 border-l-sky-500 bg-[#f7f7f7] px-8 py-14 text-center shadow-2xl rounded-sm">
+        <div className="relative mx-auto border-l-4 border-l-sky-500 bg-[#f7f7f7] px-10 lg:px-8 py-16 lg:py-14 text-center shadow-2xl rounded-sm">
           <div>
-            <div className="mb-1 text-lg font-semibold text-blue-950">{data[activeItem].personName}</div>
-            <div className="mb-3 text-sm text-blue-900/75">{data[activeItem].profile}</div>
+            <div className="mb-1 text-base lg:text-lg font-semibold text-blue-950">{data[activeItem].personName}</div>
+            <div className="mb-3 text-xs lg:text-sm text-blue-900/75">{data[activeItem].profile}</div>
             <div className="mx-auto mb-4 w-16 h-1 bg-amber-400"></div>
             <div className="mb-1 text-left text-red-500">
             <FontAwesomeIcon 
                 icon={['fas', 'quote-left']} 
-                className={`mx-1.5`} 
-                size='xl' 
+                className={`mx-1.5 text-base lg-text-xl`} 
                 />
             </div>
-            <div className="text-gray-500 font-medium text-sm">{data[activeItem].quote}</div>
+            <div className="text-black/40 font-medium text-xs lg:text-sm">{data[activeItem].quote}</div>
             <div className="flex flex-row justify-center text-blue-700 pt-2">
                 <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
                 <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
@@ -58,7 +57,7 @@ const Testimonials = ({ data }) => {
           </div>
 
           {/* Person image */}
-          <div className="absolute w-20 h-20 rounded-full top-0 right-0 translate-x-1/2 -translate-y-1/2 shadow-2xl ">
+          <div className="absolute w-20 h-20 rounded-full top-0 right-0 translate-x-1/2 -translate-y-1/2 shadow-2xl mr-5 md:mr-0 ">
             <img src={data[activeItem].imageUrl} alt="profile" className="w-full h-full rounded-[inherit]" />
           </div>
 
