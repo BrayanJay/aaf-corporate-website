@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import './App.css';
 
 import AOS from 'aos';
@@ -7,7 +8,8 @@ import 'aos/dist/aos.css';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ProductsAndServicesPage from './pages/ProductsAndServicesPage';
-import InvesterRelations from './pages/InvesterRelations';
+import ScrollToTop from './components/ScrollToTop';
+import InvesterRelationsPage from './pages/InvesterRelationsPage';
 
 
 function App() {
@@ -20,9 +22,18 @@ function App() {
   }, []); // The empty array ensures the effect runs only once when the component mounts.
 
   return (
-    <>
-      <ProductsAndServicesPage/>
-    </>
+    <Router>
+      <div className=''> 
+        <ScrollToTop/>
+        <Routes>
+          <Route path='/' element={<LandingPage/>}/>
+          <Route path='/about' element={<AboutPage/>}/>
+          <Route path='/products' element={<ProductsAndServicesPage/>}/>
+          <Route path='/ir' element={<InvesterRelationsPage/>}/>
+        </Routes>
+        <ScrollToTop/>
+      </div>
+    </Router>
   );
 }
 

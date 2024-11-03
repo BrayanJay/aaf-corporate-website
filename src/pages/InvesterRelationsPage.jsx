@@ -11,7 +11,7 @@ import CorporateInformation from '../components/CorporateInformation';
         description: "“ Empowering People and Transforming Lives “",
     };
 
-const InvesterRelations = () => {
+const InvesterRelationsPage = () => {
   return (
     <div className='container mx-auto'>
         <Carousel image={image}/>
@@ -20,4 +20,4 @@ const InvesterRelations = () => {
   )
 }
 
-export default InvesterRelations
+export default InvesterRelationsPage

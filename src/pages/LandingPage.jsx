@@ -15,12 +15,12 @@ const LandingPage = () => {
         <HeroBanner/>
         <LandingPgCards/>
         <WhyChooseUs/>
-          <Luckewallet/>
-          <ProductsOverview/>
-          <AllTestimonials/>
-          <BranchDetails/>
-          <TrustedPartners/>
-          <InquiriesForm/>
+        <Luckewallet/>
+        <ProductsOverview/>
+        <AllTestimonials/>
+        <BranchDetails/>
+        <TrustedPartners/>
+        <InquiriesForm/>
     </>
   )
 }
