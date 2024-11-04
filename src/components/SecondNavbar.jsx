@@ -3,11 +3,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import Dropdown from './Dropdown'
+import { Link } from 'react-router-dom';
+import Dropdown from './Dropdown';
 
 library.add(fas, fab);
 
-// Dropdown data for each menu item
 const dropdownData = {
     home: [],
     about: [],
@@ -32,32 +32,28 @@ const SecondNavbar = () => {
 
     return (
         <>
-            <header className='flex justify-between px-4 py-3 shadow-md items-center sticky top-0 z-50 bg-white/60 backdrop-blur-md'>
-                <ul className='hidden md:flex gap-4 font-medium'>
-                    <li 
+            <div className='flex justify-between px-4 py-3 shadow-md items-center sticky top-0 z-50 bg-white/60 backdrop-blur-md'>
+                <div className='hidden md:flex gap-4 font-medium'>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('home')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('home')}
                     >
-                        Home
-                    </li>
-                    <li 
+                        <Link to="/">Home</Link>
+                    </div>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('about')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('about')}
                     >
-                        About
-                        
-                    </li>
-                    <li 
+                        <Link to="/about">About</Link>
+                    </div>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('products')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('products')}
                     >
-                        Products & Services
+                        <Link to="/products">Products & Services</Link>
                         <FontAwesomeIcon 
                             icon={['fas', 'chevron-down']} 
                             className={`ml-2 transition-transform ${dropdownOpen === 'products' ? 'rotate-180' : ''}`}
@@ -66,14 +62,13 @@ const SecondNavbar = () => {
                         {dropdownOpen === 'products' && (
                             <Dropdown items={dropdownData.products} />
                         )}
-                    </li>
-                    <li 
+                    </div>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('policies')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('policies')}
                     >
-                        Investor Relations
+                        <Link to="/ir">Investor Relations</Link>
                         <FontAwesomeIcon 
                             icon={['fas', 'chevron-down']} 
                             className={`ml-2 transition-transform ${dropdownOpen === 'policies' ? 'rotate-180' : ''}`} 
@@ -82,14 +77,13 @@ const SecondNavbar = () => {
                         {dropdownOpen === 'policies' && (
                             <Dropdown items={dropdownData.investor_relations} />
                         )}
-                    </li>
-                    <li 
+                    </div>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('investor')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('investor')}
                     >
-                        Downloads
+                        <Link to="/downloads">Downloads</Link>
                         <FontAwesomeIcon 
                             icon={['fas', 'chevron-down']} 
                             className={`ml-2 transition-transform ${dropdownOpen === 'investor' ? 'rotate-180' : ''}`} 
@@ -98,14 +92,13 @@ const SecondNavbar = () => {
                         {dropdownOpen === 'investor' && (
                             <Dropdown items={dropdownData.downloads} />
                         )}
-                    </li>
-                    <li 
+                    </div>
+                    <div 
                         className={liClasses}
                         onMouseEnter={() => toggleDropdown('careers')}
                         onMouseLeave={() => toggleDropdown(null)}
-                        onClick={() => toggleDropdown('careers')}
                     >
-                        Careers
+                        <Link to="/careers">Careers</Link>
                         <FontAwesomeIcon 
                             icon={['fas', 'chevron-down']} 
                             className={`ml-2 transition-transform ${dropdownOpen === 'careers' ? 'rotate-180' : ''}`} 
@@ -114,44 +107,23 @@ const SecondNavbar = () => {
                         {dropdownOpen === 'careers' && (
                             <Dropdown items={dropdownData.careers} />
                         )}
-                    </li>
-                </ul>
-                <span className='md:hidden cursor-pointer' onClick={toggleNavbar}>
+                    </div>
+                </div>
+                <div className='md:hidden cursor-pointer' onClick={toggleNavbar}>
                     <FontAwesomeIcon icon={['fas', 'bars']} size='lg' />
-                </span>
-            </header>
+                </div>
+            </div>
 
             {isNavbarOpen && (
                 <div className='md:hidden'>
-                    <ul className='flex flex-col gap-4 p-4 bg-[#004fc5]'>
-                        <li className={liClasses}>Home</li>
-                        <li className={liClasses}>About</li>
-                        <li className={liClasses}>
-                            Products & Services
-                            <FontAwesomeIcon 
-                                icon={['fas', 'chevron-down']} 
-                                className='ml-2' 
-                                size='lg' 
-                            />
-                        </li>
-                        <li className={liClasses}>
-                            Policies & Compliance
-                            <FontAwesomeIcon 
-                                icon={['fas', 'chevron-down']} 
-                                className='ml-2' 
-                                size='lg' 
-                            />
-                        </li>
-                        <li className={liClasses}>
-                            Investor Relations
-                            <FontAwesomeIcon 
-                                icon={['fas', 'chevron-down']} 
-                                className='ml-2' 
-                                size='lg' 
-                            />
-                        </li>
-                        <li className={liClasses}>Careers</li>
-                    </ul>
+                    <div className='flex flex-col gap-4 p-4 bg-[#004fc5]'>
+                        <div className={liClasses}><Link to="/">Home</Link></div>
+                        <div className={liClasses}><Link to="/about">About</Link></div>
+                        <div className={liClasses}><Link to="/products">Products & Services</Link></div>
+                        <div className={liClasses}><Link to="/ir">Investor Relations</Link></div>
+                        <div className={liClasses}><Link to="/downloads">Downloads</Link></div>
+                        <div className={liClasses}><Link to="/careers">Careers</Link></div>
+                    </div>
                 </div>
             )}
         </>
