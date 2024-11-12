@@ -19,7 +19,7 @@ const Carousel = ({ image }) => {
 
   return (
     <div
-      className={`relative w-screen h-auto rounded-b-3xl overflow-hidden transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative h-auto rounded-b-3xl overflow-hidden transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       style={{
         backgroundImage: `url(${image.src})`,
         backgroundSize: 'cover',

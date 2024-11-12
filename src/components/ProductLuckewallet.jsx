@@ -15,7 +15,7 @@ const ProductLuckewallet = () => {
             <p className='py-5 text-xs lg:text-sm font-medium lg:font-semibold text-black/50 text-right'>For over 50 years we of Asia Asset Finance PLC have invested our interests in countless individuals and business’. Be it in the Gold loans we provide for the most reasonable rates, leasing, mortgage loans, Group Personal loans, Personal Loans, Business Loans, Corporate Loans, Micro Loans or accepting your public deposits we are proud to have nurtured communities to be sustainable economies.</p>
             <p className='py-5 text-xs lg:text-sm font-medium lg:font-semibold text-black/50 text-right'>Asia Asset Finance PLC is a fully owned subsidiary of Muthoot Finance Ltd and a fully licensed, deposit-taking institution registered with the Central Bank of Sri Lanka.</p>
         
-            <div className='relative p-5 justify-end ml-auto' data-aos="fade-up">
+            <div className='relative py-5 justify-end ml-auto' data-aos="fade-up">
                 <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900 text-right'>Key <span className='font-bold text-amber-400'>Features</span></h1>
                 <div className='grid grid-cols-2 grid-flow-row gap-2'>
                 

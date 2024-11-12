@@ -2,6 +2,8 @@ import React from 'react'
 import banner1 from '../assets/bannerimg1.svg';
 import Carousel from '../components/Carousel';
 import CorporateInformation from '../components/CorporateInformation';
+import FinancialKeys from '../components/FinancialKeys';
+import Documents from '../components/Documents';
 
     const image = {
         src: banner1,
@@ -16,6 +18,8 @@ const InvesterRelationsPage = () => {
     <div className='container mx-auto'>
         <Carousel image={image}/>
         <CorporateInformation/>
+        <FinancialKeys/>
+        <Documents/>
     </div>
   )
 }
