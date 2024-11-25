@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 const isValidEmail = (email) => {
   return String(email)
@@ -8,25 +9,28 @@ const isValidEmail = (email) => {
     );
 };
 
-const validateData = ({ username, email, mobile }) => {
+const validateData = ({ name, email, mobile }) => {
   const errorObj = {};
 
-  if (!username) errorObj.username = "Please provide the username";
+  if (!name) errorObj.name = "Please provide your name";
 
   if (!email) {
-    errorObj.email = "Please provide the email";
+    errorObj.email = "Please provide your email";
   } else if (!isValidEmail(email)) {
-    errorObj.email = "Please provide a valid email address..";
+    errorObj.email = "Please provide a valid email address";
   }
 
   if (!mobile) {
-    errorObj.mobile = "Please provide the mobile number";
+    errorObj.mobile = "Please provide your mobile number";
   }
 
   return errorObj;
 };
 
 const InquiriesForm = () => {
+  const { t } = useTranslation();
+  const inquiryForm = t("inquiryForm", { returnObjects: true });
+
   const [formData, setFormData] = useState({});
   const [formErrors, setFormErrors] = useState({});
 
@@ -62,33 +66,33 @@ const InquiriesForm = () => {
     <div className='justify-center relative bg-bgdesign bg-cover text-roboto px-10 py-10 lg:px-40'>
       <div className='absolute inset-0 bg-white/80 bg-cover'></div>
       <div className='relative z-10' data-aos="fade-up"> {/* Added pl-40 and pr-40 here */}
-        <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> Get in Touch with Us Today </h1>
-        <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-sm lg:text-xl font-md text-blue-500 italic'>Bringing Financial Solutions Closer to You</p>
+        <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> {inquiryForm.title} </h1>
+        <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-sm lg:text-xl font-md text-blue-500 italic'>{inquiryForm.subtitle}</p>
       </div>
-      <div className="z-10 relative max-w-lg p-4 md:max-w-4xl mx-auto">
+      <div className="z-10 relative max-w-lg p-4 md:max-w-4xl mx-auto" data-aos="zoom-in">
         <form onSubmit={handleSubmit} className="md:flex md:gap-4">
           <div className="md:w-1/2">
             <div className="mb-4">
-              <label htmlFor="username" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
-                Username
+              <label htmlFor="name" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
+                {inquiryForm.label1}
               </label>
-              <input type="text" name="username" id="username" className={inputClasses("username")} placeholder="username.." value={formData.username || ''} onChange={handleChange} />
-              <p className={fieldErrorClasses("username")}>{formErrors.username}</p>
+              <input type="text" name="name" id="name" className={inputClasses("name")} placeholder={inquiryForm.field1} value={formData.name || ''} onChange={handleChange} />
+              <p className={fieldErrorClasses("name")}>{formErrors.name}</p>
             </div>
 
             <div className="mb-4">
               <label htmlFor="mobile" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
-                Mobile Number
+                {inquiryForm.label2}
               </label>
-              <input type="text" name="mobile" id="mobile" className={inputClasses("mobile")} placeholder="mobile number.." value={formData.mobile || ''} onChange={handleChange} />
+              <input type="text" name="mobile" id="mobile" className={inputClasses("mobile")} placeholder={inquiryForm.field2} value={formData.mobile || ''} onChange={handleChange} />
               <p className={fieldErrorClasses("mobile")}>{formErrors.mobile}</p>
             </div>
 
             <div className="mb-4">
               <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
-                Email
+                {inquiryForm.label3}
               </label>
-              <input type="email" name="email" id="email" className={inputClasses("email")} placeholder="you@example.com" value={formData.email || ''} onChange={handleChange} />
+              <input type="email" name="email" id="email" className={inputClasses("email")} placeholder={inquiryForm.field3} value={formData.email || ''} onChange={handleChange} />
               <p className={fieldErrorClasses("email")}>{formErrors.email}</p>
             </div>
           </div>
@@ -96,9 +100,9 @@ const InquiriesForm = () => {
           <div className="md:w-1/2">
             <div className="mb-4">
               <label htmlFor="message" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
-                Message
+                {inquiryForm.label4}
               </label>
-              <textarea name="message" id="message" className={inputClasses("message")} placeholder="message.." rows="6" value={formData.message || ''} onChange={handleChange} 
+              <textarea name="message" id="message" className={inputClasses("message")} placeholder={inquiryForm.field4} rows="6" value={formData.message || ''} onChange={handleChange} 
                 style={{ height: 'calc(3 * 3.5rem + 2rem)' }} // Adjust the height here
               />
               <p className={fieldErrorClasses("message")}>{formErrors.message}</p>
@@ -108,10 +112,10 @@ const InquiriesForm = () => {
 
         <div className="text-right mt-4 flex justify-end gap-5">
           <button onClick={handleClear} type="button" className="bg-gray-500 hover:bg-gray-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
-            Clear
+            {inquiryForm.button1}
           </button>
           <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
-            Submit
+            {inquiryForm.button2}
           </button>
         </div>
       </div>

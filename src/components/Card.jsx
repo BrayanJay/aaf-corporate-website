@@ -1,32 +1,35 @@
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { useTranslation } from "react-i18next";
 
 library.add(fas, fab, far);
 
-import React from 'react';
-
 const Card = () => {
+  const { t } = useTranslation();
+  const landingPageCards = t("landingPageCards", { returnObjects: true });
+
     const cards = [
         {
             idx: "card1",
-            ic: <FontAwesomeIcon icon={['fas', 'user-group']} className={`mx-1.5 text-2xl md:text-4xl`} />,
-            title: "Expert Team",
-            description: "Leverage the knowledge and experience of our financial experts dedicated to helping you succeed."
+            ic: <FontAwesomeIcon icon={['fas', 'user-group']} className={`mx-1.5 text-2xl md:text-4xl text-blue-700`} />,
+            title: landingPageCards.card1_title,
+            description: landingPageCards.card1_description
         },
         {
             idx: "card2",
-            ic: <FontAwesomeIcon icon={['fas', 'globe']} className={`mx-1.5 text-2xl md:text-4xl`} />,
-            title: "Global Reach",
-            description: "We provide services across the globe, ensuring you get financial expertise wherever you are."
+            ic: <FontAwesomeIcon icon={['fas', 'globe']} className={`mx-1.5 text-2xl md:text-4xl text-blue-700`} />,
+            title: landingPageCards.card2_title,
+            description: landingPageCards.card2_description
         },
         {
             idx: "card3",
-            ic: <FontAwesomeIcon icon={['fas', 'clock']} className={`mx-1.5  text-2xl md:text-4xl`} />,
-            title: "24/7 Support",
-            description: "Our team is available around the clock to provide you with exceptional customer support."
+            ic: <FontAwesomeIcon icon={['fas', 'clock']} className={`mx-1.5  text-2xl md:text-4xl text-blue-700`} />,
+            title: landingPageCards.card2_title,
+            description: landingPageCards.card2_description
         }
     ];
 

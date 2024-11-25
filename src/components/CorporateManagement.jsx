@@ -1,32 +1,13 @@
 import React from 'react'
+import { useTranslation } from "react-i18next";
 
-import mrRajiv from '../assets/bod/rja.svg';
-import mrRoshan from '../assets/bod/rds.svg';
-import mrThiru from '../assets/bod/gm.svg';
-import mrMahesh from '../assets/bod/gm.svg';
-import mrJayantha from '../assets/bod/gm.svg';
-import mrSameera from '../assets/bod/gm.svg';
-import msGeethika from '../assets/bod/gm.svg';
-import mrSajith from '../assets/bod/gm.svg';
-import mrInditha from '../assets/bod/gm.svg';
-import mrPraveen from '../assets/bod/gm.svg';
 import ProfileCard from './ProfileCard';
 
 const CorporateManagement = () => {
+    const { t } = useTranslation();
+    const profileDetails = t("comProfilesAbout", { returnObjects: true });
+    const comTexts = t("comTextsAbout", { returnObjects: true });
 
-    const corporateManagement = [
-        { imgSrc: mrRajiv, name: 'Rajiv Gunawardena', title: 'Director / Chief Executive Officer' },
-        { imgSrc: mrRoshan, name: 'Roshan Gunasekara', title: 'Executive Director / Chief Operating Officer' },
-        { imgSrc: mrThiru, name: 'M. Thiruneelakandan', title: 'General Manager' },
-        { imgSrc: mrMahesh, name: 'Mahesh Kumar', title: 'Deputy General Manager - Credit' },
-        { imgSrc: mrJayantha, name: 'Jayantha Weerapullige', title: 'Deputy General Manager - Marketing' },
-        { imgSrc: mrSameera, name: 'Sameera Weveladeniya', title: 'Deputy General Manager - Fixed Deposits' },
-        { imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Deputy General Manager - Finance' },
-        { imgSrc: mrSajith, name: 'Sajith Atapattu', title: 'Deputy General Manager - Risk' },
-        { imgSrc: mrInditha, name: 'Inditha Jayathilaka', title: 'Deputy General Manager - IT' },
-        { imgSrc: mrPraveen, name: 'Praveen Peiris', title: 'Deputy General Manager - Treasury' },
-        
-      ]
 
   return (
     <div className='w-full h-full relative px-10 lg:px-20 gap-2 pt-10'>
@@ -41,8 +22,8 @@ const CorporateManagement = () => {
 
             <div className="w-full h-auto flex justify-center mt-10">
             {/* Grid Layout for Profile Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center md:justify-items-stretch">
-                {corporateManagement.map((profile, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center md:justify-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                {profileDetails.map((profile, idx) => (
                     <ProfileCard
                     key={idx}
                     imgSrc={profile.imgSrc}

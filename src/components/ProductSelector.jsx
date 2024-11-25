@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import FD from '../assets/products/fd.svg';
+import { useTranslation } from "react-i18next";
 
 const ProductSelector = () => {
+  const { t } = useTranslation();
+  const data = t("productsSelector", { returnObjects: true });
   const [selectedProduct, setSelectedProduct] = useState('Fixed Deposits');
 
   const products = {
@@ -19,7 +22,7 @@ const ProductSelector = () => {
         { title: "Low Interest", description: "Competitive interest rates for gold-backed loans." },
       ],
     },
-    'Micro Mortgage': {
+    'Mortgage': {
       images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
       features: [
         { title: "Affordable Rates", description: "Low-interest rates for small-scale mortgages." },
@@ -33,7 +36,7 @@ const ProductSelector = () => {
         { title: "Fast Processing", description: "Quick and easy leasing application process." },
       ],
     },
-    'Foreign Exchange': {
+    'Forex': {
       images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
       features: [
         { title: "Competitive Rates", description: "Exchange currency at favorable rates." },
@@ -61,7 +64,7 @@ const ProductSelector = () => {
             {Object.keys(products).map((product) => (
               <div
                 key={product}
-                className={`cursor-pointer py-1 text-left text-white font-black uppercase transition-all duration-300 ${selectedProduct === product ? 'pl-2 border-l-4 border-amber-400 text-white text-2xl md:text-3xl lg:text-5xl' : 'text-xl md:text-2xl lg:text-4xl'}`}
+                className={`cursor-pointer py-1 lg:py-2 text-left text-white font-black uppercase transition-all duration-300 ${selectedProduct === product ? 'pl-2 border-l-4 border-amber-400 text-white text-2xl md:text-3xl lg:text-5xl' : 'text-xl md:text-2xl lg:text-4xl'}`}
                 style={{
                   borderLeftWidth: selectedProduct === product ? (window.innerWidth >= 768 ? '4px' : '2px') : '0px',
                 }}

@@ -5,7 +5,7 @@ const CardsAbout = ({ stats }) => {  // Destructure stats from props
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="flex justify-center items-center px-5 lg:px-40 py-10 -mt-12 lg:-mt-24">
+    <div className="flex justify-center items-center px-5 lg:px-40 py-10 -mt-12 lg:-mt-24" data-aos="fade-up">
       <div className="relative w-full max-w-4xl flex shadow-md overflow-visible">
         {stats.map(({ stat, text, icon }, idx) => (
           <div

@@ -19,7 +19,7 @@ const Carousel = ({ image }) => {
 
   return (
     <div
-      className={`relative h-auto rounded-b-3xl overflow-hidden transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative h rounded-b-3xl overflow-hidden transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       style={{
         backgroundImage: `url(${image.src})`,
         backgroundSize: 'cover',
@@ -27,7 +27,7 @@ const Carousel = ({ image }) => {
       }}
     >
       {/* Overlay for text */}
-      <div className="flex flex-col bg-black/30 relative h-full">
+      <div className="flex flex-col bg-black/30 backdrop-blur-sm relative h-[25vh] md:h-[40vh] lg:h-[55vh]">
         <div className="flex flex-col relative justify-center items-start pl-10 lg:pl-20 pt-5 lg:pt-10">
           <p className="border-l-4 lg:border-l-8 border-blue-900 text-white text-2xl md:text-4xl lg:text-7xl font-bold uppercase pl-2 lg:pl-4">
             {image.title}</p>

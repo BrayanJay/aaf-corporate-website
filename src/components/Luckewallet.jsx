@@ -3,49 +3,53 @@ import MobilePic from '../assets/lwallet.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Astore from '../assets/appstorelogo.svg'
 import Pstore from '../assets/playstorelogo.svg'
+import { useTranslation } from "react-i18next";
 
 const Luckewallet = () => {
+  const { t } = useTranslation();
+  const luckewallet = t("luckewalletLandingPage", { returnObjects: true });
+
   return (
     <div className='flex flex-col lg:flex-row max-w-auto max-h-auto px-10 lg:px-40'>
       <div className='order-2 md:order-1 lg:basis-1/2 w-full h-full relative gap-2'>
 
         <div className='relative ' data-aos="fade-up">
-            <h1 className='border-l-4 lg:border-l-8 border-blue-500 p-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>Simplify Your Financial Journey with Our <span className='font-bold text-amber-400'>Luckewallet</span> Mobile App </h1>
-            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>Experience seamless and secure financial services right from your smartphone. <span className='font-medium italic underline hover:cursor-pointer text-blue-900'>Learn More</span></p>
+            <h1 className='border-l-4 lg:border-l-8 border-blue-500 p-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{luckewallet.title1} <span className='font-bold text-amber-400'>{luckewallet.title2}</span> {luckewallet.title3} </h1>
+            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>{luckewallet.subtitle} <span className='font-medium italic underline hover:cursor-pointer text-blue-900'>{luckewallet.learn_more}</span></p>
         </div>
         <div className='relative p-5' data-aos="fade-up">
-            <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'>Key <span className='font-bold text-amber-400'>Features</span></h1>
+            <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h1>
             <div className='grid grid-cols-2 grid-flow-row gap-2'>
                 
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'list-check']} className='pt-1 text-blue-700' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>Easy Account Management</h1>
-                <p className='text-xs text-blue-900/50'>View and manage all your accounts effortlessly in one place.</p>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature1_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature1_description}</p>
                 </div>
                 </div>
 
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'hand-holding-dollar']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>Quick Loan Applications</h1>
-                <p className='text-xs text-blue-900/50'>Apply for loans and track your application status seamlessly.</p>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature2_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature2_description}</p>
                 </div>
                 </div>
 
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'shield-halved']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>Easy Account Management</h1>
-                <p className='text-xs text-blue-900/50'>View and manage all your accounts effortlessly in one place.</p>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature3_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature3_description}</p>
                 </div>
                 </div>
 
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'bell']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>Real-time Notifications</h1>
-                <p className='text-xs text-blue-900/50'>Stay updated with instant alerts on account activities and offers.</p>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature4_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature4_description}</p>
                 </div>
                 </div>
 

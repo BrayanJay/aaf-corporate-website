@@ -19,7 +19,7 @@ const LandingPage = () => {
         <ProductsOverview/>
         <AllTestimonials/>
         <BranchDetails/>
-        <TrustedPartners/>
+        {/*<TrustedPartners/>*/}
         <InquiriesForm/>
     </>
   )

@@ -1,24 +1,22 @@
 import React from 'react'
-import banner1 from '../assets/bannerimg1.svg';
+import { useTranslation } from 'react-i18next';
 import Carousel from '../components/Carousel';
 import CorporateInformation from '../components/CorporateInformation';
 import FinancialKeys from '../components/FinancialKeys';
 import Documents from '../components/Documents';
 
-    const image = {
-        src: banner1,
-        title: "Investor Relations",
-        intro: "Empowering Your Financial Future ",
-        specialnote: "since 1981",
-        description: "“ Empowering People and Transforming Lives “",
-    };
-
 const InvesterRelationsPage = () => {
+  const { t } = useTranslation();
+  const bannerDetails = t("bannerIR", { returnObjects: true });
   return (
     <div className='container mx-auto'>
-        <Carousel image={image}/>
+        <Carousel image={bannerDetails}/>
+        <div id='corporate-information' className=' bg-white'>
         <CorporateInformation/>
+        </div>
+        <div id='financial-keys' className='pt-12 bg-white'>
         <FinancialKeys/>
+        </div>
         <Documents/>
     </div>
   )

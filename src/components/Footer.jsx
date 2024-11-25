@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const data = [
-  { title: "About", list: ["Overview", "Board of Directors", "Corporate Management", "Branch Network"] },
-  { title: "Products", list: ["Gold Loans", "Fixed Deposits", "Leasing", "Mortgage", "Foreign Exchange ", "E - Savings"] },
-  { title: "Investor Relations", list: ["Corporate Profile", "Annual Reports", "Credit Ratings", "Other financial information - CSE"] },
-  { title: "Careers", list: ["Careers", "Internships"] },
-];
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = ({ theme = "dark" }) => {
+  const { t } = useTranslation();
+  const listItems = t("footerListItems", { returnObjects: true });
+  const data = t("footerText", { returnObjects: true });
+
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+
+  // Effect to handle smooth scroll after language change
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const elementId = hash.substring(1); // Remove the '#' symbol
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [t.language]); // Runs when the language changes
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -21,6 +33,24 @@ const Footer = ({ theme = "dark" }) => {
     alert(`Submitted email: ${email}`);
   };
 
+  const handleNavigation = (link) => {
+    // If the link is a full-page link (without a hash), scroll to the top of the page
+    if (!link.includes('#')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navigate(link);  // Navigate to the full-page route
+    }
+
+    // If it's a component link (with a hash), smooth scroll to that element
+    else {
+      const elementId = link.split('#')[1];
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      navigate(link);  // Navigate to the route, allowing scrolling within the page
+    }
+  };
+
   return (
     <div
       className={`px-5 md:px-10 lg:px-20 py-10
@@ -29,14 +59,14 @@ const Footer = ({ theme = "dark" }) => {
       {/* Subscription Section */}
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-8 border-b">
         <div className="flex-1 text-center lg:text-left" data-aos="fade-up">
-          <p className="pb-3 text-lg md:text-xl font-medium text-white/80">Bringing Financial Solutions Closer to You</p>
+          <p className="pb-3 text-lg md:text-xl font-medium text-white/80">{data.subs_title1}</p>
           <h1 className="text-2xl md:text-4xl font-semibold text-white/80">
-            Subscribe & Get Latest Updates <br /> From Us!
+            {data.subs_title2} <br /> {data.subs_title3}!
           </h1>
         </div>
-        <div className="flex-1">
+        <div className="flex-1" data-aos="fade-up">
           <p className="pb-3 text-center lg:text-left font-thin text-white/80">
-            Subscribe to receive our offers and updates directly in your inbox.
+            {data.subs_message}
           </p>
           <form
             onSubmit={handleSubmit}
@@ -47,7 +77,7 @@ const Footer = ({ theme = "dark" }) => {
               name="email"
               id="email"
               className="flex-grow border border-slate-300 rounded-sm px-3 py-2 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm"
-              placeholder="Enter your email"
+              placeholder={data.subs_field}
               value={email}
               onChange={handleChange}
             />
@@ -55,7 +85,7 @@ const Footer = ({ theme = "dark" }) => {
               type="submit"
               className="bg-white hover:bg-bluegradient text-blue-700 hover:text-white mt-3 sm:mt-0 sm:ml-2 px-4 py-2 rounded-sm font-semibold"
             >
-              Submit
+              {data.subs_btn}
             </button>
           </form>
         </div>
@@ -65,18 +95,17 @@ const Footer = ({ theme = "dark" }) => {
       <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-16 py-10 border-b">
         {/* Left Section */}
         <div className="md:basis-1/4 text-center md:text-left">
-          <img className="w-24 mx-auto md:mx-0" src={logo} alt="Logo" />
-          <p className="mt-4 mb-6 text-sm leading-relaxed text-gray-400">
-            Asia Asset Finance PLC, incorporated on 25th November 1981, is rated ICRA A+ Stable Outlook and is licensed
-            by the Monetary Board of the Central Bank of Sri Lanka.
+          <img className="w-24 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up"/>
+          <p className="mt-4 mb-6 text-sm leading-relaxed text-gray-400" data-aos="fade-up" data-aos-delay="100">
+            {data.intro}
           </p>
           <div className="flex flex-col gap-1 text-sm">
-            <p>No: 76, Park Street, Colombo 02, Sri Lanka</p>
-            <p>+94 117 699000</p>
-            <p>info@asiaassetfinance.lk</p>
+            <p data-aos="fade-up" data-aos-delay="200">{data.address}</p>
+            <p data-aos="fade-up" data-aos-delay="300">+94 117 699000</p>
+            <p data-aos="fade-up" data-aos-delay="400">info@asiaassetfinance.lk</p>
           </div>
-          <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg">
-            {['facebook', 'linkedin', 'instagram', 'youtube', 'twitter'].map((icon, idx) => (
+          <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg" data-aos="fade-up" data-aos-delay="500">
+            {['facebook', 'instagram', 'linkedin', 'youtube'].map((icon, idx) => (
               <FontAwesomeIcon
                 key={idx}
                 icon={['fab', icon]}
@@ -87,17 +116,16 @@ const Footer = ({ theme = "dark" }) => {
         </div>
 
         {/* Footer Links */}
-        <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16">
-          {data.map(({ title, list }, idx) => (
+        <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16" data-aos="fade-up" data-aos-delay="500">
+          {listItems.map((item, idx) => (
             <div key={idx} className="w-full sm:w-auto">
-              <h5 className="font-semibold mb-3 text-gray-300">{title}</h5>
+              <h5 className="font-semibold mb-3 text-gray-300">{item.title}</h5>
               <ul className="flex flex-col gap-3">
-                {list.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="transition-all duration-300 ease-in-out hover:text-white cursor-pointer"
-                  >
-                    {item}
+                {item.list.map((listItem, listIdx) => (
+                  <li key={listIdx} className="transition-all duration-300 ease-in-out hover:text-white cursor-pointer">
+                    <span onClick={() => handleNavigation(item.links[listIdx])}>
+                      {listItem}
+                    </span>
                   </li>
                 ))}
               </ul>

@@ -1,39 +1,30 @@
 /* eslint-disable react-refresh/only-export-components */
 import React from 'react';
+import { useTranslation } from "react-i18next";
+
 import goldellipse from '../assets/goldellipse.svg';
 import blueellipse from '../assets/blueellipse.svg';
 
 import mrPrasanth from '../assets/bod/vap.svg';
 import mrRajiv from '../assets/bod/rja.svg';
-import mrAlexandra from '../assets/bod/gm.svg';
-import mrBijimon from '../assets/bod/kr.svg';
-import mrPillai from '../assets/bod/kgk.svg';
-import mrRajitha from '../assets/bod/rab.svg';
-import mrJayasekara from '../assets/bod/jpdr.svg';
-import mrRoshan from '../assets/bod/rds.svg';
-import mrKumarasiri from '../assets/bod/tcd.svg';
 import ProfileCard from './ProfileCard';
 
 const BOD = () => {
-  const boadOfDirectors = [
-    { imgSrc: mrAlexandra, name: 'G. M. Alexander', title: 'Non - Executive Director' },
-    { imgSrc: mrBijimon, name: 'K. R. Bijimon', title: 'Non - Executive Director / Chief General Manager - Muthoot Finance Ltd' },
-    { imgSrc: mrPillai, name: 'K. G. K. Pillai', title: 'Non - Executive Director' },
-    { imgSrc: mrRajitha, name: 'R. A. B. Basnayake', title: 'Independent Non - Executive Director' },
-    { imgSrc: mrJayasekara, name: 'J. P. D. R. Jayasekara', title: 'Independent Non - Executive Director' },
-    { imgSrc: mrRoshan, name: 'R. D. S. Gunasekara', title: 'Executive Director / Chief Operating Officer' },
-    { imgSrc: mrKumarasiri, name: 'T. C. D. Kumarasiri', title: 'Non - Executive Director' },
-  ];
+  const { t } = useTranslation();
+  const profileDetails = t("bodProfilesAbout", { returnObjects: true });
+  const bodTexts = t("bodTextsAbout", { returnObjects: true });
+
+  
 
   return (
     <div className="w-full h-auto flex flex-col">
-      <div className='relative text-center pt-5 lg:pt-10 px-10 lg:px-20' data-aos="fade-up">
-                <h1 className='inline-block px-5 border-b-2 lg:border-b-4 border-blue-500 text-xl md:text-2xl lg:text-4xl font-normal text-blue-900'> Board of <span className='font-black text-blue-700'> Directors </span></h1>
-                <p className='pt-1 text-xs md:text-sm lg:text-lg font-light italic text-blue-500'>Guiding Our Vision with Expertise and Integrity</p>
-                <p className='pb-5 pt-5 text-xs lg:text-sm font-normal text-black/50 text-center'>Our Board of Directors comprises seasoned professionals with diverse backgrounds and extensive experience in the financial industry. Their leadership and strategic insights are instrumental in steering Asia Asset Finance towards sustainable growth and success.</p>
+      <div className='relative text-center pt-5 lg:pt-10 px-10 lg:px-20'>
+                <h1 className='inline-block px-5 border-b-2 lg:border-b-4 border-blue-500 text-xl md:text-2xl lg:text-4xl font-normal text-blue-900' data-aos="fade-up"> {bodTexts.title1} <span className='font-black text-blue-700'> {bodTexts.title2} </span></h1>
+                <p className='pt-1 text-xs md:text-sm lg:text-lg font-light italic text-blue-500' data-aos="fade-up">{bodTexts.subtitle}</p>
+                <p className='pb-5 pt-5 text-xs lg:text-sm font-normal text-black/50 text-center' data-aos="fade-up" data-aos-delay	="300">{bodTexts.intro}</p>
             </div>
-      <div className="flex flex-row md:gap-40">
-        <img src={goldellipse} className="h-72 md:h-96" />
+      <div className="flex flex-row md:gap-40" data-aos="fade-right">
+        <img src={goldellipse} className="h-72 md:h-96"/>
         <div className="absolute pl-20">
           <img
             src={mrPrasanth}
@@ -44,38 +35,36 @@ const BOD = () => {
         <div className="flex md:basis-1/3">
           <div className="text-right pl-20 md:pl-0 pr-5 flex flex-col pt-20">
             <div className="text-4xl md:text-6xl font-black text-blue-700 pr-5 border-r-4 border-blue-500">
-              “ <span className="text-xl md:text-2xl lg:text-4xl font-black text-blue-700 pt-2">V. A. Prasanth</span>
+              “ <span className="text-xl md:text-2xl lg:text-4xl font-black text-blue-700 pt-2">{bodTexts.chairman_name}</span>
             </div>
             <div className="text-xs md:text-sm lg:text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
-              Chairman
+            {bodTexts.chairman_position}
             </div>
 
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
-              V.A Prasanth is a commercial banker with over 37 years of all-round exposure in
-              Retail & Corporate banking, Treasury Operations and Information Security. Formerly
-              he worked with Indian Bank – acclaimed as one of the best...
+            {bodTexts.chairman_description}
               <span className="font-medium italic text-blue-500 hover:cursor-pointer hover:text-blue-900 transition transform ease-in-out duration-300">
-                See more
+              {bodTexts.see_more_btn}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-row md:gap-40 justify-end">
+      <div className="flex flex-row md:gap-40 justify-end" data-aos="fade-left">
         <div className="flex md:basis-1/3">
           <div className="text-left pl-5 pr-20 md:pr-0 flex flex-col pt-20">
             <div className="text-4xl md:text-6xl font-black text-amber-500 pl-5 border-l-4 border-amber-400">
-              <span className="text-xl md:text-2xl lg:text-4xl font-black text-amber-500 pt-2">R.J. A. Gunawardena</span> ” 
+              <span className="text-xl md:text-2xl lg:text-4xl font-black text-amber-500 pt-2">{bodTexts.ceo_name}</span> ” 
             </div>
             <div className="text-xs md:text-sm lg:text-xl font-black text-amber-400 pl-5 border-l-4 border-amber-400">
-              Director / Chief Executive Officer
+            {bodTexts.ceo_position}
             </div>
 
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
-              Mr. Rajiv Gunawardena, the Chief Executive Officer / Director of Asia Asset Finance PLC was appointed to the Board in December 2009. A visionary leader, responsible for setting and implementing the organization’s vision...
+            {bodTexts.ceo_description}
               <span className="font-medium italic text-amber-400 hover:cursor-pointer hover:text-amber-500 transition transform ease-in-out duration-300">
-                See more
+              {bodTexts.see_more_btn}
               </span>
             </div>
           </div>
@@ -91,8 +80,8 @@ const BOD = () => {
 
       <div className="w-full h-auto flex justify-center">
         {/* Grid Layout for Profile Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch">
-          {boadOfDirectors.map((profile, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch" data-aos="fade-up">
+          {profileDetails.map((profile, idx) => (
             <ProfileCard
               key={idx}
               imgSrc={profile.imgSrc}

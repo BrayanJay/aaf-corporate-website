@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 import bank1 from '../assets/bankers/boc.svg'
 import bank2 from '../assets/bankers/combank.svg'
@@ -13,73 +14,74 @@ import bank9 from '../assets/bankers/seylan.svg'
 const logos = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8, bank9]
 
 const CorporateInformation = () => {
+    const { t } = useTranslation();
+    const corporateProfile = t("corporateProfileIR", { returnObjects: true });
   return (
     <div className='w-full px-10 lg:px-40'>
         <div className="flex flex-col relative justify-center items-start pt-10">
           <div className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold pl-2 lg:pl-4">
-            Corporate <span className='font-light text-blue-500'> Information</span></div>
+            {corporateProfile.title1} <span className='font-light text-blue-500'> {corporateProfile.title2}</span></div>
         </div>
         <div className='flex lg:flex-row flex-col lg:gap-40'>
         <div className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
             <div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Name of Company
+                {corporateProfile.label1}
                 </div>
                 <div className='text-xs lg:text-sm md:text-base font-medium text-blue-900/80'>
-                Asia Asset Finance PLC
+                {corporateProfile.field1}
                 </div>
             </div>
 
             <div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Company ratings
+                {corporateProfile.label2}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                Fitch A+
+                {corporateProfile.field2}
                 </div>
             </div>
 
             <div className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Legal Form
+                {corporateProfile.label3}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - Incorporated as a Private Limited Company on 23 September 1970. (under the Companies Ordinance No. 51 of 1938 (Cap 145))
+                {corporateProfile.field3_1}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - Name changed under the Companies Ordinance No. 51 of 1938 (Cap 145) on 03 October 2006.
+                {corporateProfile.field3_2}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - Re-registered under the Companies Act No. 07 of 2007 on 23 January 2008.
+                {corporateProfile.field3_3}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - Converted to a Public Limited Company under the Companies Act No. 07 of 2007 on 20 March 2012.
+                {corporateProfile.field3_4}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - Registration Number (under the Companies Act No. 17 of 1982): PB 139 PQ.
+                {corporateProfile.field3_5}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                - New Registration Number (under the Companies Act No. 7 of 2007): PB 139 PQ.
+                {corporateProfile.field3_6}
                 </div>
             </div>
 
             <div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Company Registration Number
+                {corporateProfile.label4}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                PB 139 PQ
+                {corporateProfile.field4}
                 </div>
             </div>
 
             <div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Lawyers of the Company
+                {corporateProfile.label5}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 <span>
-                    Shiranthi Gunawardane Associates, <br/>
-                    No.22/1,Elliot Place,Colombo 08. 
+                {corporateProfile.field5}
                 </span>
                 </div>
             </div>
@@ -89,61 +91,55 @@ const CorporateInformation = () => {
         <div className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
             <div className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Board of Directors
+                {corporateProfile.label6}
                 </div>
                 <div className='text-xs lg:text-sm font-bold text-blue-900/80'>
-                Chairman - V. A Prasanth
+                {corporateProfile.field6_1}
                 </div>
                 <div className='text-xs lg:text-sm font-bold text-blue-900/80'>
-                CEO - Rajiv James Abeywickrema Gunawardena
+                {corporateProfile.field6_2}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                George Muthoot Alexander
+                {corporateProfile.field6_3}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                Kuttikattu Rajappan Bijimon
+                {corporateProfile.field6_4}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                Kiran Gopala Krishna Pillai
+                {corporateProfile.field6_5}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                Rajitha Ananda Bandara Basnayake
+                {corporateProfile.field6_6}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                J P D R Jayasekara
+                {corporateProfile.field6_7}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                Roshan De Silva Gunasekera
+                {corporateProfile.field6_8}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                T. C. D. Kumarasiri
+                {corporateProfile.field6_9}
                 </div>
             </div>
 
             <div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Secretary of the Company
+                {corporateProfile.label7}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 <span>
-                Ms. Chalani Gonaduwa <br/>
-                Company Secretory <br/>
-                No.76, Park Street, Colombo 02.<br/>
-                Tel: 011 7699 074 <br/>
-                Email: companysecretary@asiaassetfinance.lk
+                {corporateProfile.field7}
                 </span>
                 </div>
             </div>
 
             <div className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Auditors of the Company
+                {corporateProfile.label8}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 <span>
-                BDO Partners <br/>
-                65/2, Sir Chiththapalam A. Gardiner Mawatha, <br/>
-                Colombo 02.
+                {corporateProfile.field8}
                 </span>
                 </div> 
             </div>
@@ -152,7 +148,7 @@ const CorporateInformation = () => {
         
         <div className='px-20 py-5 text-center'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-                Bankers of the Company
+                {corporateProfile.label9}
                 </div>
                 <div className="container mx-auto p-4">
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
