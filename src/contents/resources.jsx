@@ -412,7 +412,7 @@ category: "goal",
     productsSelector: { 
       'Fixed Deposit': {
         images: [FD, FD],
-        name: "Fixed Deposit",
+        name: "Fixed Deposits",
         features: [
           { title: "High Interest Rate", description: "Earn a higher interest rate than regular savings accounts." },
           { title: "Flexible Terms", description: "Choose from a variety of terms that best suit your needs." },
@@ -486,7 +486,7 @@ category: "goal",
 
     //FD Page Components
     fdPage: {
-      title: "Fixed Deposit",
+      title: "Fixed Deposits",
       description: "It is never a bad time to start saving and it is never a bad idea to start saving with us. With a history spanning over 50 years, Asia Asset Finance PLC has become a time-tested investment partner as a finance company registered with the Central Bank of Sri Lanka. We ensure the security of your wealth, whilst offering deposit rates which are designed to ensure consistently competitive returns. Sri Lanka has faced multiple economic crisis’ and in spite of that Asia Asset has always delivered. Our services include door-to-door service with a friendly and personalized team of professionals to cater to your individual requirements.",
     },
 
