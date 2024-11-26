@@ -57,10 +57,10 @@ const resources = {
 
       //Footer component
       footerListItems: [
-        { title: "About", list: ["Overview", "Board of Directors", "Corporate Management", "Branch Network"], links: ["/about", "/about/#bod", "/about/#corporate-management", "/about/#branches" ] },
-        { title: "Products", list: ["Gold Loans", "Fixed Deposits", "Leasing", "Mortgage", "Foreign Exchange ", "E - Savings"], links: ["/gold-loan", "/fixed-deposit", "/leasing", "/mortgage", "/foreign-exchange", "/products/#luckewallet"] },
-        { title: "Investor Relations", list: ["Corporate Profile", "Key Financials"], links: ["/ir", "/ir/#financial-keys"] },
-        { title: "Other Links", list: ["Careers", "Contact Us", "Downloads"], links: ["/careers", "/contacts", "/downloads"] },
+        { title: "About", list: ["Overview", "Board of Directors", "Corporate Management", "Branch Network"], links: ["/web/about", "/web/about/#bod", "/web/about/#corporate-management", "/web/about/#branches" ] },
+        { title: "Products", list: ["Gold Loans", "Fixed Deposits", "Leasing", "Mortgage", "Forex ", "Luckewallet - Digital Wallet"], links: ["/web/gold-loan", "/web/fixed-deposit", "/web/leasing", "/web/mortgage", "/web/foreign-exchange", "/web/products/#luckewallet"] },
+        { title: "Investor Relations", list: ["Corporate Profile", "Key Financials"], links: ["/web/ir", "/web/ir/#financial-keys"] },
+        { title: "Other Links", list: ["Careers", "Contact Us", "Downloads"], links: ["/web/careers", "/web/contacts", "/web/downloads"] },
       ],
 
       footerText: {
@@ -393,11 +393,11 @@ category: "goal",
       title: "Downloads",
       section1: "Annual Reports",
       intro1: "",
-      section2: "Financial Reports",
+      section2: "Interim Financials",
       intro2: "",
       section3: "KYC Documents",
       intro3: "",
-      section4: "",
+      section4: "Other Documents",
       intro4: "",
     },
 
@@ -554,10 +554,10 @@ category: "goal",
 
       //Footer Component
       footerListItems: [
-        { title: "අපි ගැන", list: ["සාරාංශය", "නිලධාරී මණ්ඩලය", "කාර්යාල කළමනාකරණය", "ශාඛා ජාලය"], links: ["/about", "/about/#bod", "/about/#corporate-management", "/about/#branches"] },
-        { title: "නිෂ්පාදන", list: ["දුම්රිය ණය", "ස්ථිර තැන්පතු", "භාණ්ඩ වාහන", "හොල්ඩිං", "විදේශ මූල්‍ය", "ඊ-සේවින්"], links: ["/gold-loan", "/fixed-deposit", "/leasing", "/mortgage", "/foreign-exchange", "/products/#luckewallet"] },
-        { title: "වැඩිහිටියන්ගේ සම්බන්ධතා", list: ["සමාගමේ වාර්තා", "ප්‍රධාන මූල්‍ය තොරතුරු"], links: ["/ir", "/ir/#financial-keys"] },
-        { title: "වෙනත් සබැඳි", list: ["රැකියා", "අප අමතන්න", "බාගත කිරීම්"], links: ["/careers", "/contacts", "/downloads"] },
+        { title: "අපි ගැන", list: ["සාරාංශය", "නිලධාරී මණ්ඩලය", "කාර්යාල කළමනාකරණය", "ශාඛා ජාලය"], links: ["/web/about", "/web/about/#bod", "/web/about/#corporate-management", "/web/about/#branches"] },
+        { title: "නිෂ්පාදන", list: ["දුම්රිය ණය", "ස්ථිර තැන්පතු", "භාණ්ඩ වාහන", "හොල්ඩිං", "විදේශ මූල්‍ය", "ඊ-සේවින්"], links: ["/web/gold-loan", "/web/fixed-deposit", "/web/leasing", "/web/mortgage", "/web/foreign-exchange", "/web/products/#luckewallet"] },
+        { title: "වැඩිහිටියන්ගේ සම්බන්ධතා", list: ["සමාගමේ වාර්තා", "ප්‍රධාන මූල්‍ය තොරතුරු"], links: ["/web/ir", "/web/ir/#financial-keys"] },
+        { title: "වෙනත් සබැඳි", list: ["රැකියා", "අප අමතන්න", "බාගත කිරීම්"], links: ["/web/careers", "/web/contacts", "/web/downloads"] },
       ],
       
       
@@ -1025,10 +1025,10 @@ comProfilesAbout: [
 
       //Footer Component
       footerListItems: [
-        { title: "எங்களைப் பற்றி", list: ["சாரா பார்வை", "பிரBoard நிர்வாக குழு", "கார்ப்பரேட் மேலாண்மை", "முகாமைத்துவ வலை"], links: ["/about", "/about/#bod", "/about/#corporate-management", "/about/#branches"] },
-        { title: "தயாரிப்புகள்", list: ["பரபரப்பு கடன்", "நிலைபார்க்க வேண்டிய உறுதிப்பத்திரம்", "பட்சி வாடகைகள்", "குடியுரிமை", "வெளிநாட்டு பரிமாற்றம்", "இ-சேமிப்பு"], links: ["/gold-loan", "/fixed-deposit", "/leasing", "/mortgage", "/foreign-exchange", "/products/#luckewallet"] },
-        { title: "பொது தொடர்புகள்", list: ["திறந்த சிறுகுழு", "முக்கிய நிதி"], links: ["/ir", "/ir/#financial-keys"] },
-        { title: "மற்ற இணைப்புகள்", list: ["வேலைவாய்ப்பு", "எங்களை தொடர்பு கொள்ளவும்", "பதிவிறக்கங்கள்"], links: ["/careers", "/contacts", "/downloads"] },
+        { title: "எங்களைப் பற்றி", list: ["சாரா பார்வை", "பிரBoard நிர்வாக குழு", "கார்ப்பரேட் மேலாண்மை", "முகாமைத்துவ வலை"], links: ["/web/about", "/web/about/#bod", "/web/about/#corporate-management", "/web/about/#branches"] },
+        { title: "தயாரிப்புகள்", list: ["பரபரப்பு கடன்", "நிலைபார்க்க வேண்டிய உறுதிப்பத்திரம்", "பட்சி வாடகைகள்", "குடியுரிமை", "வெளிநாட்டு பரிமாற்றம்", "இ-சேமிப்பு"], links: ["/web/gold-loan", "/web/fixed-deposit", "/web/leasing", "/web/mortgage", "/web/foreign-exchange", "/web/products/#luckewallet"] },
+        { title: "பொது தொடர்புகள்", list: ["திறந்த சிறுகுழு", "முக்கிய நிதி"], links: ["/web/ir", "/web/ir/#financial-keys"] },
+        { title: "மற்ற இணைப்புகள்", list: ["வேலைவாய்ப்பு", "எங்களை தொடர்பு கொள்ளவும்", "பதிவிறக்கங்கள்"], links: ["/web/careers", "/web/contacts", "/web/downloads"] },
       ],
 
 

@@ -4,10 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Astore from '../assets/appstorelogo.svg'
 import Pstore from '../assets/playstorelogo.svg'
 import { useTranslation } from "react-i18next";
+import { useNavigate } from 'react-router-dom'
 
 const Luckewallet = () => {
   const { t } = useTranslation();
   const luckewallet = t("luckewalletLandingPage", { returnObjects: true });
+  const navigate = useNavigate();  // For programmatic navigation
+  
+  const handleLearnMoreClick = () => {
+    // Navigate to /about route (you can specify the full URL if needed)
+    navigate('/products', { replace: true });
+    
+    // Scroll to the #branches section after navigation
+    setTimeout(() => {
+      const element = document.getElementById('luckewallet');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 200); // Delay to allow for navigation before scrolling
+  };
 
   return (
     <div className='flex flex-col lg:flex-row max-w-auto max-h-auto px-10 lg:px-40'>
@@ -15,7 +30,7 @@ const Luckewallet = () => {
 
         <div className='relative ' data-aos="fade-up">
             <h1 className='border-l-4 lg:border-l-8 border-blue-500 p-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{luckewallet.title1} <span className='font-bold text-amber-400'>{luckewallet.title2}</span> {luckewallet.title3} </h1>
-            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>{luckewallet.subtitle} <span className='font-medium italic underline hover:cursor-pointer text-blue-900'>{luckewallet.learn_more}</span></p>
+            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>{luckewallet.subtitle} <span onClick={handleLearnMoreClick} className='font-medium italic underline hover:cursor-pointer text-blue-900'>{luckewallet.learn_more}</span></p>
         </div>
         <div className='relative p-5' data-aos="fade-up">
             <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h1>

@@ -28,8 +28,8 @@ const Card = () => {
         {
             idx: "card3",
             ic: <FontAwesomeIcon icon={['fas', 'clock']} className={`mx-1.5  text-2xl md:text-4xl text-blue-700`} />,
-            title: landingPageCards.card2_title,
-            description: landingPageCards.card2_description
+            title: landingPageCards.card3_title,
+            description: landingPageCards.card3_description
         }
     ];
 

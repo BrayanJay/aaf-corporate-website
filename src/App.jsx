@@ -75,25 +75,25 @@ function App() {
         <SocialMediaIcons direction='up'>{socialMediaIcons}</SocialMediaIcons>
         </div>
         <Routes>
-          <Route path='/' element={<LandingPage/>}/>
-          <Route path='/about' element={<AboutPage/>}/>
-          <Route path='/products' element={<ProductsAndServicesPage/>}/>
-          <Route path='/ir' element={<InvesterRelationsPage/>}/>
-          <Route path='/profile' element={<PersonalProfile/>}/>
+          <Route path='/web' element={<LandingPage/>}/>
+          <Route path='web/about' element={<AboutPage/>}/>
+          <Route path='web/products' element={<ProductsAndServicesPage/>}/>
+          <Route path='web/ir' element={<InvesterRelationsPage/>}/>
+          <Route path='web/profile' element={<PersonalProfile/>}/>
 
-          <Route path="/gold-loan" element={<GoldLoanPage />} />
-          <Route path="/fixed-deposit" element={<FixedDepositPage />} />
-          <Route path="/leasing" element={<LeasingPage />} />
-          <Route path="/mortgage" element={<Mortgage />} />
-          <Route path="/foreign-exchange" element={<ForeignExchange />} />
-          <Route path="/luckewallet" element={<LuckewalletPage />} />
+          <Route path="web/gold-loan" element={<GoldLoanPage />} />
+          <Route path="web/fixed-deposit" element={<FixedDepositPage />} />
+          <Route path="web/leasing" element={<LeasingPage />} />
+          <Route path="web/mortgage" element={<Mortgage />} />
+          <Route path="web/foreign-exchange" element={<ForeignExchange />} />
+          <Route path="web/luckewallet" element={<LuckewalletPage />} />
 
-          <Route path="/careers" element={<CareerPortal />} />
-          <Route path="/careers/job-description" element={<JobDescription />} />
-          <Route path="/careers/application-form" element={<ApplicationForm />} />
+          <Route path="web/careers" element={<CareerPortal />} />
+          <Route path="web/careers/job-description/:jobId" element={<JobDescription />} />
+          <Route path="web/careers/application-form" element={<ApplicationForm />} />
           
-          <Route path='/contacts' element={<Contacts/>}/>
-          <Route path='/downloads' element={<Downloads/>}/>
+          <Route path='web/contacts' element={<Contacts/>}/>
+          <Route path='web/downloads' element={<Downloads/>}/>
 
 
         </Routes>

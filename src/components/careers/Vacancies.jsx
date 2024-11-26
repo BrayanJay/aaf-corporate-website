@@ -1,18 +1,14 @@
 import React from 'react'
 import JobCard from '../careers/JobCard'
-import { useNavigate } from 'react-router-dom';
+import JobData from '../../contents/JobData';
 
-function Vacancies(){
+const Vacancies = () => {
 
     return(
-    <div id='1' className=''>
-        <JobCard
-          Department="Finance Department"
-          SubDepartment="Fixed Deposits"
-          Designation="Senior Manager"
-          Location="Head Office"
-          Type="Full Time"
-        />
+    <div className=''>
+        {JobData.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))}
     </div>
   )
 }

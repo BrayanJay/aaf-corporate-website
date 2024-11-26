@@ -1,48 +1,59 @@
-import React from 'react'
-import PropTypes from 'prop-types'; 
+// JobDescription.jsx
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import JobData from '../../../contents/JobData';
 
 const JobDescription = () => {
-
   const navigate = useNavigate();
+  const { jobId } = useParams(); // Extract jobId from route params
+
+  // Retrieve the job details using jobId
+  const job = JobData.find((job) => job.id === jobId) || {};
+  const scrolltoTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
 
   return (
-    <div className='flex flex-col'>
-      <h1 className='justify-start lg:text-3xl text-2xl lg:pl-20 pl-10 flex pt-5 text-sky-700 font-bold'>Finance Department</h1>
-      <div className='lg:ml-20 lg:mr-20 ml-10 mr-10 p-2 mt-10 mb-10 rounded-xl h-auto w-auto bg-whit shadow-2xl'>  
-      <h2 className='flex justify-start lg:text-3xl md:text-2xl text-lg pl-10 pt-5 text-gray-600 font-bold'>Senior Manager - Fixed Deposits</h2>
-      <div className='flex flex-col pl-10 pr-10 pt-5 pb-10 text-gray-400 font-semibold lg:gap-5 gap-5'>
-        <div className='flex justify-start h-10 w-48 px-5 py-2.5 bg-blue-500 rounded-lg text-white ease-in-out'>
-          <span className='flex flex-col justify-center items-center font-bold'>Key Responsibilities</span>
+    <div className="flex flex-col">
+      <h1 className="justify-start lg:text-3xl text-2xl lg:pl-20 pl-10 flex pt-5 text-sky-700 font-bold">
+        {job.department || 'Job Department'}
+      </h1>
+      <div className="lg:ml-20 lg:mr-20 ml-10 mr-10 p-2 mt-10 mb-10 rounded-xl h-auto w-auto bg-white shadow-2xl">
+        <h2 className="flex justify-start lg:text-3xl md:text-2xl text-lg pl-10 pt-5 text-gray-600 font-bold">
+          {job.designation || 'Job Designation'}
+        </h2>
+        <div className="flex flex-col pl-10 pr-10 pt-5 pb-10 text-gray-400 font-semibold lg:gap-5 gap-5">
+          <div className="flex justify-start h-10 w-48 px-5 py-2.5 bg-blue-500 rounded-lg text-white ease-in-out">
+            <span className="flex flex-col justify-center items-center font-bold">Key Responsibilities</span>
+          </div>
+          {job.responsibilities?.map((resp, index) => (
+            <div key={index} className="flex">
+              <FontAwesomeIcon
+                icon={['fas', 'caret-right']}
+                className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1"
+              />
+              <p className="ml-3 lg:text-sm md:text-sm text-xs">{resp}</p>
+            </div>
+          ))}
         </div>
-        
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Implementation of the Company's Strategy, on Fixed Deposit Mobilization across the Branch Network and achieve the pre-determined Targets, Goal and Objectives.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Develop the Fixed Deposit customer base of the Company through a well-defined and focused business plan.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Spearhead the digitization of the Fixed Deposit mobilization process of the Company.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Identify opportunities for product enhancements and be competitive in the market.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Provide periodical reports to the management on the market competition and industry analysis for Fixed Deposits.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Provide periodical reports to the management on the market competition and industry. analysis for Fixed Deposits.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Provide recommendations to senior management on new strategies and action plans to grow the Fixed Deposits Portfolio of the Company.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Lead and motivate the team to reach the desired performance levels and develop the team to retain and enhance the performance over time.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Communicate product enhancements and initiatives to internal and external stakeholders.</p></div>
-      </div>
-
-      <div className='flex flex-col pl-10 pr-10 pt-5 pb-10 text-gray-400 font-semibold lg:gap-5 gap-5'>
-        <div className='flex justify-start h-10 w-48 px-5 py-2.5 bg-blue-500 rounded-lg text-white ease-in-out'>
-          <span className='flex flex-col justify-center items-center font-bold'>Job Requirements</span>
+        <div className="flex flex-col pl-10 pr-10 pt-5 pb-10 text-gray-400 font-semibold lg:gap-5 gap-5">
+          <div className="flex justify-start h-10 w-48 px-5 py-2.5 bg-blue-500 rounded-lg text-white ease-in-out">
+            <span className="flex flex-col justify-center items-center font-bold">Job Requirements</span>
+          </div>
+          {job.requirements?.map((req, index) => (
+            <div key={index} className="flex">
+              <FontAwesomeIcon
+                icon={['fas', 'caret-right']}
+                className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1"
+              />
+              <p className="ml-3 lg:text-sm md:text-sm text-xs">{req}</p>
+            </div>
+          ))}
         </div>
 
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Sound educational background.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Minimum of 5 years experience of which at least 2 years should be in a managerial level preferably in a Financial Institute.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>A high degree of commitment, leadership skills and expert knowledge and experience in Fixed Deposit Mobilization.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Strong management skills backed by high integrity and the ability to maintain good interpersonal relationships that are required to maintain credibility are essential</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Possess comprehensive knowledge of portfolio management, new product development, and innovative acquisitions initiatives.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>Ability to achieve set goals and targets.</p></div>
-      <div className='flex'><FontAwesomeIcon icon={['fas', 'caret-right']} className="lg:text-sm md:text-sm text-xs text-gray-400 mt-1 " /><p className='ml-3 lg:text-sm md:text-sm text-xs'>A valid riding and/or driving licens</p></div>
-      </div>
-      
-      <div className='flex flex-col text-blue-950/75 font-bold pl-10 pr-10 pb-10 gap-5'>
+        <div className='flex flex-col text-blue-950/75 font-bold pl-10 pr-10 pb-10 gap-5'>
         <span className='md:text-md text-sm'>The incumbent will be offered a very attractive remuneration package coupled with allowances, on-the-job training, local and foreign off the job training and career guidance with facilities to pursue further studies for career advancement in a fastgrowing company.</span>
       </div>
 
@@ -50,13 +61,15 @@ const JobDescription = () => {
     <div className=" text-white lg:text-lg text-xs font-bold">Asia Asset Finance PLC is an Equal Opportunity Provider</div>
 </div>
 
-      <div onClick={() => navigate(`/careers/application-form`)} className="h-auto px-10 ml-10 mr-10 mb-10 py-2 bg-[#14326b] hover:bg-blue-700 transition-colors duration-500 ease-in-out rounded-2xl justify-center items-center gap-2.5 hover:cursor-pointer">
-        <div className=" text-white text-lg font-bold text-center">Apply Now</div>
-      </div>
-
+        <div
+          onClick={() => {navigate('/careers/application-form'); scrolltoTop();}}
+          className="h-auto px-10 ml-10 mr-10 mb-10 py-2 bg-[#14326b] hover:bg-blue-700 transition-colors duration-500 ease-in-out rounded-2xl justify-center items-center gap-2.5 hover:cursor-pointer"
+        >
+          <div className="text-white text-lg font-bold text-center">Apply Now</div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default JobDescription
+export default JobDescription;

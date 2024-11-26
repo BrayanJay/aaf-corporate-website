@@ -34,22 +34,25 @@ const Footer = ({ theme = "dark" }) => {
   };
 
   const handleNavigation = (link) => {
-    // If the link is a full-page link (without a hash), scroll to the top of the page
     if (!link.includes('#')) {
+      // Navigate to the route and scroll to the top
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      navigate(link);  // Navigate to the full-page route
-    }
-
-    // If it's a component link (with a hash), smooth scroll to that element
-    else {
+      navigate(link);
+    } else {
+      // Navigate to the route first
+      navigate(link, { replace: true });
+  
+      // Extract the element ID and scroll to it after navigation
       const elementId = link.split('#')[1];
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-      navigate(link);  // Navigate to the route, allowing scrolling within the page
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Delay to ensure DOM is updated
     }
   };
+  
 
   return (
     <div

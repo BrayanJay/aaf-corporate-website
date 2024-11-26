@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
+import mLogo from '../assets/muthootlogo.webp'
 import greatPlace2Work from '../assets/gpw.svg'
 import fitchA from '../assets/fitchA.svg'
 
@@ -24,11 +25,11 @@ export const Header = () => {
   <div id='inner-container' className='flex flex-initial justify-between'>
     <div className='flex flex-row'>
     <div id='logo-bg' className='flex bg-white'>
-      <img className='lg:h-24 md:h-16 h-10' src={logo}></img>
+      <img className='lg:h-20 md:h-16 h-10' src={logo}></img>
     </div>
     <div id='certificates' className='p-2 basis-1/3 flex justify-start lg:gap-5 md:gap-3 gap-2'>
-      <img className='lg:h-20 md:h-12 h-6' src={greatPlace2Work}></img>
-      <img className='lg:h-20 md:h-12 h-6' src={fitchA}></img>
+      <img className='lg:h-16 md:h-12 h-6' src={greatPlace2Work}></img>
+      <img className='lg:h-16 md:h-12 h-6' src={fitchA}></img>
     </div>
     </div>
     <div className='flex flex-row px-10 items-center'>
