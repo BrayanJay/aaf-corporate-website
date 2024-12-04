@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from '../components/Carousel';
-import banner from '../assets/bannerimg1.svg';
+import bannerProductsPg from '../media/bannerProductsPg.webp';
 import ProductSelector from '../components/ProductSelector';
 import ProductLuckewallet from '../components/ProductLuckewallet';
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,7 @@ const ProductsAndServicesPage = () => {
   const data = t("bannerProducts", { returnObjects: true });
 
   const image = {
-    src: banner,
+    src: bannerProductsPg,
     title: data.title,
     intro: data.intro,
     specialnote: data.specialnote,

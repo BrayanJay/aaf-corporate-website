@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'; // Import for prop validation
 const DownloadsCard = ({ documents }) => {
 
   return (
-    <div className="flex flex-wrap gap-6 justify-start">
+    <div className="flex flex-wrap gap-6 justify-center">
       {documents.map((doc) => (
         <a
           key={doc.idx}

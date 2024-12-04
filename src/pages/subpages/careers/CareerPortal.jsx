@@ -1,15 +1,35 @@
-import Banner from '../../../components/careers/Banner'
+import { useTranslation } from 'react-i18next'
+import banner from '../../../media/bannerCareers.webp'
 import Title from '../../../components/careers/Title'
-import Vacancies from '../../../components/careers/Vacancies'
+//import Vacancies from '../../../components/careers/Vacancies'
+import greatPlace2Work from '../../../media/gpw.webp'
 
 import React from 'react'
+import Carousel from '../../../components/Carousel'
 
 const CareerPortal = () => {
+  const { t } = useTranslation();
+  const data = t("careersBanner", { returnObjects: true });
+
+  const image = {
+    src: banner,
+    title: data.title,
+  };
   return (
-    <>
-        <Banner/>
+    <>  
+    <div>
+        <Carousel image={image}/>
+        </div>
         <Title/>
-        <Vacancies/>
+        {/*<Vacancies/>*/}
+        <div className='px-5 sm:px-10 lg:px-40 py-10'>
+          <iframe
+          src='https://asiaassetfinance.net/careers/'
+          width="100%"
+          height="1000" 
+          title="Available Vacancies"
+        style={{ border: 'none' }}></iframe>
+        </div>
     </>
   );
 }

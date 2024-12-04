@@ -1,8 +1,8 @@
 import React from 'react'
 import { useTranslation } from "react-i18next";
-import LuckewalletLogo from '../assets/luckewalletlogo.svg'
+import LuckewalletLogo from '../media/luckewalletlogo.webp'
 
-import LuckewalletImg from '../assets/products/wallet.svg'
+import LuckewalletImg from '../media/products/luckewallet.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ProductLuckewallet = () => {

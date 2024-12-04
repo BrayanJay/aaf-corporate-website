@@ -11,18 +11,20 @@ const FinancialKeys = () => {
         {data.title1} <span className='font-light text-blue-500'> {data.title2}</span></div>
 
         <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-20 py-5">
-          <FinancialsCard amount={data.card1_amount} title={data.card1_title} />
-          <FinancialsCard amount={data.card2_amount} title={data.card2_title} />
-          <FinancialsCard amount={data.card3_amount} title={data.card3_title} />
-          <FinancialsCard amount={data.card4_amount} title={data.card4_title} />
-          <FinancialsCard amount={data.card5_amount} title={data.card5_title} />
+          <FinancialsCard amount="6,603 Mn" title={data.card1_title} />
+          <FinancialsCard amount="334 Mn" title={data.card2_title} />
+          <FinancialsCard amount="25,843 Mn" title={data.card3_title} />
+          <FinancialsCard amount="10.82%" title={data.card4_title} />
+          <FinancialsCard amount="2.77" title={data.card5_title} />
         </div>
 
 
       <div className="block bg-bluegradient rounded-tl-3xl rounded-br-3xl mx-auto w-fit px-5 lg:px-10 my-5">
         <div className="lg:gap-20 flex flex-col sm:flex-row justify-center items-center">
 
-          <div className="text-center sm:text-left flex justify-center items-center">
+
+          {/*Share Price Section*/}
+          {/*<div className="text-center sm:text-left flex justify-center items-center">
             <div className="text-white text-xl sm:text-2xl font-black">{data.share_price_title}</div>
           </div>
           
@@ -35,7 +37,7 @@ const FinancialKeys = () => {
                 <div className="text-white text-sm sm:text-xs font-normal">{data.share_price_percentage}%</div>
               </div>
             </div>
-          </div>
+          </div>*/}
 
         </div>
 

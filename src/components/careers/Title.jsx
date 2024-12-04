@@ -11,10 +11,10 @@ const Title = () => {
         <span className='text-2xl md:text-3xl lg:text-5xl text-blue-950 text-center'>{data.title1} <span className='font-black text-amber-400 uppercase'>{data.title2}!</span> </span>
       </div>
       <div className='flex justify-center md:px-40 md:pt-10 px-10 pt-5 font-medium'>
-      <span className='text-black/40 text-center text-xs md:text-sm lg:text-lg '>{data.description1}!</span>
+      <span className='text-black/40 text-center text-xs md:text-sm lg:text-lg '>{data.description1}</span>
       </div>
       <div className='hidden sm:flex justify-center md:px-40 px-10 pt-5  font-medium'>
-        <span className='text-black/40 text-center text-xs md:text-sm lg:text-lg'>{data.description2}!</span>
+        <span className='text-black/40 text-center text-xs md:text-sm lg:text-lg'>{data.description2}</span>
       </div>
     </div>
   )

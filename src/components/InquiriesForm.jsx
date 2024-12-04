@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from "react-i18next";
+import emailjs from "emailjs-com";
+import Loader from './Loader'; // Import the Loader component
 
 const isValidEmail = (email) => {
   return String(email)
@@ -11,21 +13,19 @@ const isValidEmail = (email) => {
 
 const validateData = ({ name, email, mobile }) => {
   const errorObj = {};
-
   if (!name) errorObj.name = "Please provide your name";
-
   if (!email) {
     errorObj.email = "Please provide your email";
   } else if (!isValidEmail(email)) {
     errorObj.email = "Please provide a valid email address";
   }
-
   if (!mobile) {
     errorObj.mobile = "Please provide your mobile number";
   }
-
   return errorObj;
 };
+
+
 
 const InquiriesForm = () => {
   const { t } = useTranslation();
@@ -33,6 +33,22 @@ const InquiriesForm = () => {
 
   const [formData, setFormData] = useState({});
   const [formErrors, setFormErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+
+  const Popup = ({ message, onClose }) => {
+    return (
+      <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-40">
+        <div className="bg-white p-6 rounded-lg text-center">
+          <p>{message}</p>
+          <button onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
+            {inquiryForm.close_btn}
+          </button>
+        </div>
+      </div>
+    );
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,7 +58,36 @@ const InquiriesForm = () => {
     e.preventDefault();
     const errorObj = validateData(formData);
     setFormErrors(errorObj);
-    if (Object.keys(errorObj).length === 0) alert("Successful");
+    if (Object.keys(errorObj).length === 0) {
+      setIsLoading(true); // Show loader
+      emailjs
+        .send(
+          "service_ybwzqz8", // Replace with your EmailJS Service ID
+          "template_jb24nh8", // Replace with your EmailJS Template ID
+          {
+            name: formData.name,
+            email: formData.email,
+            mobile: formData.mobile,
+            message: formData.message,
+          },
+          "JbAGpq5aNuwpMa1mo" // Replace with your EmailJS Public Key
+        )
+        .then(
+          (response) => {
+            setPopupMessage(inquiryForm.response_pass); // Success message
+            setShowPopup(true); // Show popup
+            setFormData({}); // Clear the form data
+          },
+          (err) => {
+            setPopupMessage(inquiryForm.response_fail); // Failure message
+            setShowPopup(true); // Show popup
+            console.error("FAILED...", err);
+          }
+        )
+        .finally(() => {
+          setIsLoading(false); // Hide loader
+        });
+    }
   };
 
   const handleClear = () => {
@@ -65,7 +110,7 @@ const InquiriesForm = () => {
   return (
     <div className='justify-center relative bg-bgdesign bg-cover text-roboto px-10 py-10 lg:px-40'>
       <div className='absolute inset-0 bg-white/80 bg-cover'></div>
-      <div className='relative z-10' data-aos="fade-up"> {/* Added pl-40 and pr-40 here */}
+      <div className='relative z-10' data-aos="fade-up">
         <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> {inquiryForm.title} </h1>
         <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-sm lg:text-xl font-md text-blue-500 italic'>{inquiryForm.subtitle}</p>
       </div>
@@ -119,6 +164,9 @@ const InquiriesForm = () => {
           </button>
         </div>
       </div>
+
+      {isLoading && <Loader duration={2000}/>}
+      {showPopup && <Popup message={popupMessage} onClose={() => setShowPopup(false)} />}
     </div>
   );
 };

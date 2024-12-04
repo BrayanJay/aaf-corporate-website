@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +10,8 @@ library.add(fas, fab);
 
 const Testimonials = ({ data }) => {
   const [activeItem, setActiveItem] = useState(0);
+  const { t } = useTranslation();
+  const testimonialsText = t("testimonialsText", { returnObjects: true });
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -26,8 +29,8 @@ const Testimonials = ({ data }) => {
       
       <div className='lg:gap-2 pt-10'>
         <div className='relative ' data-aos="fade-up">
-                <h1 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black italic text-amber-400'> What Our Clients Say </h1>
-                <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>Real Stories of Success and Satisfaction</p>
+                <h1 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black italic text-amber-400'> {testimonialsText.title} </h1>
+                <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>{testimonialsText.subtitle}</p>
         </div>
       </div>
 

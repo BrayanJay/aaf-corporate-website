@@ -13,7 +13,7 @@ const Navbar = () => {
   const sidebarRef = useRef(null); // Reference for sidebar
   const dropdownRef = useRef(null); // Ref for dropdown
 
-  const liClasses = 'text-white bg-bluegradient hover:bg-darkbluegradient py-1.5 px-2.5 rounded-tl-lg rounded-br-lg';
+  const liClasses = 'text-white bg-bluegradient hover:bg-darkbluegradient py-1.5 px-2.5 rounded-tl-lg rounded-br-lg text-sm';
 
   const toggleDropdown = (menu) => {
     setDropdown(dropdown === menu ? null : menu);
@@ -39,21 +39,21 @@ const Navbar = () => {
 
   // Close the dropdown when clicking outside of it
   useEffect(() => {
-    const handleClickOutsideDropdown = (event) => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false); // Close sidebar if click is outside sidebar
+      }
+  
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDropdown(null);
+        setDropdown(null); // Close dropdown if click is outside dropdown
       }
     };
-
-    // Only attach listener when dropdown is open
-    if (dropdown) {
-      document.addEventListener('mousedown', handleClickOutsideDropdown);
-    }
-
+  
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutsideDropdown);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [dropdown]); // Effect runs when dropdown state changes
+  }, []); // Effect runs when dropdown state changes
 
   const scrolltoTop = () => {
     document.body.scrollTop = 0;
@@ -61,8 +61,36 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white/50 backdrop-blur-md shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 flex items-center justify-end h-12">
+    <nav className="bg-white shadow-md sticky top-10 md:top-16 lg:top-20 z-40">
+      <div className="container mx-auto flex items-center justify-between h-8 lg:h-12 px-2 md:px-10">
+
+      <div className="flex flex-row justify-center items-center gap-2 md:gap-5">
+        <a
+          href="tel://+94117699000"
+          className="flex flex-row items-center"
+        >
+          <FontAwesomeIcon
+            icon={['fas', 'phone']}
+            className="border-2 rounded-3xl transition-all duration-300 ease-in-out text-blue-500 border-blue-500 hover:border-bluegradient text-xs p-1"
+          />
+          <span className="px-2 text-black/50 hover:text-blue-700 text-xs font-semibold transition-colors duration-300 ease-in-out">
+            +94 117 699 000
+          </span>
+        </a>
+        <a
+          href="mailto://info@asiaassetfinance.lk"
+          className="flex flex-row items-center"
+        >
+          <FontAwesomeIcon
+            icon={['fas', 'envelope']}
+            className="border-2 rounded-3xl transition-all duration-300 ease-in-out text-blue-500 border-blue-500 hover:border-bluegradient text-xs p-1"
+          />
+          <span className="px-2 text-black/50 hover:text-blue-700 text-xs font-semibold transition-colors duration-300 ease-in-out">
+            info@asiaassetfinance.lk
+          </span>
+        </a>
+      </div>
+
         
 
         {/* Mobile Hamburger Menu for Sidebar */}
@@ -113,7 +141,7 @@ const Navbar = () => {
               {navbarData.about}
             </button>
             {dropdown === 'about' && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-blue-900 shadow-lg z-50">
+              <div ref={dropdownRef} className="absolute left-0 mt-2 w-48 bg-white text-blue-900 text-sm shadow-lg z-50 ">
                 <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/about" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.about_dropdown0}
                 </HashLink>
@@ -142,26 +170,26 @@ const Navbar = () => {
               {navbarData.products}
             </button>
             {dropdown === 'products' && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-blue-900 shadow-lg z-50">
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/products" onClick={() => {setDropdown(null); scrolltoTop()}}>
+              <div ref={dropdownRef} className="absolute left-0 mt-2 w-48 bg-white text-sm text-blue-900 shadow-lg z-50">
+                {/*<HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/products" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown1}
-                </HashLink>
-                <Link className="block px-4 py-2 hover:bg-blue-100" to="/web/gold-loan" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                </HashLink>*/}
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/gold-loan" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown2}
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-blue-100" to="/web/fixed-deposit" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                </HashLink>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/fixed-deposit" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown3}
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-blue-100" to="/web/leasing" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                </HashLink>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/leasing" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown4}
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-blue-100" to="/web/mortgage" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                </HashLink>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/mortgage" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown5}
-                </Link>
-                <Link className="block px-4 py-2 hover:bg-blue-100" to="/web/foreign-exchange" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                </HashLink>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/foreign-exchange" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown6}
-                </Link>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/products/#luckewallet" onClick={() => {setDropdown(null)}}>
+                </HashLink>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/luckewallet" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown7}
                 </HashLink>
               </div>
@@ -177,11 +205,11 @@ const Navbar = () => {
               {navbarData.investor_relations}
             </button>
             {dropdown === 'ir' && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-blue-900 shadow-lg z-50">
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" to="/web/ir" onClick={() => {setDropdown(null); scrolltoTop()}}>
+              <div ref={dropdownRef} className="absolute left-0 mt-2 w-48 bg-white text-sm text-blue-900 shadow-lg z-50">
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/ir" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.investor_relations_dropdown1}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" to="/web/ir/#financial-keys" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/web/ir/#financial-keys" onClick={() => setDropdown(null)}>
                 {navbarData.investor_relations_dropdown2}
                 </HashLink>
               </div>
@@ -200,13 +228,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu */}
+      {/* -------------------------------------- Mobile Sidebar Menu------------------------------------------------- */}
       {isOpen && (
         <div
           ref={sidebarRef} // Attach the ref here
-          className="lg:hidden fixed top-0 right-0  h-full w-64 z-50"
+          className="lg:hidden fixed top-10 right-0 h-fit w-60 z-50"
         >
-          <div className="flex flex-col space-y-4 py-4 px-4 bg-blue-700 ">
+          <div className="flex flex-col space-y-4 py-4 px-4 bg-blue-950 ">
             <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" to="/web" onClick={() => {toggleSidebar(); scrolltoTop()}}>
             {navbarData.home}
             </Link>
@@ -219,20 +247,20 @@ const Navbar = () => {
                 {navbarData.about}
               </button>
               {dropdown === 'about' && (
-                <div className="bg-blue-600 text-white space-y-2 py-2 px-4">
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/about" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                <div ref={dropdownRef} className="bg-blue-800 text-white space-y-2 py-2 px-4">
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/about" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.about_dropdown0}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/about/#mission-vision-goal" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/about/#mission-vision-goal" onClick={toggleSidebar}>
                   {navbarData.about_dropdown1}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/about/#bod" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/about/#bod" onClick={toggleSidebar}>
                   {navbarData.about_dropdown2}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/about/#corporate-management" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/about/#corporate-management" onClick={toggleSidebar}>
                   {navbarData.about_dropdown3}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/about/#branches" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/about/#branches" onClick={toggleSidebar}>
                   {navbarData.about_dropdown4}
                   </HashLink>
                   
@@ -248,26 +276,26 @@ const Navbar = () => {
                 {navbarData.products}
               </button>
               {dropdown === 'products' && (
-                <div className="bg-blue-600 text-white space-y-2 py-2 px-4">
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/products" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                <div ref={dropdownRef} className="bg-blue-800 text-white space-y-2 py-2 px-4">
+                  {/*<HashLink className="block py-2 hover:text-gray-300" to="/web/products" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown1}
-                  </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/gold-loan" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  </HashLink>*/}
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/gold-loan" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown2}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/fixed-deposit" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/fixed-deposit" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown3}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/leasing" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/leasing" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown4}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/mortgage" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/mortgage" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown5}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/foreign-exchange" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/foreign-exchange" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown6}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/products/#luckewallet" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/luckewallet" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown7}
                   </HashLink>
                 </div>
@@ -282,11 +310,11 @@ const Navbar = () => {
                 {navbarData.investor_relations}
               </button>
               {dropdown === 'ir' && (
-                <div className="bg-blue-600 text-white space-y-2 py-2 px-4">
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/ir" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                <div ref={dropdownRef} className="bg-blue-800 text-white space-y-2 py-2 px-4">
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/ir" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.investor_relations_dropdown1}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" to="/web/ir/#financial-keys" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/web/ir/#financial-keys" onClick={toggleSidebar}>
                   {navbarData.investor_relations_dropdown2}
                   </HashLink>
                 </div>

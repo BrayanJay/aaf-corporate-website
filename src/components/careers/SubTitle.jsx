@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../../assets/logo.png";
-import certification1 from '../../assets/fitchA.png';
-import certification2 from '../../assets/gpw.png';
+import logo from "../../media/logo.webp";
+import certification1 from '../../media/fitchA.webp';
+import certification2 from '../../media/gpw.webp';
 
 const SubTitle = () => {
     return(

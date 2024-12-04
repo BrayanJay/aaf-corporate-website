@@ -12,17 +12,24 @@
   "dependencies": {
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-react": "^2.3.0",
+    "@fontsource/noto-sans-sinhala": "^5.1.0",
+    "@fontsource/noto-sans-tamil": "^5.1.0",
+    "@fontsource/roboto": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.0",
     "@material-tailwind/react": "^2.1.10",
+    "@vitejs/plugin-legacy": "^6.0.0",
     "aos": "^2.3.4",
     "babel-plugin-macros": "^3.1.0",
     "careers": "file:../careers",
+    "emailjs-com": "^3.2.0",
     "i18next": "^23.16.5",
     "i18next-http-backend": "^2.6.2",
+    "modernizr": "^3.13.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -47,6 +54,6 @@
     "globals": "^15.9.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.12",
-    "vite": "^5.4.1"
+    "vite": "^6.0.1"
   }
 }

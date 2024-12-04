@@ -1,17 +1,19 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 
-import bank1 from '../assets/bankers/boc.svg'
-import bank2 from '../assets/bankers/combank.svg'
-import bank3 from '../assets/bankers/dfcc.svg'
-import bank4 from '../assets/bankers/indian-bank.svg'
-import bank5 from '../assets/bankers/ndb.svg'
-import bank6 from '../assets/bankers/panasia.svg'
-import bank7 from '../assets/bankers/peoples.svg'
-import bank8 from '../assets/bankers/sampath.svg'
-import bank9 from '../assets/bankers/seylan.svg'
+import bank1 from '../media/bankers/boc.svg'
+import bank2 from '../media/bankers/combank.svg'
+import bank3 from '../media/bankers/dfcc.svg'
+import bank4 from '../media/bankers/indian-bank.svg'
+import bank5 from '../media/bankers/ndb.svg'
+import bank6 from '../media/bankers/panasia.svg'
+import bank7 from '../media/bankers/peoples.svg'
+import bank8 from '../media/bankers/sampath.svg'
+import bank9 from '../media/bankers/seylan.svg'
+import bank10 from '../media/bankers/ntb.svg'
 
-const logos = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8, bank9]
+
+const logos = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8, bank9, bank10]
 
 const CorporateInformation = () => {
     const { t } = useTranslation();
@@ -122,7 +124,7 @@ const CorporateInformation = () => {
                 </div>
             </div>
 
-            <div>
+            {/*<div>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label7}
                 </div>
@@ -131,7 +133,7 @@ const CorporateInformation = () => {
                 {corporateProfile.field7}
                 </span>
                 </div>
-            </div>
+            </div>*/}
 
             <div className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
@@ -147,7 +149,7 @@ const CorporateInformation = () => {
         </div>
         
         <div className='px-20 py-5 text-center'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <div className='text-xl md:text-2xl lg:text-3xl font-bold text-blue-700'>
                 {corporateProfile.label9}
                 </div>
                 <div className="container mx-auto p-4">

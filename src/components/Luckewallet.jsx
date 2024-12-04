@@ -1,19 +1,19 @@
 import React from 'react'
-import MobilePic from '../assets/lwallet.svg'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Astore from '../assets/appstorelogo.svg'
-import Pstore from '../assets/playstorelogo.svg'
+import Astore from '../media/appStoreBtn.webp';
+import Pstore from '../media/playStoreBtn.webp';
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
 
-const Luckewallet = () => {
+const Luckewallet = ({MobilePic, logo}) => {
   const { t } = useTranslation();
   const luckewallet = t("luckewalletLandingPage", { returnObjects: true });
   const navigate = useNavigate();  // For programmatic navigation
   
   const handleLearnMoreClick = () => {
     // Navigate to /about route (you can specify the full URL if needed)
-    navigate('/products', { replace: true });
+    navigate('/web/luckewallet', { replace: true });
     
     // Scroll to the #branches section after navigation
     setTimeout(() => {
@@ -24,15 +24,20 @@ const Luckewallet = () => {
     }, 200); // Delay to allow for navigation before scrolling
   };
 
+  const scrolltoTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
-    <div className='flex flex-col lg:flex-row max-w-auto max-h-auto px-10 lg:px-40'>
-      <div className='order-2 md:order-1 lg:basis-1/2 w-full h-full relative gap-2'>
+    <div className='flex flex-col lg:flex-row max-w-auto max-h-auto px-10 lg:px-20'>
+      <div className=' lg:basis-1/2 w-full h-full relative gap-2'>
 
         <div className='relative ' data-aos="fade-up">
             <h1 className='border-l-4 lg:border-l-8 border-blue-500 p-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{luckewallet.title1} <span className='font-bold text-amber-400'>{luckewallet.title2}</span> {luckewallet.title3} </h1>
-            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>{luckewallet.subtitle} <span onClick={handleLearnMoreClick} className='font-medium italic underline hover:cursor-pointer text-blue-900'>{luckewallet.learn_more}</span></p>
+            <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500'>{luckewallet.subtitle} <span onClick={() => {handleLearnMoreClick(); scrolltoTop()}} className='font-medium italic underline hover:cursor-pointer text-blue-900'>{luckewallet.learn_more}</span></p>
         </div>
-        <div className='relative p-5' data-aos="fade-up">
+        <div className='hidden lg:block relative p-5' data-aos="fade-up">
             <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h1>
             <div className='grid grid-cols-2 grid-flow-row gap-2'>
                 
@@ -70,16 +75,22 @@ const Luckewallet = () => {
 
             </div>
             <div className='flex gap-5 pt-10'>
-                <img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore}/>
-                <img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore}/>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
 
             </div>
         </div>
       
       </div>
-      <div className='order-1 md:order-2 basis-1/2 p-5' data-aos="fade-right">
-            <img src={MobilePic} className=''/>
+      <div className='flex order-1 md:order-2 basis-1/2 p-5 justify-center items-center' data-aos="fade-right">
+            <img src={logo} className='absolute right-0 top-5 w-16 sm:w-24 md:w-32 lg:w-40'/>
+            <img src={MobilePic} className='lg:h-[100vh]'/>
         </div>
+        <div className='sm:hidden flex gap-5 pt-10'>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
+
+            </div>
     </div>
   )
 }

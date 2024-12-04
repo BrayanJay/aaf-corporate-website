@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply font-roboto;
-  }
 
   html {
     scroll-behavior: smooth;

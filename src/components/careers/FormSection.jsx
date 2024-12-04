@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../assets/person.png';
+import img from '../../media/person.png';
 
 function FormSection() {
   return (

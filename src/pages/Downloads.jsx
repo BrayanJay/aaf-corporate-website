@@ -11,27 +11,27 @@ const Downloads = () => {
     {
       idx: 1,
       title: "Annual Report 2023-2024",
-      url: "/src/assets/attachments/annualReports/ar2324.pdf", // Add the PDF file's URL
+      url: "/web/src/media/attachments/annualReports/ar2324.pdf", // Add the PDF file's URL
     },
     {
       idx: 2,
       title: "Annual Report 2022-2023",
-      url: "/src/assets/attachments/annualReports/ar2223.pdf", // Add the PDF file's URL
+      url: "/web/src/media/attachments/annualReports/ar2223.pdf", // Add the PDF file's URL
     },
     {
       idx: 3,
       title: "Annual Report 2021-2022",
-      url: "/src/assets/attachments/annualReports/ar2122.pdf", // Add the PDF file's URL
+      url: "/web/src/media/attachments/annualReports/ar2122.pdf", // Add the PDF file's URL
     },
     {
       idx: 4,
       title: "Annual Report 2020-2021",
-      url: "/src/assets/attachments/annualReports/ar2021.pdf", // Add the PDF file's URL
+      url: "/web/src/media/attachments/annualReports/ar2021.pdf", // Add the PDF file's URL
     },
     {
       idx: 5,
       title: "Annual Report 2019-2020",
-      url: "/src/assets/attachments/annualReports/ar1920.pdf", // Add the PDF file's URL
+      url: "/web/src/media/attachments/annualReports/ar1920.pdf", // Add the PDF file's URL
     },
     // Add more reports here
   ];
@@ -39,28 +39,28 @@ const Downloads = () => {
   const interimFinancials = [
     {
       idx: 1,
-      title: "Interiem Financials as at 30th June 2023",
-      url: "/src/assets/attachments/interiemFinancials/ir30June2023.pdf",
+      title: "Interim Financials as at 30th June 2023",
+      url: "/web/src/media/attachments/interiemFinancials/ir30June2023.pdf",
     },
     {
       idx: 2,
-      title: "Interiem Financials as at 30th September 2023",
-      url: "/src/assets/attachments/interiemFinancials/ir30Sept2023.pdf",
+      title: "Interim Financials as at 30th September 2023",
+      url: "/web/src/media/attachments/interiemFinancials/ir30Sept2023.pdf",
     },
     {
       idx: 3,
-      title: "Interiem Financials as at 31st December 2023",
-      url: "/src/assets/attachments/interiemFinancials/ir31Dec2023.pdf",
+      title: "Interim Financials as at 31st December 2023",
+      url: "/web/src/media/attachments/interiemFinancials/ir31Dec2023.pdf",
     },
     {
       idx: 4,
-      title: "Interiem Financials as at 31st March 2023",
-      url: "/src/assets/attachments/interiemFinancials/ir31Mar2023.pdf",
+      title: "Interim Financials as at 31st March 2024",
+      url: "/web/src/media/attachments/interiemFinancials/ir31Mar2024.pdf",
     },
     {
       idx: 5,
-      title: "Interiem Financials as at 30th June 2024",
-      url: "/src/assets/attachments/interiemFinancials/ir30June2024.pdf",
+      title: "Interim Financials as at 30th June 2024",
+      url: "/web/src/media/attachments/interiemFinancials/ir30June2024.pdf",
     },
     // Add more documents here
   ];
@@ -69,78 +69,98 @@ const Downloads = () => {
     {
       idx: 1,
       title: "Customer Complaint Handling Procedure",
-      url: "src/assets/attachments/otherRelatedDocs/CustomerComplaintHandlingProcedure.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/CustomerComplaintHandlingProcedure.pdf",
     },
     {
       idx: 2,
       title: "Financial Consumer Protection",
-      url: "src/assets/attachments/otherRelatedDocs/FinancialConsumerProtectionPolicy.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/FinancialConsumerProtectionPolicy.pdf",
     },
     {
       idx: 3,
-      title: "Policy on Matters Telating to The Board of Directors",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnMattersTelatingToTheBoardOfDirectors.pdf",
+      title: "Policy on Matters Relating to The Board of Directors",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnMattersTelatingToTheBoardOfDirectors.pdf",
     },
     {
       idx: 4,
-      title: "Board Commitees 30-09-2027",
-      url: "src/assets/attachments/otherRelatedDocs/BoardCommittees30092027.pdf",
+      title: "Board Commitees",
+      url: "/web/src/media/attachments/otherRelatedDocs/BoardCommittees30092027.pdf",
     },
     {
       idx: 5,
       title: "Corporate Governance Nomination & Re-Election Policy",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnCorporateGovernanceNominationAndReElection.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnCorporateGovernanceNominationAndReElection.pdf",
     },
     {
       idx: 6,
       title: "Remuneration Policy",
-      url: "src/assets/attachments/otherRelatedDocs/RemunerationPolicy.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/RemunerationPolicy.pdf",
     },
     {
       idx: 7,
       title: "Code of Business Conduct & Securities Trading Policy",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnInternalCodeBusinessConductAndEthicsForAllDirectorsAndEmployeesIncludingPoliciesOnTradingInTheEntitiesListedSecurities.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnInternalCodeBusinessConductAndEthicsForAllDirectorsAndEmployeesIncludingPoliciesOnTradingInTheEntitiesListedSecurities.pdf",
     },
     {
       idx: 8,
-      title: "Risk Managment & Internal Controls Summary",
-      url: "src/assets/attachments/otherRelatedDocs/RiskManagmentAndInternalControlsSummary.pdf",
+      title: "Risk Management & Internal Controls Summary",
+      url: "/web/src/media/attachments/otherRelatedDocs/RiskManagmentAndInternalControlsSummary.pdf",
     },
     {
       idx: 9,
       title: "Shareholder & Investor Relations Policy",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnRelationsWithShareholdersAndInvestors.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnRelationsWithShareholdersAndInvestors.pdf",
     },
     {
       idx: 10,
       title: "ESG Sustainability Policy",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnEnvironmentalSocialAndGovernanceSustainability.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnEnvironmentalSocialAndGovernanceSustainability.pdf",
     },
     {
       idx: 11,
       title: "Asset & Investment Management Policy",
-      url: "src/assets/attachments/otherRelatedDocs/PolicyOnControlAndManagementOfCompanyAssetsAndShareholderInvestments.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/PolicyOnControlAndManagementOfCompanymediaAndShareholderInvestments.pdf",
     },
     {
       idx: 12,
       title: "Corporate Disclosures Policy",
-      url: "src/assets/attachments/otherRelatedDocs/CorporateDisclosuresPolicy.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/CorporateDisclosuresPolicy.pdf",
     },
     {
       idx: 13,
       title: "Whistleblowing Policy Summary",
-      url: "src/assets/attachments/otherRelatedDocs/WhistleblowingPolicySummary.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/WhistleblowingPolicySummary.pdf",
     },
     {
       idx: 14,
       title: "Anti-Bribery & Corruption Policy",
-      url: "src/assets/attachments/otherRelatedDocs/AntiBriberyAndCorruptionPolicy.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/AntiBriberyAndCorruptionPolicy.pdf",
     },
     {
       idx: 15,
       title: "Credit Ratings",
-      url: "src/assets/attachments/otherRelatedDocs/CreditRatings2024.pdf",
+      url: "/web/src/media/attachments/otherRelatedDocs/CreditRatings2024.pdf",
     },
+    // Add more documents here
+  ];
+
+  const customerInformation = [
+    {
+      idx: 1,
+      title: "Finance Business Act, No. 42 OF 2011",
+      url: "/web/src/media/attachments/customerInformation/finance_business_act_no_42_of_2011.pdf",
+    },
+    {
+      idx: 2,
+      title: "AAF - Finance Business Licence",
+      url: "/web/src/media/attachments/customerInformation/finance_business_licence_aaf.pdf",
+    },
+    {
+      idx: 3,
+      title: "Directions, Rules, Determinations, Notices, and Guidelines",
+      url: "/web/src/media/attachments/customerInformation/lfc_s_direction_book.pdf",
+    },
+
     // Add more documents here
   ];
 
@@ -156,9 +176,11 @@ const Downloads = () => {
               {data.section1}
             </div>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
-              Click on a document to view it.
+              {data.intro1}
             </div>
-            <DownloadsCard documents={annualReports} />
+            <div className="flex justify-center items-center w-full">
+          <DownloadsCard documents={annualReports} />
+        </div>
           </div>
 
           <div className='py-5 lg:py-10 flex flex-col items-center'>
@@ -166,9 +188,19 @@ const Downloads = () => {
               {data.section2}
             </div>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
-              Explore detailed financial facts.
+            {data.intro2}
             </div>
             <DownloadsCard documents={interimFinancials} />
+          </div>
+
+          <div className='py-5 lg:py-10 flex flex-col items-center'>
+            <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+              {data.section3}
+            </div>
+            <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
+            {data.intro3}
+            </div>
+            <DownloadsCard documents={customerInformation} />
           </div>
 
           <div className='py-5 lg:py-10 flex flex-col items-center'>
@@ -176,7 +208,7 @@ const Downloads = () => {
               {data.section4}
             </div>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
-              Other essential policies.
+            {data.intro4}
             </div>
             <DownloadsCard documents={OtherRelatedDocuments} />
           </div>

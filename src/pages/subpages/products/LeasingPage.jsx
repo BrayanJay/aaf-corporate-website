@@ -1,15 +1,14 @@
 import React from 'react'
 import Carousel from '../../../components/Carousel'
-import banner from '../../../assets/products/le.svg'
+import banner from '../../../media/products/leasingPgBanner.webp'
 import Description from '../../../components/Description';
-import Upload from '../../../assets/uploads/le13112024.webp'
 import { useTranslation } from "react-i18next";
 
 
 const LeasingPage = () => {
   const { t } = useTranslation();
   const data = t("leasingPage", { returnObjects: true });
-  
+
   const image = {
     src: banner,
     title: data.title,
@@ -18,9 +17,21 @@ const LeasingPage = () => {
     <div>
       <Carousel image={image}/>
       <Description description={data.description} />
-      <div className='flex justify-center p-10 bg-white'>
-          <img className='p-10' src={Upload}/>
+      <div className='flex justify-center gap-5 bg-white'>
+      <a href={data.kfd}
+          target="_blank"
+          rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_1}</div></a>
+      <a href={data.charges_tariff}><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_2}</div></a>
       </div>
+
+      <div className='text-rose-800 text-center text-xs sm:text-sm py-2'>{data.note}</div>
+      
+      <a href='tel://+94766640640'>
+      <div className="max-w-xs mx-auto bg-amber-300 hover:bg-amber-400 transition-colors duration-300 ease-in-out shadow-lg rounded-lg py-2 px-4 text-center my-10">
+        <h2 className="text-lg font-bold text-blue-700">{data.hotline}</h2>
+        <p className="mt-1 text-2xl font-semibold text-gray-800">0766 640 640</p>
+      </div>
+      </a>
     </div>
   )
 }

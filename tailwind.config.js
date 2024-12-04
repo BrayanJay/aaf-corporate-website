@@ -6,9 +6,26 @@ export default {
   ],
   theme: {
     extend: {
+    
+      keyframes: {
+        blink: {
+          '0%': { opacity: '0.5' },
+          '100%': { opacity: '0' },
+        },
+        zoomInOut: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.2)' },
+        },
+      },
+      animation: {
+        blink: 'blink 2s infinite alternate',
+        zoomInOut: 'zoomInOut 2s infinite alternate',
+      },
       
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
+      sinhala_sans: ['Noto Sans Sinhala', 'sans-serif'],
+      tamil_sans: ['Noto Sans Tamil', 'sans-serif'],
     },
     colors: {
       "primary": "#193569",
@@ -28,8 +45,9 @@ export default {
       'goldgradient': 'linear-gradient(to top, #E69800 0%, #FFD600 100%)',
       'lightbluegradient': 'linear-gradient(to right, #3558D4 0%, #0085FF 100%)',
       'custom-gradient2': 'linear-gradient(to right, #4facfe 0%, #00f2fe 100%)',
-      'bgdesign': "url('./assets/design.svg')",
-      'banner1': "url('./assets/bannerimg1.svg')",
+      'bgdesign': "url('./media/design.svg')",
+      'footerBg': "url('/src/media/footer.webp')",
+      'mvgImg' : "url('/src/media/AAF_HO.webp')"
     },
     scrollBehavior: {
       smooth: 'smooth',

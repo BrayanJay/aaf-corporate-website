@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import FD from '../assets/products/fd.svg';
+//products Selector Images
+import FD from '../media/products/fdProducts.webp';
+import GLoan from '../media/products/gloanProducts.webp';
+import Leasing1 from '../media/products/leasing1Products.webp';
+import Leasing2 from '../media/products/leasing2Products.webp';
+import Mortgage from '../media/products/mortgageProducts.webp';
 import { useTranslation } from "react-i18next";
 
 const ProductSelector = () => {
@@ -16,21 +21,21 @@ const ProductSelector = () => {
       ],
     },
     'Gold Loan': {
-      images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
+      images: [GLoan, GLoan],
       features: [
         { title: "Fast Approval", description: "Get quick access to funds using your gold as collateral." },
         { title: "Low Interest", description: "Competitive interest rates for gold-backed loans." },
       ],
     },
     'Mortgage': {
-      images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
+      images: [Mortgage, Mortgage],
       features: [
         { title: "Affordable Rates", description: "Low-interest rates for small-scale mortgages." },
         { title: "Flexible Repayment", description: "Customizable repayment plans based on income." },
       ],
     },
     'Leasing': {
-      images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
+      images: [Leasing1, Leasing2],
       features: [
         { title: "Convenient Leasing Options", description: "Lease vehicles, equipment, and more at flexible terms." },
         { title: "Fast Processing", description: "Quick and easy leasing application process." },

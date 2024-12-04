@@ -1,17 +1,11 @@
 import React from 'react'
 import Carousel from '../../../components/Carousel'
-import banner from '../../../assets/products/gl.svg'
+import banner from '../../../media/products/gloanPgBanner.webp'
 import Description from '../../../components/Description';
-import glUpload from '../../../assets/uploads/gl13112024.webp'
 
 import { useTranslation } from "react-i18next";
 
 
-
-const AboutOverview = {
-  title: "Overview",
-  description: "Responsibility is something that comes to all of us. You can be a father, contemplating your daughter’s wedding and the expenses that come with. A mother striving to give her son the best possible education. A spouse in dire need of money for your better half’s sudden surgery. Fear not, ladies and gentlemen. Our Gold Loan Service has got you and your finances covered. Simply walk to any Asia Asset Branch and speak to one of our caring professionals and we’ll take it from there. Here are the guarantees. Instant money. Flexible interest rates, according to your situation. And at the end of it all, your gold has seen a safer space! We are, after all- a fully owned subsidiary of Muthoot Finance, legendary multinational Financial Service Provider with the LARGEST gold loan portfolio around the globe. With Asia Asset Finance PLC’s Gold Loan services, it takes no more than a few minutes for your gold to generate cash. All you need is the gold."
-};
 
 const GoldLoanPage = () => {
   const { t } = useTranslation();
@@ -26,9 +20,22 @@ const GoldLoanPage = () => {
     <div>
       <Carousel image={image}/>
       <Description description={data.description} />
-      <div className='flex justify-center p-10 bg-white'>
-          <img className='p-10' src={glUpload}/>
+      <div className='flex justify-center gap-5 bg-white'>
+      <a href={data.kfd}
+          target="_blank"
+          rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_1}</div></a>
+      <a href={data.charges_tariff}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_2}</div></a>
+      
       </div>
+      <div className='text-rose-800 text-center text-xs sm:text-sm py-2'>{data.note}</div>
+
+      <a href='tel://+94767888222'>
+      <div className="max-w-xs mx-auto bg-amber-300 hover:bg-amber-400 transition-colors duration-300 ease-in-out shadow-lg rounded-lg py-2 px-4 text-center my-10">
+      <h2 className="text-lg font-bold text-blue-700">{data.hotline}</h2>
+      <p className="mt-1 text-2xl font-semibold text-gray-800">0767 888 222</p>
+    </div>
+    </a>
+      
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../media/footer_logo.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from 'react-router-dom';
@@ -53,14 +53,17 @@ const Footer = ({ theme = "dark" }) => {
     }
   };
   
+  const scrolltoTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
 
   return (
     <div
-      className={`px-5 md:px-10 lg:px-20 py-10
-      ${theme === "dark" ? "bg-gray-900 text-gray-400" : "bg-gray-100 text-gray-600"}`}
-    >
+      className="px-5 md:px-10 lg:px-20 py-10 bg-blue-950 md:bg-footerBg bg-cover bg-center relative">
+        <div className='absolute inset-0 md:bg-blue-950/80 bg-cover backdrop-blur-xs'></div>
       {/* Subscription Section */}
-      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-8 border-b">
+      {/*<div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-8 border-b">
         <div className="flex-1 text-center lg:text-left" data-aos="fade-up">
           <p className="pb-3 text-lg md:text-xl font-medium text-white/80">{data.subs_title1}</p>
           <h1 className="text-2xl md:text-4xl font-semibold text-white/80">
@@ -92,28 +95,42 @@ const Footer = ({ theme = "dark" }) => {
             </button>
           </form>
         </div>
-      </div>
+      </div>*/}
 
       {/* Main Footer Content */}
-      <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-16 py-10 border-b">
+      <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-16 py-10 border-b border-white">
         {/* Left Section */}
         <div className="md:basis-1/4 text-center md:text-left">
-          <img className="w-24 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up"/>
-          <p className="mt-4 mb-6 text-sm leading-relaxed text-gray-400" data-aos="fade-up" data-aos-delay="100">
+          <Link to="/web" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up"/></Link>
+          <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" data-aos="fade-up" data-aos-delay="100">
             {data.intro}
           </p>
-          <div className="flex flex-col gap-1 text-sm">
+          <div className="flex flex-col gap-1 text-sm text-white/80">
             <p data-aos="fade-up" data-aos-delay="200">{data.address}</p>
             <p data-aos="fade-up" data-aos-delay="300">+94 117 699000</p>
             <p data-aos="fade-up" data-aos-delay="400">info@asiaassetfinance.lk</p>
           </div>
           <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg" data-aos="fade-up" data-aos-delay="500">
-            {['facebook', 'instagram', 'linkedin', 'youtube'].map((icon, idx) => (
+            {[
+                { platform: 'facebook', link: 'https://www.facebook.com/AsiaAssetFinancePLC/' },
+                { platform: 'instagram', link: 'https://www.instagram.com/asiaassetfinance.lk/' },
+                { platform: 'linkedin', link: 'https://lk.linkedin.com/company/asia-asset-finance-plc?trk=public_post_feed-actor-name' },
+                { platform: 'youtube', link: 'https://www.youtube.com/@asiaassetfinance5308' },
+                { platform: 'tiktok', link: 'https://www.tiktok.com/@asia_asset_finance'}
+              ].map((icon, idx) => (
+              <a
+              key={idx}
+              href={icon.link}
+              target="_blank" // Opens link in a new tab
+              rel="noopener noreferrer" // Security measure for external links
+              className="transition-all duration-300 ease-in-out text-white/80 hover:text-white"     
+              >
               <FontAwesomeIcon
                 key={idx}
-                icon={['fab', icon]}
-                className="transition-all duration-300 ease-in-out hover:text-white cursor-pointer"
+                icon={['fab', icon.platform]}
+                className="cursor-pointer"
               />
+              </a>
             ))}
           </div>
         </div>
@@ -122,10 +139,10 @@ const Footer = ({ theme = "dark" }) => {
         <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16" data-aos="fade-up" data-aos-delay="500">
           {listItems.map((item, idx) => (
             <div key={idx} className="w-full sm:w-auto">
-              <h5 className="font-semibold mb-3 text-gray-300">{item.title}</h5>
+              <h5 className="font-semibold mb-3 text-white/80">{item.title}</h5>
               <ul className="flex flex-col gap-3">
                 {item.list.map((listItem, listIdx) => (
-                  <li key={listIdx} className="transition-all duration-300 ease-in-out hover:text-white cursor-pointer">
+                  <li key={listIdx} className="transition-all duration-300 ease-in-out text-white/60 hover:text-white cursor-pointer">
                     <span onClick={() => handleNavigation(item.links[listIdx])}>
                       {listItem}
                     </span>
@@ -138,11 +155,8 @@ const Footer = ({ theme = "dark" }) => {
       </div>
 
       {/* Footer Bottom */}
-      <div
-        className={`py-5 text-center text-gray-500 text-xs
-        ${theme === "dark" ? "border-t-gray-800" : "border-t-gray-300"}`}
-      >
-        2024 &copy; Copyright <span className="font-black">Asia Asset Finance PLC</span>. All Rights Reserved
+      <div className="relative items-center justify-center py-5 text-center text-white/70  text-xs">
+        2024 &copy; Copyright <span className="font-black cursor-pointer hover:text-white transition-colors ease-in-out duration-500">Asia Asset Finance PLC</span>. All Rights Reserved
       </div>
     </div>
   );

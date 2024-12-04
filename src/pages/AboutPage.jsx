@@ -1,6 +1,5 @@
 import Carousel from '../components/Carousel';
 import React from 'react';
-import banner1 from '../assets/bannerimg1.svg';
 import CardsAbout from '../components/CardsAbout';
 import Description from '../components/Description';
 import { useTranslation } from "react-i18next";
@@ -9,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import MissionVisionGoal from '../components/MissionVisionGoal';
 import BOD from '../components/BOD';
 import CorporateManagement from '../components/CorporateManagement';
-import BranchNetwork from '../components/BranchNetwork';
+//import BranchNetwork from '../components/BranchNetwork';
 import BranchNetworkTemp from '../components/BranchNetworkTemp';
 
 const AboutPage = () => {
@@ -23,7 +22,7 @@ const AboutPage = () => {
       <Carousel image={bannerDetails}/>
       <CardsAbout stats={stats}/>
       <Description title={AboutOverview.title} description={AboutOverview.description}/>
-      <div id='mission-vision-goal' className='bg-white pt-12'>
+      <div id='mission-vision-goal' className='bg-white pt-20'>
       <MissionVisionGoal/>
       </div>
       <div id='bod' className='bg-white py-12'>

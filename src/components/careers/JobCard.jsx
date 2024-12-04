@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
           </div>
           <div className="flex flex-grow justify-end">
             <div
-              onClick={() => {navigate(`/careers/job-description/${job.id}`); scrolltoTop();}}
+              onClick={() => {navigate(`/web/careers/job-description/${job.id}`); scrolltoTop();}}
               className="bg-lightbluegradient hover:bg-darkbluegradient transition-all duration-500 ease-in-out rounded-tl-xl rounded-br-xl justify-center lg:mr-20 mr-10 py-2 px-3 text-white/80 hover:text-white lg:text-sm text-xs cursor-pointer shadow-lg"
             >
               View

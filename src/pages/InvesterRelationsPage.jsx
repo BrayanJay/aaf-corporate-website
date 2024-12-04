@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Carousel from '../components/Carousel';
 import CorporateInformation from '../components/CorporateInformation';
 import FinancialKeys from '../components/FinancialKeys';
-import Documents from '../components/Documents';
+//import Documents from '../components/Documents';
 
 const InvesterRelationsPage = () => {
   const { t } = useTranslation();
@@ -14,10 +14,10 @@ const InvesterRelationsPage = () => {
         <div id='corporate-information' className=' bg-white'>
         <CorporateInformation/>
         </div>
-        <div id='financial-keys' className='pt-12 bg-white'>
+        <div id='financial-keys' className='pt-20 md:pt-28 bg-white'>
         <FinancialKeys/>
         </div>
-        <Documents/>
+        {/*<Documents/>*/}
     </div>
   )
 }

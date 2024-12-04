@@ -47,15 +47,15 @@ const HeroBanner = () => {
         >
           {/* Overlay for text */}
           <div className="flex flex-row bg-black/30 h-full">
-            <div className="flex-col basis-1/2"></div>
-            <div className="flex flex-col basis-1/2 justify-center items-start p-8 h-full gap-2 md:gap-10">
-              <h2 className="text-white text-lg md:text-xl font-semibold uppercase">
+            <div className="flex-col md:basis-1/2"></div>
+            <div className="flex flex-col md:basis-1/2 md:justify-center items-start p-8 h-full gap-2 md:gap-10">
+              <h2 className="text-white text-base md:text-lg font-semibold uppercase">
                 {item.title}
               </h2>
-              <h1 className="border-l-8 border-blue-900 text-white text-4xl md:text-7xl font-bold uppercase pl-4">
+              <h1 className="border-l-8 border-blue-900 text-white text-2xl md:text-5xl font-bold uppercase pl-4">
                 {item.intro}
               </h1>
-              <p className="text-white text-xs md:text-md font-medium mt-2 mr-10">
+              <p className="hidden md:block text-white text-xs md:text-md font-medium mt-2 mr-10">
                 {item.description}
               </p>
             </div>
