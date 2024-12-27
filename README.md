@@ -24,9 +24,9 @@ Frontend: React with Vite for fast development and hot module replacement (HMR).
 
 Styling: Tailwind CSS for efficient and scalable designs.
 
-Backend: Node.js for the CMS.
+Backend: Node.js for the CMS. (still on process)
 
-Database: MongoDB for storing dynamic content and branch data.
+Database: MongoDB for storing dynamic content and branch data. (still on process)
 
 Hosting: GoDaddy.
 
@@ -86,6 +86,4 @@ _Contact_
 
 For questions or support, please contact:
 
-Email: [Insert Email Address]
-
-Phone: [Insert Phone Number]
+Email: wmbk.jayawardana1@gmail.com
