@@ -1,4 +1,3 @@
-import React from 'react'
 import SubTitle from '../../../components/careers/SubTitle'
 import FormSection from '../../../components/careers/FormSection'
 

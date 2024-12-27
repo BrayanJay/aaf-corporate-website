@@ -1,4 +1,3 @@
-import React from 'react'
 import JobCard from '../careers/JobCard'
 import JobData from '../../contents/JobData';
 

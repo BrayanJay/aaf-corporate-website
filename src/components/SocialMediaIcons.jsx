@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
+//Overlayed Icon Bar (Social Media, Branch Network and FD Rate)
 const SocialMediaIcons = ({ children, direction = "up" }) => {
   const [show, setShow] = useState(true);
 
+  //Can use which direction to expand the icon bar
   const getPosition = (i) => {
     if (direction === "up") return { top: `${-(i + 1) * 50}px`, left: 0 };
     if (direction === "down") return { top: `${(i + 1) * 50}px`, left: 0 };
@@ -11,13 +14,14 @@ const SocialMediaIcons = ({ children, direction = "up" }) => {
     if (direction === "right") return { left: `${(i + 1) * 50}px`, top: 0 };
   };
 
+  //Animation effect
   const getTransitionDelay = (i) => {
     if (show) return { transitionDelay: `${i * 100}ms` };
     else return { transitionDelay: `${(children.length - i - 1) * 100}ms` };
   };
 
   return (
-    <div className="inline-block relative w-fit h-fit" onClick={() => setShow((prevShow) => !prevShow)}>
+    <div id='main-container' className="inline-block relative w-fit h-fit" onClick={() => setShow((prevShow) => !prevShow)}>
       <span
         className={`text-white w-10 h-10 flex justify-center items-center`}
       >
@@ -43,6 +47,12 @@ const SocialMediaIcons = ({ children, direction = "up" }) => {
       </ul>
     </div>
   );
+};
+
+// PropTypes validation
+SocialMediaIcons.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,  // Expect an array of React elements
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right']),  // Expect one of the four possible directions
 };
 
 export default SocialMediaIcons;

@@ -1,5 +1,4 @@
 // JobDescription.jsx
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate, useParams } from 'react-router-dom';
 import JobData from '../../../contents/JobData';

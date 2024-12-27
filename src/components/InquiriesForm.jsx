@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from "react-i18next";
 import emailjs from "emailjs-com";
 import Loader from './Loader'; // Import the Loader component
+import PropTypes from 'prop-types';
 
 const isValidEmail = (email) => {
   return String(email)
@@ -9,6 +10,10 @@ const isValidEmail = (email) => {
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
+};
+
+const isValidMobileNumber = (mobileNumber) => {
+  return String(mobileNumber).match(/^\d{10}$/);
 };
 
 const validateData = ({ name, email, mobile }) => {
@@ -21,6 +26,9 @@ const validateData = ({ name, email, mobile }) => {
   }
   if (!mobile) {
     errorObj.mobile = "Please provide your mobile number";
+  }
+  else if (!isValidMobileNumber(mobile)){
+    errorObj.mobile = "Please provide a valid mobile number with 10 digits."
   }
   return errorObj;
 };
@@ -50,6 +58,12 @@ const InquiriesForm = () => {
     );
   };
 
+  // Add prop validation
+Popup.propTypes = {
+  message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -62,19 +76,19 @@ const InquiriesForm = () => {
       setIsLoading(true); // Show loader
       emailjs
         .send(
-          "service_ybwzqz8", // Replace with your EmailJS Service ID
-          "template_jb24nh8", // Replace with your EmailJS Template ID
+          "service_x5osrbi", // Replace with your EmailJS Service ID
+          "template_io05a5c", // Replace with your EmailJS Template ID
           {
             name: formData.name,
             email: formData.email,
             mobile: formData.mobile,
             message: formData.message,
           },
-          "JbAGpq5aNuwpMa1mo" // Replace with your EmailJS Public Key
+          "XFV9q5aHEd81dBg34" // Replace with your EmailJS Public Key
         )
         .then(
           (response) => {
-            setPopupMessage(inquiryForm.response_pass); // Success message
+            setPopupMessage(inquiryForm.response_pass, response); // Success message
             setShowPopup(true); // Show popup
             setFormData({}); // Clear the form data
           },
@@ -112,7 +126,6 @@ const InquiriesForm = () => {
       <div className='absolute inset-0 bg-white/80 bg-cover'></div>
       <div className='relative z-10' data-aos="fade-up">
         <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> {inquiryForm.title} </h1>
-        <p className='border-l-4 border-amber-400 pl-5 pr-5 pt-1 text-sm lg:text-xl font-md text-blue-500 italic'>{inquiryForm.subtitle}</p>
       </div>
       <div className="z-10 relative max-w-lg p-4 md:max-w-4xl mx-auto" data-aos="zoom-in">
         <form onSubmit={handleSubmit} className="md:flex md:gap-4">
@@ -159,7 +172,7 @@ const InquiriesForm = () => {
           <button onClick={handleClear} type="button" className="bg-gray-500 hover:bg-gray-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button1}
           </button>
-          <button onClick={handleSubmit} className="bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
+          <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button2}
           </button>
         </div>
@@ -170,5 +183,6 @@ const InquiriesForm = () => {
     </div>
   );
 };
+
 
 export default InquiriesForm;

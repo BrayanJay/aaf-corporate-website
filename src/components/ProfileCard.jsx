@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -6,12 +6,16 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
   const { t } = useTranslation();
   const data = t("bodTextsAbout", { returnObjects: true });
 
-  const scrolltoTop = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Enables smooth scrolling
+    });
   };
+  
   return (
-    <div className="w-40 lg:w-64 lg:h-80 relative mx-auto flex flex-col justify-between">
+    <div id="top" className="w-40 lg:w-64 lg:h-80 relative mx-auto flex flex-col justify-between">
+      
       {/* Profile Image */}
       <div className="flex justify-center mt-4 mb-2">
         <img
@@ -43,7 +47,7 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
 
       {/* View Profile - Link to profile page */}
       <div className="pt-2 pb-4 text-black/40 text-xs md:text-sm font-normal text-center cursor-pointer hover:text-black/60">
-        <Link to={`/web/profile/${id}`} onClick={scrolltoTop}>
+        <Link to={`/profile/${id}`} onClick={scrollToTop}> 
           <span className="font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
             {data.view_profile_btn}
           </span>
@@ -51,6 +55,16 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
       </div>
     </div>
   );
+};
+
+// Prop validation
+ProfileCard.propTypes = {
+  id: PropTypes.number.isRequired, // id should be a string and is required
+  imgSrc: PropTypes.string.isRequired, // imgSrc should be a string and is required
+  name: PropTypes.string.isRequired, // name should be a string and is required
+  title: PropTypes.string.isRequired, // title should be a string and is required
+  borderColor: PropTypes.string, // borderColor should be a string (optional)
+  textColor: PropTypes.string, // textColor should be a string (optional)
 };
 
 export default ProfileCard;

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import aspectRatio from "@tailwindcss/aspect-ratio";
+
 export default {
   content: [
     "./index.html",
@@ -6,7 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-    
       keyframes: {
         blink: {
           '0%': { opacity: '0.5' },
@@ -16,10 +17,28 @@ export default {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.2)' },
         },
+        scaleUp: {
+          "0%": { transform: "scale(0)" },
+          "100%": { transform: "scale(1)" },
+        },
+        scaleDown: {
+          "100%": { transform: "scale(1)" },
+          "0%": { transform: "scale(0.5)" },
+        },
+        zoomIn: {
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" },
+        },
+        zoomOut: {
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(0)" },
+        },
       },
       animation: {
         blink: 'blink 2s infinite alternate',
         zoomInOut: 'zoomInOut 2s infinite alternate',
+        scaleUp: "scaleUp 1s ease-in-out",
+        scaleDown: "scaleDown 0.5s ease-in-out",
       },
       
     fontFamily: {
@@ -62,6 +81,9 @@ export default {
     },
     },
   },
-  plugins: [],
+  plugins: [
+    aspectRatio,
+
+  ],
 }
 

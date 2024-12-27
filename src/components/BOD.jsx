@@ -1,41 +1,17 @@
-import React from 'react';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
-import goldellipse from '../media/goldellipse.webp';
-import blueellipse from '../media/blueellipse.webp';
+import gold_ellipse from '../media/goldellipse.webp';
+import blue_ellipse from '../media/blueellipse.webp';
 
 import mrPrasanth from '../media/bod/vap.webp';
 import mrRajiv from '../media/bod/rja.webp';
-import ProfileCard from './ProfileCard';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import ProfileCard from './ProfileCard'; //Re-usable component
 
 const BOD = () => {
   const { t } = useTranslation();
   const profileDetails = t("bodProfilesAbout", { returnObjects: true });
   const bodTexts = t("bodTextsAbout", { returnObjects: true });
-
-  const [aosAnimation, setAosAnimation] = useState("fade-up");
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setAosAnimation("fade-right"); // Large screens (lg and above)
-      } else {
-        setAosAnimation("fade-up"); // Smaller screens
-      }
-    };
-
-    // Initialize on component mount
-    handleResize();
-
-    // Add resize event listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup listener on unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const scrolltoTop = () => {
     document.body.scrollTop = 0;
@@ -53,7 +29,7 @@ const BOD = () => {
             
       {/* Chairman Section */}
       <div className="flex flex-row md:gap-40" data-aos="fade-right">
-        <img src={goldellipse} className="h-72 md:h-96" />
+        <img src={gold_ellipse} className="h-72 md:h-96" />
         <div className="absolute pl-10 sm:pl-20">
           <img
             src={mrPrasanth}
@@ -75,12 +51,12 @@ const BOD = () => {
 
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               <span className='hidden lg:block text-left'>{bodTexts.chairman_description}</span>
-              <Link to={`/web/profile/${profileDetails.id=1}`} onClick={scrolltoTop}>
+              <Link to={`/profile/${profileDetails.id=1}`} onClick={scrolltoTop}>
                 <span className="hidden lg:block font-medium italic text-blue-500 hover:cursor-pointer hover:text-blue-900 transition transform ease-in-out duration-300">
                   {bodTexts.see_more_btn}
                 </span>
               </Link>
-              <Link to={`/web/profile/1`} onClick={scrolltoTop}>
+              <Link to={`/profile/1`} onClick={scrolltoTop}>
                 <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
                   {bodTexts.view_profile_btn}
                 </span>
@@ -104,12 +80,12 @@ const BOD = () => {
 
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               <span className='hidden lg:block'>{bodTexts.ceo_description}</span>
-              <Link to={`/web/profile/${profileDetails.id=9}`} onClick={scrolltoTop}>
+              <Link to={`/profile/${profileDetails.id=10}`} onClick={scrolltoTop}>
                 <span className="hidden lg:block font-medium italic text-amber-400 hover:cursor-pointer hover:text-amber-500 transition transform ease-in-out duration-300">
                   {bodTexts.see_more_btn}
                 </span>
               </Link>
-              <Link to={`/web/profile/9`} onClick={scrolltoTop}>
+              <Link to={`/profile/10`} onClick={scrolltoTop}>
                 <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
                   {bodTexts.view_profile_btn}
                 </span>
@@ -117,7 +93,7 @@ const BOD = () => {
             </div>
           </div>
         </div>
-        <img src={blueellipse} className="h-72 md:h-96" />
+        <img src={blue_ellipse} className="h-72 md:h-96" />
         <div className="absolute pr-10 sm:pr-20">
           <img
             src={mrRajiv}
@@ -145,5 +121,6 @@ const BOD = () => {
     </div>
   );
 };
+
 
 export default BOD;

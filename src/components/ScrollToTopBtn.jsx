@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 
+//This button component is used to navigate to the top of the page when clicked
 const ScrollToTopBtn = () => {
 
   const [visible, setVisible] = useState(false);

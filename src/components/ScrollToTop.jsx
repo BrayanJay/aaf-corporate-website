@@ -1,11 +1,24 @@
-import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const ScrollToTop = ({ children }) => {
+//This hooker is used to scroll to the top of the page when navigate between pages
+const ScrollToTop = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
+    // Use scrollIntoView to ensure proper scrolling behavior
+    const topElement = document.getElementById('top');
+    if (topElement) {
+      topElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location]);
 
-  return <>{children}</>;
+  return (
+    <div
+      id="top"
+      className="absolute top-1" 
+    ></div>
+  );
 };
 
 export default ScrollToTop;

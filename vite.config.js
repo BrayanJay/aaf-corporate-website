@@ -5,7 +5,7 @@ import legacy from '@vitejs/plugin-legacy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/web', //web shoulb be included
+  base: '/', //web shoulb be included
   server: {
     https: {
       key: './key.pem',

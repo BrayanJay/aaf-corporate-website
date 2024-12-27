@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
+//Chamari's Picture
 import Wcu1 from '../media/wcu1.webp'
+//Staff's Picture
 import Wcu2 from '../media/wcu2.webp'
 import { useTranslation } from "react-i18next";
 
@@ -29,19 +32,20 @@ const   WhyChooseUs = () => {
   }, []);
 
   return (
-    <div className='flex max-w-auto max-h-auto justify-center px-10 lg:px-20 flex-wrap'>
+    <div id='main-container' className='flex max-w-auto max-h-auto justify-center px-10 lg:px-20 flex-wrap'>
       <div className='grid grid-cols-1 lg:grid-cols-2 grid-rows-1 grid-flow-row lg:grid-flow-col w-full h-full relative'>
 
         {/*WCU Images Section */}
         <div className='order-2 lg:order-1 grid grid-cols-2 grid-rows-1 grid-flow-row gap-2'>
         <div className=' rounded-tr-lg rounded-bl-lg p-2 md:p-5' data-aos={aosAnimation} data-aos-delay={aosAnimation === "fade-up" ? 300 : 0} > {/*Add delay only for small screens*/}
-            <img className="h-auto lg:h-full rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu1}/>
+            <img className="h-auto rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu1}/>
         </div>
         <div className='rounded-tr-lg rounded-bl-lg p-2 md:p-5' data-aos={aosAnimation} data-aos-delay={aosAnimation === "fade-up" ? 300 : 0}>
-            <img className="lg:h-full rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu2}/>
+            <img className="rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu2}/>
         </div>
         </div>
 
+        {/* Text Content Section */}
         <div className='order-1 lg:order-2'>
         <div className='px-2 lg:px-5 border-l-4 lg:border-l-8 border-blue-900' data-aos="fade-up">
             <h1 className='text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'>{whyChooseUs.title_left} <span className='font-extrabold text-blue-900'>{whyChooseUs.title_right}</span></h1>

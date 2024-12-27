@@ -1,10 +1,10 @@
-import React from 'react';
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
 import map from '../media/map.svg';
+import { HashLink } from 'react-router-hash-link';
 
 // Branch images
-import deniyaya from '../media/branches/deniyaya.svg';
+//import deniyaya from '../media/branches/deniyaya.svg';
 
 const BranchDetails = () => {
   const { t } = useTranslation();
@@ -13,7 +13,7 @@ const BranchDetails = () => {
   
   const handleReadMoreClick = () => {
     // Navigate to /about route (you can specify the full URL if needed)
-    navigate('/web/about', { replace: true });
+    navigate('/about', { replace: true });
     
     // Scroll to the #branches section after navigation
     setTimeout(() => {
@@ -25,11 +25,14 @@ const BranchDetails = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center relative bg-bgdesign bg-cover text-roboto">
+    <div id="main-container" className="flex flex-col lg:flex-row justify-center relative bg-bgdesign bg-cover text-roboto">
+      {/* White Fading Layer for Background */}
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+      {/* Map Image - Left Section */}
       <div className="hidden lg:block lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-        <img src={map} alt="Map" />
+        <HashLink smooth to="/about/#branches"><img src={map} alt="Map" /></HashLink>
       </div>
+      {/* Contents - Right Section */}
       <div className="lg:basis-1/2 z-10" data-aos="fade-up">
         <div className="relative px-10 lg:px-20 pt-10 lg:pt-20 " data-aos="fade-up">
           <h1 className="border-r-4 lg:border-r-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700 text-right">
@@ -42,12 +45,12 @@ const BranchDetails = () => {
             {branchDetails.description1} <span className="font-bold text-blue-700">{branchDetails.description2}</span> {branchDetails.description3} <span className="font-bold text-blue-700">{branchDetails.description4}</span> {branchDetails.description5}
           </p>
           <div onClick={handleReadMoreClick} className="z-10 lg:hidden right-10 flex absolute py-1.5 px-3 mt-2 bg-lightbluegradient rounded-tl-lg rounded-br-lg cursor-pointer hover:bg-bluegradient transition delay-200 ease-in-out rounded-sm text-white text-sm font-medium font-roboto">
-                Branch Network
+          {branchDetails.our_branch_network_btn}
           </div>
           {/*<p className="hidden lg:block lg:pl-5 lg:pr-5 lg:pt-5 text-sm lg:text-xl font-bold text-blue-500 italic text-right">{branchDetails.newbranches_title}</p>
           <p className="hidden lg:block pb-5 pt-5 text-xs lg:text-sm font-md text-black/50 text-justify">{branchDetails.newbranches_description}</p>
           */}
-          <div className="hidden lg:block flex flex-col lg:flex-row">
+          <div className="hidden lg:block flex-col lg:flex-row">
             {/*<div className="lg:basis-1/2">
               <img className="rounded-2xl shadow-lg" src={deniyaya} alt="Deniyaya Branch" />
             </div>*/}
@@ -59,13 +62,16 @@ const BranchDetails = () => {
               <div
                 onClick={handleReadMoreClick}
                 className="right-20 flex absolute py-1.5 px-3 mt-2 bg-lightbluegradient rounded-tl-lg rounded-br-lg cursor-pointer hover:bg-bluegradient transition delay-200 ease-in-out rounded-sm text-white text-sm font-medium font-roboto">
-                View Branch Network
+                {branchDetails.our_branch_network_btn}
               </div>
             </div>
           </div>
+
+          {/* Map image for smaller screens */}
           <div className="lg:hidden lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-            <img src={map} alt="Map" />
+          <HashLink smooth to="/about/#branches"><img src={map} alt="Map" /></HashLink>
           </div>
+          
         </div>
       </div>
     </div>

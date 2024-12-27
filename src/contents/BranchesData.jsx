@@ -1,5 +1,5 @@
-// src/data/branchesData.js
-import branchSample from '../media/branches/branch.svg';
+//Branches data file
+import branchSample from '../media/branches/temp.webp';
 
 const branchesData = {
   western: {

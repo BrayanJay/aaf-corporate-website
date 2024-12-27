@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../media/logo.webp";
 import certification1 from '../../media/fitchA.webp';
 import certification2 from '../../media/gpw.webp';

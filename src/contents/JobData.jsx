@@ -1,6 +1,5 @@
-import React from 'react'
+//Job vacancies data file
 
-// JobVacancies.jsx
 const JobData = [
     {
         id: '1',

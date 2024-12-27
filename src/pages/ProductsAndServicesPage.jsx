@@ -1,4 +1,3 @@
-import React from 'react'
 import Carousel from '../components/Carousel';
 import bannerProductsPg from '../media/bannerProductsPg.webp';
 import ProductSelector from '../components/ProductSelector';

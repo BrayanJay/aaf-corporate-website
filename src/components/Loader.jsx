@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../media/logo.webp'
+import PropTypes from 'prop-types';
 
 const Loader = ({ duration }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -28,6 +29,11 @@ const Loader = ({ duration }) => {
       </div>
     </div>
   );
+};
+
+// Prop validation for duration
+Loader.propTypes = {
+  duration: PropTypes.number.isRequired, // Duration must be a number and is required
 };
 
 export default Loader;

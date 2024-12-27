@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +15,8 @@ const PersonalProfile = () => {
   }
 
   return (
-    <div className='px-10 lg:px-40 py-10 lg:py-20'>
+    <div id="top" className="lg:py-10">
+    <div className='px-10 lg:px-40'>
       <div className='md:grid md:grid-flow-row md:grid-cols-4 gap-5'>
         {/* Profile Image */}
         <div>
@@ -63,6 +63,7 @@ const PersonalProfile = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next';
 
+//bankers logoes
 import bank1 from '../media/bankers/boc.svg'
 import bank2 from '../media/bankers/combank.svg'
 import bank3 from '../media/bankers/dfcc.svg'
@@ -12,21 +12,26 @@ import bank8 from '../media/bankers/sampath.svg'
 import bank9 from '../media/bankers/seylan.svg'
 import bank10 from '../media/bankers/ntb.svg'
 
-
-const logos = [bank1, bank2, bank3, bank4, bank5, bank6, bank7, bank8, bank9, bank10]
+//logoes array
+const logos = [bank8, bank10, bank2, bank3, bank4, bank5, bank6, bank7, bank9, bank1, ]
 
 const CorporateInformation = () => {
     const { t } = useTranslation();
     const corporateProfile = t("corporateProfileIR", { returnObjects: true });
+
   return (
-    <div className='w-full px-10 lg:px-40'>
+    <div id='main-container' className='w-full px-10 lg:px-40'>
+        {/* Header Section */}
         <div className="flex flex-col relative justify-center items-start pt-10">
           <div className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold pl-2 lg:pl-4">
-            {corporateProfile.title1} <span className='font-light text-blue-500'> {corporateProfile.title2}</span></div>
+            {corporateProfile.title1} <span className='font-light text-blue-500'> {corporateProfile.title2}</span>
+            </div>
         </div>
+
+        {/* Body Section */}
         <div className='flex lg:flex-row flex-col lg:gap-40'>
         <div className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
-            <div>
+            <div id='company-name'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label1}
                 </div>
@@ -35,7 +40,7 @@ const CorporateInformation = () => {
                 </div>
             </div>
 
-            <div>
+            <div id='company-rating'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label2}
                 </div>
@@ -44,7 +49,7 @@ const CorporateInformation = () => {
                 </div>
             </div>
 
-            <div className='flex flex-col gap-1'>
+            <div id='legal-form' className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label3}
                 </div>
@@ -68,7 +73,7 @@ const CorporateInformation = () => {
                 </div>
             </div>
 
-            <div>
+            <div id='company-reg-no'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label4}
                 </div>
@@ -77,7 +82,7 @@ const CorporateInformation = () => {
                 </div>
             </div>
 
-            <div>
+            <div id='company-lawyers'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label5}
                 </div>
@@ -90,7 +95,7 @@ const CorporateInformation = () => {
 
         </div>
 
-        <div className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
+        <div id='bod' className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
             <div className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label6}
@@ -122,20 +127,26 @@ const CorporateInformation = () => {
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 {corporateProfile.field6_9}
                 </div>
+                <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
+                {corporateProfile.field6_10}
+                </div>
             </div>
 
-            {/*<div>
+            <div id='company-secretary'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label7}
                 </div>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
-                <span>
                 {corporateProfile.field7}
-                </span>
                 </div>
-            </div>*/}
+                <div className='text-xs lg:text-sm font-medium text-blue-900/80 hover:underline'>
+                <a href='mailto:companysecretary@asiaassetfinance.lk'><span>
+                {corporateProfile.field7_1}
+                </span></a>
+                </div>
+            </div>
 
-            <div className='flex flex-col gap-1'>
+            <div id='company-auditors' className='flex flex-col gap-1'>
                 <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label8}
                 </div>
@@ -148,15 +159,15 @@ const CorporateInformation = () => {
         </div>
         </div>
         
-        <div className='px-20 py-5 text-center'>
+        <div id='banking-partners' className='px-20 py-5 text-center'>
                 <div className='text-xl md:text-2xl lg:text-3xl font-bold text-blue-700'>
                 {corporateProfile.label9}
                 </div>
                 <div className="container mx-auto p-4">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10">
                     {logos.map((Logo, index) => (
                     <div key={index} className="flex items-center justify-center">
-                        <img src={Logo} alt={`Logo ${index + 1}`} className="w-24 h-24" />
+                        <img src={Logo} alt={`Logo ${index + 1}`} className="max-w-36" />
                     </div>
                     ))}
                     </div>

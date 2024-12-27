@@ -1,4 +1,3 @@
-import React from 'react'
 import mainImg from '../../assets/careers.png'
 
 const Banner = () => {

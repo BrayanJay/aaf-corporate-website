@@ -1,112 +1,125 @@
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+library.add(fas);
 
-library.add(fas, fab);
-
-const Testimonials = ({ data }) => {
-  const [activeItem, setActiveItem] = useState(0);
-  const { t } = useTranslation();
-  const testimonialsText = t("testimonialsText", { returnObjects: true });
+const Testimonial = ({ testimonials }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
 
   useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setActiveItem(id => (id + 1) % data.length);
-    }, 5000);
-
-    return () => {
-      window.clearInterval(intervalId);
+    const updateVisibleCount = () => {
+      if (window.innerWidth >= 1024) setVisibleCount(3); // Large screens
+      else if (window.innerWidth >= 768) setVisibleCount(2); // Medium screens
+      else setVisibleCount(1); // Small screens
     };
-  }, [data]);
+
+    updateVisibleCount(); // Initialize on mount
+    window.addEventListener("resize", updateVisibleCount); // Update on resize
+
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+  // Automatically move to the next set of testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + visibleCount) % testimonials.length);
+    }, 2000);
+
+    // Cleanup interval on component unmount or dependency change
+    return () => clearInterval(interval);
+  }, [visibleCount, testimonials.length]);
+
+  // Get the visible testimonials
+  const visibleTestimonials = testimonials
+    .slice(currentIndex, currentIndex + visibleCount)
+    .concat(
+      testimonials.slice(
+        0,
+        Math.max(0, currentIndex + visibleCount - testimonials.length)
+      )
+    );
+
+  // Move to the previous set of testimonials
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - visibleCount + testimonials.length) % testimonials.length
+    );
+  };
+
+  // Move to the next set of testimonials
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + visibleCount) % testimonials.length);
+  };
 
   return (
-    <>
-      <div className="w-full h-full relative px-10 lg:px-40 pb-20 bg-blue-950/75 backdrop-blur-sm">
-      
-      <div className='lg:gap-2 pt-10'>
-        <div className='relative ' data-aos="fade-up">
-                <h1 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black italic text-amber-400'> {testimonialsText.title} </h1>
-                <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>{testimonialsText.subtitle}</p>
-        </div>
-      </div>
+    <div className="relative w-full py-10">
+      {/* Slider Controls */}
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800"
+        onClick={handlePrev}
+        title="Previous"
+      >
+        <FontAwesomeIcon icon={["fas", "chevron-left"]} size="lg" />
+      </button>
 
-        {/* Some space */}
-        <div className="mb-16"></div>
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800"
+        onClick={handleNext}
+        title="Next"
+      >
+        <FontAwesomeIcon icon={["fas", "chevron-right"]} size="lg" />
+      </button>
 
-        {/* Quote container along with person details */}
-        <div className="relative mx-auto border-l-4 border-l-sky-500 bg-[#f7f7f7] px-10 lg:px-8 py-16 lg:py-14 text-center shadow-2xl rounded-sm">
-          <div>
-            <div className="mb-1 text-base lg:text-lg font-semibold text-blue-950">{data[activeItem].personName}</div>
-            <div className="mb-3 text-xs lg:text-sm text-blue-900/75">{data[activeItem].profile}</div>
-            <div className="mx-auto mb-4 w-16 h-1 bg-amber-400"></div>
-            <div className="mb-1 text-left text-red-500">
-            <FontAwesomeIcon 
-                icon={['fas', 'quote-left']} 
-                className={`mx-1.5 text-base lg-text-xl`} 
-                />
+      {/* Dynamic Testimonials Component*/}
+      <div className="flex justify-center items-stretch gap-4 px-6 overflow-hidden">
+        {visibleTestimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-md rounded-lg p-6 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] flex-shrink-0 flex flex-col"
+          >
+            <div className="flex flex-col items-center text-center">
+              <img
+                src={testimonial.imageUrl}
+                alt="Profile"
+                className="w-16 h-16 rounded-full object-cover mb-4"
+              />
+              <h3 className="text-lg font-semibold text-gray-800">
+                {testimonial.personName}
+              </h3>
+              <p className="text-sm text-gray-500">{testimonial.location}</p>
             </div>
-            <div className="text-black/40 font-medium text-xs lg:text-sm">{data[activeItem].quote}</div>
-            <div className="flex flex-row justify-center text-blue-700 pt-2">
-                <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
-                <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
-                <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
-                <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
-                <FontAwesomeIcon icon={['fas', 'star']} size='sm'/>
+            <div className="flex-1 mt-4 text-gray-600 text-sm text-center">
+              {testimonial.quote}
+            </div>
+            <div className="flex gap-1 mt-2 justify-center text-yellow-400">
+              {Array.from({ length: testimonial.rating }).map((_, i) => (
+                <FontAwesomeIcon key={i} icon={["fas", "star"]} />
+              ))}
             </div>
           </div>
-
-          {/* Person image */}
-          <div className="absolute w-20 h-20 rounded-full top-0 right-0 translate-x-1/2 -translate-y-1/2 shadow-2xl mr-5 md:mr-0 ">
-            <img src={data[activeItem].imageUrl} alt="profile" className="w-full h-full rounded-[inherit]" />
-          </div>
-
-          {/* Left button */}
-          <button
-            className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 aspect-square bg-blue-700 text-white font-bold rounded-full flex justify-center items-center hover:bg-blue-800 active:bg-blue-900 shadow-2xl transition"
-            onClick={() => setActiveItem(Math.max(0, activeItem - 1))}
-            title="Move to previous"
-          >
-            <FontAwesomeIcon 
-                icon={['fas', 'chevron-left']} 
-                className={`mx-1.5`} 
-                size='xl' 
-                />
-          </button>
-
-          {/* Right button */}
-          <button
-            className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-8 aspect-square bg-blue-700 text-white font-bold rounded-full flex justify-center items-center hover:bg-blue-800 active:bg-blue-900 shadow-2xl transition"
-            onClick={() => setActiveItem(Math.min(data.length - 1, activeItem + 1))}
-            title="Move to next"
-          >
-            <FontAwesomeIcon 
-                icon={['fas', 'chevron-right']} 
-                className={`mx-1.5`} 
-                size='xl' 
-                />
-          </button>
-        </div>
-
-        {/* Item Indicator */}
-        <div className="mx-auto mt-4 flex gap-2 w-fit">
-          {data.map((item, idx) => (
-            <div
-              key={idx}
-              className={`rounded-full cursor-pointer transition-all duration-500 ${
-                activeItem === idx ? "w-5 h-2.5 bg-amber-400" : "w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400"
-              }`}
-              onClick={() => setActiveItem(idx)}
-              title={`Move to ${idx + 1}`}
-            />
-          ))}
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
-export default Testimonials;
+
+// Prop validation
+Testimonial.propTypes = {
+  testimonials: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string.isRequired, // URL for the profile image
+      personName: PropTypes.string.isRequired, // Name of the person
+      location: PropTypes.string, // Location (optional)
+      quote: PropTypes.string.isRequired, // Testimonial quote
+      rating: PropTypes.number.isRequired, // Rating out of 5
+    })
+  ).isRequired,
+};
+
+export default Testimonial;

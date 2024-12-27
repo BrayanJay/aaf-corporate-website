@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Dropdown = ({ items }) => {
   return (
     <ul className="absolute mt-1 bg-white shadow-lg rounded-md py-2 z-50 flex flex-col space-y-2 px-2">
@@ -8,6 +10,11 @@ const Dropdown = ({ items }) => {
       ))}
     </ul>
   );
+};
+
+// Prop validation for the Dropdown component
+Dropdown.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Dropdown;

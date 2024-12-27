@@ -1,6 +1,7 @@
-import React from 'react';
 import Map from '../assets/map.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+//Currently not using this component
 
 const BranchNetwork = () => {
   return (

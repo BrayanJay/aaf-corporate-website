@@ -1,7 +1,6 @@
-import React from 'react'
 import { useTranslation } from "react-i18next";
 
-import ProfileCard from './ProfileCard';
+import ProfileCard from './ProfileCard'; //Re-usable Component
 
 const CorporateManagement = () => {
     const { t } = useTranslation();
@@ -10,8 +9,9 @@ const CorporateManagement = () => {
 
 
   return (
-    <div className='w-full h-full relative px-10 lg:px-20 gap-2 pt-10'>
+    <div id="main-container" className='w-full h-full relative px-10 lg:px-20 gap-2 pt-10'>
 
+            {/* Header Section */}
             <div className='relative ' data-aos="fade-up">
                 <h1 className='border-r-4 lg:border-r-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900 text-right'> {comTexts.title1} <span className='font-black text-blue-700'> {comTexts.title2} </span></h1>
                 <p className='border-r-4 lg:border-r-8 border-blue-500 px-5 md:pt-1 text-xs md:text-sm lg:text-xl font-medium italic text-blue-500 text-right'>{comTexts.subtitle}</p>
@@ -26,7 +26,7 @@ const CorporateManagement = () => {
                 {profileDetails.map((profile, idx) => (
                     <ProfileCard
                     key={idx}
-                    id={idx + 9}
+                    id={idx + 10} //Id starts from 10 according to the array
                     imgSrc={profile.imgSrc}
                     name={profile.name}
                     title={profile.title}

@@ -1,10 +1,8 @@
-import React from 'react';
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import fdImg from '../media/productsoverview/fd.webp'; // test upload
 import { Link } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 
@@ -46,13 +44,13 @@ const ProductsOverview = () => {
           {productsOverview.map((product, index) => (
             <SwiperSlide key={index} className="flex justify-center ">
               <Link to={product.link} onClick={ScrollToTop}>
-              <div className="relative h-48 sm:h-64 lg:h-96 transition-all duration-300 group">
+              <div className="relative transition-all duration-300 group">
                 {/* Background Image */}
-                <img className='' src={product.image} alt="Test Image" />
+                <img className='rounded-tr-3xl rounded-bl-3xl h-48 sm:h-64 lg:h-96 w-48 lg:w-60' src={product.image} alt="Test Image" />
                 
                 
                 {/* Overlay for hover effect */}
-                <div className="absolute inset-0 h-48 sm:h-64 lg:h-96 bg-black/30 group-hover:bg-black/50 transition-all duration-300"></div>
+                <div className="absolute overflow-hidden inset-0 h-48 sm:h-64 lg:h-96 bg-black/30 group-hover:bg-black/50 transition-all duration-300 rounded-tr-3xl rounded-bl-3xl"></div>
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-20">

@@ -1,5 +1,6 @@
 // src/components/BranchNetwork.jsx
-import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 //import branchesData from '../contents/BranchesData'
 import { useTranslation } from 'react-i18next';
 
@@ -26,13 +27,8 @@ const BranchNetwork = () => {
     ? filterBranches(allBranches)
     : filterBranches(branchesData[selectedRegion]?.branches || []);
 
-  // Function to handle region tab click
-  const handleRegionClick = (region) => {
-    setSelectedRegion(region);
-  };
-
   return (
-    <div className="px-10 lg:px-20">
+    <div id='main-container' className="px-10 lg:px-20">
       {/* Header Section */}
       <div className="flex flex-col relative justify-center items-start py-10">
           <div className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-semibold pl-2 lg:pl-4" data-aos="fade-up">
@@ -55,7 +51,7 @@ const BranchNetwork = () => {
       </div>
 
       {/* Tab Bar */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
+      <div className="flex flex-wrap justify-center gap-2 mb-6" data-aos="fade-up">
         <button
           onClick={() => setSelectedRegion('all')}
           className={`py-2 px-4 rounded-lg ${
@@ -64,6 +60,8 @@ const BranchNetwork = () => {
         >
           {data.all_tab}
         </button>
+
+        {/* Dynamically create regional Tabs */}
         {Object.keys(branchesData).map((region) => (
           <button
             key={region}
@@ -78,22 +76,25 @@ const BranchNetwork = () => {
       </div>
 
       {/* Branch Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10" data-aos="fade-up">
+        {/* Dynamically create cards per  each branch */}
         {filteredBranches.length > 0 ? (
           filteredBranches.map((branch, index) => (
             <div key={index} className="flex flex-col p-4 bg-white shadow-lg rounded-lg justify-center items-center">
               <img
                 src={branch.image}
                 alt={branch.name}
-                className="max-w-16 lg:max-w-24 w-fit h-fit object-cover"
+                className="max-w-16 lg:max-w-24 max-h-16 lg:max-h-24 w-fit h-fit object-cover"
               />
-              <h3 className="text-base lg:text-lg font-bold mt-2 text-center">{branch.name}</h3>
-              <p className='text-xs lg:text-sm text-center'>{branch.location}</p>
-              <p className='text-xs lg:text-sm text-center'>{branch.contact}</p>
+              <div className="text-blue-900 text-base lg:text-lg font-bold mt-2 text-center">{branch.name}</div>
+              <div className='text-black/60 flex items-center text-xs lg:text-sm text-center gap-2'><FontAwesomeIcon icon={['fas', 'location-dot']} className="text-xs"/> {branch.location}</div>
+              <a href={`tel:+94${branch.contact.replace(/\s/g, '').replace(/^0/, '')}`}>
+                <div className='text-black/60 flex items-center text-xs lg:text-sm text-center hover:text-blue-500 transition-all duration-300 ease-in-out gap-2'><FontAwesomeIcon icon={['fas', 'phone']} className="text-xs"/> {branch.contact}</div>
+              </a>
             </div>
           ))
         ) : (
-          <p className=''>No branches found!</p>
+          <div className='flex flex-row justify-center text-xl font-semibold text-center text-rose-800'>No branches found!</div>
         )}
       </div>
     </div>

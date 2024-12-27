@@ -1,8 +1,5 @@
-// JobCard.jsx
-import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from '@material-tailwind/react';
 import { useNavigate } from 'react-router-dom';
 
 const JobCard = ({ job }) => {

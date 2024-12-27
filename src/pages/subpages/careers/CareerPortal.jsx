@@ -2,9 +2,7 @@ import { useTranslation } from 'react-i18next'
 import banner from '../../../media/bannerCareers.webp'
 import Title from '../../../components/careers/Title'
 //import Vacancies from '../../../components/careers/Vacancies'
-import greatPlace2Work from '../../../media/gpw.webp'
 
-import React from 'react'
 import Carousel from '../../../components/Carousel'
 
 const CareerPortal = () => {

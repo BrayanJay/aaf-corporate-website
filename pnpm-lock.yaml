@@ -89,6 +89,9 @@ importers:
       react-router-hash-link:
         specifier: ^2.4.3
         version: 2.4.3(react-router-dom@6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      smoothscroll-polyfill:
+        specifier: ^0.4.4
+        version: 0.4.4
       swiper:
         specifier: ^11.1.14
         version: 11.1.15
@@ -2438,6 +2441,9 @@ packages:
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
+
+  smoothscroll-polyfill@0.4.4:
+    resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5298,6 +5304,8 @@ snapshots:
       object-inspect: 1.13.3
 
   signal-exit@4.1.0: {}
+
+  smoothscroll-polyfill@0.4.4: {}
 
   source-map-js@1.2.1: {}
 

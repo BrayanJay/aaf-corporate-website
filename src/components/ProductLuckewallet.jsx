@@ -1,65 +1,86 @@
-import React from 'react'
-import { useTranslation } from "react-i18next";
-import LuckewalletLogo from '../media/luckewalletlogo.webp'
-
-import LuckewalletImg from '../media/products/luckewallet.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Astore from '../media/appStoreBtn.webp';
+import Pstore from '../media/playStoreBtn.webp';
+import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 
-const ProductLuckewallet = () => {
-    const { t } = useTranslation();
-    const data = t("luckewalletProductsPage", { returnObjects: true });
+const Luckewallet = ({MobilePic, logo}) => {
+  const { t } = useTranslation();
+  const luckewallet = t("luckewalletLandingPage", { returnObjects: true });
+
 
   return (
-    <div className='flex lg:flex-row flex-col relative px-10 lg:px-40 pt-20 ' data-aos="fade-up">
-        <div className='relative lg:basis-1/2 lg:pb-10'>
-            <img className='' src={LuckewalletImg}/>
+    <div className='flex flex-col lg:flex-row max-w-auto max-h-auto px-10 lg:px-20'>
+      <div className=' lg:basis-1/2 w-full h-full relative gap-2'>
+
+        <div className='relative ' data-aos="fade-up">
+            <h1 className='border-l-4 lg:border-l-8 border-blue-500 p-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{luckewallet.title1} <span className='font-bold text-amber-400'>{luckewallet.title2}</span> {luckewallet.title3} </h1>
+
         </div>
-        <div className='flex flex-col lg:basis-1/2'>
-            <img className='lg:w-1/3 ml-auto' src={LuckewalletLogo}/>
-            <p className='py-5 text-xs lg:text-sm font-medium lg:font-semibold text-black/50 text-right'>{data.description1}</p>
-            <p className='py-5 text-xs lg:text-sm font-medium lg:font-semibold text-black/50 text-right'>{data.description2}</p>
-        
-            <div className='relative py-5 justify-end ml-auto' data-aos="fade-up">
-                <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900 text-right'>{data.kFeature1} <span className='font-bold text-amber-400'>{data.kFeature2} </span></h1>
-                <div className='grid grid-cols-2 grid-flow-row gap-2'>
+        <div className='hidden lg:block relative p-5' data-aos="fade-up">
+            <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h1>
+            <div className='grid grid-cols-2 grid-flow-row gap-2'>
                 
-                    <div className='relative max-w-64 flex gap-2 pt-5'>
-                    <FontAwesomeIcon icon={['fas', 'list-check']} className='pt-1 text-blue-700 hover:text-bluegradient border-white hover:border-bluegradient text-sm lg:text-lg'/>
-                    <div className=''>
-                    <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{data.f1title} </h1>
-                    <p className='text-xs text-blue-900/50'>{data.f1Text}</p>
-                    </div>
-                    </div>
-
-                    <div className='relative max-w-64 flex gap-2 pt-5'>
-                    <FontAwesomeIcon icon={['fas', 'hand-holding-dollar']} className='pt-1 text-blue-700 border-white text-sm lg:text-lg'/>
-                    <div className=''>
-                    <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{data.f2title}</h1>
-                    <p className='text-xs text-blue-900/50'>{data.f2Text}</p>
-                    </div>
-                    </div>
-
-                    <div className='relative max-w-64 flex gap-2 pt-5'>
-                    <FontAwesomeIcon icon={['fas', 'shield-halved']} className='pt-1 text-blue-700 border-white text-sm lg:text-lg'/>
-                    <div className=''>
-                    <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{data.f3title}</h1>
-                    <p className='text-xs text-blue-900/50'>{data.f3Text}</p>
-                    </div>
-                    </div>
-
-                    <div className='relative max-w-64 flex gap-2 pt-5'>
-                    <FontAwesomeIcon icon={['fas', 'bell']} className='pt-1 text-blue-700 border-white text-sm lg:text-lg'/>
-                    <div className=''>
-                    <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{data.f4title}</h1>
-                    <p className='text-xs text-blue-900/50'>{data.f4Text}</p>
-                    </div>
-                    </div>
+                <div className='relative max-w-64 flex gap-2 pt-5'>
+                <FontAwesomeIcon icon={['fas', 'list-check']} className='pt-1 text-blue-700' size='lg'/>
+                <div className=''>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature1_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature1_description}</p>
                 </div>
+                </div>
+
+                <div className='relative max-w-64 flex gap-2 pt-5'>
+                <FontAwesomeIcon icon={['fas', 'hand-holding-dollar']} className='pt-1 text-blue-700 border-white' size='lg'/>
+                <div className=''>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature2_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature2_description}</p>
+                </div>
+                </div>
+
+                <div className='relative max-w-64 flex gap-2 pt-5'>
+                <FontAwesomeIcon icon={['fas', 'shield-halved']} className='pt-1 text-blue-700 border-white' size='lg'/>
+                <div className=''>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature3_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature3_description}</p>
+                </div>
+                </div>
+
+                <div className='relative max-w-64 flex gap-2 pt-5'>
+                <FontAwesomeIcon icon={['fas', 'bell']} className='pt-1 text-blue-700 border-white' size='lg'/>
+                <div className=''>
+                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature4_title}</h1>
+                <p className='text-xs text-blue-900/50'>{luckewallet.feature4_description}</p>
+                </div>
+                </div>
+
+            </div>
+            <div className='flex flex-col pt-10'>
+                <div className='font-bold text-blue-950'>{luckewallet.download_now}</div>
+            <div className='flex gap-5'>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
+            </div>
             </div>
         </div>
+      
+      </div>
+      <div className='flex order-1 md:order-2 basis-1/2 p-5 justify-center items-center' data-aos="fade-right">
+            <img src={logo} className='absolute right-0 top-5 w-16 sm:w-24 md:w-32 lg:w-40'/>
+            <img src={MobilePic} className='lg:h-[100vh]'/>
+        </div>
+        <div className='sm:hidden flex gap-5 pt-10'>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
 
+            </div>
     </div>
   )
 }
 
-export default ProductLuckewallet
+//Prop Validation
+Luckewallet.propTypes = {
+  MobilePic: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired
+};
+
+export default Luckewallet

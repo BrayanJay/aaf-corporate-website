@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 //products Selector Images
 import FD from '../media/products/fdProducts.webp';
 import GLoan from '../media/products/gloanProducts.webp';
 import Leasing1 from '../media/products/leasing1Products.webp';
 import Leasing2 from '../media/products/leasing2Products.webp';
 import Mortgage from '../media/products/mortgageProducts.webp';
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 const ProductSelector = () => {
-  const { t } = useTranslation();
-  const data = t("productsSelector", { returnObjects: true });
+  //const { t } = useTranslation();
+  //const data = t("productsSelector", { returnObjects: true });
   const [selectedProduct, setSelectedProduct] = useState('Fixed Deposits');
 
   const products = {

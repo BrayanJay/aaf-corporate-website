@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react'; //import useState if the subcription sector connect
 import logo from '../media/footer_logo.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from 'react-router-dom';
 
-const Footer = ({ theme = "dark" }) => {
+const Footer = () => {
   const { t } = useTranslation();
   const listItems = t("footerListItems", { returnObjects: true });
   const data = t("footerText", { returnObjects: true });
 
-  const [email, setEmail] = useState('');
+  //const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
   // Effect to handle smooth scroll after language change
@@ -24,7 +24,8 @@ const Footer = ({ theme = "dark" }) => {
     }
   }, [t.language]); // Runs when the language changes
 
-  const handleChange = (e) => {
+  {/*
+    const handleChange = (e) => {
     setEmail(e.target.value);
   };
 
@@ -32,6 +33,7 @@ const Footer = ({ theme = "dark" }) => {
     e.preventDefault();
     alert(`Submitted email: ${email}`);
   };
+  */}
 
   const handleNavigation = (link) => {
     if (!link.includes('#')) {
@@ -101,21 +103,21 @@ const Footer = ({ theme = "dark" }) => {
       <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-16 py-10 border-b border-white">
         {/* Left Section */}
         <div className="md:basis-1/4 text-center md:text-left">
-          <Link to="/web" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up"/></Link>
-          <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" data-aos="fade-up" data-aos-delay="100">
+          <Link to="/" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up" data-aos-once="true"/></Link>
+          <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
             {data.intro}
           </p>
           <div className="flex flex-col gap-1 text-sm text-white/80">
-            <p data-aos="fade-up" data-aos-delay="200">{data.address}</p>
-            <p data-aos="fade-up" data-aos-delay="300">+94 117 699000</p>
-            <p data-aos="fade-up" data-aos-delay="400">info@asiaassetfinance.lk</p>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'location-dot']} className='pr-3'/>{data.address}</p>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'phone']} className='pr-3'/>1369</p>
+            <p data-aos="fade-up" data-aos-delay="400" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'envelope']} className='pr-3'/>info@asiaassetfinance.lk</p>
           </div>
-          <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg" data-aos="fade-up" data-aos-delay="500">
+          <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
             {[
                 { platform: 'facebook', link: 'https://www.facebook.com/AsiaAssetFinancePLC/' },
                 { platform: 'instagram', link: 'https://www.instagram.com/asiaassetfinance.lk/' },
                 { platform: 'linkedin', link: 'https://lk.linkedin.com/company/asia-asset-finance-plc?trk=public_post_feed-actor-name' },
-                { platform: 'youtube', link: 'https://www.youtube.com/@asiaassetfinance5308' },
+                /*{ platform: 'youtube', link: 'https://www.youtube.com/@asiaassetfinance5308' },*/
                 { platform: 'tiktok', link: 'https://www.tiktok.com/@asia_asset_finance'}
               ].map((icon, idx) => (
               <a
@@ -136,7 +138,7 @@ const Footer = ({ theme = "dark" }) => {
         </div>
 
         {/* Footer Links */}
-        <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16" data-aos="fade-up" data-aos-delay="500">
+        <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
           {listItems.map((item, idx) => (
             <div key={idx} className="w-full sm:w-auto">
               <h5 className="font-semibold mb-3 text-white/80">{item.title}</h5>

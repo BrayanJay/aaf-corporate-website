@@ -1,10 +1,9 @@
-import React from 'react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Astore from '../media/appStoreBtn.webp';
 import Pstore from '../media/playStoreBtn.webp';
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const Luckewallet = ({MobilePic, logo}) => {
   const { t } = useTranslation();
@@ -13,7 +12,7 @@ const Luckewallet = ({MobilePic, logo}) => {
   
   const handleLearnMoreClick = () => {
     // Navigate to /about route (you can specify the full URL if needed)
-    navigate('/web/luckewallet', { replace: true });
+    navigate('/luckewallet', { replace: true });
     
     // Scroll to the #branches section after navigation
     setTimeout(() => {
@@ -84,7 +83,7 @@ const Luckewallet = ({MobilePic, logo}) => {
       </div>
       <div className='flex order-1 md:order-2 basis-1/2 p-5 justify-center items-center' data-aos="fade-right">
             <img src={logo} className='absolute right-0 top-5 w-16 sm:w-24 md:w-32 lg:w-40'/>
-            <img src={MobilePic} className='lg:h-[100vh]'/>
+            <img src={MobilePic} className=''/>
         </div>
         <div className='sm:hidden flex gap-5 pt-10'>
                 <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
@@ -94,5 +93,11 @@ const Luckewallet = ({MobilePic, logo}) => {
     </div>
   )
 }
+
+// Prop validation for MobilePic and logo
+Luckewallet.propTypes = {
+  MobilePic: PropTypes.string.isRequired, // MobilePic must be a string (image source or URL)
+  logo: PropTypes.string.isRequired, // logo must be a string (image source or URL)
+};
 
 export default Luckewallet

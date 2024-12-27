@@ -1,5 +1,6 @@
-import React, { createRef, useEffect, useState, useMemo, useRef } from "react";
+import { createRef, useEffect, useState, useRef } from "react";
 
+// THIS COMPONENT IS CURRENTLY NOT IN USE
 /**
  * @param {Object[]} tabsData - Array of tabs with their details.
  * @param {string} tabsData[].tabName - Unique name for each tab.

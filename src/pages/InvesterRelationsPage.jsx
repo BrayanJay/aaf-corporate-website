@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next';
 import Carousel from '../components/Carousel';
 import CorporateInformation from '../components/CorporateInformation';

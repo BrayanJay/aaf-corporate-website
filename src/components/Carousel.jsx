@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import prop-types
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fas, fab);
 
+
+//Common Carousel Component
 const Carousel = ({ image }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -19,6 +20,7 @@ const Carousel = ({ image }) => {
 
   return (
     <div
+    id='main-container'
       className={`relative h rounded-b-3xl overflow-hidden transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
       style={{
         backgroundImage: `url(${image.src})`,
@@ -44,7 +46,7 @@ const Carousel = ({ image }) => {
   );
 };
 
-// Define prop types for validation
+// props validation
 Carousel.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,

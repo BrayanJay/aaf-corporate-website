@@ -1,4 +1,3 @@
-import React from 'react';
 import img from '../../media/person.png';
 
 function FormSection() {

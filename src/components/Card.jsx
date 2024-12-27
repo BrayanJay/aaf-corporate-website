@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +10,8 @@ library.add(fas, fab, far);
 const Card = () => {
   const { t } = useTranslation();
   const landingPageCards = t("landingPageCards", { returnObjects: true });
-
+    
+  //Cards data to be display
     const cards = [
         {
             idx: "card1",
@@ -34,7 +34,8 @@ const Card = () => {
     ];
 
     return (
-      <div className="flex flex-wrap gap-6 justify-center">
+      <div id='main-container' className="flex flex-wrap gap-6 justify-center">
+        {/* Dynamic create cards */}
         {cards.map((card) => (
           <div
             key={card.idx}

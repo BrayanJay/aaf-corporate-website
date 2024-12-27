@@ -1,4 +1,4 @@
-import React from 'react'
+//THIS COMPONENT IS CURRENTLY NOT IN USE
 
 const TrustedPartners = () => {
   return (
