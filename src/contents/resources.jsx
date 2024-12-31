@@ -120,13 +120,6 @@ const resources = {
             "",
         },
         {
-          src: banner6,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
-        {
           src: banner1,
           title: "Innovative Solutions for Your Financial Future",
           intro: "Empowering Your Financial Future",
@@ -1150,13 +1143,6 @@ category: "goal",
       carouselLandingPage: [
         {
           src: banner4,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
-        {
-          src: banner6,
           title: "",
           intro: "",
           description:
@@ -2188,13 +2174,6 @@ branchesData: {
       carouselLandingPage: [
         {
           src: banner4,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
-        {
-          src: banner6,
           title: "",
           intro: "",
           description:

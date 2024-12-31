@@ -161,7 +161,7 @@ function App() {
     
     <Router>
       <Loader duration={2000}/>
-      <Popup/>
+      {/*<Popup/>*/}
 
       <div className=''>
       
