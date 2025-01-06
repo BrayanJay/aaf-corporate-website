@@ -6,7 +6,7 @@ import banner2 from '../media/bannerimg2.webp';
 import banner3 from '../media/bannerimg3.webp';
 import banner4 from '../media/bannerimg4.jpg';
 //import banner5 from '../media/bannerimg5.png';
-import banner6 from '../media/bannerimg6.webp';
+//import banner6 from '../media/bannerimg6.webp';
 
 //About Page Banners
 import bannerAbout from '../media/bannerAbout.webp';
@@ -405,7 +405,6 @@ category: "goal",
         { name: "Grandpass", location: "No.428, Madampitiya Road, Colombo 14.", contact: "011 768 1502", image: branchSample },
         { name: "Elakanda", location: "No.327, Thimbirigasyaya, Handala, Wattala.", contact: "011 769 9446", image: branchSample },
         { name: "Homagama", location: "No.486, Homagama Town, Homagama.", contact: "011 769 9415", image: branchSample },
-        { name: "Dankotuwa", location: "No.07, Naththandiya Road, Dankotuwa.", contact: "031 769 9030", image: branchSample },
       ]
     },
     eastern: {
@@ -426,7 +425,7 @@ category: "goal",
         { name: "Nintavur", location: "42/11, Main Street, Ninthavur.", contact: "067 769 9052", image: branchSample },
 	      { name: "Serunuwara", location: "No.44, A.R.B.03, Serunuwara.", contact: "026 769 9050", image: branchSample },
 	      { name: "Mutur", location: "Batticoca Road, Alim Nagar, Mutur.", contact: "026 769 9040", image: branchSample },
-	      { name: "Ampara", location: "No.451, D S Senanayaka Road, Ampara.", contact: "063 769 9020", image: branchSample }
+	      { name: "Ampara", location: "No.451, D S Senanayaka Road, Ampara.", contact: "063 769 9020", image: branchSample },
       ]
     },
     southern: {
@@ -437,7 +436,7 @@ category: "goal",
         { name: "Beruwala", location: "No.199, Totamune South, Beruwala.", contact: "034 769 9030", image: branchSample },
         { name: "Ambalantota", location: "No.55, Maha Veediya, Ambalantota.", contact: "047 769 9000", image: branchSample },
         { name: "Elpitiya", location: "No.23/4, Ambalangoda road, Elpitiya.", contact: "091 769 9010", image: branchSample },
-        { name: "Deniyaya", location: "No.196, Main Street, Deniaya.", contact: "041 769 9020", image: branchSample }
+        { name: "Deniyaya", location: "No.196, Main Street, Deniaya.", contact: "041 769 9020", image: branchSample },
       ]
     },
     northern: {
@@ -498,7 +497,8 @@ category: "goal",
         { name: "Udappuwa", location: "No.75, Division No 2, Udappuwa.", contact: "032 769 9032", image: branchSample },
         { name: "Puttalam", location: "No.61, Kurunegala Road, Puttalam.", contact: "032 769 9010", image: branchSample },
 	      { name: "Kalpitiya", location: "No.120, Puttalam Road, Kalpitiya.", contact: "032 769 9020", image: branchSample },
-	      { name: "Wariyapola", location: "No.52, Chilaw Road, Wariyapola", contact: "037 769 9010", image: branchSample }
+	      { name: "Wariyapola", location: "No.52, Chilaw Road, Wariyapola", contact: "037 769 9010", image: branchSample },
+        { name: "Dankotuwa", location: "No.07, Naththandiya Road, Dankotuwa.", contact: "031 769 9030", image: branchSample },
       ]
     },
     uva: {
@@ -1436,7 +1436,6 @@ branchesData: {
       { name: "ග්‍රෑන්ඩ් පාස් ", location: "අංක 428, මාදම්පිටිය පාර, කොළඹ 14.", contact: "011 768 1502", image: branchSample },
       { name: "ඇලකන්ද", location: "අංක 327, තිඹිරිගස්යාය, හැඳල, වත්තල.", contact: "011 769 9446", image: branchSample },
       { name: "හෝමාගම", location: "අංක 486, හෝමාගම නගරය, හෝමාගම.", contact: "011 769 9415", image: branchSample },
-      { name: "දංකොටුව", location: "අංක 07, නාත්තන්ඩිය පාර, දංකොටුව.", contact: "031 769 9030", image: branchSample },
 
     ]
   },
@@ -1530,7 +1529,8 @@ branchesData: {
       { name: "උඩප්පුව", location: "අංක 75, කොට්ඨාශ අංක 2, උඩප්පුව.", contact: "032 769 9032", image: branchSample },
       { name: "පුත්තලම", location: "අංක 61, කුරුණෑගල පාර, පුත්තලම.", contact: "032 769 9010", image: branchSample },
       { name: "කල්පිටිය", location: "අංක 120, පුත්තලම පාර, දකුණ, කල්පිටිය.", contact: "032 769 9020", image: branchSample },
-      { name: "වාරියපොල", location: "අංක 52, හලාවත පාර, වාරියපොල", contact: "037 769 9010", image: branchSample }
+      { name: "වාරියපොල", location: "අංක 52, හලාවත පාර, වාරියපොල", contact: "037 769 9010", image: branchSample },
+      { name: "දංකොටුව", location: "අංක 07, නාත්තන්ඩිය පාර, දංකොටුව.", contact: "031 769 9030", image: branchSample },
 
     ]
   },
@@ -2457,7 +2457,6 @@ branchesData: {
       { name: "கிராண்ட்பாஸ்", location: "இல. 428, மாதம்பிடிய வீதி, கொழும்பு 14.", contact: "011 768 1502", image: branchSample },
       { name: "எலகந்தை", location: "இல. 327, திம்பிரிகஸ்யாய, ஹந்தல, வத்தளை.", contact: "011 769 9446", image: branchSample },
       { name: "ஹோமாகம", location: "இல. 486, ஹோமாகம நகரம், ஹோமாகம.", contact: "011 769 9415", image: branchSample },
-      { name: "தங்கொடுவ", location: "இல. 07, நாத்தாண்டிய வீதி, தங்கொடுவ.", contact: "031 769 9030", image: branchSample },
     ]
   },
   eastern: {
@@ -2550,8 +2549,8 @@ branchesData: {
       { name: "உடப்புவ", location: "இல. 75, பிரிவு இலக்கம் 2, உடப்புவ.", contact: "032 769 9032", image: branchSample },
       { name: "புத்தளம்", location: "இல. 61, குருநாகல் வீதி, புத்தளம்.", contact: "032 769 9010", image: branchSample },
       { name: "கல்பிட்டி", location: "இல. 120, புத்தளம் வீதி, தெற்கு, கல்பிட்டி.", contact: "032 769 9020", image: branchSample },
-      { name: "வாரியபொல", location: "இல. 52, சிலாபம் வீதி, வாரியபொல.", contact: "037 769 9010", image: branchSample }
-
+      { name: "வாரியபொல", location: "இல. 52, சிலாபம் வீதி, வாரியபொல.", contact: "037 769 9010", image: branchSample },
+      { name: "தங்கொடுவ", location: "இல. 07, நாத்தாண்டிய வீதி, தங்கொடுவ.", contact: "031 769 9030", image: branchSample },
     ]
 },
 uva: {
@@ -2688,6 +2687,7 @@ sabaragamuwa: {
         "",
         "",
     ],
+    
     information_collection: "தகவல் சேகரிப்பு மற்றும் பயன்பாடு",
     ic_description: [
       "சிறந்த அனுபவத்தைப் பெற, எங்கள் சேவையைப் பயன்படுத்தும் போது, ​​தனிப்பட்ட முறையில் அடையாளம் காணக்கூடிய சில தகவல்களை எங்களுக்கு வழங்குமாறு நாங்கள் கோரலாம். நாங்கள் கோரும் தகவல்கள் எங்களால் தக்கவைக்கப்படும் மற்றும் இந்த தனியுரிமைக் கொள்கையில் விவரிக்கப்பட்டுள்ளபடி பயன்படுத்தப்படும்.",

@@ -41,9 +41,10 @@ import Promotions from './pages/Promotions';
 import { useTranslation } from 'react-i18next';
 import { HashLink } from 'react-router-hash-link';
 import Modal from './components/Modal';
-import Popup from './components/temporary/Popup';
+//import Popup from './components/temporary/Popup'; ----- Temporary removed
 import CustomerInformation from './pages/subpages/CustomerInformation';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import LuckewalletTutues from './pages/subpages/LuckewalletTutes';
 
 function App() {
   const { t } = useTranslation();
@@ -194,6 +195,7 @@ function App() {
           <Route path='/downloads' element={<Downloads/>}/>
           <Route path='/promotions' element={<Promotions/>}/>
           <Route path='/downloads/customer-information' element={<CustomerInformation/>}/>
+          <Route path='/downloads/luckewallet-guidelines' element={<LuckewalletTutues/>}/>
           <Route path='/downloads/privacy-policy' element={<PrivacyPolicy/>}/>
           <Route path='/app-privacy-policy' element={<PrivacyPolicy/>}/> {/*Duplicated route coz the old version support*/}
 
