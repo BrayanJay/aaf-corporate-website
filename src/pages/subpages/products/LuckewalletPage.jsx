@@ -56,6 +56,7 @@ const LuckewalletPage = () => {
           rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_1}</div></a>
       {/*<a href={Upload}><div className='px-3 py-1.5 border-2 border-amber-400 text-amber-400 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>Charges & Tariff Sheet</div></a>*/}
       <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_3}</div></Link>
+      <Link to="/downloads/luckewallet-guidelines"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{/*data.btn_3*/}Guideline Tutorials</div></Link>
       </div>
 
       <a href='tel://+94765699699'>
