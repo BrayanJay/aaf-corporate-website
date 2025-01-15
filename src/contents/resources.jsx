@@ -4,7 +4,7 @@
 import banner1 from '../media/bannerimg1.webp';
 import banner2 from '../media/bannerimg2.webp';
 import banner3 from '../media/bannerimg3.webp';
-import banner4 from '../media/bannerimg4.jpg';
+//import banner4 from '../media/bannerimg4.jpg';
 //import banner5 from '../media/bannerimg5.png';
 //import banner6 from '../media/bannerimg6.webp';
 
@@ -112,13 +112,7 @@ const resources = {
       },
 
       carouselLandingPage: [
-        {
-          src: banner4,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
+        
         {
           src: banner1,
           title: "Innovative Solutions for Your Financial Future",
@@ -353,8 +347,10 @@ category: "goal",
     { imgSrc: mrRajiv, name: 'Rajiv Gunawardena', title: 'Executive Director / Chief Executive Officer' },
     { imgSrc: mrRoshan, name: 'Roshan Gunasekara', title: 'Executive Director / Chief Operating Officer' },
     { imgSrc: mrThiru, name: 'M. Thiruneelakandan', title: 'Non-Independent Executive Director / General Manager' },
-    { imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Chief Financial Officer' },
-    { imgSrc: mrJayantha, name: 'Jayantha Weerappulige', title: 'General Manager - Operation' },
+    //{ imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Chief Financial Officer' },
+    { imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Deputy General Manager - Finance' },
+    //{ imgSrc: mrJayantha, name: 'Jayantha Weerappulige', title: 'General Manager - Operation' },
+    { imgSrc: mrJayantha, name: 'Jayantha Weerappulige', title: 'Deputy General Manager - Operation' },
     { imgSrc: mrMahesh, name: 'Mahesh Kumar', title: 'Deputy General Manager - Credit' },
     { imgSrc: mrSameera, name: 'Samira Weveladeniya', title: 'Deputy General Manager - Fixed Deposits' },
     { imgSrc: mrSajith, name: 'Sajith Atapattu', title: 'Deputy General Manager - Risk' },
@@ -520,7 +516,7 @@ category: "goal",
       title: "Sabaragamuwa Region",
       branches: [
         { name: "Kegalle", location: "No.245, Main Street, Kegalle.", contact: "035 769 9011", image: branchSample },
-        { name: "Ruwanwella", location: "No.104. Main Street, Ruwanwella.", contact: "036 769 9002", image: branchSample },
+        { name: "Ruwanwella", location: "No.104. Main Street, Ruwanwella.", contact: "036 769 9001", image: branchSample },
         { name: "Balangoda", location: "No.16, Reset House Approach Road, Balangoda.", contact: "045 769 9000", image: branchSample },
         { name: "Rakwana", location: "No.29, Main street, Rakwana", contact: "045 769 9011", image: branchSample },
         { name: "Eheliyagoda", location: "No.36, Main Street, Ehaliyagoda.", contact: "036 769 9011", image: branchSample },
@@ -1023,7 +1019,8 @@ category: "goal",
         id: "13",
         name: "Geethika Elwalage",
         src: msGeethika,
-        designation: "Chief Financial Officer",
+        //designation: "Chief Financial Officer",
+        designation: "Deputy General Manager - Finance",
         description : ["Ms. Geethika Elwalage has varied exposure of over 16 years in the financial services sector. She is a Fellow Member of the Institute of Chartered Accountants of Sri Lanka. She has additional experience of three years in the audit sector, having worked at BDO Partners. Further, she holds a Master’s Degree in Business Administration from the University of Sri Jayewardenepura.",
         ]
       },
@@ -1031,8 +1028,8 @@ category: "goal",
         id: "14",
         name: "Jayantha Weerappulige",
         src: mrJayantha,
-        designation: "General Manager - Operation",
-        description : ["Mr. Jayantha Weerappulige joined Asia Asset Finance PLC in 2008. Currently he serves as the GM - Operation, initially he served in the capacity of Senior Manager Lending for 3 years before hew was promoted as AGM grade and in 2022 he was promoted to DGM position. Mr. Jayantha Weerappulige holds a B. Com (Special) degree in Business Administration and MBA from the University of Colombo. He counts over 23 years of working experience in Marketing, Credit, Operations, Accounts of which 20 years were spent in the Finance sector and he also has the experience in the banking sector in his previous employment with Peoples Merchant Bank during the period from 2003 to 2008. He holds more than 15 years of experience in the top management of Asia Asset Finance PLC.",
+        designation: "Deputy General Manager - Operation",
+        description : ["Mr. Jayantha Weerappulige joined Asia Asset Finance PLC in 2008. Currently he serves as the DGM - Operation, initially he served in the capacity of Senior Manager Lending for 3 years before hew was promoted as AGM grade and in 2022 he was promoted to DGM position. Mr. Jayantha Weerappulige holds a B. Com (Special) degree in Business Administration and MBA from the University of Colombo. He counts over 23 years of working experience in Marketing, Credit, Operations, Accounts of which 20 years were spent in the Finance sector and he also has the experience in the banking sector in his previous employment with Peoples Merchant Bank during the period from 2003 to 2008. He holds more than 15 years of experience in the top management of Asia Asset Finance PLC.",
           "He is responsible for overlooking the entire branch network as well as overall operations of the branches which comprises of Marketing, Credit, Administrations & Recoveries. He is further responsible for product & business development, strategic planning & implementation.",
         ]
       },
@@ -1141,13 +1138,7 @@ category: "goal",
       },
 
       carouselLandingPage: [
-        {
-          src: banner4,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
+        
         {
           src: banner1,
           title: "ඔබේ මූල්‍ය අනාගතය සඳහා නව්‍ය විසඳුම්",
@@ -1383,8 +1374,10 @@ comProfilesAbout: [
   { imgSrc: mrRajiv, name: 'රජීව් ගුණවර්ධන', title: 'විධායක අධ්‍යක්ෂ / ප්‍රධාන විධායක නිලධාරී' },
   { imgSrc: mrRoshan, name: 'රොෂාන් ගුණසේකර', title: 'විධායක අධ්‍යක්ෂ / ප්‍රධාන මෙහෙයුම් නිලධාරි' },
   { imgSrc: mrThiru, name: 'එම්. තිරුනීලකන්දන්', title: 'ස්වාධීන නොවන විධායක අධ්‍යක්ෂ / සමාන්‍යාධිකාරී' },
-  { imgSrc: msGeethika, name: 'ගීතිකා එල්වලගේ', title: 'ප්‍රධාන මූල්‍ය නිලධාරි' },
-  { imgSrc: mrJayantha, name: 'ජයන්ත වීරප්පුලිගෙ', title: 'සමාන්‍යාධිකාරී - මෙහෙයුම්' },
+  //{ imgSrc: msGeethika, name: 'ගීතිකා එල්වලගේ', title: 'ප්‍රධාන මූල්‍ය නිලධාරි' },
+  { imgSrc: msGeethika, name: 'ගීතිකා එල්වලගේ', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - මූල්‍ය' },
+  //{ imgSrc: mrJayantha, name: 'ජයන්ත වීරප්පුලිගෙ', title: 'සමාන්‍යාධිකාරී - මෙහෙයුම්' },
+  { imgSrc: mrJayantha, name: 'ජයන්ත වීරප්පුලිගෙ', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - මෙහෙයුම්' },
   { imgSrc: mrMahesh, name: 'මහේෂ් කුමාර්', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - ණය' },
   { imgSrc: mrSameera, name: 'සමිර වේවැල්දෙණිය', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - ස්ථාවර තැන්පතු' },
   { imgSrc: mrSajith, name: 'සජිත් අතපත්තු', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - අවදානම් කළමනාකරණය' },
@@ -1553,7 +1546,7 @@ branchesData: {
     title: "සබරගමුව කලාපය",
     branches: [
       { name: "කෑගල්ල", location: "අංක 245, ප්‍රධාන වීදිය, කෑගල්ල.", contact: "035 769 9011", image: branchSample },
-      { name: "රුවන්වැල්ල", location: "අංක 104. ප්‍රධාන වීදිය, රුවන්වැල්ල.", contact: "036 769 9002", image: branchSample },
+      { name: "රුවන්වැල්ල", location: "අංක 104. ප්‍රධාන වීදිය, රුවන්වැල්ල.", contact: "036 769 9001", image: branchSample },
       { name: "බලංගොඩ", location: "අංක 16, රීසෙට් හවුස් ප්‍රවේශ පාර, බලංගොඩ.", contact: "045 769 9000", image: branchSample },
       { name: "රක්වාන", location: "අංක 29, ප්‍රධාන වීදිය, රක්වාන.", contact: "045 769 9011", image: branchSample },
       { name: "ඇහැලියගොඩ", location: "අංක 36, ප්‍රධාන වීදිය, ඇහැලියගොඩ.", contact: "036 769 9011", image: branchSample },
@@ -2052,7 +2045,8 @@ branchesData: {
         id: "13",
         name: "ගීතිකා එල්වලගේ",
         src: msGeethika,
-        designation: "ප්‍රධාන මූල්‍ය නිලධාරි",
+        //designation: "ප්‍රධාන මූල්‍ය නිලධාරි",
+        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - මූල්‍ය",
         description : ["ගීතිකා එල්වලගේ මහත්මිය වසර 16 කට වැඩි කාලයක් මුල්‍ය සේවා අංශයේ විවිධ වූ අත්දැකීම් ලබා ඇත. ඇය ශ්‍රී ලංකා වරලත් ගණකාධිකාරී ආයතනයේ සාමාජිකාවකි. BDO Partners හි සේවය කර ඇති ඇයට විගණන අංශයේ වසර තුනක අමතර පළපුරුද්දක් ඇත. තවද, ඇය ශ්‍රී ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ ශාස්ත්‍රපති උපාධියක් ද ලබා ඇත.",
 
         ]
@@ -2061,8 +2055,9 @@ branchesData: {
         id: "14",
         name: "ජයන්ත වීරප්පුලිගෙ",
         src: mrJayantha,
-        designation: "සමාන්‍යාධිකාරී - මෙහෙයුම්",
-        description : ["ජයන්ත වීරප්පුලිගේ මහතා 2008 වසරේ Asia Asset Finance PLC හා සම්බන්ධ විය. දැනට, වීරපුල්ලිගේ මහතා ඒෂියා ඇසට් ෆිනෑන්ස් හි සාමාන්‍යාධිකාරී - මෙහෙයුම් ලෙස සේවය කරයි., මුලදී ඔහු AGM ශ්‍රේණිය ලෙස උසස් වීමට පෙර වසර 3ක් ජ්‍යෙෂ්ඨ කළමනාකාර ණය දීමේ තනතුරේ සේවය කළ අතර 2022 දී ඔහු DGM තනතුරට උසස් කරන ලදී. . ජයන්ත වීරප්පුලිගේ මහතා කොළඹ විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ B. Com (විශේෂ) උපාධියක් සහ MBA උපාධියක් ලබා ඇත. මූල්‍ය අංශයේ වසර 20ක් ගත කළ අලෙවිකරණය, ණය, මෙහෙයුම්, ගිණුම් පිළිබඳ වසර 23කට වැඩි සේවා පළපුරුද්දක් ඇති ඔහු 2003 සිට පීපල්ස් මර්චන්ට් බැංකුවේ මීට පෙර කළ රැකියාවේදී බැංකු ක්ෂේත්‍රයේ පළපුරුද්ද ද ඇත. 2008. ඔහු Asia Asset Finance PLC හි ඉහළ කළමනාකාරිත්වයේ වසර 15 කට වැඩි පළපුරුද්දක් දරයි. අලෙවිකරණය, ණය, පරිපාලනය සහ ප්‍රතිසාධන වලින් සමන්විත ශාඛාවල ක්‍රියාකාරිත්වය මෙන්ම සමස්ත ශාඛා ජාලයම මෙහෙයවීම සඳහා ඔහු වගකිව යුතුය.  නිෂ්පාදන සහ ව්‍යාපාර සංවර්ධනය, උපායමාර්ගික සැලසුම් සහ ක්‍රියාත්මක කිරීම සඳහා ඔහු තවදුරටත් වගකිව යුතුය.",
+        //designation: "සමාන්‍යාධිකාරී - මෙහෙයුම්",
+        designation: "නියෝජ්‍ය සමාන්‍යාධිකාරී - මෙහෙයුම්",
+        description : ["ජයන්ත වීරප්පුලිගේ මහතා 2008 වසරේ Asia Asset Finance PLC හා සම්බන්ධ විය. දැනට, වීරපුල්ලිගේ මහතා ඒෂියා ඇසට් ෆිනෑන්ස් හි නියෝජ්‍ය සාමාන්‍යාධිකාරී - මෙහෙයුම් ලෙස සේවය කරයි., මුලදී ඔහු AGM ශ්‍රේණිය ලෙස උසස් වීමට පෙර වසර 3ක් ජ්‍යෙෂ්ඨ කළමනාකාර ණය දීමේ තනතුරේ සේවය කළ අතර 2022 දී ඔහු DGM තනතුරට උසස් කරන ලදී. . ජයන්ත වීරප්පුලිගේ මහතා කොළඹ විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ B. Com (විශේෂ) උපාධියක් සහ MBA උපාධියක් ලබා ඇත. මූල්‍ය අංශයේ වසර 20ක් ගත කළ අලෙවිකරණය, ණය, මෙහෙයුම්, ගිණුම් පිළිබඳ වසර 23කට වැඩි සේවා පළපුරුද්දක් ඇති ඔහු 2003 සිට පීපල්ස් මර්චන්ට් බැංකුවේ මීට පෙර කළ රැකියාවේදී බැංකු ක්ෂේත්‍රයේ පළපුරුද්ද ද ඇත. 2008. ඔහු Asia Asset Finance PLC හි ඉහළ කළමනාකාරිත්වයේ වසර 15 කට වැඩි පළපුරුද්දක් දරයි. අලෙවිකරණය, ණය, පරිපාලනය සහ ප්‍රතිසාධන වලින් සමන්විත ශාඛාවල ක්‍රියාකාරිත්වය මෙන්ම සමස්ත ශාඛා ජාලයම මෙහෙයවීම සඳහා ඔහු වගකිව යුතුය.  නිෂ්පාදන සහ ව්‍යාපාර සංවර්ධනය, උපායමාර්ගික සැලසුම් සහ ක්‍රියාත්මක කිරීම සඳහා ඔහු තවදුරටත් වගකිව යුතුය.",
 
         ]
       },
@@ -2172,13 +2167,7 @@ branchesData: {
       },
 
       carouselLandingPage: [
-        {
-          src: banner4,
-          title: "",
-          intro: "",
-          description:
-            "",
-        },
+        
         {
           src: banner1,
           title: "உங்கள் நிதி எதிர்காலத்திற்கு புதிய தீர்வுகள்",
@@ -2414,8 +2403,10 @@ comProfilesAbout: [
   { imgSrc: mrRajiv, name: 'ரஜீவ் குணவர்தன', title: 'நிறுவன இயக்குனர் / நிறைவேற்று பணிப்பாளர் / பிரதான நிறைவேற்று அதிகாரி' },
   { imgSrc: mrRoshan, name: 'ரோஷன் குணசேகர', title: 'நிறைவேற்று பணிப்பாளர் / பிரதான செயட்பாடு அதிகாரி' },
   { imgSrc: mrThiru, name: 'எம். திருநீலகண்டன்', title: 'நிறைவேற்று  பணிப்பாளர் / பொது முகாமையாளர்' },
-  { imgSrc: msGeethika, name: 'கீதிகா எல்வாலகே', title: 'முதன்மை நிதி அதிகாரி' },
-  { imgSrc: mrJayantha, name: 'ஜயந்த வீரப்புலிகே', title: 'பொது முகாமையாளர் - செயல்பாடு' },
+  //{ imgSrc: msGeethika, name: 'கீதிகா எல்வாலகே', title: 'முதன்மை நிதி அதிகாரி' },
+  { imgSrc: msGeethika, name: 'கீதிகா எல்வாலகே', title: 'துணை பொது முகாமையாளர் - நிதி' },
+  //{ imgSrc: mrJayantha, name: 'ஜயந்த வீரப்புலிகே', title: 'பொது முகாமையாளர் - செயல்பாடு' },
+  { imgSrc: mrJayantha, name: 'ஜயந்த வீரப்புலிகே', title: 'துணை பொது முகாமையாளர் - செயல்பாடு' },
   { imgSrc: mrMahesh, name: 'மஹேஷ் குமார்', title: 'துணை பொது முகாமையாளர் - கடன்' },
   { imgSrc: mrSameera, name: 'சமீரா வெவெல்தெனிய', title: 'துணை பொது முகாமையாளர் - நிலையான வைப்பு' },
   { imgSrc: mrSajith, name: 'சஜித் அடபத்து', title: 'துணை பொது முகாமையாளர் - இடர் மேலாண்மை' },
@@ -2572,7 +2563,7 @@ sabaragamuwa: {
     title: "சப்ரகமுவ மாகாணம்",
     branches: [
       { name: "கேகாலை", location: "இல. 245, பிரதான வீதி, கேகாலை.", contact: "035 769 9011", image: branchSample },
-      { name: "ருவன்வெல்ல", location: "இல. 104. பிரதான வீதி, ருவன்வெல்ல.", contact: "036 769 9002", image: branchSample },
+      { name: "ருவன்வெல்ல", location: "இல. 104. பிரதான வீதி, ருவன்வெல்ல.", contact: "036 769 9001", image: branchSample },
       { name: "பலாங்கொடை", location: "இல. 16, ரீசெட் ஹவுஸ் அப்ரோச் வீதி, பலாங்கொடை.", contact: "045 769 9000", image: branchSample },
       { name: "ரக்வானா", location: ". . எண். 29 ரக்வானா பிரதான வீதி", contact: "045 769 9011", image: branchSample },
       { name: "எஹலியகொட", location: "இல. 36 பிரதான வீதி, எஹலியகொட.", contact: "036 769 9011", image: branchSample },
@@ -3062,7 +3053,8 @@ sabaragamuwa: {
         id: "13",
         name: "கீதிகா எல்வலகே",
         src: msGeethika,
-        designation: "முதன்மை நிதி அதிகாரி",
+        //designation: "முதன்மை நிதி அதிகாரி",
+        designation: "துணை பொது முகாமையாளர் - நிதி",
         description : ["திருமதி. கீதிகா எல்வலகே நிதிச் சேவைத் துறையில் 16 ஆண்டுகளுக்கும் மேலாக பல்வேறு வெளிப்பாட்டைக் கொண்டுள்ளார். அவர் இலங்கை பட்டயக் கணக்காளர்கள் நிறுவனத்தின் சக உறுப்பினராவார். BDO பார்ட்னர்ஸில் பணிபுரிந்த தணிக்கைத் துறையில் மூன்று ஆண்டுகள் கூடுதல் அனுபவம் பெற்றவர். மேலும், அவர் ஸ்ரீ ஜயவர்தனபுர பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் முதுகலைப் பட்டம் பெற்றுள்ளார்.",
 
         ]
@@ -3071,8 +3063,9 @@ sabaragamuwa: {
         id: "14",
         name: "ஜயந்த வீரபுல்லிகே",
         src: mrJayantha,
-        designation: "பொது முகாமையாளர் - செயல்பாடு",
-        description : ["திரு. ஜயந்த வீரப்புலிகே 2008 இல் Asia Asset Finance PLC இல் இணைந்தார். தற்போது அவர் பொது முகாமையாளர் - செயல்பாடு அதிகாரியாக பணியாற்றுகிறார், ஆரம்பத்தில் அவர் AGM தரமாக உயர்த்தப்படுவதற்கு முன்னர் 3 வருடங்கள் மூத்த மேலாளர் கடன் வழங்குபவராக பணியாற்றினார் மற்றும் 2022 இல் DGM பதவிக்கு உயர்த்தப்பட்டார். . திரு. ஜயந்த வீரப்புலிகே கொழும்பு பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் B. Com (சிறப்பு) பட்டம் மற்றும் MBA பட்டம் பெற்றவர். மார்கெட்டிங், கிரெடிட், ஆபரேஷன்ஸ், கணக்குகள் ஆகியவற்றில் 20 ஆண்டுகள் நிதித் துறையில் செலவழித்த 23 ஆண்டுகளுக்கும் மேலான பணி அனுபவத்தை அவர் கணக்கிடுகிறார், மேலும் 2003 முதல் பீப்பிள்ஸ் மெர்ச்சன்ட் வங்கியில் தனது முந்தைய வேலையில் வங்கித் துறையில் அனுபவம் பெற்றவர். 2008. ஆசியா அசெட் ஃபைனான்ஸ் பிஎல்சியின் உயர் நிர்வாகத்தில் 15 ஆண்டுகளுக்கும் மேலான அனுபவம் பெற்றவர். சந்தைப்படுத்தல், கடன், நிர்வாகம் மற்றும் மீட்டெடுப்புகளை உள்ளடக்கிய கிளைகளின் ஒட்டுமொத்த செயல்பாடுகள் மற்றும் ஒட்டுமொத்த கிளை நெட்வொர்க்கையும் கவனிப்பதற்கு அவர் பொறுப்பானவர். தயாரிப்பு மற்றும் வணிக மேம்பாடு, மூலோபாய திட்டமிடல் மற்றும் செயல்படுத்தல் ஆகியவற்றிற்கு அவர் மேலும் பொறுப்பானவர்.",
+        //designation: "பொது முகாமையாளர் - செயல்பாடு",
+        designation: "துணை பொது முகாமையாளர் - செயல்பாடு",
+        description : ["திரு. ஜயந்த வீரப்புலிகே 2008 இல் Asia Asset Finance PLC இல் இணைந்தார். தற்போது அவர் துணை பொது முகாமையாளர் - செயல்பாடு அதிகாரியாக பணியாற்றுகிறார், ஆரம்பத்தில் அவர் AGM தரமாக உயர்த்தப்படுவதற்கு முன்னர் 3 வருடங்கள் மூத்த மேலாளர் கடன் வழங்குபவராக பணியாற்றினார் மற்றும் 2022 இல் DGM பதவிக்கு உயர்த்தப்பட்டார். . திரு. ஜயந்த வீரப்புலிகே கொழும்பு பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் B. Com (சிறப்பு) பட்டம் மற்றும் MBA பட்டம் பெற்றவர். மார்கெட்டிங், கிரெடிட், ஆபரேஷன்ஸ், கணக்குகள் ஆகியவற்றில் 20 ஆண்டுகள் நிதித் துறையில் செலவழித்த 23 ஆண்டுகளுக்கும் மேலான பணி அனுபவத்தை அவர் கணக்கிடுகிறார், மேலும் 2003 முதல் பீப்பிள்ஸ் மெர்ச்சன்ட் வங்கியில் தனது முந்தைய வேலையில் வங்கித் துறையில் அனுபவம் பெற்றவர். 2008. ஆசியா அசெட் ஃபைனான்ஸ் பிஎல்சியின் உயர் நிர்வாகத்தில் 15 ஆண்டுகளுக்கும் மேலான அனுபவம் பெற்றவர். சந்தைப்படுத்தல், கடன், நிர்வாகம் மற்றும் மீட்டெடுப்புகளை உள்ளடக்கிய கிளைகளின் ஒட்டுமொத்த செயல்பாடுகள் மற்றும் ஒட்டுமொத்த கிளை நெட்வொர்க்கையும் கவனிப்பதற்கு அவர் பொறுப்பானவர். தயாரிப்பு மற்றும் வணிக மேம்பாடு, மூலோபாய திட்டமிடல் மற்றும் செயல்படுத்தல் ஆகியவற்றிற்கு அவர் மேலும் பொறுப்பானவர்.",
 
         ]
       },
