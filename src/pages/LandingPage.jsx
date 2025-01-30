@@ -9,6 +9,7 @@ import BranchDetails from '../components/BranchDetails'
 import InquiriesForm from '../components/InquiriesForm'
 import SideImg from '../media/lwallet.webp'
 import { Helmet } from 'react-helmet'
+import LoanCalculator from '../components/LoanCalculator'
 
 
 const LandingPage = () => {
@@ -35,6 +36,7 @@ const LandingPage = () => {
         <BranchDetails/>
         {/*<TrustedPartners/>*/}
         <InquiriesForm/>
+        <LoanCalculator/>
     </>
   )
 }

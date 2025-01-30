@@ -200,6 +200,7 @@ function App() {
           <Route path='/app-privacy-policy' element={<PrivacyPolicy/>}/> {/*Duplicated route coz the old version support*/}
 
           <Route path='contacts/complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the old version support*/}
+          <Route path='/customer-complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the KYD document*/}
 
 
         </Routes>
