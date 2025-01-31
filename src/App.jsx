@@ -155,7 +155,13 @@ function App() {
           
         </div>
       </Modal>
-    </span>
+    </span>,
+
+    <span key="loan calculator" className="rounded-md w-10 h-10 flex justify-center items-center cursor-pointer">
+    <HashLink smooth to="/#loan_calculator">
+          <FontAwesomeIcon icon={['fas', 'calculator']} className="text-amber-400 hover:text-amber-500 text-2xl lg:text-4xl"/>
+          </HashLink>
+    </span>,
   ];
   
   return (

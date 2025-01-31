@@ -36,7 +36,7 @@ const LandingPage = () => {
         <BranchDetails/>
         {/*<TrustedPartners/>*/}
         <InquiriesForm/>
-        <LoanCalculator/>
+        <div id='loan_calculator'><LoanCalculator/></div>
     </>
   )
 }
