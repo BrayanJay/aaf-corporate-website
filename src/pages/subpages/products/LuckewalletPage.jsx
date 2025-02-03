@@ -26,7 +26,9 @@ const LuckewalletPage = () => {
 
       {/* G Tagging sources */}
       <Helmet>
-        <title>Asia Asset Finance PLC | Luckewallet</title>
+        <title>Luckewallet – Digital Payment Solutions</title>
+        <meta name="description" content="Simplify transactions with our secure digital wallet. Enjoy fast, convenient, and safe payment options." />
+        <meta name="keywords" content="Digital Payment Wallet Sri Lanka"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/luckewallet" />
       </Helmet>
 

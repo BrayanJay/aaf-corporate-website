@@ -61,12 +61,12 @@ const HeroBanner = () => {
           <div className="flex flex-row bg-black/30 h-full">
             <div className="flex-col md:basis-1/2"></div>
             <div className="flex flex-col md:basis-1/2 md:justify-center items-start p-8 h-full gap-2 md:gap-10">
-              <h2 className="text-white text-base md:text-lg font-semibold uppercase">
+              <h1 className="text-white text-base md:text-lg font-semibold uppercase">
                 {item.title}
-              </h2>
-              <h1 className="border-l-8 border-blue-900 text-white text-2xl md:text-5xl font-bold uppercase pl-4">
-                {item.intro}
               </h1>
+              <h2 className="border-l-8 border-blue-900 text-white text-2xl md:text-5xl font-bold uppercase pl-4">
+                {item.intro}
+              </h2>
               <p className="hidden md:block text-white text-xs md:text-md font-medium mt-2 mr-10">
                 {item.description}
               </p>
@@ -80,12 +80,14 @@ const HeroBanner = () => {
       <button
         onClick={handlePrev}
         className="absolute left-4 top-1/2 transform text-white hover:bg-black/20 bg-opacity-50 rounded-full p-2 z-10"
+        aria-label="Pevious Button"
       >
         <FontAwesomeIcon icon={["fas", "chevron-left"]} size="2xl" />
       </button>
       <button
         onClick={handleNext}
         className="absolute right-4 top-1/2 transform text-white hover:bg-black/20 bg-opacity-50 rounded-full p-2 z-10"
+        aria-label="Next Button"
       >
         <FontAwesomeIcon icon={["fas", "chevron-right"]} size="2xl" />
       </button>

@@ -6,8 +6,8 @@ const FinancialKeys = () => {
   const data = t("keyFinancialsIR", { returnObjects: true });
   return (
     <div className='px-10 lg:px-40 flex flex-col justify-center'>
-      <div className='text-center  text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold py-2 lg:py-5'>
-        {data.title1} <span className='font-light text-blue-500'> {data.title2}</span></div>
+      <h1 className='text-center  text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold py-2 lg:py-5'>
+        {data.title1} <span className='font-light text-blue-500'> {data.title2}</span></h1>
 
         <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-20 py-5">
           <FinancialsCard amount="6,603 Mn" title={data.card1_title} />

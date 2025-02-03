@@ -10,9 +10,9 @@ export const PrivacyPolicy = () => {
       <div className="">
 
         {/*Title - Privacy Policy */}
-        <div className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
+        <h1 className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
           {data.title}
-        </div>
+        </h1>
 
         {/* Description */}
         <div className='flex flex-col text-xs md:text-sm lg:text-base font-medium py-5 gap-y-5 text-black/50 text-center lg:text-left'>

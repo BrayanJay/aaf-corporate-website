@@ -20,8 +20,9 @@ const AboutPage = () => {
   return (
     <div id='top' className="container mx-auto w-full">
       <Helmet>
-        <title>Asia Asset Finance PLC | About</title>
-        <meta name="description" content="Discover Asia Asset Finance, a trusted financial partner in Sri Lanka with 54+ years of excellence. Serving 70,000+ customers with innovative solutions like Gold Loans, Fixed Deposits, Leasing, and more. Learn about our journey and commitment to your financial success!" />
+        <title>Asia Asset Finance PLC | Leading Finance Company</title>
+        <meta name="description" content="Learn how we provide innovative financial services, focusing on customer needs and sustainable growth." />
+        <meta name="keywords" content="Finance Services"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/about" />
       </Helmet>
       <Carousel image={bannerDetails}/>

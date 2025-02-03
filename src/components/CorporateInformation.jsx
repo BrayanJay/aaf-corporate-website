@@ -23,9 +23,9 @@ const CorporateInformation = () => {
     <div id='main-container' className='w-full px-10 lg:px-40'>
         {/* Header Section */}
         <div className="flex flex-col relative justify-center items-start pt-10">
-          <div className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold pl-2 lg:pl-4">
+          <h1 className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-bold pl-2 lg:pl-4">
             {corporateProfile.title1} <span className='font-light text-blue-500'> {corporateProfile.title2}</span>
-            </div>
+            </h1>
         </div>
 
         {/* Body Section */}

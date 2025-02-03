@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useState } from 'react';
 import ComplaintForm from '../components/ComplaintForm';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 const Contacts = ({formType = 'inquiry'}) => {
   const { t } = useTranslation();
@@ -25,6 +26,14 @@ const Contacts = ({formType = 'inquiry'}) => {
 
   return (
     <div>
+      {/* G Tagging sources */}
+    <Helmet>
+        <title>Contact Us – Asia Asset Finance</title>
+        <meta name="description" content="Reach out for inquiries, loan details, and more. Our friendly team is ready to assist you." />
+        <meta name="keywords" content="Finance Support"></meta>
+        <link rel="canonical" href="https://www.asiaassetfinance.com/contacts" />
+      </Helmet>
+
     <div className="flex flex-col lg:flex-row px-10 lg:px-20 justify-between">
       {/* Left Content */}
       <div className="flex-1 relative py-10 flex flex-col gap-2">

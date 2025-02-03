@@ -20,8 +20,9 @@ const image = {
 
       {/* G Tagging sources */}
       <Helmet>
-        <title>Asia Asset Finance PLC | Fixed Deposits</title>
-        <meta name="description" content="Grow your savings with Asia Asset Finance Fixed Deposits! Enjoy high-interest rates, flexible terms, and trusted service backed by 54+ years of excellence in Sri Lanka. Start your journey to financial security today!" />
+        <title>Fixed Deposits – Secure Your Future</title>
+        <meta name="description" content="Enjoy higher returns with flexible deposit tenures. Secure your future and earn more on your investments." />
+        <meta name="keywords" content="Fixed Deposits Sri Lanka"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/fixed-deposit" />
       </Helmet>
 

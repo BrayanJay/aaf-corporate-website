@@ -7,7 +7,7 @@ const Promotions = () => {
   return (
 
     <div className='px-10 lg:px-20 py-10'>
-        <div className='border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{data.title}</div>
+        <h1 className='border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900'>{data.title}</h1>
         {/*<div className='flex flex-col w-full h-full bg-transparent text-center '>
             <span className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>{data.subtitle}</span>
             <span className='text-xs md:text-sm lg:text-base font-medium text-black/50'>{data.description}</span>

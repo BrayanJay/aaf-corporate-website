@@ -4,6 +4,7 @@ import Title from '../../../components/careers/Title'
 //import Vacancies from '../../../components/careers/Vacancies'
 
 import Carousel from '../../../components/Carousel'
+import { Helmet } from 'react-helmet'
 
 const CareerPortal = () => {
   const { t } = useTranslation();
@@ -15,6 +16,14 @@ const CareerPortal = () => {
   };
   return (
     <>  
+    {/* G Tagging sources */}
+    <Helmet>
+        <title>Careers at Asia Asset Finance – Join Our Team</title>
+        <meta name="description" content="Explore finance career opportunities. Develop your skills in a dynamic, growth-oriented environment." />
+        <meta name="keywords" content="Finance Careers Sri Lanka"></meta>
+        <link rel="canonical" href="https://www.asiaassetfinance.com/careers" />
+      </Helmet>
+
     <div>
         <Carousel image={image}/>
         </div>

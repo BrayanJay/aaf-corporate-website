@@ -129,6 +129,7 @@ function App() {
         <button
         className="rounded-full  w-10 h-10 flex justify-center items-center cursor-pointer"
         onClick={() => setIsModalOpen(true)}
+        aria-label='Fixed Deposit Rates'
       >
         <FontAwesomeIcon icon={['fas', 'percent']} className="text-amber-400 hover:text-amber-500 text-2xl lg:text-4xl"/>
       </button>

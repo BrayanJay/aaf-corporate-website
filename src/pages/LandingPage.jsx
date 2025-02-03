@@ -19,10 +19,10 @@ const LandingPage = () => {
         <Helmet>
 
         
-        <meta name="description" content="For over 50 years we at Asia Asset Finance PLC have invested our interests in countless individuals and business. Be it in the Gold Loans we provide for the most reasonable rates, Leasing, Mortgage Loans, Group Personal Loans, Personal Loans, Business Loans, Corporate Loans, Micro Loans or accepting your public deposits we are proud to have nurtured communities to be sustainable economies." />
-        <meta name="keywords" content="Gold Loan, Fixed Deposits, Lowest Rates, Loans, Mortgage, Leasing, Asia Asset Finance, Asia Asset, Finance Company, Leasing Company, Fixed Deposits Rates, Sri Lanka, "></meta>
+        <meta name="description" content="Offering lending, deposits, and more. Get reliable finance solutions tailored for customers in Sri Lanka." />
+        <meta name="keywords" content="Finance Solutions Sri Lanka"></meta>
         <meta property="og:description" content="Leading finance company in Sri Lanka." />
-        <meta property="og:image" content="/src/media/wcu1.webp" />
+        <meta property="og:image" content="/src/media/logo.webp" />
         <meta property="og:url" content="https://asiaassetfinance.com/" />
 
         </Helmet>

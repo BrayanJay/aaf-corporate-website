@@ -22,8 +22,9 @@ const GoldLoanPage = () => {
 
       {/* G Tagging sources */}
       <Helmet>
-        <title>Asia Asset Finance PLC | Gold Loan</title>
-        <meta name="description" content="Unlock instant cash with Asia Asset Finance Gold Loans! Get high-value loans at low interest rates, fast approvals, and trusted service in Sri Lanka. Secure your future with our 54+ years of excellence." />
+        <title>Gold Loans – Low Interest, Quick Approvals</title>
+        <meta name="description" content="Secure gold loans at competitive rates with flexible repayment plans and fast processing in Sri Lanka." />
+        <meta name="keywords" content="Gold Loans Sri Lanka"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/gold-loan" />
       </Helmet>
 

@@ -25,7 +25,9 @@ const image = {
     <div id='main-container'>
       {/* G Tagging sources */}
       <Helmet>
-        <title>Asia Asset Finance PLC | Forex</title>
+        <title>Foreign Exchange – Competitive Rates</title>
+        <meta name="description" content="Exchange currencies quickly and securely. Benefit from transparent rates and professional advice." />
+        <meta name="keywords" content="Foreign Exchange Sri Lanka"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/foreign-exchange" />
       </Helmet>
 

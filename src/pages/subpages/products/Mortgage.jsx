@@ -3,6 +3,7 @@ import banner from '../../../media/products/mortgagePgBanner.webp'
 import Description from '../../../components/Description';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Mortgage = () => {
   const { t } = useTranslation();
@@ -15,7 +16,15 @@ const Mortgage = () => {
 
   return (
     <div id='main-container'>
-
+      
+      {/* G Tagging sources */}
+      <Helmet>
+        <title>Mortgage Loans – Own Your Home</title>
+        <meta name="description" content="Obtain affordable mortgage financing with flexible terms. Secure your dream property with ease." />
+        <meta name="keywords" content="Mortgage Loans Sri Lanka"></meta>
+        <link rel="canonical" href="https://www.asiaassetfinance.com/mortgage" />
+      </Helmet>
+      
       {/* Page Carousel */}
       <Carousel image={image}/>
 

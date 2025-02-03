@@ -211,9 +211,9 @@ const Downloads = () => {
   return (
     <div className='flex flex-col lg:flex-row px-10 lg:px-40 py-10'>
       <div className="">
-        <div className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
+        <h1 className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
           {data.title}
-        </div>
+        </h1>
         <div id="annual-reports" className="">
           <div className='py-5 lg:py-10 flex flex-col items-center'>
             <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>

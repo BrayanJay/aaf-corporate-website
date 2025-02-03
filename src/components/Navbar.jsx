@@ -106,6 +106,7 @@ const Navbar = () => {
           <button
             className="text-blue-700 hover:text-blue-900 focus:outline-none"
             onClick={toggleSidebar}
+            aria-label='Navigation Bar'
           >
             <svg
               className="w-6 h-6"

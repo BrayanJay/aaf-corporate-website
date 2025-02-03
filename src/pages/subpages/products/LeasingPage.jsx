@@ -19,7 +19,9 @@ const LeasingPage = () => {
 
       {/* G Tagging sources */}
       <Helmet>
-        <title>Asia Asset Finance PLC | Leasing</title>
+        <title>Leasing – Vehicles & Equipment Financing</title>
+        <meta name="description" content="Access hassle-free leasing solutions for vehicles or equipment. Get quick approvals and competitive rates." />
+        <meta name="keywords" content="Leasing Solutions Sri Lanka"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/leasing" />
       </Helmet>
 
