@@ -35,6 +35,7 @@ const CareerPortal = () => {
           width="100%"
           height="1000" 
           title="Available Vacancies"
+          aria-label='Available Vacancies'
         style={{ border: 'none' }}></iframe>
         </div>
     </>

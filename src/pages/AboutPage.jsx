@@ -25,6 +25,7 @@ const AboutPage = () => {
         <meta name="keywords" content="Finance Services"></meta>
         <link rel="canonical" href="https://www.asiaassetfinance.com/about" />
       </Helmet>
+      
       <Carousel image={bannerDetails}/>
       <CardsAbout stats={stats}/>
       <Description title={AboutOverview.title} description={AboutOverview.description}/>

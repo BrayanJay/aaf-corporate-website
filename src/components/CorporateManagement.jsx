@@ -14,7 +14,7 @@ const CorporateManagement = () => {
             {/* Header Section */}
             <div className='relative ' data-aos="fade-up">
                 <h1 className='border-r-4 lg:border-r-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900 text-right'> {comTexts.title1} <span className='font-black text-blue-700'> {comTexts.title2} </span></h1>
-                <p className='border-r-4 lg:border-r-8 border-blue-500 px-5 md:pt-1 text-xs md:text-sm lg:text-xl font-medium italic text-blue-500 text-right'>{comTexts.subtitle}</p>
+                <h2 className='border-r-4 lg:border-r-8 border-blue-500 px-5 md:pt-1 text-xs md:text-sm lg:text-xl font-medium italic text-blue-500 text-right'>{comTexts.subtitle}</h2>
                 <p className='py-5 text-xs lg:text-sm font-normal text-black/50 text-justify'>{comTexts.description}</p>
             </div>
 

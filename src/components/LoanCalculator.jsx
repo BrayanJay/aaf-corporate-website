@@ -82,6 +82,7 @@ function LoanCalculator() {
         <button
           type="submit"
           className="w-full py-2 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-800 transition duration-300"
+          aria-label='Click here to Calculate Equated Monthly Instalment'
         >
           Calculate EMI
         </button>
@@ -100,7 +101,7 @@ function LoanCalculator() {
             at: <span className='font-semibold text-white'>{parseFloat(interestRate).toFixed(2)}%</span>
           </p>
           <p className="text-base font-base text-white mt-2">
-            Estimated Monthly Payment: <span className='text-2xl text-amber-400 font-bold'> {formatCurrency(monthlyPayment)} </span>
+            Equated Monthly Instalment: <span className='text-2xl text-amber-400 font-bold'> {formatCurrency(monthlyPayment)} </span>
           </p>
 
         </div>

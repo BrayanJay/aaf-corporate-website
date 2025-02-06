@@ -31,24 +31,24 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
         className="flex flex-col justify-center items-center text-center border-t-2 md:border-t-4 pt-4 flex-1"
         style={{ borderColor }} // Dynamic border color for top line
       >
-        <div className="flex flex-row items-center gap-1">
+        <h1 className="flex flex-row items-center gap-1">
           <span className="hidden lg:block text-2xl lg:text-4xl font-black" style={{ color: textColor }}>
             “
           </span>
           <span className="text-sm lg:text-2xl font-black" style={{ color: textColor }}>
             {name}
           </span>
-        </div>
+        </h1>
         
-        <div className="text-xs lg:text-sm font-bold md:mt-2" style={{ color: borderColor }}>
+        <h2 className="text-xs lg:text-sm font-bold md:mt-2" style={{ color: borderColor }}>
           {title}
-        </div>
+        </h2>
       </div>
 
       {/* View Profile - Link to profile page */}
       <div className="pt-2 pb-4 text-black/40 text-xs md:text-sm font-normal text-center cursor-pointer hover:text-black/60">
         <Link to={`/profile/${id}`} onClick={scrollToTop}> 
-          <span className="font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
+          <span className="font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300" aria-label='Read More'>
             {data.view_profile_btn}
           </span>
         </Link>

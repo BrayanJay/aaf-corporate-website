@@ -30,14 +30,14 @@ export const Header = () => {
   <div id='inner-container' className='flex flex-initial justify-between'>
     <div className='flex flex-row'>
     <div id='logo-bg' className='flex bg-white px-2'>
-      <Link to="/"><img className='lg:h-20 md:h-16 h-10 md:pl-5 max-w-56 py-1 lg:py-2' src={logo} onClick={scrolltoTop}></img></Link>
+      <Link to="/"><img className='lg:h-20 md:h-16 h-10 md:pl-5 max-w-56 py-1 lg:py-2' aria-label="Asia Asset Finance Logo" src={logo} onClick={scrolltoTop}></img></Link>
     </div>
     <div id='certificates' className='justify-start md:justify-center w-full h-full md:bg-white p-2 flex items-center lg:gap-5 md:gap-3 gap-2'>
-    <a href='https://www.muthootfinance.com' target="_blank" rel="noopener noreferrer"><img className='lg:h-10 md:h-8 h-4 max-w-28 justify-end' src={mLogo}></img></a>
-      <a href='https://greatplacetowork.lk/best-workplace/asia-asset-finance-plc/' target='_blank'><img className='lg:h-16 md:h-12 h-6' src={greatPlace2Work}></img></a>
-      <a href='https://www.fitchratings.com/entity/asia-asset-finance-plc-90601905#ratings' target='_blank'><img className='lg:h-16 md:h-12 h-6' src={fitchA}></img></a>
-      <HashLink smooth to='/about'><img className='lg:h-16 md:h-12 h-6 hidden sm:block' src={legacy_years}></img></HashLink>
-      <HashLink to="/about/#branches"><img className='lg:h-16 md:h-12 h-6 min-w-10' src={branch_logo}></img></HashLink>
+    <a href='https://www.muthootfinance.com' target="_blank" rel="noopener noreferrer"><img className='lg:h-10 md:h-8 h-4 max-w-28 justify-end' aria-label="Muthoot Finance" src={mLogo}></img></a>
+      <a href='https://greatplacetowork.lk/best-workplace/asia-asset-finance-plc/' target='_blank'><img className='lg:h-16 md:h-12 h-6' aria-label="Great Place to work certification" src={greatPlace2Work}></img></a>
+      <a href='https://www.fitchratings.com/entity/asia-asset-finance-plc-90601905#ratings' target='_blank'><img className='lg:h-16 md:h-12 h-6' aria-label="Fitch ratings" src={fitchA}></img></a>
+      <HashLink smooth to='/about'><img className='lg:h-16 md:h-12 h-6 hidden sm:block' src={legacy_years} aria-label="50 Years plus excellence"></img></HashLink>
+      <HashLink to="/about/#branches"><img className='lg:h-16 md:h-12 h-6 min-w-10' src={branch_logo} aria-label="100 Branches"></img></HashLink>
     </div>
     {/*<div className='justify-start md:justify-center w-full h-full p-2 flex items-center lg:gap-5 md:gap-3 gap-2'>
       <img className='lg:h-16 md:h-12 h-6' src={legacy_years}></img>
@@ -52,7 +52,7 @@ export const Header = () => {
       </div>*/}
       <Link to="/contacts" onClick={scrolltoTop}>
       <div className=''>
-      <div className="lg:h-12 p-1 lg:p-2.5 rounded-tl-lg rounded-br-lg border-2 items-center gap-2.5 cursor-pointer hover:bg-goldgradient text-xs lg:text-sm hidden sm:block">
+      <div className="lg:h-12 p-1 lg:p-2.5 rounded-tl-lg rounded-br-lg border-2 items-center gap-2.5 cursor-pointer hover:bg-goldgradient text-xs lg:text-sm hidden sm:block" aria-label="Contact Us">
         <FontAwesomeIcon icon={['fas', 'phone']} className='text-white hover:text-bluegradient border-white px-1 lg:px-2'/>
         <span className='text-white border-white '>{data.title}</span>
       </div>
@@ -62,7 +62,7 @@ export const Header = () => {
       <FontAwesomeIcon icon={['fas', 'phone']} className='sm:hidden text-white hover:text-amber-400 border-white px-2 items-center'/>
       </Link>*/}
     </div>
-    <div className="block self-center content-center">
+    <div className="block self-center content-center" aria-label="Select Language">
       <LanguageSelector/>
     </div>
     </div>

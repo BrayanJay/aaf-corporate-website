@@ -19,9 +19,9 @@ const ProductsOverview = () => {
           <h1 className="border-r-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black text-blue-700 text-right">
             {productsOverviewText.title}
           </h1>
-          <p className="border-r-8 border-blue-500 pl-5 pr-5 pt-1 text-sm lg:text-xl font-medium text-blue-900 text-right">
+          <h2 className="border-r-8 border-blue-500 pl-5 pr-5 pt-1 text-sm lg:text-xl font-medium text-blue-900 text-right">
             {productsOverviewText.subtitle}
-          </p>
+          </h2>
           <p className="pb-5 pt-5 text-xs lg:text-sm font-medium lg:font-semibold text-black/50 text-justify">
             {productsOverviewText.description}
           </p>
@@ -46,7 +46,7 @@ const ProductsOverview = () => {
               <Link to={product.link} onClick={ScrollToTop}>
               <div className="relative transition-all duration-300 group">
                 {/* Background Image */}
-                <img className='rounded-tr-3xl rounded-bl-3xl h-48 sm:h-64 lg:h-96 w-48 lg:w-60' src={product.image} alt="Test Image" />
+                <img className='rounded-tr-3xl rounded-bl-3xl h-48 sm:h-64 lg:h-96 w-48 lg:w-60' src={product.image} alt="Product Image" />
                 
                 
                 {/* Overlay for hover effect */}

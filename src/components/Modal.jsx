@@ -96,6 +96,7 @@ const Modal = ({
                 <button
                   className="flex items-center justify-center"
                   onClick={onClose}
+                  aria-label="Close Button"
                 >
                   <span>
                     <i className="fa-solid fa-close"></i>

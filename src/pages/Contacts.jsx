@@ -41,48 +41,48 @@ const Contacts = ({formType = 'inquiry'}) => {
           <h1 className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
             <span className="font-bold text-amber-400">{data.title1} </span>{data.title2} 
           </h1>
-          <p className="border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500">
+          <h2 className="border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 pb-5 text-xs md:text-sm lg:text-lg font-semibold text-stone-500">
           {data.subtitle} 
-          </p>
+          </h2>
         </div>
         <div className="flex flex-col py-5 gap-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
 
           <div className="bg-bluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card1title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card1title}</h3>
             <br /> {data.card1Body}
           </div>
 
-          <a href="tel:+94117699000">
+          <a href="tel:+94117699000" aria-label='CLick to Dial'>
           <div className="bg-bluegradient hover:bg-darkbluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card3title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card3title}</h3>
             <br /> {data.card3Body}
           </div>
           </a>
 
-          <a href="tel:+94117170712">
+          <a href="tel:+94117170712" aria-label='CLick to Dial'>
           <div className="bg-bluegradient hover:bg-darkbluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card2title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card2title}</h3>
             <br /> {data.card2Body}
           </div>
           </a>
 
-          <a href="tel:+94777999922">
+          <a href="tel:+94777999922" aria-label='CLick to Dial'>
           <div className="bg-bluegradient hover:bg-darkbluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card5title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card5title}</h3>
             <br /> {data.card5Body}
           </div>
           </a>
 
-          <a href="tel:1369">
+          <a href="tel:1369" aria-label='CLick to Dial'>
           <div className="bg-bluegradient hover:bg-darkbluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card6title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card6title}</h3>
             <br /> {data.card6Body}
           </div>
           </a>
 
           <a href='mailto:info@asiaassetfinance.lk'>
           <div className="bg-bluegradient hover:bg-darkbluegradient rounded-tl-xl rounded-br-xl text-center text-xs md:text-sm text-white font-extralight py-2">
-            <span className="font-bold text-sm md:text-base lg:text-lg">{data.card4title}</span>
+            <h3 className="font-bold text-sm md:text-base lg:text-lg">{data.card4title}</h3>
             <br /> {data.card4Body}
           </div>
           </a>
@@ -105,6 +105,7 @@ const Contacts = ({formType = 'inquiry'}) => {
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setActiveTab('inquiry')}
+          aria-label='Switch to Inquiry Form'
         >
           {formData.inquiry}
         </button>
@@ -115,6 +116,7 @@ const Contacts = ({formType = 'inquiry'}) => {
               : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => setActiveTab('complaint')}
+          aria-label='Switch to Complaints Form'
         >
           {formData.cus_complaint}
         </button>

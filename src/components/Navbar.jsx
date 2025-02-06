@@ -73,9 +73,10 @@ const Navbar = () => {
           <FontAwesomeIcon
             icon={['fas', 'phone']}
             className="border-2 rounded-3xl transition-all duration-300 ease-in-out text-blue-500 border-blue-500 hover:border-bluegradient text-xs p-1"
+            aria-label='Contact Us'
           />
           <span className="px-2 text-black/50 hover:text-blue-700 text-xs font-semibold transition-colors duration-300 ease-in-out">
-            <span className='hidden sm:block'>1369</span>
+            <span className='hidden sm:block' aria-label='1369'>1369</span>
           </span>
         </a>
         <a
@@ -85,9 +86,10 @@ const Navbar = () => {
           <FontAwesomeIcon
             icon={['fas', 'envelope']}
             className="border-2 rounded-3xl transition-all duration-300 ease-in-out text-blue-500 border-blue-500 hover:border-bluegradient text-xs p-1"
+            aria-label='Email'
           />
           <span className="px-2 text-black/50 hover:text-blue-700 text-xs font-semibold transition-colors duration-300 ease-in-out">
-          <span className='hidden sm:block'>info@asiaassetfinance.lk</span>
+          <span className='hidden sm:block' aria-label='email address info@asiaassetfinance.lk'>info@asiaassetfinance.lk</span>
           </span>
         </a>
       </div>
@@ -137,7 +139,7 @@ const Navbar = () => {
         {/* Navbar Tabs - Right side (Visible on larger screens only) */}
         <div className="hidden lg:flex space-x-3">
           {/* Home Tab */}
-          <Link className={liClasses} to="" onClick={scrolltoTop}>
+          <Link className={liClasses} to="" onClick={scrolltoTop} aria-label={navbarData.home}>
           {navbarData.home}
           </Link>
 
@@ -146,24 +148,25 @@ const Navbar = () => {
             <button
               className={liClasses}
               onClick={() => toggleDropdown('about')}
+              aria-label={navbarData.about}
             >
               {navbarData.about}
             </button>
             {dropdown === 'about' && (
               <div ref={dropdownRef} className="absolute left-0 mt-2 w-48 bg-white text-blue-900 text-sm shadow-lg z-50 ">
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/about" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown0} smooth to="/about" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.about_dropdown0}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/about/#mission-vision-goal" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown1} smooth to="/about/#mission-vision-goal" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown1}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/about/#bod" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown2} smooth to="/about/#bod" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown2}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/about/#corporate-management" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown3} smooth to="/about/#corporate-management" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown3}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/about/#branches" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown4} smooth to="/about/#branches" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown4}
                 </HashLink>
               </div>
@@ -175,6 +178,7 @@ const Navbar = () => {
             <button
               className={liClasses}
               onClick={() => toggleDropdown('products')}
+              aria-label={navbarData.products}
             >
               {navbarData.products}
             </button>
@@ -183,22 +187,22 @@ const Navbar = () => {
                 {/*<HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/products" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown1}
                 </HashLink>*/}
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/gold-loan" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown2} smooth to="/gold-loan" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown2}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/fixed-deposit" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown3} smooth to="/fixed-deposit" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown3}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/leasing" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown4} smooth to="/leasing" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown4}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/mortgage" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown5} smooth to="/mortgage" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown5}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/foreign-exchange" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown6} smooth to="/foreign-exchange" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown6}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/luckewallet" onClick={() => {setDropdown(null); scrolltoTop()}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.products_dropdown7} smooth to="/luckewallet" onClick={() => {setDropdown(null); scrolltoTop()}}>
                 {navbarData.products_dropdown7}
                 </HashLink>
               </div>
@@ -210,20 +214,21 @@ const Navbar = () => {
             <button
               className={liClasses}
               onClick={() => toggleDropdown('ir')}
+              aria-label={navbarData.investor_relations}
             >
               {navbarData.investor_relations}
             </button>
             {dropdown === 'ir' && (
               <div ref={dropdownRef} className="absolute left-0 mt-2 w-48 bg-white text-sm text-blue-900 shadow-lg z-50">
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/ir" onClick={() => {setDropdown(null); scrolltoTop();}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.investor_relations_dropdown1} smooth to="/ir" onClick={() => {setDropdown(null); scrolltoTop();}}>
                 {navbarData.investor_relations_dropdown1}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/ir/#financial-keys" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.investor_relations_dropdown2} smooth to="/ir/#financial-keys" onClick={() => setDropdown(null)}>
                 {navbarData.investor_relations_dropdown2}
                 </HashLink>
 
                 {/* Downloads*/}
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" smooth to="/downloads" onClick={() => {setDropdown(null); scrolltoTop();}}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.downloads} smooth to="/downloads" onClick={() => {setDropdown(null); scrolltoTop();}}>
                 {navbarData.downloads}
                 </HashLink>
               </div>
@@ -231,7 +236,7 @@ const Navbar = () => {
           </div>
 
           {/* Careers Tab (No Dropdown) */}
-          <Link className={liClasses} to="/careers" onClick={scrolltoTop}>
+          <Link className={liClasses} aria-label={navbarData.careers} to="/careers" onClick={scrolltoTop}>
           {navbarData.careers}
           </Link>
 
@@ -249,32 +254,32 @@ const Navbar = () => {
           className="lg:hidden fixed top-10 right-0 h-fit w-60 z-50"
         >
           <div className="flex flex-col space-y-4 py-4 px-4 bg-blue-950 ">
-            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" to="" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" aria-label={navbarData.home} to="" onClick={() => {toggleSidebar(); scrolltoTop()}}>
             {navbarData.home}
             </Link>
             <div className="relative transition-all duration-75 ease-in-out hover:border-b-2 border-white">
               <button
                 className="block text-white hover:text-gray-300"
                 onClick={() => toggleDropdown('about')}
-              
+                aria-label={navbarData.about}
               >
                 {navbarData.about}
               </button>
               {dropdown === 'about' && (
                 <div ref={dropdownRef} className="bg-blue-800 text-white space-y-2 py-2 px-4">
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/about" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown0} smooth to="/about" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.about_dropdown0}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/about/#mission-vision-goal" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown1} smooth to="/about/#mission-vision-goal" onClick={toggleSidebar}>
                   {navbarData.about_dropdown1}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/about/#bod" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown2} smooth to="/about/#bod" onClick={toggleSidebar}>
                   {navbarData.about_dropdown2}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/about/#corporate-management" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown3} smooth to="/about/#corporate-management" onClick={toggleSidebar}>
                   {navbarData.about_dropdown3}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/about/#branches" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown4} smooth to="/about/#branches" onClick={toggleSidebar}>
                   {navbarData.about_dropdown4}
                   </HashLink>
                   
@@ -286,6 +291,7 @@ const Navbar = () => {
               <button
                 className="block text-white hover:text-gray-300"
                 onClick={() => toggleDropdown('products')}
+                aria-label={navbarData.products}
               >
                 {navbarData.products}
               </button>
@@ -294,22 +300,22 @@ const Navbar = () => {
                   {/*<HashLink className="block py-2 hover:text-gray-300" to="/products" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown1}
                   </HashLink>*/}
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/gold-loan" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown2} smooth to="/gold-loan" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown2}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/fixed-deposit" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown3} smooth to="/fixed-deposit" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown3}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/leasing" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown4} smooth to="/leasing" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown4}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/mortgage" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown5} smooth to="/mortgage" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown5}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/foreign-exchange" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown6} smooth to="/foreign-exchange" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown6}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/luckewallet" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.products_dropdown7} smooth to="/luckewallet" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.products_dropdown7}
                   </HashLink>
                 </div>
@@ -320,25 +326,26 @@ const Navbar = () => {
               <button
                 className="block text-white hover:text-gray-300"
                 onClick={() => toggleDropdown('ir')}
+                aria-label={navbarData.investor_relations}
               >
                 {navbarData.investor_relations}
               </button>
               {dropdown === 'ir' && (
                 <div ref={dropdownRef} className="bg-blue-800 text-white space-y-2 py-2 px-4">
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/ir" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.investor_relations_dropdown1} smooth to="/ir" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.investor_relations_dropdown1}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" smooth to="/ir/#financial-keys" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.investor_relations_dropdown2} smooth to="/ir/#financial-keys" onClick={toggleSidebar}>
                   {navbarData.investor_relations_dropdown2}
                   </HashLink>
-                  <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" to="/downloads" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+                  <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" aria-label={navbarData.downloads} to="/downloads" onClick={() => {toggleSidebar(); scrolltoTop()}}>
                   {navbarData.downloads}
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" to="/careers" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" aria-label={navbarData.careers} to="/careers" onClick={() => {toggleSidebar(); scrolltoTop()}}>
             {navbarData.careers}
             </Link>
 
@@ -346,7 +353,7 @@ const Navbar = () => {
             {navbarData.downloads}
             </Link>*/}
 
-            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" to="/contacts" onClick={() => {toggleSidebar(); scrolltoTop()}}>
+            <Link className="block text-white hover:text-gray-300 transition-all duration-75 ease-in-out hover:border-b-2 border-white" aria-label={navbarData.contacts} to="/contacts" onClick={() => {toggleSidebar(); scrolltoTop()}}>
             {navbarData.contacts}
             </Link>
           </div>

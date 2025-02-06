@@ -60,7 +60,7 @@ const ComplaintForm = () => {
       <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-40">
         <div className="bg-white p-6 rounded-lg text-center">
           <p>{message}</p>
-          <button onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
+          <button aria-label='Close Button' onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
             {inquiryForm.close_btn}
           </button>
         </div>

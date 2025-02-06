@@ -12,6 +12,7 @@ const DownloadsCard = ({ documents }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="p-5 lg:p-10 bg-[#f6fcff] rounded-tl-2xl rounded-br-2xl shadow-lg flex-col justify-center items-center gap-5 inline-flex hover:transition-all hover:ease-in-out hover:duration-500 hover:scale-105 cursor-pointer"
+          aria-label={doc.title}
         >
           <div className="justify-center items-center flex">
             <FontAwesomeIcon

@@ -88,6 +88,7 @@ useEffect(() => {
       <button
         className="text-white text-xs md:text-sm lg:text-base font-semibold flex items-center gap-2"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Click here to Select Language"
       >
         <span className="flex h-5 md:h-8 lg:h-10 w-5 md:w-8 lg:w-10 rounded-md bg-goldgradient border-2 justify-center items-center text-xs lg:text-sm">
           {activeLanguage === "en" ? "E" : activeLanguage === "si" ? "සි" : "த"}
@@ -103,6 +104,7 @@ useEffect(() => {
               activeLanguage === "en" ? "bg-blue-200" : ""
             }`}
             onClick={() => changeLanguage("en")}
+            aria-label="English"
           >
             E
           </button>
@@ -111,6 +113,7 @@ useEffect(() => {
               activeLanguage === "si" ? "bg-blue-200" : ""
             }`}
             onClick={() => changeLanguage("si")}
+            aria-label="Sinhala"
           >
             සි
           </button>
@@ -119,6 +122,7 @@ useEffect(() => {
               activeLanguage === "ta" ? "bg-blue-200" : ""
             }`}
             onClick={() => changeLanguage("ta")}
+            aria-label="Tamil"
           >
             த
           </button>

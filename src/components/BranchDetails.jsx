@@ -30,7 +30,7 @@ const BranchDetails = () => {
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
       {/* Map Image - Left Section */}
       <div className="hidden lg:block lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-        <HashLink smooth to="/about/#branches"><img src={map} alt="Map" /></HashLink>
+        <HashLink smooth to="/about/#branches"><img src={map} alt="Map Image" /></HashLink>
       </div>
       {/* Contents - Right Section */}
       <div className="lg:basis-1/2 z-10" data-aos="fade-up">
@@ -38,13 +38,13 @@ const BranchDetails = () => {
           <h1 className="border-r-4 lg:border-r-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700 text-right">
             {branchDetails.title1} <span className="font-black text-blue-900">{branchDetails.title2}</span>
           </h1>
-          <p className="border-r-4 lg:border-r-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-xs lg:text-xl font-md text-blue-500 italic text-right">
+          <h2 className="border-r-4 lg:border-r-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-xs lg:text-xl font-md text-blue-500 italic text-right">
             {branchDetails.subtitle}
-          </p>
+          </h2>
           <p className="pb-5 pt-5 text-xs lg:text-sm font-md text-black/50 text-right">
             {branchDetails.description1} <span className="font-bold text-blue-700">{branchDetails.description2}</span> {branchDetails.description3} <span className="font-bold text-blue-700">{branchDetails.description4}</span> {branchDetails.description5}
           </p>
-          <div onClick={handleReadMoreClick} className="z-10 lg:hidden right-10 flex absolute py-1.5 px-3 mt-2 bg-lightbluegradient rounded-tl-lg rounded-br-lg cursor-pointer hover:bg-bluegradient transition delay-200 ease-in-out rounded-sm text-white text-sm font-medium font-roboto">
+          <div aria-label="Branch Network Button" onClick={handleReadMoreClick} className="z-10 lg:hidden right-10 flex absolute py-1.5 px-3 mt-2 bg-lightbluegradient rounded-tl-lg rounded-br-lg cursor-pointer hover:bg-bluegradient transition delay-200 ease-in-out rounded-sm text-white text-sm font-medium font-roboto">
           {branchDetails.our_branch_network_btn}
           </div>
           {/*<p className="hidden lg:block lg:pl-5 lg:pr-5 lg:pt-5 text-sm lg:text-xl font-bold text-blue-500 italic text-right">{branchDetails.newbranches_title}</p>
@@ -69,7 +69,7 @@ const BranchDetails = () => {
 
           {/* Map image for smaller screens */}
           <div className="lg:hidden lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-          <HashLink smooth to="/about/#branches"><img src={map} alt="Map" /></HashLink>
+          <HashLink smooth to="/about/#branches"><img src={map} alt="Branch Map Image" /></HashLink>
           </div>
           
         </div>

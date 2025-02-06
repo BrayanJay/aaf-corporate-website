@@ -33,7 +33,7 @@ const HeroBanner = () => {
 
 
   return (
-    <div className="relative w-full aspect-w-16 aspect-h-9 lg:aspect-h-6 overflow-hidden">
+    <div className="relative w-full aspect-w-16 aspect-h-9 lg:aspect-h-6 overflow-hidden" aria-label="Main Carousel">
       {/* ---------------------- Debenture Issue Button -------------------------------
       <div className="top-5 left-5 hidden sm:block">
       <DebentureIssueBtn

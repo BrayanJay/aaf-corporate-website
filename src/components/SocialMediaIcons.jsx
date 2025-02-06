@@ -40,6 +40,7 @@ const SocialMediaIcons = ({ children, direction = "up" }) => {
             key={i}
             className={`absolute z-50 ${show ? "scale-100" : "scale-0"} transition duration-300`}
             style={{ ...getTransitionDelay(i), ...getPosition(i) }}
+            aria-label={item}
           >
             {item}
           </li>

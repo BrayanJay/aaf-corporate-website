@@ -24,7 +24,7 @@ const CardsAbout = ({ stats }) => {  // Destructure stats from props
             onMouseLeave={() => setHoveredIndex(null)}
             style={{ zIndex: hoveredIndex === idx ? 20 : 10 }}
           >
-            <FontAwesomeIcon icon={icon} className="text-white text-base md:text-xl lg:text-4xl mb-3" />
+            <FontAwesomeIcon icon={icon} className="text-white text-base md:text-xl lg:text-4xl mb-3" aria-label={text}/>
             <div className="font-bold text-xs md:text-xl lg:text-3xl text-white">{stat}</div>
             <div className="text-wrap mt-2 text-xs md:text-sm lg:text-base text-white uppercase text-center font-thin">{text}</div>
           </div>

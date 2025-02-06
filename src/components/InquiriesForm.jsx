@@ -50,7 +50,7 @@ const InquiriesForm = () => {
       <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-40">
         <div className="bg-white p-6 rounded-lg text-center">
           <p>{message}</p>
-          <button onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
+          <button aria-label='Close Button' onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
             {inquiryForm.close_btn}
           </button>
         </div>
@@ -169,10 +169,10 @@ Popup.propTypes = {
         </form>
 
         <div className="text-right mt-4 flex justify-end gap-5">
-          <button onClick={handleClear} type="button" className="bg-gray-500 hover:bg-gray-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
+          <button aria-label='Clear Button' onClick={handleClear} type="button" className="bg-gray-500 hover:bg-gray-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button1}
           </button>
-          <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
+          <button aria-label='Submit Button' onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button2}
           </button>
         </div>

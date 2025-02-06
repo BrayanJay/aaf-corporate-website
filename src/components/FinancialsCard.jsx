@@ -10,7 +10,7 @@ const FinancialsCard = ({amount, title}) => {
           <div className="text-center text-xs font-medium"></div>
           </div>
         </div>
-        <div className='flex justify-center text-center text-sm font-medium py-2 text-blue-900/80 max-w-36'>{title}</div>
+        <h4 className='flex justify-center text-center text-sm font-medium py-2 text-blue-900/80 max-w-36'>{title}</h4>
     </div>
   )
 }

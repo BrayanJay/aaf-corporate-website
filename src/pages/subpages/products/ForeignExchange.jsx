@@ -39,16 +39,16 @@ const image = {
       <Description description={data.description} />
       </div>
       <div className='flex justify-center gap-5 bg-white'>
-      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_3}</div></Link>
+      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
       </div>
       <div className='flex justify-center p-10 bg-white'>
           {/*<img className='p-10' src={fdUpload}/>*/}
       </div>
 
       <div className='px-20 py-5 text-center'>
-                <div className='text-xl md:text-2xl lg:text-3xl font-bold text-blue-900'>
+                <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-blue-900'>
                 {data.our_partners}
-                </div>
+                </h1>
                 <div className="container mx-auto p-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {logos.map((Logo, index) => (
@@ -61,7 +61,7 @@ const image = {
                 
         </div>
 
-      <a href='tel://+94763280901'>
+      <a href='tel://+94763280901' aria-label="Click Here to Dial">
       <div className="max-w-xs mx-auto bg-amber-300 hover:bg-amber-400 transition-colors duration-300 ease-in-out shadow-lg rounded-lg py-2 px-4 text-center mb-10">
       <h2 className="text-lg font-bold text-blue-700">{data.hotline}</h2>
       <p className="mt-1 text-2xl font-semibold text-gray-800">0763 280 901</p>

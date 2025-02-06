@@ -216,9 +216,9 @@ const Downloads = () => {
         </h1>
         <div id="annual-reports" className="">
           <div className='py-5 lg:py-10 flex flex-col items-center'>
-            <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+            <h2 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
               {data.section1}
-            </div>
+            </h2>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
               {data.intro1}
             </div>
@@ -228,9 +228,9 @@ const Downloads = () => {
           </div>
 
           <div className='py-5 lg:py-10 flex flex-col items-center'>
-            <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+            <h2 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
               {data.section2}
-            </div>
+            </h2>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
             {data.intro2}
             </div>
@@ -248,9 +248,9 @@ const Downloads = () => {
           </div>*/}
 
           <div className='py-5 lg:py-10 flex flex-col items-center'>
-            <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+            <h2 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
               {data.section4}
-            </div>
+            </h2>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
             {data.intro4}
             </div>

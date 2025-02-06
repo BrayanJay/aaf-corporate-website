@@ -63,6 +63,7 @@ const Testimonial = ({ testimonials }) => {
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800"
         onClick={handlePrev}
         title="Previous"
+        aria-label="Previous Button"
       >
         <FontAwesomeIcon icon={["fas", "chevron-left"]} size="lg" />
       </button>
@@ -71,6 +72,7 @@ const Testimonial = ({ testimonials }) => {
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800"
         onClick={handleNext}
         title="Next"
+        aria-label="Next Button"
       >
         <FontAwesomeIcon icon={["fas", "chevron-right"]} size="lg" />
       </button>

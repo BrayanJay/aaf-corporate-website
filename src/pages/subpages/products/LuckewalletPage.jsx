@@ -55,13 +55,13 @@ const LuckewalletPage = () => {
       <div className='flex justify-center p-10 gap-5 bg-white'>
       <a href={data.kfd}
           target="_blank"
-          rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_1}</div></a>
+          rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></a>
       {/*<a href={Upload}><div className='px-3 py-1.5 border-2 border-amber-400 text-amber-400 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>Charges & Tariff Sheet</div></a>*/}
-      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{data.btn_3}</div></Link>
-      <Link to="/downloads/luckewallet-guidelines"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{/*data.btn_3*/}Guideline Tutorials</div></Link>
+      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
+      <Link to="/downloads/luckewallet-guidelines"><p className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center'>{/*data.btn_3*/}Guideline Tutorials</p></Link>
       </div>
 
-      <a href='tel://+94765699699'>
+      <a href='tel://+94765699699' aria-label="Click Here to Dial">
       <div className="max-w-xs mx-auto bg-amber-300 hover:bg-amber-400 transition-colors duration-300 ease-in-out shadow-lg rounded-lg py-2 px-4 text-center mb-10">
       <h2 className="text-lg font-bold text-blue-700">{data.hotline}</h2>
       <p className="mt-1 text-2xl font-semibold text-gray-800">0765 699 699</p>

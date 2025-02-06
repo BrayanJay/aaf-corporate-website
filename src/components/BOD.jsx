@@ -23,7 +23,7 @@ const BOD = () => {
       {/* header Section */}
       <div className='relative text-center pt-5 lg:pt-10 px-10 lg:px-20'>
                 <h1 className='inline-block px-5 border-b-2 lg:border-b-4 border-blue-500 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900' data-aos="fade-up"> {bodTexts.title1} <span className='font-black text-blue-700'> {bodTexts.title2} </span></h1>
-                <p className='pt-1 text-xs md:text-sm lg:text-lg font-medium italic text-blue-500' data-aos="fade-up">{bodTexts.subtitle}</p>
+                <h2 className='pt-1 text-xs md:text-sm lg:text-lg font-medium italic text-blue-500' data-aos="fade-up">{bodTexts.subtitle}</h2>
                 <p className='pb-5 pt-5 text-xs lg:text-sm font-normal text-black/50 text-center' data-aos="fade-up" data-aos-delay	="300">{bodTexts.intro}</p>
             </div>
             
@@ -34,6 +34,7 @@ const BOD = () => {
           <img
             src={mrPrasanth}
             className="rounded-full h-32 md:h-52 mt-20 shadow-xl border-4 md:border-8 border-blue-500"
+            alt="Chairman of Asia Asset Finance PLC, Mr. V A Prasanth"
           />
         </div>
 
@@ -52,12 +53,12 @@ const BOD = () => {
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               <span className='hidden lg:block text-left'>{bodTexts.chairman_description}</span>
               <Link to={`/profile/${profileDetails.id=1}`} onClick={scrolltoTop}>
-                <span className="hidden lg:block font-medium italic text-blue-500 hover:cursor-pointer hover:text-blue-900 transition transform ease-in-out duration-300">
+                <span className="hidden lg:block font-medium italic text-blue-500 hover:cursor-pointer hover:text-blue-900 transition transform ease-in-out duration-300" aria-label="Read more">
                   {bodTexts.see_more_btn}
                 </span>
               </Link>
               <Link to={`/profile/1`} onClick={scrolltoTop}>
-                <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
+                <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300" aria-label="Read more">
                   {bodTexts.view_profile_btn}
                 </span>
               </Link>
@@ -81,12 +82,12 @@ const BOD = () => {
             <div className="pt-5 text-xs md:text-sm font-medium text-black/40 pr-5 text-justify">
               <span className='hidden lg:block'>{bodTexts.ceo_description}</span>
               <Link to={`/profile/${profileDetails.id=10}`} onClick={scrolltoTop}>
-                <span className="hidden lg:block font-medium italic text-amber-400 hover:cursor-pointer hover:text-amber-500 transition transform ease-in-out duration-300">
+                <span className="hidden lg:block font-medium italic text-amber-400 hover:cursor-pointer hover:text-amber-500 transition transform ease-in-out duration-300" aria-label="Read more">
                   {bodTexts.see_more_btn}
                 </span>
               </Link>
               <Link to={`/profile/10`} onClick={scrolltoTop}>
-                <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300">
+                <span className="lg:hidden font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300" aria-label="Read more">
                   {bodTexts.view_profile_btn}
                 </span>
               </Link>
@@ -98,6 +99,7 @@ const BOD = () => {
           <img
             src={mrRajiv}
             className="rounded-full h-32 md:h-52 mt-20 shadow-xl border-4 md:border-8 border-amber-400"
+            aria-label="CEO of Asia Asset Finance PLC, Mr. R J A Gunawardena"
           />
         </div>
       </div>

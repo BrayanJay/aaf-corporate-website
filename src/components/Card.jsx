@@ -44,10 +44,10 @@ const Card = () => {
             <div className="justify-center items-center flex">
               {card.ic}
             </div>
-            <div className="w-48 sm:w-96 md:w-96 text-center px-2 text-blue-900/80 text-lg md:text-2xl font-bold">
+            <div className="w-48 sm:w-96 md:w-96 text-center px-2 text-blue-900/80 text-lg md:text-2xl font-bold" aria-label={card.title}>
               {card.title}
             </div>
-            <div className="hidden md:block w-48 sm:w-96 md::w-96 px-10 text-center text-black/40 text-xs md:text-base font-medium">
+            <div className="hidden md:block w-48 sm:w-96 md::w-96 px-10 text-center text-black/40 text-xs md:text-base font-medium" aria-label={card.description}>
               {card.description}
             </div>
           </div>

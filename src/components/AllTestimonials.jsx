@@ -14,7 +14,7 @@ const AllTestimonials = () => {
       <div className='lg:gap-2 py-10'>
         <div className='relative ' data-aos="fade-up">
                 <h1 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-black italic text-amber-400'> {testimonialsText.title} </h1>
-                <p className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>{testimonialsText.subtitle}</p>
+                <h2 className='border-l-4 lg:border-l-8 border-blue-500 pl-5 pr-5 lg:pt-1 text-sm lg:text-lg font-md text-white/70'>{testimonialsText.subtitle}</h2>
         </div>
       </div>
       {/*Body Section*/}  

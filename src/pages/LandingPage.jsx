@@ -17,14 +17,11 @@ const LandingPage = () => {
     <>
         {/*Meta Tags for SEO Optimization*/}
         <Helmet>
-
-        
         <meta name="description" content="Offering lending, deposits, and more. Get reliable finance solutions tailored for customers in Sri Lanka." />
         <meta name="keywords" content="Finance Solutions Sri Lanka"></meta>
         <meta property="og:description" content="Leading finance company in Sri Lanka." />
         <meta property="og:image" content="/src/media/logo.webp" />
         <meta property="og:url" content="https://asiaassetfinance.com/" />
-
         </Helmet>
 
         <HeroBanner/>

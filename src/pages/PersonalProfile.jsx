@@ -32,14 +32,14 @@ const PersonalProfile = () => {
           <div>
             {/* Name and Title */}
             <div className="text-4xl md:text-6xl font-black text-blue-700 py-10 lg:py-0">
-              <div className='pr-5 border-r-4 border-blue-500'>
+              <h1 className='pr-5 border-r-4 border-blue-500'>
                 “ <span className="text-xl md:text-2xl lg:text-4xl font-black text-blue-700 pt-2">
                 {profile.name}
               </span>
-              </div>
-              <div className="text-xs md:text-sm lg:text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
+              </h1>
+              <h3 className="text-xs md:text-sm lg:text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
               {profile.designation}
-            </div>
+            </h3>
             </div>
             
             

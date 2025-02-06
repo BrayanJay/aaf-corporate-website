@@ -18,13 +18,13 @@ const Luckewallet = ({MobilePic, logo}) => {
 
         </div>
         <div className='hidden lg:block relative p-5' data-aos="fade-up">
-            <h1 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h1>
+            <h2 className='text-sm md:text-lg lg:text-xl font-semibold text-blue-900'> {luckewallet.key_features1} <span className='font-bold text-amber-400'>{luckewallet.key_features2}</span></h2>
             <div className='grid grid-cols-2 grid-flow-row gap-2'>
                 
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'list-check']} className='pt-1 text-blue-700' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature1_title}</h1>
+                <h3 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature1_title}</h3>
                 <p className='text-xs text-blue-900/50'>{luckewallet.feature1_description}</p>
                 </div>
                 </div>
@@ -32,7 +32,7 @@ const Luckewallet = ({MobilePic, logo}) => {
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'hand-holding-dollar']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature2_title}</h1>
+                <h3 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature2_title}</h3>
                 <p className='text-xs text-blue-900/50'>{luckewallet.feature2_description}</p>
                 </div>
                 </div>
@@ -40,7 +40,7 @@ const Luckewallet = ({MobilePic, logo}) => {
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'shield-halved']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature3_title}</h1>
+                <h3 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature3_title}</h3>
                 <p className='text-xs text-blue-900/50'>{luckewallet.feature3_description}</p>
                 </div>
                 </div>
@@ -48,7 +48,7 @@ const Luckewallet = ({MobilePic, logo}) => {
                 <div className='relative max-w-64 flex gap-2 pt-5'>
                 <FontAwesomeIcon icon={['fas', 'bell']} className='pt-1 text-blue-700 border-white' size='lg'/>
                 <div className=''>
-                <h1 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature4_title}</h1>
+                <h3 className='text-blue-700 font-bold text-xs md:text-sm lg:text-base'>{luckewallet.feature4_title}</h3>
                 <p className='text-xs text-blue-900/50'>{luckewallet.feature4_description}</p>
                 </div>
                 </div>
@@ -57,20 +57,20 @@ const Luckewallet = ({MobilePic, logo}) => {
             <div className='flex flex-col pt-10'>
                 <div className='font-bold text-blue-950'>{luckewallet.download_now}</div>
             <div className='flex gap-5'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Click here to Download'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Click Here to Download'/></a>
             </div>
             </div>
         </div>
       
       </div>
       <div className='flex order-1 md:order-2 basis-1/2 p-5 justify-center items-center' data-aos="fade-right">
-            <img src={logo} className='absolute right-0 top-5 w-16 sm:w-24 md:w-32 lg:w-40'/>
-            <img src={MobilePic} className='lg:h-[100vh]'/>
+            <img src={logo} className='absolute right-0 top-5 w-16 sm:w-24 md:w-32 lg:w-40' alt='Luckewallet Logo'/>
+            <img src={MobilePic} className='lg:h-[100vh]' alt='Luckewallet User Interface'/>
         </div>
         <div className='sm:hidden flex gap-5 pt-10'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore}/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore}/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Click here to download'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Click here to download'/></a>
 
             </div>
     </div>

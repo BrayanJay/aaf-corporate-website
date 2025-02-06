@@ -32,27 +32,27 @@ const CorporateInformation = () => {
         <div className='flex lg:flex-row flex-col lg:gap-40'>
         <div className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
             <div id='company-name'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label1}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm md:text-base font-medium text-blue-900/80'>
                 {corporateProfile.field1}
                 </div>
             </div>
 
             <div id='company-rating'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label2}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 {corporateProfile.field2}
                 </div>
             </div>
 
             <div id='legal-form' className='flex flex-col gap-1'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label3}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 {corporateProfile.field3_1}
                 </div>
@@ -74,18 +74,18 @@ const CorporateInformation = () => {
             </div>
 
             <div id='company-reg-no'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label4}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 {corporateProfile.field4}
                 </div>
             </div>
 
             <div id='company-lawyers'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label5}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 <span>
                 {corporateProfile.field5}
@@ -97,9 +97,9 @@ const CorporateInformation = () => {
 
         <div id='bod' className='flex flex-col lg:basis-1/2 py-5 gap-5 '>
             <div className='flex flex-col gap-1'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label6}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-bold text-blue-900/80'>
                 {corporateProfile.field6_1}
                 </div>
@@ -133,9 +133,9 @@ const CorporateInformation = () => {
             </div>
 
             <div id='company-secretary'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label7}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 {corporateProfile.field7}
                 </div>
@@ -147,9 +147,9 @@ const CorporateInformation = () => {
             </div>
 
             <div id='company-auditors' className='flex flex-col gap-1'>
-                <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+                <h3 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
                 {corporateProfile.label8}
-                </div>
+                </h3>
                 <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
                 <span>
                 {corporateProfile.field8}

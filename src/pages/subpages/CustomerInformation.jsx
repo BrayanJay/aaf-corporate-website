@@ -44,7 +44,7 @@ const CustomerInformation = () => {
     <div className='flex flex-col lg:flex-row px-10 lg:px-40 py-10'>
       <div className="">
         <div className="border-l-4 lg:border-l-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900">
-          {data.section3}
+          <h1>{data.section3}</h1>
           <div className='text-xs lg:text-sm font-medium text-blue-900/80'>
               {data.intro3}
             </div>

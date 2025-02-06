@@ -104,13 +104,13 @@ const Footer = () => {
         {/* Left Section */}
         <div className="md:basis-1/4 text-center md:text-left">
           <Link to="/" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up" data-aos-once="true"/></Link>
-          <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+          <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" aria-label={data.intro} data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
             {data.intro}
           </p>
           <div className="flex flex-col gap-1 text-sm text-white/80">
-            <p data-aos="fade-up" data-aos-delay="200" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'location-dot']} className='pr-3'/>{data.address}</p>
-            <p data-aos="fade-up" data-aos-delay="300" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'phone']} className='pr-3'/>1369</p>
-            <p data-aos="fade-up" data-aos-delay="400" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'envelope']} className='pr-3'/>info@asiaassetfinance.lk</p>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'location-dot']} className='pr-3' aria-label={data.address}/>{data.address}</p>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'phone']} className='pr-3' aria-label="hotline: 1369"/>1369</p>
+            <p data-aos="fade-up" data-aos-delay="400" data-aos-once="true"><FontAwesomeIcon icon={['fas', 'envelope']} className='pr-3' aria-label="email address: info@asiaassetfinance.lk"/>info@asiaassetfinance.lk</p>
           </div>
           <div className="flex justify-center md:justify-start mt-4 gap-3 text-lg" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
             {[
@@ -131,6 +131,7 @@ const Footer = () => {
                 key={idx}
                 icon={['fab', icon.platform]}
                 className="cursor-pointer"
+                aria-label={icon.platform}
               />
               </a>
             ))}
@@ -141,11 +142,11 @@ const Footer = () => {
         <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-16" data-aos="fade-up" data-aos-delay="500" data-aos-once="true">
           {listItems.map((item, idx) => (
             <div key={idx} className="w-full sm:w-auto">
-              <h5 className="font-semibold mb-3 text-white/80">{item.title}</h5>
+              <h5 className="font-semibold mb-3 text-white/80" aria-label={item.title}>{item.title}</h5>
               <ul className="flex flex-col gap-3">
                 {item.list.map((listItem, listIdx) => (
                   <li key={listIdx} className="transition-all duration-300 ease-in-out text-white/60 hover:text-white cursor-pointer">
-                    <span onClick={() => handleNavigation(item.links[listIdx])}>
+                    <span onClick={() => handleNavigation(item.links[listIdx])} aria-label={listItem}>
                       {listItem}
                     </span>
                   </li>
@@ -157,7 +158,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="relative items-center justify-center py-5 text-center text-white/70  text-xs">
+      <div className="relative items-center justify-center py-5 text-center text-white/70  text-xs" aria-label="2024 © Copyright Asia Asset Finance PLC. All Rights Reserved.">
         2024 &copy; Copyright <span className="font-black cursor-pointer hover:text-white transition-colors ease-in-out duration-500">Asia Asset Finance PLC</span>. All Rights Reserved
       </div>
     </div>
