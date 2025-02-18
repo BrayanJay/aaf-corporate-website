@@ -1,49 +1,49 @@
 //MAIN SOURCE OF TEXT CONTENTS - ALL THE CHANGES SHOULD BE DONE IN HERE
 
 //Landing Page Banners
-import banner1 from '../media/bannerimg1.webp';
-import banner2 from '../media/bannerimg2.webp';
-import banner3 from '../media/bannerimg3.webp';
-//import banner4 from '../media/bannerimg4.jpg';
-//import banner5 from '../media/bannerimg5.png';
-//import banner6 from '../media/bannerimg6.webp';
+import banner1 from '../media/landingPage/bannerimg1.webp';
+import banner2 from '../media/landingPage/bannerimg2.webp';
+import banner3 from '../media/landingPage/bannerimg3.webp';
+//import banner4 from '../media/landingPage/bannerimg4.jpg';
+//import banner5 from '../media/landingPage/bannerimg5.png';
+//import banner6 from '../media/landingPage/bannerimg6.webp';
 
 //About Page Banners
-import bannerAbout from '../media/bannerAbout.webp';
+import bannerAbout from '../media/aboutPage/bannerAbout.webp';
 
 //Investor Relations Page Banners
-import bannerIR from '../media/bannerIR.webp';
+import bannerIR from '../media/products/bannerIR.webp';
 
 //Landing Page Products Overview Images
-import FixedDeposits from '../media/productsoverview/fd.webp';
-import Forex from '../media/productsoverview/forex.webp';
-import GoldLoan from '../media/productsoverview/gloan.webp';
-import Mortgage from '../media/productsoverview/mortgage.webp';
-import Leasing from '../media/productsoverview/leasing.webp';
-import Luckewallet from '../media/productsoverview/luckewallet.webp';
+import FixedDeposits from '../media/landingPage/fd.webp';
+import Forex from '../media/landingPage/forex.webp';
+import GoldLoan from '../media/landingPage/gloan.webp';
+import Mortgage from '../media/landingPage/mortgage.webp';
+import Leasing from '../media/landingPage/leasing.webp';
+import Luckewallet from '../media/landingPage/luckewallet.webp';
 
 import { faUsers, faBriefcase, faBuilding, faClock } from '@fortawesome/free-solid-svg-icons'; // Import suitable icons
 
 //BOD Profile Pictures
-import mrPrasanth from '../media/bod/vap.webp';
-import mrRajiv from '../media/bod/rja.webp';
-import mrAlexandra from '../media/bod/gm.webp';
-import mrBijimon from '../media/bod/kr.webp';
-import mrPillai from '../media/bod/kgk.webp';
-import mrRajitha from '../media/bod/rab.webp';
-import mrJayasekara from '../media/bod/jpdr.webp';
-import mrRoshan from '../media/bod/rds.webp';
-import mrKumarasiri from '../media/bod/tcd.webp';
+import mrPrasanth from '../media/aboutPage/bod/vap.webp';
+import mrRajiv from '../media/aboutPage/bod/rja.webp';
+import mrAlexandra from '../media/aboutPage/bod/gm.webp';
+import mrBijimon from '../media/aboutPage/bod/kr.webp';
+import mrPillai from '../media/aboutPage/bod/kgk.webp';
+import mrRajitha from '../media/aboutPage/bod/rab.webp';
+import mrJayasekara from '../media/aboutPage/bod/jpdr.webp';
+import mrRoshan from '../media/aboutPage/bod/rds.webp';
+import mrKumarasiri from '../media/aboutPage/bod/tcd.webp';
 
 //COM Profile Pictures
-import mrThiru from '../media/com/tn.webp';
-import mrMahesh from '../media/com/mk.webp';
-import mrJayantha from '../media/com/jw.webp';
-import mrSameera from '../media/com/sw.webp';
-import msGeethika from '../media/com/ge.webp';
-import mrSajith from '../media/com/sa.webp';
-import mrInditha from '../media/com/ij.webp';
-import mrPraveen from '../media/com/pp.webp';
+import mrThiru from '../media/aboutPage/com/tn.webp';
+import mrMahesh from '../media/aboutPage/com/mk.webp';
+import mrJayantha from '../media/aboutPage/com/jw.webp';
+import mrSameera from '../media/aboutPage/com/sw.webp';
+import msGeethika from '../media/aboutPage/com/ge.webp';
+import mrSajith from '../media/aboutPage/com/sa.webp';
+import mrInditha from '../media/aboutPage/com/ij.webp';
+import mrPraveen from '../media/aboutPage/com/pp.webp';
 
 //Products Selector Images
 import FD from '../media/products/fdPgBanner.webp';

@@ -1,9 +1,9 @@
-import logo from '../media/logo.webp'
-import mLogo from '../media/muthootLogo.webp'
-import greatPlace2Work from '../media/gpw.webp'
-import fitchA from '../media/fitchA.webp'
-import legacy_years from '../media/50years.webp'
-import branch_logo from '../media/100branches.webp'
+import logo from '../media/logos/logo.webp'
+import mLogo from '../media/logos/muthootLogo.webp'
+import greatPlace2Work from '../media/logos/gpw.webp'
+import fitchA from '../media/logos/fitchA.webp'
+import legacy_years from '../media/logos/50years.webp'
+import branch_logo from '../media/logos/100branches.webp'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

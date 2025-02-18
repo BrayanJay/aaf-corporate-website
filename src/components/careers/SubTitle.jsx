@@ -1,6 +1,6 @@
-import logo from "../../media/logo.webp";
-import certification1 from '../../media/fitchA.webp';
-import certification2 from '../../media/gpw.webp';
+import logo from "../../media/logos/logo.webp";
+import certification1 from '../../media/logos/fitchA.webp';
+import certification2 from '../../media/logos/gpw.webp';
 
 const SubTitle = () => {
     return(

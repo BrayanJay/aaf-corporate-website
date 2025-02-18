@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Astore from '../media/appStoreBtn.webp';
-import Pstore from '../media/playStoreBtn.webp';
+import Astore from '../media/icons/appStoreBtn.webp';
+import Pstore from '../media/icons/playStoreBtn.webp';
 import { useTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 

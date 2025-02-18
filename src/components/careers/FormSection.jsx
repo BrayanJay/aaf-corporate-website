@@ -1,4 +1,4 @@
-import img from '../../media/person.png';
+import img from '../../media/careersPage/person.png';
 
 function FormSection() {
   return (

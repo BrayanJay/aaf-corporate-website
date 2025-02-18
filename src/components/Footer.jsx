@@ -1,5 +1,5 @@
 import { useEffect } from 'react'; //import useState if the subcription sector connect
-import logo from '../media/footer_logo.webp';
+import logo from '../media/logos/footer_logo.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from 'react-router-dom';

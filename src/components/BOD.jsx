@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
-import gold_ellipse from '../media/goldellipse.webp';
-import blue_ellipse from '../media/blueellipse.webp';
+import gold_ellipse from '../media/aboutPage/goldellipse.webp';
+import blue_ellipse from '../media/aboutPage/blueellipse.webp';
 
-import mrPrasanth from '../media/bod/vap.webp';
-import mrRajiv from '../media/bod/rja.webp';
+import mrPrasanth from '../media/aboutPage/bod/vap.webp';
+import mrRajiv from '../media/aboutPage/bod/rja.webp';
 import ProfileCard from './ProfileCard'; //Re-usable component
 
 const BOD = () => {

@@ -64,9 +64,9 @@ export default {
       'goldgradient': 'linear-gradient(to top, #E69800 0%, #FFD600 100%)',
       'lightbluegradient': 'linear-gradient(to right, #3558D4 0%, #0085FF 100%)',
       'custom-gradient2': 'linear-gradient(to right, #4facfe 0%, #00f2fe 100%)',
-      'bgdesign': "url('./media/design.svg')",
-      'footerBg': "url('/src/media/footer.webp')",
-      'mvgImg' : "url('/src/media/AAF_HO.webp')"
+      'bgdesign': "url('./media/contactPage/design.svg')",
+      'footerBg': "url('/src/media/footer/footer.webp')",
+      'mvgImg' : "url('/src/media/aboutPage/AAF_HO.webp')"
     },
     scrollBehavior: {
       smooth: 'smooth',

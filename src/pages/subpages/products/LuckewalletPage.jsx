@@ -3,10 +3,10 @@ import Carousel from '../../../components/Carousel';
 import Description from '../../../components/Description';
 import banner from '../../../media/products/luckewalletPgBanner4.webp';
 import MobilePic from '../../../media/products/luckewallet.webp'
-import luckewallet_logo from '../../../media/luckewalletlogo.webp';
+import luckewallet_logo from '../../../media/logos/luckewalletlogo.webp';
 
-import Astore from '../../../media/appStoreBtn.webp';
-import Pstore from '../../../media/playStoreBtn.webp';
+import Astore from '../../../media/icons/appStoreBtn.webp';
+import Pstore from '../../../media/icons/playStoreBtn.webp';
 import ProductLuckewallet from '../../../components/ProductLuckewallet';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';

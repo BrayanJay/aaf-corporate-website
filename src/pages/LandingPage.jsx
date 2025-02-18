@@ -7,7 +7,7 @@ import AllTestimonials from '../components/AllTestimonials'
 import BranchDetails from '../components/BranchDetails'
 //import TrustedPartners from '../components/TrustedPartners'
 import InquiriesForm from '../components/InquiriesForm'
-import SideImg from '../media/lwallet.webp'
+import SideImg from '../media/landingPage/lwallet.webp'
 import { Helmet } from 'react-helmet'
 import LoanCalculator from '../components/LoanCalculator'
 

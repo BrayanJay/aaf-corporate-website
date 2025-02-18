@@ -15,7 +15,7 @@ const Promotions = () => {
 
         {/*Card */}
         <div className="flex flex-col rounded overflow-hidden shadow-lg my-10">
-        <img className="max-w-[600px]" src="/src/media/promotions/dream_scheme_promo.webp" alt="Dream Scheme Promotion"/>
+        <img className="max-w-[600px]" src="/src/media/attachments/promotions/dream_scheme_promo.webp" alt="Dream Scheme Promotion"/>
         
         {/*Title & Description */}
         <div className="px-6 py-4">

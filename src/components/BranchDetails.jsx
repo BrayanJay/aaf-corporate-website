@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
-import map from '../media/map.svg';
+import map from '../media/landingPage/map.svg';
 import { HashLink } from 'react-router-hash-link';
 
 // Branch images

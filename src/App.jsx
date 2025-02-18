@@ -121,7 +121,7 @@ function App() {
     <span key="branch-network" className="rounded-md w-10 h-10 flex justify-center items-center cursor-pointer">
     <HashLink smooth to="/about/#branches">
           {/*<FontAwesomeIcon icon={['fas', 'location-dot']} className="text-green-500 hover:text-green-600 text-2xl lg:text-4xl"/>*/}
-          <img src='../src/media/map_icon.png'/>
+          <img src='../src/media/icons/map_icon.png'/>
           </HashLink>
     </span>,
 

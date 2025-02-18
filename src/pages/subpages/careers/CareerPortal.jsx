@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import banner from '../../../media/bannerCareers.webp'
+import banner from '../../../media/CareersPage/bannerCareers.webp'
 import Title from '../../../components/careers/Title'
 //import Vacancies from '../../../components/careers/Vacancies'
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '../media/logo.webp'
+import logo from '../media/logos/logo.webp'
 import PropTypes from 'prop-types';
 
 const Loader = ({ duration }) => {

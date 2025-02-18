@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 //Chamari's Picture
-import Wcu1 from '../media/wcu1.webp'
+import Wcu1 from '../media/landingPage/wcu1.webp'
 //Staff's Picture
-import Wcu2 from '../media/wcu2.webp'
+import Wcu2 from '../media/landingPage/wcu2.webp'
 import { useTranslation } from "react-i18next";
 
 const   WhyChooseUs = () => {
