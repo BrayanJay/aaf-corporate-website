@@ -8,16 +8,16 @@ const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false); // For controlling dropdown open/close
   const dropdownRef = useRef(null); // Reference for the dropdown container
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-    setActiveLanguage(lang);
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    setActiveLanguage(language);
   
 
   // Change font class on the <html> element
   const htmlElement = document.documentElement;
   htmlElement.classList.remove("font-roboto", "font-sinhala_sans", "font-tamil_sans");
   
-  switch (lang) {
+  switch (language) {
     case "en":
       document.documentElement.classList.add("font-roboto");
       break;

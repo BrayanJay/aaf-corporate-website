@@ -777,6 +777,8 @@ category: "goal",
       description2: "We are constantly on the lookout for passionate professionals with a desire to build economies and break societal boundaries. So if you think you have what it takes, apply for the available positions below."
     },
 
+    //------------------------------------------------------ Products Pages --------------------------------------------------------------//
+
     //Gold Loan Page Components
     goldLoanPage: {
       title: "Gold Loan",

@@ -45,6 +45,7 @@ import Modal from './components/Modal';
 import CustomerInformation from './pages/subpages/CustomerInformation';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import LuckewalletTutues from './pages/subpages/LuckewalletTutes';
+import TestComponent from './components/TestComponent';
 
 function App() {
   const { t } = useTranslation();
@@ -209,6 +210,7 @@ function App() {
           <Route path='contacts/complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the old version support*/}
           <Route path='/customer-complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the KYD document*/}
 
+          <Route path='/test' element={<TestComponent/>}/>
 
         </Routes>
         <Footer/>
