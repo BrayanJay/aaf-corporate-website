@@ -4,11 +4,33 @@ import Description from '../../../components/Description';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Mortgage = () => {
-  const { t } = useTranslation();
-  const data = t("mortgagePage", { returnObjects: true });
+  const { i18n } = useTranslation();
+  //const { product_name } = useParams(); // Get product from URL params
+  const [data, setData] = useState(null);
+  //const data = t("mortgagePage", { returnObjects: true });
   
+  useEffect(() => {
+    const fetchProductData = async () => {
+      let product_name = "mortgage";
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/data/product/${product_name}/${i18n.language}`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProductData();
+  }, [i18n.language]); // Re-fetch on language or product change
+
+  if (!data) return <p>Loading...</p>;
+
   const image = {
     src: banner,
     title: data.title,

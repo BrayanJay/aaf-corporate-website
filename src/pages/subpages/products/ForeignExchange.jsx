@@ -10,13 +10,35 @@ import w_union from '../../../media/products/forex/western_union.png'
 import ria from '../../../media/products/forex/ria.png'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const logos = [moneygram, w_union, muthoot, ria]
 
 const ForeignExchange = () => {
-  const { t } = useTranslation();
-  const data = t("forexPage", { returnObjects: true });
+  const { i18n } = useTranslation();
+  //const { product_name } = useParams(); // Get product from URL params
+    const [data, setData] = useState(null);
+  //const data = t("forexPage", { returnObjects: true });
   
+  useEffect(() => {
+    const fetchProductData = async () => {
+      let product_name = "forex";
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/data/product/${product_name}/${i18n.language}`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProductData();
+  }, [i18n.language]); // Re-fetch on language or product change
+
+  if (!data) return <p>Loading...</p>;
+
 const image = {
   src: banner,
   title: data.title,
@@ -39,7 +61,7 @@ const image = {
       <Description description={data.description} />
       </div>
       <div className='flex justify-center gap-5 bg-white'>
-      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
+      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></Link>
       </div>
       <div className='flex justify-center p-10 bg-white'>
           {/*<img className='p-10' src={fdUpload}/>*/}
@@ -47,7 +69,7 @@ const image = {
 
       <div className='px-20 py-5 text-center'>
                 <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-blue-900'>
-                {data.our_partners}
+                {data.our_partners_title}
                 </h1>
                 <div className="container mx-auto p-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

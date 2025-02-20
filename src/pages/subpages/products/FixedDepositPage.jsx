@@ -4,11 +4,34 @@ import Description from '../../../components/Description';
 import { useTranslation } from "react-i18next";
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 const FixedDepositPage = () => {
-  const { t } = useTranslation();
-  const data = t("fdPage", { returnObjects: true });
+  //const data = t("fdPage", { returnObjects: true });
+  const { i18n } = useTranslation();
+  //const { product_name } = useParams(); // Get product from URL params
+  const [data, setData] = useState(null);
+  //const data = t("goldLoanPage", { returnObjects: true });
+
+  useEffect(() => {
+    const fetchProductData = async () => {
+      let product_name = "fixed_deposits";
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/data/product/${product_name}/${i18n.language}`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProductData();
+  }, [i18n.language]); // Re-fetch on language or product change
+
+  if (!data) return <p>Loading...</p>;
   
 const image = {
   src: banner,
@@ -36,7 +59,7 @@ const image = {
 
       <div className='flex justify-center gap-5 bg-white'>
       <a href={data.kfd} target="_blank" rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></a>
-      <a href={data.fdRates}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_2}>{data.btn_2}</div></a>
+      <a href={data.fdRatesImg}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_2}>{data.btn_2}</div></a>
       <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
       <a href={data.collectionAccounts}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_4}>{data.btn_4}</div></a>
       </div>
