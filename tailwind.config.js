@@ -40,7 +40,6 @@ export default {
         scaleUp: "scaleUp 1s ease-in-out",
         scaleDown: "scaleDown 0.5s ease-in-out",
       },
-      
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
       sinhala_sans: ['Noto Sans Sinhala', 'sans-serif'],

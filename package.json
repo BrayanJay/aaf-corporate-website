@@ -12,8 +12,8 @@
   "dependencies": {
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-react": "^2.3.0",
-    "@fontsource/noto-sans-sinhala": "^5.1.0",
-    "@fontsource/noto-sans-tamil": "^5.1.0",
+    "@fontsource/noto-sans-sinhala": "^5.1.1",
+    "@fontsource/noto-sans-tamil": "^5.1.1",
     "@fontsource/roboto": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
