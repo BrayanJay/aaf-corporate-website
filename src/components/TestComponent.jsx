@@ -20,11 +20,12 @@ const TestComponent = () => {
   useEffect(() => {
     const fetchProductData = async () => {
       let product_name = "gold_loan";
+      if (!product_name) return; // Avoid making API calls if product_name is undefined
       try {
         const response = await axios.get(
           `http://localhost:3000/data/product/${product_name}/${i18n.language}`
         );
-        setData(response.data);
+        setData(response.data[0]);
       } catch (error) {
         console.error("Error fetching product data:", error);
       }

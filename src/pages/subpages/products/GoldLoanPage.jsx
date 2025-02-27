@@ -23,7 +23,7 @@ const GoldLoanPage = () => {
         const response = await axios.get(
           `http://localhost:3000/data/product/${product_name}/${i18n.language}`
         );
-        setData(response.data);
+        setData(response.data[0]);
       } catch (error) {
         console.error("Error fetching product data:", error);
       }
@@ -61,6 +61,7 @@ const GoldLoanPage = () => {
       <div className='flex justify-center gap-5 bg-white'>
       <a href={data.kfd} target="_blank" rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></a>
       <a href={data.charges_tariff}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_2}>{data.btn_2}</div></a>
+      <a href={data.terms_and_conditions}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_4}>{data.btn_4}</div></a>
       <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
       </div>
       <div className='text-rose-800 text-center text-xs sm:text-sm py-2'>{data.note}</div>

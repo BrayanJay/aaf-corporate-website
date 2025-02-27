@@ -21,7 +21,7 @@ const LeasingPage = () => {
         const response = await axios.get(
           `http://localhost:3000/data/product/${product_name}/${i18n.language}`
         );
-        setData(response.data);
+        setData(response.data[0]);
       } catch (error) {
         console.error("Error fetching product data:", error);
       }
