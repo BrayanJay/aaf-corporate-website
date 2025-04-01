@@ -882,6 +882,7 @@ category: "goal",
       card6Body: "1369",
     },
 
+    //Personal Profile page
     profileDetails: [
       {
         id: "1",

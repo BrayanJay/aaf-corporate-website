@@ -1,82 +1,88 @@
-import Carousel from '../components/Carousel'
-import banner from '../media/products/gloanPgBanner.webp'
-import Description from '../components/Description';
-
-import { useTranslation } from "react-i18next";
-import { Helmet } from 'react-helmet';
-import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-
-
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const TestComponent = () => {
-  
-  const { i18n } = useTranslation();
-  const { product_name } = useParams(); // Get product from URL params
-  const [data, setData] = useState(null);
-  //const data = t("goldLoanPage", { returnObjects: true });
-  
+  const { id } = useParams(); // Retrieve the dynamic id from the URL
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    const fetchProductData = async () => {
-      let product_name = "gold_loan";
-      if (!product_name) return; // Avoid making API calls if product_name is undefined
+    const fetchProfile = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3000/data/product/${product_name}/${i18n.language}`
-        );
-        setData(response.data[0]);
-      } catch (error) {
-        console.error("Error fetching product data:", error);
+        const response = await fetch(`https://localhost:3000/data/read/profiles/${id}`);
+        if (!response.ok) {
+          throw new Error('Profile not found');
+        }
+        const data = await response.json();
+        setProfile(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchProductData();
-  }, [product_name, i18n.language]); // Re-fetch on language or product change
+    fetchProfile();
+  }, [id]);
 
-  if (!data) return <p>Loading...</p>;
+  if (loading) {
+    return <div className="text-center py-20 text-blue-500">Loading...</div>;
+  }
 
-  const image = {
-    src: banner,
-    title: data.title,
-  };
-
+  if (error || !profile) {
+    return <div className="text-center py-20 text-red-500">Profile not found.</div>;
+  }
 
   return (
-    <div id='main-container'>
+    <div id="top" className="lg:py-10">
+      <div className='px-10 lg:px-40'>
+        <div className='md:grid md:grid-flow-row md:grid-cols-4 gap-5'>
+          {/* Profile Image */}
+          <div>
+            <img
+              className='hidden lg:block rounded-tl-3xl rounded-br-3xl shadow-2xl shadow-blue-900/80 drop-shadow-2xl'
+              src={profile.src}
+              alt={profile.name}
+            />
+          </div>
 
-      {/* G Tagging sources */}
-      <Helmet>
-        <title>Gold Loans – Low Interest, Quick Approvals</title>
-        <meta name="description" content="Secure gold loans at competitive rates with flexible repayment plans and fast processing in Sri Lanka." />
-        <meta name="keywords" content="Gold Loans Sri Lanka"></meta>
-        <link rel="canonical" href="https://www.asiaassetfinance.com/gold-loan" />
-      </Helmet>
+          {/* Profile Details */}
+          <div className='text-end md:col-span-3'>
+            <div>
+              {/* Name and Title */}
+              <div className="text-4xl md:text-6xl font-black text-blue-700 py-10 lg:py-0">
+                <h1 className='pr-5 border-r-4 border-blue-500'>
+                  “ <span className="text-xl md:text-2xl lg:text-4xl font-black text-blue-700 pt-2">
+                  {profile.name}
+                </span>
+                </h1>
+                <h3 className="text-xs md:text-sm lg:text-xl font-black text-blue-500 pr-5 border-r-4 border-blue-500">
+                {profile.designation}
+              </h3>
+              </div>
 
-      {/* Page Carousel */}
-      <Carousel image={image}/>
+              {/* Profile Image - below larger screens */}
+              <div className='flex justify-center items-center'>
+                <img
+                  className='max-w-56 lg:hidden rounded-tl-3xl rounded-br-3xl shadow-2xl drop-shadow-2xl'
+                  src={profile.src}
+                  alt={profile.name}
+                />
+              </div>
+            </div>
 
-      {/* Body Section */}
-      <div className='py-10'>
-      <Description description={data.description} />
+            {/* Description */}
+            <div className='flex flex-col text-sm font-medium py-5 gap-y-5 text-black/50 lg:pl-10 text-center lg:text-left'>
+              {profile.description.map((desc, index) => (
+                <span key={index}>{desc}</span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div className='flex justify-center gap-5 bg-white'>
-      <a href={data.kfd} target="_blank" rel="noopener noreferrer"><div className='px-3 py-1.5 border-2 border-blue-500 text-blue-500 text-xs sm:text-base hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></a>
-      <a href={data.charges_tariff}><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_2}>{data.btn_2}</div></a>
-      <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_3}>{data.btn_3}</div></Link>
-      </div>
-      <div className='text-rose-800 text-center text-xs sm:text-sm py-2'>{data.note}</div>
-
-      <a href='tel://+94767888222' aria-label="Click here to Dial">
-      <div className="max-w-xs mx-auto bg-amber-300 hover:bg-amber-400 transition-colors duration-300 ease-in-out shadow-lg rounded-lg py-2 px-4 text-center my-10">
-      <h2 className="text-lg font-bold text-blue-700">{data.hotline}</h2>
-      <p className="mt-1 text-2xl font-semibold text-gray-800">0767 888 222</p>
     </div>
-    </a>
-      
-    </div>
-  )
-}
+  );
+};
 
-export default TestComponent
+export default TestComponent;
