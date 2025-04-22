@@ -7,8 +7,7 @@ import { useTranslation } from "react-i18next";
 import MissionVisionGoal from '../components/MissionVisionGoal';
 import BOD from '../components/BOD';
 import CorporateManagement from '../components/CorporateManagement';
-//import BranchNetwork from '../components/BranchNetwork';
-import BranchNetworkTemp from '../components/BranchNetworkTemp';
+import BranchNetwork from '../components/BranchNetwork';
 import { Helmet } from 'react-helmet';
 
 const AboutPage = () => {
@@ -39,8 +38,7 @@ const AboutPage = () => {
       <CorporateManagement/>
       </div>
       <div id='branches' className='bg-white pt-12'>
-      {/*<BranchNetwork/>*/}
-      <BranchNetworkTemp/>
+      <BranchNetwork/>
       </div>
     </div>
   );
