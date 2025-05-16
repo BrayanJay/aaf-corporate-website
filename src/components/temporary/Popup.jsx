@@ -45,7 +45,7 @@ const Popup = () => {
 
           {/* Modal Image */}
             <img
-              src="/src/media/attachments/debentureIssues2024/debenture_closed_popup.webp"
+              src="/src/media/uploads/popup.webp"
               alt="Debenture issue 2024"
               className="w-full h-auto"
               //onClick={handleImageClick} // Navigate on image click

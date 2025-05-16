@@ -64,7 +64,7 @@ function App() {
 
   // Fetch popup state from backend
   useEffect(() => {
-    axios.get("http://localhost:3000/data/popup-state")
+    axios.get("http://localhost:3000/data/getPopup")
       .then(response => {
         setIsPopupVisible(response.data.popupEnabled);
       })
