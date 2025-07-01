@@ -1,147 +1,9 @@
-import DownloadsCard from '../components/DownloadsCard';
 import { useTranslation } from "react-i18next";
+import FileCard from '../components/FileCard';
 
 const Downloads = () => {
   const { t } = useTranslation();
   const data = t("downloadsTexts", { returnObjects: true });
-
-  // Example data for categories
-  const annualReports = [
-    {
-      idx: 1,
-      title: "Annual Report 2023-2024",
-      url: "/src/media/attachments/annualReports/ar2324.pdf", // Add the PDF file's URL
-    },
-    {
-      idx: 2,
-      title: "Annual Report 2022-2023",
-      url: "/src/media/attachments/annualReports/ar2223.pdf", // Add the PDF file's URL
-    },
-    {
-      idx: 3,
-      title: "Annual Report 2021-2022",
-      url: "/src/media/attachments/annualReports/ar2122.pdf", // Add the PDF file's URL
-    },
-    {
-      idx: 4,
-      title: "Annual Report 2020-2021",
-      url: "/src/media/attachments/annualReports/ar2021.pdf", // Add the PDF file's URL
-    },
-    {
-      idx: 5,
-      title: "Annual Report 2019-2020",
-      url: "/src/media/attachments/annualReports/ar1920.pdf", // Add the PDF file's URL
-    },
-    // Add more reports here
-  ];
-
-  const interimFinancials = [
-    {
-      idx: 1,
-      title: "Interim Financials as at 30th June 2023",
-      url: "/src/media/attachments/interiemFinancials/ir30June2023.pdf",
-    },
-    {
-      idx: 2,
-      title: "Interim Financials as at 30th September 2023",
-      url: "/src/media/attachments/interiemFinancials/ir30Sept2023.pdf",
-    },
-    {
-      idx: 3,
-      title: "Interim Financials as at 31st December 2023",
-      url: "/src/media/attachments/interiemFinancials/ir31Dec2023.pdf",
-    },
-    {
-      idx: 4,
-      title: "Interim Financials as at 31st March 2024",
-      url: "/src/media/attachments/interiemFinancials/ir31Mar2024.pdf",
-    },
-    {
-      idx: 5,
-      title: "Interim Financials as at 30th June 2024",
-      url: "/src/media/attachments/interiemFinancials/ir30June2024.pdf",
-    },
-    {
-      idx: 6,
-      title: "Interim Financials as at 30th September 2024",
-      url: "/src/media/attachments/interiemFinancials/ir30Sept2024.pdf",
-    },
-    // Add more documents here
-  ];
-
-  const OtherRelatedDocuments = [
-    {
-      idx: 1,
-      title: "Policy on Matters Relating to The Board of Directors",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnMattersTelatingToTheBoardOfDirectors.pdf",
-    },
-    {
-      idx: 2,
-      title: "Board Committees",
-      url: "/src/media/attachments/otherRelatedDocs/BoardCommittees30092027.pdf",
-    },
-    {
-      idx: 3,
-      title: "Corporate Governance Nomination & Re-Election Policy",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnCorporateGovernanceNominationAndReElection.pdf",
-    },
-    {
-      idx: 4,
-      title: "Remuneration Policy",
-      url: "/src/media/attachments/otherRelatedDocs/RemunerationPolicy.pdf",
-    },
-    {
-      idx: 5,
-      title: "Code of Business Conduct & Securities Trading Policy",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnInternalCodeBusinessConductAndEthicsForAllDirectorsAndEmployeesIncludingPoliciesOnTradingInTheEntitiesListedSecurities.pdf",
-    },
-    {
-      idx: 6,
-      title: "Risk Management & Internal Controls Summary",
-      url: "/src/media/attachments/otherRelatedDocs/RiskManagmentAndInternalControlsSummary.pdf",
-    },
-    {
-      idx: 7,
-      title: "Shareholder & Investor Relations Policy",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnRelationsWithShareholdersAndInvestors.pdf",
-    },
-    {
-      idx: 8,
-      title: "ESG Sustainability Policy",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnEnvironmentalSocialAndGovernanceSustainability.pdf",
-    },
-    {
-      idx: 9,
-      title: "Asset & Investment Management Policy",
-      url: "/src/media/attachments/otherRelatedDocs/PolicyOnControlAndManagementOfCompanyAssetsAndShareholderInvestments.pdf",
-    },
-    {
-      idx: 10,
-      title: "Corporate Disclosures Policy",
-      url: "/src/media/attachments/otherRelatedDocs/CorporateDisclosuresPolicy.pdf",
-    },
-    {
-      idx: 11,
-      title: "Whistleblowing Policy Summary",
-      url: "/src/media/attachments/otherRelatedDocs/WhistleblowingPolicySummary.pdf",
-    },
-    {
-      idx: 12,
-      title: "Anti-Bribery & Corruption Policy",
-      url: "/src/media/attachments/otherRelatedDocs/AntiBriberyAndCorruptionPolicy.pdf",
-    },
-    {
-      idx: 13,
-      title: "Credit Ratings",
-      url: "/src/media/attachments/otherRelatedDocs/CreditRatings2024.pdf",
-    },
-    {
-      idx: 14,
-      title: "Accessibility Policy",
-      url: "/src/media/attachments/otherRelatedDocs/AccessibilityPolicy.pdf",
-    },
-    // Add more documents here
-  ];
 
   {/*const customerInformation = [
     {
@@ -222,8 +84,8 @@ const Downloads = () => {
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
               {data.intro1}
             </div>
-            <div className="flex justify-center items-center w-full">
-          <DownloadsCard documents={annualReports} />
+        <div className="flex justify-center items-center w-full">
+          <FileCard fileDirectory="annualReports" category="Annual Reports" />
         </div>
           </div>
 
@@ -234,7 +96,9 @@ const Downloads = () => {
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
             {data.intro2}
             </div>
-            <DownloadsCard documents={interimFinancials} />
+            <div className="flex justify-center items-center w-full">
+              <FileCard fileDirectory="interiemFinancials" category="Interiem Financials" />
+            </div>
           </div>
 
           {/*<div className='py-5 lg:py-10 flex flex-col items-center'>
@@ -254,17 +118,21 @@ const Downloads = () => {
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
             {data.intro4}
             </div>
-            <DownloadsCard documents={OtherRelatedDocuments} />
-          </div>
-
-          {/*<div id='debentureIssues' className='py-5 lg:py-10 flex flex-col items-center'>
-            <div className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
-              {data.section5}
+            <div className="flex justify-center items-center w-full">
+              <FileCard fileDirectory="otherRelatedDocs" category="Other Related Documents" />
             </div>
+          </div>
+          
+          {/*<div className='py-5 lg:py-10 flex flex-col items-center'>
+            <h2 className='text-sm md:text-xl lg:text-2xl font-medium text-blue-700'>
+              {data.section5}
+            </h2>
             <div className='pb-5 text-xs lg:text-sm font-medium text-blue-900/80'>
             {data.intro5}
             </div>
-            <DownloadsCard documents={debentureIssues} />
+            <div className="flex justify-center items-center w-full">
+              <FileCard fileDirectory="debentureIssues" category="Debenture Issues" />
+            </div>
           </div>*/}
 
         </div>

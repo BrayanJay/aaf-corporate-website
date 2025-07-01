@@ -41,19 +41,18 @@ import Promotions from './pages/Promotions';
 import { useTranslation } from 'react-i18next';
 import { HashLink } from 'react-router-hash-link';
 import Modal from './components/Modal';
-import Popup from './components/temporary/Popup';
 import CustomerInformation from './pages/subpages/CustomerInformation';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import LuckewalletTutues from './pages/subpages/LuckewalletTutes';
 import TestComponent from './components/TestComponent';
-import axios from 'axios';
+//import PopupWrapper from './components/temporary/PopupWrapper';
+//import Popup from './test-components/Popup';
 
 function App() {
   const { t } = useTranslation();
   const fdPage = t("fdPage", { returnObjects: true });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -62,14 +61,6 @@ function App() {
     });
   }, []); // The empty array ensures the effect runs only once when the component mounts.
 
-  // Fetch popup state from backend
-  useEffect(() => {
-    axios.get("http://localhost:3000/data/getPopup")
-      .then(response => {
-        setIsPopupVisible(response.data.popupEnabled);
-      })
-      .catch(error => console.error("Error fetching popup state:", error));
-  }, []);
 
   {/*useEffect(() => {
     // Check local storage for modal state
@@ -180,7 +171,7 @@ function App() {
     <Router>
       <Loader duration={2000}/>
       
-      {isPopupVisible && <Popup onClose={() => setIsPopupVisible(false)} />} {/* Conditional Rendering */}
+      {/* <Popup/> */}
 
       <div className=''>
       
