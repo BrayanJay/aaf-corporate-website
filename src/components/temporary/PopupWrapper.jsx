@@ -6,7 +6,7 @@ function PopupWrapper() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/popup/popup-state")
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/popup/popup-state`)
       .then(response => {
         if (response.data.popupEnabled) {
           setShowPopup(true);

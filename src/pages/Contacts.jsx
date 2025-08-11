@@ -1,4 +1,4 @@
-import contactImg from '../media/contactPage/contactPage.webp';
+import contactImg from '../media/contactPage/sideImage.webp';
 import InquiriesForm from '../components/InquiriesForm';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';

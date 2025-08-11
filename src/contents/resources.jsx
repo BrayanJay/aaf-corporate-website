@@ -12,7 +12,7 @@ import banner3 from '../media/landingPage/bannerimg3.webp';
 import bannerAbout from '../media/aboutPage/bannerAbout.webp';
 
 //Investor Relations Page Banners
-import bannerIR from '../media/products/bannerIR.webp';
+import bannerIR from '../media/investorRelations/irPgBanner.webp';
 
 //Landing Page Products Overview Images
 import FixedDeposits from '../media/landingPage/fd.webp';

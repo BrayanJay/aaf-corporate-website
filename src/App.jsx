@@ -187,7 +187,8 @@ function App() {
           <Route path='/about' element={<AboutPage/>}/>
           {/*<Route path='/products' element={<ProductsAndServicesPage/>}/>*/}
           <Route path='/ir' element={<InvesterRelationsPage/>}/>
-          <Route path="/profile/:id" element={<PersonalProfile />} />
+          <Route path="/profile/bod/:profileId" element={<PersonalProfile type="bod" />} />
+          <Route path="/profile/coop/:profileId" element={<PersonalProfile type="coop" />} />
 
           <Route path="/gold-loan" element={<GoldLoanPage />} />
           <Route path="/fixed-deposit" element={<FixedDepositPage />} />

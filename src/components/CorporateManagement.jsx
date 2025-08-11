@@ -14,7 +14,7 @@ const CorporateManagement = () => {
     const fetchProfiles = async () => {
       try {
         const lang = i18n.language;
-        const response = await axios.post(`http://localhost:3000/data/read/profiles`, {
+        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/data/read/profiles`, {
           ids: com_ids,
           lang: lang
         });

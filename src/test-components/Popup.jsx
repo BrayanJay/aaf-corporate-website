@@ -6,7 +6,7 @@ const Popup = () => {
     const [hasChecked, setHasChecked] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/popup/test-popup-status')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/popup/test-popup-status`)
             .then(response => {
                 if (response.data.exists && !sessionStorage.getItem('popupShown')) {
                     setShowPopup(true);

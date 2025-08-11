@@ -18,7 +18,7 @@ const Mortgage = () => {
       let product_name = "mortgage";
       try {
         const response = await axios.get(
-          `http://localhost:3000/data/product/${product_name}/${i18n.language}`
+          `${import.meta.env.VITE_API_BASE_URL}/data/product/${product_name}/${i18n.language}`
         );
         setData(response.data[0]);
       } catch (error) {

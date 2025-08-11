@@ -11,7 +11,7 @@ const BranchNetwork = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const apiBaseUrl = "http://localhost:3000/data/branches";
+  const apiBaseUrl = `${import.meta.env.VITE_API_BASE_URL}/branch/branches`;
 
   // Fetch all regions based on language
   useEffect(() => {

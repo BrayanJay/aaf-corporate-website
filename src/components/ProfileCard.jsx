@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
+const ProfileCard = ({ profileId, profilePicture, profileName, designation, borderColor, textColor, type }) => {
   const { t } = useTranslation();
   const data = t("bodTextsAbout", { returnObjects: true });
 
@@ -20,8 +20,8 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
       <div className="flex justify-center mt-4 mb-2">
         <img
           className="w-20 h-20 lg:w-32 lg:h-32 rounded-full shadow border-2 md:border-4"
-          src={imgSrc}
-          alt={`${name}'s profile`}
+          src={profilePicture}
+          alt={`${profileName}'s profile`}
           style={{ borderColor }} // Dynamically applying border color
         />
       </div>
@@ -36,18 +36,18 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
             “
           </span>
           <span className="text-sm lg:text-2xl font-black" style={{ color: textColor }}>
-            {name}
+            {profileName}
           </span>
         </h1>
         
         <h2 className="text-xs lg:text-sm font-bold md:mt-2" style={{ color: borderColor }}>
-          {title}
+          {designation}
         </h2>
       </div>
 
       {/* View Profile - Link to profile page */}
       <div className="pt-2 pb-4 text-black/40 text-xs md:text-sm font-normal text-center cursor-pointer hover:text-black/60">
-        <Link to={`/profile/${id}`} onClick={scrollToTop}> 
+        <Link to={`/profile/${type}/${profileId}`} onClick={scrollToTop}>
           <span className="font-medium italic text-black/40 hover:cursor-pointer hover:text-black/60 transition transform ease-in-out duration-300" aria-label='Read More'>
             {data.view_profile_btn}
           </span>
@@ -59,12 +59,13 @@ const ProfileCard = ({ id, imgSrc, name, title, borderColor, textColor }) => {
 
 // Prop validation
 ProfileCard.propTypes = {
-  id: PropTypes.number.isRequired, // id should be a string and is required
-  imgSrc: PropTypes.string.isRequired, // imgSrc should be a string and is required
-  name: PropTypes.string.isRequired, // name should be a string and is required
-  title: PropTypes.string.isRequired, // title should be a string and is required
+  profileId: PropTypes.number.isRequired, // profileId should be a string and is required
+  profilePicture: PropTypes.string.isRequired, // profilePicture should be a string and is required
+  profileName: PropTypes.string.isRequired, // profileName should be a string and is required
+  designation: PropTypes.string.isRequired, // designation should be a string and is required
   borderColor: PropTypes.string, // borderColor should be a string (optional)
   textColor: PropTypes.string, // textColor should be a string (optional)
+  type: PropTypes.string.isRequired, // type should be a string and is required
 };
 
 export default ProfileCard;

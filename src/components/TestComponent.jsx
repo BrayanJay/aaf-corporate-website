@@ -1,173 +1,65 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import ProfileCard from './ProfileCard';
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const TestComponent = () => {
   const { t, i18n } = useTranslation();
-  const [branchesData, setBranchesData] = useState([]);
-  const [regions, setRegions] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(true);
+  const comTexts = t("comTextsAbout", { returnObjects: true });
 
-  const apiBaseUrl = "http://localhost:3000/data/branches";
-
-  // Fetch all regions based on language
+  const [profileDetails, setProfileDetails] = useState([]);  // Initialize as empty array
+  
   useEffect(() => {
-    const fetchRegions = async () => {
+    const fetchProductData = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/getBranchDetails/${i18n.language}`);
-        setRegions(response.data);
-        
-        // Set default to "All Regions"
-        setSelectedRegion(t("branchNetworktext.all_tab"));
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/profile/getProfiles/coop`);
+        //console.log(response.data); // Log the response to check the data
+        setProfileDetails(response.data || []);  // Ensure response is an array
       } catch (error) {
-        console.error("Error fetching regions:", error);
+        console.error("Error fetching product data:", error);
+        setProfileDetails([]);  // In case of an error, set as empty array
       }
     };
 
-    fetchRegions();
-  }, [i18n.language]);
+    fetchProductData();
+  }, [i18n.language]); // Re-fetch on language change
 
-  // Fetch branches based on selected region
-  useEffect(() => {
-    const fetchBranches = async () => {
-      setLoading(true);
-      try {
-        const url = selectedRegion === t("branchNetworktext.all_tab")
-          ? `${apiBaseUrl}/getBranchDetails/${i18n.language}`
-          : `${apiBaseUrl}/getBranchDetails/${selectedRegion}/${i18n.language}`;
-  
-        const response = await axios.get(url);
-        setBranchesData(Array.isArray(response.data) ? response.data : []);
-      } catch (error) {
-        console.error("Error fetching branch details:", error);
-        setBranchesData([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-  
-    fetchBranches();
-  }, [selectedRegion, i18n.language]);
-  
-  // Format phone number for display
-  const formatPhoneNumber = (phoneNumber) => {
-    if (!phoneNumber) return "";
-    
-    // Remove non-numeric characters
-    const cleaned = phoneNumber.toString().replace(/\D/g, "");
-    
-    // Format as XXX XXX XXXX
-    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-    if (match) {
-      return `${match[1]} ${match[2]} ${match[3]}`;
-    }
-    
-    return phoneNumber; // Return original if format doesn't match
-  };
-
-  // Get phone number for dialing (remove spaces, ensure proper format)
-  const getDialingNumber = (phoneNumber) => {
-    if (!phoneNumber) return "";
-    return `+94${phoneNumber.toString().replace(/\D/g, "").replace(/^0/, "")}`;
-  };
-
-  const uniqueRegionNames = [...new Set(regions.map(region => region.region_name)), t("branchNetworktext.all_tab")];
-
-  // Filter branches based on search query
-  const filteredBranches = branchesData.filter((branch) =>
-    branch?.branch_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    branch?.address?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Check if profileDetails is an array before using .filter
+  if (profileDetails.length === 0) return <p>Loading...</p>;
 
   return (
-    <div id="main-container" className="px-10 lg:px-20">
+    <div id="main-container" className="w-full h-full relative px-10 lg:px-20 gap-2 pt-10">
       {/* Header Section */}
-      <div className="flex flex-col relative justify-center items-start py-10">
-        <h1 className="border-l-4 lg:border-l-8 border-blue-900 text-blue-700 text-xl md:text-2xl lg:text-4xl font-semibold pl-2 lg:pl-4">
-          {t("branchNetworktext.title1")} <span className="font-bold text-blue-900">{t("branchNetworktext.title2")}</span>
+      <div className="relative" data-aos="fade-up">
+        <h1 className="border-r-4 lg:border-r-8 border-blue-500 px-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-900 text-right">
+          {comTexts.title1} <span className="font-black text-blue-700">{comTexts.title2}</span>
         </h1>
-        <h2 className="border-l-4 lg:border-l-8 border-blue-900 pl-2 lg:pl-4 pt-1 text-sm lg:text-xl font-medium text-blue-500 italic">
-          {t("branchNetworktext.subtitle")}
+        <h2 className="border-r-4 lg:border-r-8 border-blue-500 px-5 md:pt-1 text-xs md:text-sm lg:text-xl font-medium italic text-blue-500 text-right">
+          {comTexts.subtitle}
         </h2>
+        <p className="py-5 text-xs lg:text-sm font-normal text-black/50 text-justify">
+          {comTexts.description}
+        </p>
       </div>
 
-      {/* Search Bar */}
-      <div className="mb-6 flex justify-center items-center gap-2 lg:gap-5">
-        <div className="text-center text-xs md:text-sm lg:text-lg font-semibold text-blue-700">{t("branchNetworktext.label")}</div>
-        <input
-          type="text"
-          placeholder={t("branchNetworktext.field")}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="px-4 py-2 border border-blue-300 rounded-lg w-full sm:w-1/2"
-        />
-      </div>
-
-      {/* Tab Bar */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {uniqueRegionNames.map((regionName) => (
-          <button
-            key={regionName}
-            onClick={() => setSelectedRegion(regionName)}
-            className={`py-2 px-4 rounded-lg ${selectedRegion === regionName ? "bg-bluegradient text-white" : "bg-gray-200"}`}
-          >
-            {regionName}
-          </button>
-        ))}
-      </div>
-
-      {/* Branch Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10" data-aos="fade-up">
-        {loading ? (
-          <div className="col-span-full text-center">
-            <p className="text-lg font-semibold text-blue-700">Loading...</p>
-          </div>
-        ) : filteredBranches.length > 0 ? (
-          filteredBranches.map((branch, index) => (
-            <div key={index} className="flex flex-col p-4 bg-white shadow-lg rounded-lg justify-center items-center hover:scale-110 transition-all duration-300 ease-in-out">
-              {branch.picture && (
-                  <img 
-                    src={`../src/${branch.picture}`}
-                    alt={branch.branch_name || "Branch"} 
-                    className="max-w-32 max-h-32 lg:max-w-48 lg:max-h-48 w-fit h-fit object-cover"
-                  />
-              )}
-              <div className="text-blue-900 text-base lg:text-lg font-bold mt-2 text-center">
-                {branch.branch_name || "Unknown Branch"}
-              </div>
-              <div className="text-black/60 flex items-center text-xs lg:text-sm text-center gap-2 mt-2">
-                <FontAwesomeIcon icon={['fas', 'location-dot']} className="text-xs" /> 
-                <span>{branch.address || "No address available"}</span>
-              </div>
-              {branch.contact_number && (
-                <a href={`tel:${getDialingNumber(branch.contact_number)}`} className="mt-1">
-                  <div className="text-black/60 flex items-center text-xs lg:text-sm text-center hover:text-blue-500 transition-all duration-300 ease-in-out gap-2">
-                    <FontAwesomeIcon icon={['fas', 'phone']} className="text-xs" /> 
-                    <span>{formatPhoneNumber(branch.contact_number)}</span>
-                  </div>
-                </a>
-              )}
-              {branch.latitude && branch.longitude && (
-                <a 
-                  href={`https://maps.google.com/?q=${branch.latitude},${branch.longitude}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full text-xs"
-                >
-                  <FontAwesomeIcon icon={['fas', 'map-marker-alt']} className="mr-1" />
-                  View on Map
-                </a>
-              )}
-            </div>
-          ))
-        ) : (
-          <div className="col-span-full text-center">
-            <p className="text-xl font-semibold text-rose-800">No branches found!</p>
-          </div>
-        )}
+      {/* Profile Cards Grid */}
+      <div className="w-full h-auto flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch" data-aos="fade-up">
+          
+          {profileDetails.map((profile) => (
+            <ProfileCard
+              key={profile.id}
+              profileId={profile.id}
+              profileName={profile?.[`name_${i18n.language}`]}
+              profilePicture={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/coop/${profile.profile_picture}.webp`}
+              designation={profile?.[`designation_${i18n.language}`]}
+              description={profile?.[`description_${i18n.language}`]}
+              borderColor={profile.id % 2 === 0 ? '#fbbf24' : '#3b82f6'}
+              textColor={profile.id % 2 === 0 ? '#f59e0b' : '#1d4ed8'}
+              type="coop"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
