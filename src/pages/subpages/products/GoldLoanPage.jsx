@@ -12,10 +12,8 @@ import axios from 'axios';
 
 const GoldLoanPage = () => {
   const { i18n } = useTranslation();
-  //const { product_name } = useParams(); // Get product from URL params
   const [data, setData] = useState(null);
-  //const data = t("goldLoanPage", { returnObjects: true });
-
+  
   useEffect(() => {
     const fetchProductData = async () => {
       let product_name = "gold_loan";

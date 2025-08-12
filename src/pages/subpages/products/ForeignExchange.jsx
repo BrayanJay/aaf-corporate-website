@@ -17,9 +17,7 @@ const logos = [moneygram, w_union, muthoot, ria]
 
 const ForeignExchange = () => {
   const { i18n } = useTranslation();
-  //const { product_name } = useParams(); // Get product from URL params
-    const [data, setData] = useState(null);
-  //const data = t("forexPage", { returnObjects: true });
+  const [data, setData] = useState(null);
   
   useEffect(() => {
     const fetchProductData = async () => {

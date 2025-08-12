@@ -1,34 +1,9 @@
-import DownloadsCard from '../../components/DownloadsCard';
 import { useTranslation } from "react-i18next";
+import FileCard from '../../components/FileCard';
 
 const LuckewalletTutues = () => {
   const { t } = useTranslation();
   const data = t("downloadsTexts", { returnObjects: true });
-
-  const docs = [
-    {
-      idx: 1,
-      title: "New Customer Registration",
-      url: "/src/media/attachments/luckewalletTutes/new_customer_registration.pdf",
-    },
-    {
-      idx: 2,
-      title: "Existing Customer Registration",
-      url: "/src/media/attachments/luckewalletTutes/existing_customer_registration.pdf",
-    },
-    {
-      idx: 3,
-      title: "Fund Transfer",
-      url: "/src/media/attachments/luckewalletTutes/fund_transfer.pdf",
-    },
-    {
-      idx: 4,
-      title: "Payee Registration",
-      url: "/src/media/attachments/luckewalletTutes/payee_registration.pdf"
-    },
-
-    // Add more documents here
-  ];
 
   return (
     <div className='flex flex-col lg:flex-row px-10 lg:px-40 py-10'>
@@ -41,10 +16,9 @@ const LuckewalletTutues = () => {
         </div>
         <div id="customer-information" className="">
           <div className='py-5 lg:py-10 flex flex-col items-center'>
-            
             <div className="flex justify-center items-center w-full">
-          <DownloadsCard documents={docs} />
-        </div>
+              <FileCard fileDirectory="luckewalletTutes" category="Luckewallet Tutorials" />
+            </div>
           </div>
           </div>
       </div>

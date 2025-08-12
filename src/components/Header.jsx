@@ -2,8 +2,10 @@ import logo from '../media/logos/logo.webp'
 import mLogo from '../media/logos/muthootLogo.webp'
 import greatPlace2Work from '../media/logos/gpw.webp'
 import fitchA from '../media/logos/fitchA.webp'
-import legacy_years from '../media/logos/50years.webp'
-import branch_logo from '../media/logos/100branches.webp'
+import FiftyPlusYearsLight from '../media/logos/50YearsPlus-light.webp'
+import FiftyPlusYearsDark from '../media/logos/50YearsPlus-dark.webp'
+import HundredPlusBranchesLight from '../media/logos/100PlusBranches-light.webp'
+import HundredPlusBranchesDark from '../media/logos/100PlusBranches-Dark.webp'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,12 +15,28 @@ import LanguageSelector from './LanguageSelector';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'
 import { HashLink } from 'react-router-hash-link'
+import { useEffect, useState } from 'react'
 
 library.add(fas, fab);
+
+const useIsSmallScreen = () => {
+  const [isSmall, setIsSmall] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmall(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isSmall;
+};
 
 export const Header = () => {
   const { t } = useTranslation();
   const data = t("header", { returnObjects: true });
+  const isSmall = useIsSmallScreen();
 
   const scrolltoTop = () => {
     document.body.scrollTop = 0;
@@ -36,8 +54,23 @@ export const Header = () => {
     <a href='https://www.muthootfinance.com' target="_blank" rel="noopener noreferrer"><img className='lg:h-10 md:h-8 h-4 max-w-28 justify-end' aria-label="Muthoot Finance" src={mLogo}></img></a>
       <a href='https://greatplacetowork.lk/best-workplace/asia-asset-finance-plc/' target='_blank'><img className='lg:h-16 md:h-12 h-6' aria-label="Great Place to work certification" src={greatPlace2Work}></img></a>
       <a href='https://www.fitchratings.com/entity/asia-asset-finance-plc-90601905#ratings' target='_blank'><img className='lg:h-16 md:h-12 h-6' aria-label="Fitch ratings" src={fitchA}></img></a>
-      <HashLink smooth to='/about'><img className='lg:h-16 md:h-12 h-6 hidden sm:block' src={legacy_years} aria-label="50 Years plus excellence"></img></HashLink>
-      <HashLink to="/about/#branches"><img className='lg:h-16 md:h-12 h-6 min-w-10' src={branch_logo} aria-label="100 Branches"></img></HashLink>
+      
+      <HashLink smooth to='/about'>
+        <img
+          className='lg:h-16 md:h-12 h-6'
+          src={isSmall ? FiftyPlusYearsLight : FiftyPlusYearsDark}
+          alt="50 Years Plus Excellence"
+          aria-label="50 Years plus excellence"
+        />
+      </HashLink>
+      <HashLink to="/branchnetwork">
+        <img
+          className='lg:h-16 md:h-12 h-6'
+          src={isSmall ? HundredPlusBranchesLight : HundredPlusBranchesDark}
+          alt="100+ Branches"
+          aria-label="100+ Branches"
+        />
+      </HashLink>
     </div>
     {/*<div className='justify-start md:justify-center w-full h-full p-2 flex items-center lg:gap-5 md:gap-3 gap-2'>
       <img className='lg:h-16 md:h-12 h-6' src={legacy_years}></img>

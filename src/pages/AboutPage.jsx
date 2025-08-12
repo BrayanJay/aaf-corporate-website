@@ -6,10 +6,8 @@ import { useTranslation } from "react-i18next";
 
 import MissionVisionGoal from '../components/MissionVisionGoal';
 import BOD from '../components/BOD';
-//import CorporateManagement from '../components/CorporateManagement';
-//import BranchNetwork from '../components/BranchNetwork';
+import CorporateManagement from '../components/CorporateManagement';
 import { Helmet } from 'react-helmet';
-import TestComponent from '../components/TestComponent';
 
 const AboutPage = () => {
   const { t } = useTranslation();
@@ -36,11 +34,7 @@ const AboutPage = () => {
       <BOD/>
       </div>
       <div id='corporate-management' className='bg-white pt-12'>
-      {/* <CorporateManagement/> */}
-      <TestComponent/>
-      </div>
-      <div id='branches' className='bg-white pt-12'>
-      {/* <BranchNetwork/> */}
+      <CorporateManagement/>
       </div>
     </div>
   );

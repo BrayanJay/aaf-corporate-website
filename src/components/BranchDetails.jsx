@@ -13,7 +13,7 @@ const BranchDetails = () => {
   
   const handleReadMoreClick = () => {
     // Navigate to /about route (you can specify the full URL if needed)
-    navigate('/about', { replace: true });
+    navigate('/branchnetwork', { replace: true });
     
     // Scroll to the #branches section after navigation
     setTimeout(() => {
@@ -30,7 +30,7 @@ const BranchDetails = () => {
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
       {/* Map Image - Left Section */}
       <div className="hidden lg:block lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-        <HashLink smooth to="/about/#branches"><img src={map} alt="Map Image" /></HashLink>
+        <HashLink smooth to="/branchnetwork"><img src={map} alt="Map Image" /></HashLink>
       </div>
       {/* Contents - Right Section */}
       <div className="lg:basis-1/2 z-10" data-aos="fade-up">
@@ -69,7 +69,7 @@ const BranchDetails = () => {
 
           {/* Map image for smaller screens */}
           <div className="lg:hidden lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-          <HashLink smooth to="/about/#branches"><img src={map} alt="Branch Map Image" /></HashLink>
+          <HashLink smooth to="/branchnetwork"><img src={map} alt="Branch Map Image" /></HashLink>
           </div>
           
         </div>

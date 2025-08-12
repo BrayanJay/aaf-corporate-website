@@ -1,56 +1,72 @@
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import emailjs from "emailjs-com";
 import Loader from './Loader'; // Import the Loader component
 import PropTypes from 'prop-types';
+import CityDropdown from './CityDropdown';
 
-const isValidEmail = (email) => {
+// Email & mobile validation
+{/*const isValidEmail = (email) => {
   return String(email)
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
-};
+};*/}
 
 const isValidMobileNumber = (mobileNumber) => {
   return String(mobileNumber).match(/^\d{10}$/);
 };
 
-const validateData = ({ name, email, mobile }) => {
+// Form validation function
+const validateData = ({ customerName, mobile, product }) => {
   const errorObj = {};
-  if (!name) errorObj.name = "Please provide your name";
-  if (!email) {
-    errorObj.email = "Please provide your email";
-  } else if (!isValidEmail(email)) {
-    errorObj.email = "Please provide a valid email address";
-  }
+  if (!customerName) errorObj.customerName = "Please provide your name";
   if (!mobile) {
     errorObj.mobile = "Please provide your mobile number";
-  }
-  else if (!isValidMobileNumber(mobile)){
+  } else if (!isValidMobileNumber(mobile)){
     errorObj.mobile = "Please provide a valid mobile number with 10 digits."
   }
+  //if (!email) {
+    //errorObj.email = "Please provide your email";
+  //} else if (!isValidEmail(email)) {
+    //errorObj.email = "Please provide a valid email";
+  //}
+  if (!product) errorObj.product = "Please select a product";
+
   return errorObj;
 };
-
-
 
 const InquiriesForm = () => {
   const { t } = useTranslation();
   const inquiryForm = t("inquiryForm", { returnObjects: true });
 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    customerName: '',
+    email: '',
+    mobile: '',
+    product: '',
+    nic: '',
+    city: '',
+    amount: '',  // Keep it as a string initially for controlled input
+    remarks: '',
+    language: '',
+    leadSource: 23, 
+  });
+
   const [formErrors, setFormErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
 
+  // Popup component
   const Popup = ({ message, onClose }) => {
     return (
       <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-40">
         <div className="bg-white p-6 rounded-lg text-center">
           <p>{message}</p>
-          <button aria-label='Close Button' onClick={onClose} className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
+          <button aria-label='Close Button' 
+          onClick={onClose} 
+          className="mt-4 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md">
             {inquiryForm.close_btn}
           </button>
         </div>
@@ -58,68 +74,101 @@ const InquiriesForm = () => {
     );
   };
 
-  // Add prop validation
 Popup.propTypes = {
   message: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const token = import.meta.env.VITE_AUTH_TOKEN_LIVE;
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     const errorObj = validateData(formData);
     setFormErrors(errorObj);
-    if (Object.keys(errorObj).length === 0) {
-      setIsLoading(true); // Show loader
-      emailjs
-        .send(
-          "service_x5osrbi", // Replace with your EmailJS Service ID
-          "template_io05a5c", // Replace with your EmailJS Template ID
-          {
-            name: formData.name,
-            email: formData.email,
-            mobile: formData.mobile,
-            message: formData.message,
+    console.log("Form errors set:", errorObj);
+  
+    if (Object.keys(errorObj).length > 0) {
+      return; // Stop submission if there are validation errors
+    }
+  
+    setIsLoading(true); // Show loader
+  
+    // Prepare form data with default values for optional fields
+    const updatedFormData = {
+      ...formData,
+      nic: "Null", // Hardcoded as empty
+      city: formData.city, // Hardcoded as empty
+      email: formData.email || "Null",
+      remarks: formData.remarks || "Null", // User input or empty string
+      amount: formData.amount ? parseFloat(formData.amount) : 0, // User input or 0
+      language: formData.language || 1, // User selection or default to 1
+      leadSource: 23, // Default value
+    };
+  
+  
+    try {
+      const response = await fetch(
+        "https://asiaassetfinance.net/aafleadwave/api/v1/application/api.php/leadgenerate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
-          "XFV9q5aHEd81dBg34" // Replace with your EmailJS Public Key
-        )
-        .then(
-          (response) => {
-            setPopupMessage(inquiryForm.response_pass, response); // Success message
-            setShowPopup(true); // Show popup
-            setFormData({}); // Clear the form data
-          },
-          (err) => {
-            setPopupMessage(inquiryForm.response_fail); // Failure message
-            setShowPopup(true); // Show popup
-            console.error("FAILED...", err);
-          }
-        )
-        .finally(() => {
-          setIsLoading(false); // Hide loader
-        });
+          body: JSON.stringify(updatedFormData),
+        }
+      );
+  
+      const result = await response.json();
+      console.log("✅ API Response:", result);
+  
+      if (!response.ok) {
+        throw new Error(result.message || "Something went wrong");
+      }
+  
+      setPopupMessage(inquiryForm.response_pass); // Success message
+      setShowPopup(true);
+  
+      // Reset form after successful submission
+      handleClear();
+  
+    } catch (error) {
+      console.error("❌ API Error:", error);
+      setPopupMessage(inquiryForm.response_fail || error.message); // Failure message
+      setShowPopup(true);
+    } finally {
+      setIsLoading(false); // Hide loader
     }
   };
 
   const handleClear = () => {
-    setFormData({});
+    setFormData({
+      customerName: '',
+      email: '',
+      mobile: '',
+      product: '',
+      nic: '',
+      city: '',
+      amount: '',
+      remarks: '',
+      language: '',
+      leadSource: 23,
+    });
     setFormErrors({});
   };
 
-  const inputClasses = (field) => (
+  const inputClasses = 
     `block w-full sm:text-sm px-3 py-2 bg-white border border-slate-300 shadow-sm rounded-md
     placeholder-slate-400
     focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1
-    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-    ${formErrors[field] ? "border-pink-500 text-pink-600 focus:border-pink-500 focus:ring-pink-500" : ""}`
-  );
-
-  const fieldErrorClasses = (field) => (
-    `mt-2 ${formErrors[field] ? "visible" : "invisible"} text-pink-600 text-sm`
-  );
+    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none`;
 
   return (
     <div className='justify-center relative bg-bgdesign bg-cover text-roboto px-10 py-10 lg:px-40'>
@@ -128,51 +177,126 @@ Popup.propTypes = {
         <h1 className='border-l-4 border-amber-400 pl-5 pr-5 text-xl md:text-2xl lg:text-4xl font-semibold text-blue-700'> {inquiryForm.title} </h1>
       </div>
       <div className="z-10 relative max-w-lg p-4 md:max-w-4xl mx-auto" data-aos="zoom-in">
-        <form onSubmit={handleSubmit} className="md:flex md:gap-4">
+        
+        <form className="md:flex md:gap-4">
           <div className="md:w-1/2">
+            
             <div className="mb-4">
-              <label htmlFor="name" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
+              <label className="after:content-['*'] after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">
                 {inquiryForm.label1}
               </label>
-              <input type="text" name="name" id="name" className={inputClasses("name")} placeholder={inquiryForm.field1} value={formData.name || ''} onChange={handleChange} />
-              <p className={fieldErrorClasses("name")}>{formErrors.name}</p>
+              <input
+                type="text"
+                name="customerName"
+                placeholder={inquiryForm.field1}
+                value={formData.customerName}
+                onChange={handleChange}
+                className={inputClasses}
+                required
+              />
+              {formErrors.customerName && <p className="text-red text-sm">{formErrors.customerName}</p>}
             </div>
 
             <div className="mb-4">
-              <label htmlFor="mobile" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
+              <label className="after:content-['*'] after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">
                 {inquiryForm.label2}
               </label>
-              <input type="text" name="mobile" id="mobile" className={inputClasses("mobile")} placeholder={inquiryForm.field2} value={formData.mobile || ''} onChange={handleChange} />
-              <p className={fieldErrorClasses("mobile")}>{formErrors.mobile}</p>
+              <input
+                type="number"
+                name="mobile"
+                placeholder={inquiryForm.field2}
+                value={formData.mobile}
+                onChange={handleChange}
+                className={inputClasses + 'appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'}
+                onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10)} 
+              />
+              {formErrors.mobile && <p className="text-red text-sm">{formErrors.mobile}</p>}
             </div>
 
             <div className="mb-4">
-              <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
+              <label className="after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">
                 {inquiryForm.label3}
               </label>
-              <input type="email" name="email" id="email" className={inputClasses("email")} placeholder={inquiryForm.field3} value={formData.email || ''} onChange={handleChange} />
-              <p className={fieldErrorClasses("email")}>{formErrors.email}</p>
+              <input
+                type="email"
+                name="email"
+                placeholder={inquiryForm.field3}
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClasses}
+              />
+              {formErrors.email && <p className="text-red text-sm">{formErrors.email}</p>}
             </div>
+
+            <div className="mb-4">
+              <label className="after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">
+                {inquiryForm.label10}
+              </label>
+              <input
+                type="number"
+                name="amount"
+                placeholder={inquiryForm.field10}
+                value={formData.amount}
+                onChange={handleChange}
+                className={inputClasses}
+              />
+            </div>
+
+          <div className='mb-4'>
+            <label className="after:content-['*'] after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">{inquiryForm.label9}</label>
+            <CityDropdown value={formData.city} onChange={handleChange} token={token}/>
+            {formErrors.product && <p className="text-red text-sm">{formErrors.product}</p>}
+          </div>
+
           </div>
 
           <div className="md:w-1/2">
-            <div className="mb-4">
-              <label htmlFor="message" className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-1 text-sm font-medium text-slate-700">
+
+          <div className='mb-4'>
+            <label className="after:content-['*'] after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">Select Product</label>
+            <select required name="product" className={inputClasses} value={formData.product} onChange={handleChange}>
+              <option value="">Select Product</option>
+              <option value="1">Fixed Deposit</option>
+              <option value="2">Gold Loan</option>
+              <option value="3">Mortgage</option>
+              <option value="4">Leasing</option>
+              <option value="5">Luckewallet</option>
+            </select>
+            {formErrors.product && <p className="text-red text-sm">{formErrors.product}</p>}
+          </div>
+
+          <div className="mb-4">
+            <label className="after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">{inquiryForm.label12}</label>
+            <select name="language" className={inputClasses} value={formData.language} onChange={handleChange}>
+              <option value={inquiryForm.field12}></option>
+              <option value="1">English</option>
+              <option value="2">සිංහල</option>
+              <option value="3">தமிழ்</option>
+            </select>
+          </div>
+          
+          <div className="mb-4">
+              <label htmlFor="remarks" className="after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">
                 {inquiryForm.label4}
               </label>
-              <textarea name="message" id="message" className={inputClasses("message")} placeholder={inquiryForm.field4} rows="6" value={formData.message || ''} onChange={handleChange} 
-                style={{ height: 'calc(3 * 3.5rem + 2rem)' }} // Adjust the height here
+              <textarea name="remarks" id="remarks" className={inputClasses} placeholder={inquiryForm.field4} rows="4" onChange={handleChange} 
+                style={{ height: 'calc(3 * 4rem)' }} // Adjust the height here
               />
-              <p className={fieldErrorClasses("message")}>{formErrors.message}</p>
-            </div>
           </div>
+          
+          </div>
+
         </form>
 
         <div className="text-right mt-4 flex justify-end gap-5">
           <button aria-label='Clear Button' onClick={handleClear} type="button" className="bg-gray-500 hover:bg-gray-600 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button1}
           </button>
-          <button aria-label='Submit Button' onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
+          <button 
+          type='submit' 
+          aria-label='Submit Form'
+          onClick={handleSubmit}
+          className="bg-blue-500 hover:bg-blue-700 px-5 py-2.5 text-sm leading-5 rounded-md font-semibold text-white">
             {inquiryForm.button2}
           </button>
         </div>

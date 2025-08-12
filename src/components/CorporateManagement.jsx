@@ -1,34 +1,30 @@
 import { useTranslation } from "react-i18next";
+import ProfileCard from './ProfileCard';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProfileCard from './ProfileCard'; // Re-usable Component
 
 const CorporateManagement = () => {
   const { t, i18n } = useTranslation();
   const comTexts = t("comTextsAbout", { returnObjects: true });
 
-  const [profileDetails, setProfileDetails] = useState([]); 
-  const com_ids = [2, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // ✅ Updated IDs
-
+  const [profileDetails, setProfileDetails] = useState([]);  // Initialize as empty array
+  
   useEffect(() => {
-    const fetchProfiles = async () => {
+    const fetchProductData = async () => {
       try {
-        const lang = i18n.language;
-        const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/data/read/profiles`, {
-          ids: com_ids,
-          lang: lang
-        });
-
-        setProfileDetails(response.data || []); 
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/profile/getProfiles/coop`);
+        //console.log(response.data); // Log the response to check the data
+        setProfileDetails(response.data || []);  // Ensure response is an array
       } catch (error) {
-        console.error("Error fetching corporate management profiles:", error);
-        setProfileDetails([]); 
+        console.error("Error fetching product data:", error);
+        setProfileDetails([]);  // In case of an error, set as empty array
       }
     };
 
-    fetchProfiles();
-  }, [i18n.language]); 
+    fetchProductData();
+  }, [i18n.language]); // Re-fetch on language change
 
+  // Check if profileDetails is an array before using .filter
   if (profileDetails.length === 0) return <p>Loading...</p>;
 
   return (
@@ -46,18 +42,21 @@ const CorporateManagement = () => {
         </p>
       </div>
 
-      {/* Corporate Management Profiles */}
-      <div className="w-full h-auto flex justify-center mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch" data-aos="fade-up">
-          {profileDetails.map((profile, idx) => (
+      {/* Profile Cards Grid */}
+      <div className="w-full h-auto flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 justify-items-center md:justify-items-stretch" data-aos="fade-up">
+          
+          {profileDetails.map((profile) => (
             <ProfileCard
               key={profile.id}
-              id={profile.id}
-              imgSrc={profile.profile_picture}
-              name={profile.profile_name}
-              title={profile.designation}
-              borderColor={idx % 2 === 0 ? "#fbbf24" : "#3b82f6"}
-              textColor={idx % 2 === 0 ? "#f59e0b" : "#1d4ed8"}
+              profileId={profile.id}
+              profileName={profile?.[`name_${i18n.language}`]}
+              profilePicture={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/coop/${profile.profile_picture}.webp`}
+              designation={profile?.[`designation_${i18n.language}`]}
+              description={profile?.[`description_${i18n.language}`]}
+              borderColor={profile.id % 2 === 0 ? '#fbbf24' : '#3b82f6'}
+              textColor={profile.id % 2 === 0 ? '#f59e0b' : '#1d4ed8'}
+              type="coop"
             />
           ))}
         </div>

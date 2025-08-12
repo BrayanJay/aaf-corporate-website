@@ -26,6 +26,7 @@ import Downloads from './pages/Downloads';
 //Sub pages
 import Contacts from './pages/Contacts';
 import PersonalProfile from './pages/PersonalProfile';
+import BranchNetwork from './components/BranchNetwork';
 
 import GoldLoanPage from './pages/subpages/products/GoldLoanPage';
 import FixedDepositPage from './pages/subpages/products/FixedDepositPage';
@@ -34,8 +35,8 @@ import MortgagePage from './pages/subpages/products/Mortgage';
 import ForeignExchangePage from './pages/subpages/products/ForeignExchange';
 import LuckewalletPage from './pages/subpages/products/LuckewalletPage';
 
-import JobDescription from './pages/subpages/careers/JobDescription';
-import ApplicationForm from './pages/subpages/careers/ApplicationForm';
+// import JobDescription from './pages/subpages/careers/JobDescription';
+// import ApplicationForm from './pages/subpages/careers/ApplicationForm';
 import Loader from './components/Loader';
 import Promotions from './pages/Promotions';
 import { useTranslation } from 'react-i18next';
@@ -44,7 +45,12 @@ import Modal from './components/Modal';
 import CustomerInformation from './pages/subpages/CustomerInformation';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import LuckewalletTutues from './pages/subpages/LuckewalletTutes';
-import TestComponent from './components/TestComponent';
+
+import Login from './components/Leadwave/Login';
+import LeadForm from './components/Leadwave/LeadForm';
+
+import NotFound from './pages/NotFound';
+
 //import PopupWrapper from './components/temporary/PopupWrapper';
 //import Popup from './test-components/Popup';
 
@@ -189,6 +195,7 @@ function App() {
           <Route path='/ir' element={<InvesterRelationsPage/>}/>
           <Route path="/profile/bod/:profileId" element={<PersonalProfile type="bod" />} />
           <Route path="/profile/coop/:profileId" element={<PersonalProfile type="coop" />} />
+          <Route path='/branchnetwork' element={<BranchNetwork/>}/>
 
           <Route path="/gold-loan" element={<GoldLoanPage />} />
           <Route path="/fixed-deposit" element={<FixedDepositPage />} />
@@ -198,8 +205,8 @@ function App() {
           <Route path="/luckewallet" element={<LuckewalletPage />} />
 
           <Route path="/careers" element={<CareerPortal />} />
-          <Route path="/careers/job-description/:jobId" element={<JobDescription />} />
-          <Route path="/careers/application-form" element={<ApplicationForm />} />
+          {/* <Route path="/careers/job-description/:jobId" element={<JobDescription />} />
+          <Route path="/careers/application-form" element={<ApplicationForm />} /> */}
           
           <Route path='/contacts' element={<Contacts/>}/>
           <Route path='/downloads' element={<Downloads/>}/>
@@ -211,9 +218,12 @@ function App() {
 
           <Route path='contacts/complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the old version support*/}
           <Route path='/customer-complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the KYD document*/}
-          
-          <Route path='/test' element={<TestComponent/>}/>
 
+          <Route path='/test/leadWave/login' element={<Login />} />
+          <Route path='/test/leadWave/leadForm' element={<LeadForm />} />
+
+          {/* 404 Page - Catch all unmatched routes */}
+          <Route path='*' element={<NotFound />} />
 
         </Routes>
         <Footer/>

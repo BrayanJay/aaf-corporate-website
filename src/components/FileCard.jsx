@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const FileCard = ({fileDirectory}) => {
   const [files, setFiles] = useState([]);
 
-
-
   const fetchFiles = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/data/getFiles?folder=media/attachments/${fileDirectory}`, {
@@ -18,8 +16,6 @@ const FileCard = ({fileDirectory}) => {
       alert("Failed to load files");
     }
   };
-
-
 
   useEffect(() => {
     fetchFiles();

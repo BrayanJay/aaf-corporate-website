@@ -32,7 +32,7 @@ const Popup = () => {
         onClick={closeModal} // Close modal on outside click
       >
         <div
-          className="relative max-w-[450px]  top-10 bg-white rounded-lg shadow-lg animate-scaleUp"
+          className="relative max-w-[600px] max-w-screen top-10 bg-white rounded-lg shadow-lg animate-scaleUp"
           onClick={(e) => e.stopPropagation()} // Prevent outside click from closing
         >
           {/* Close Button */}

@@ -9,9 +9,7 @@ import axios from 'axios';
 
 const Mortgage = () => {
   const { i18n } = useTranslation();
-  //const { product_name } = useParams(); // Get product from URL params
   const [data, setData] = useState(null);
-  //const data = t("mortgagePage", { returnObjects: true });
   
   useEffect(() => {
     const fetchProductData = async () => {

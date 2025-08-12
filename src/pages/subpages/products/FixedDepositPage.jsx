@@ -9,11 +9,8 @@ import axios from 'axios';
 
 
 const FixedDepositPage = () => {
-  //const data = t("fdPage", { returnObjects: true });
   const { i18n } = useTranslation();
-  //const { product_name } = useParams(); // Get product from URL params
   const [data, setData] = useState(null);
-  //const data = t("goldLoanPage", { returnObjects: true });
 
   useEffect(() => {
     const fetchProductData = async () => {

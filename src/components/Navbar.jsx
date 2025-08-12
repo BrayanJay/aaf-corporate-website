@@ -166,7 +166,7 @@ const Navbar = () => {
                 <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown3} smooth to="/about/#corporate-management" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown3}
                 </HashLink>
-                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown4} smooth to="/about/#branches" onClick={() => setDropdown(null)}>
+                <HashLink className="block px-4 py-2 hover:bg-blue-100" aria-label={navbarData.about_dropdown4} smooth to="/branchnetwork" onClick={() => setDropdown(null)}>
                 {navbarData.about_dropdown4}
                 </HashLink>
               </div>
@@ -279,7 +279,7 @@ const Navbar = () => {
                   <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown3} smooth to="/about/#corporate-management" onClick={toggleSidebar}>
                   {navbarData.about_dropdown3}
                   </HashLink>
-                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown4} smooth to="/about/#branches" onClick={toggleSidebar}>
+                  <HashLink className="block py-2 hover:text-gray-300" aria-label={navbarData.about_dropdown4} smooth to="/branchnetwork" onClick={toggleSidebar}>
                   {navbarData.about_dropdown4}
                   </HashLink>
                   

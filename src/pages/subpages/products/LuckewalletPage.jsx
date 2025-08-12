@@ -15,10 +15,8 @@ import axios from 'axios';
 
 const LuckewalletPage = () => {
   const { i18n } = useTranslation();
-  //const { product_name } = useParams(); // Get product from URL params
-    const [data, setData] = useState(null);
-  //const data = t("luckewalletPage", { returnObjects: true });
-
+  const [data, setData] = useState(null);
+  
   useEffect(() => {
     const fetchProductData = async () => {
       let product_name = "luckewallet";
