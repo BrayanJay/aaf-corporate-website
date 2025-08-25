@@ -117,6 +117,6 @@ For inquiries, collaborations, or opportunities:
 
 💼 LinkedIn: linkedin.com/in/brayanjay
 
-🌍 Portfolio: brayanjay.web.lk
+🌍 Portfolio: https://www.brayanjay.web.lk
 
 ⚡ This project is the property of Asia Asset Finance PLC. All rights reserved.
