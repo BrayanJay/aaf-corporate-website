@@ -1,89 +1,122 @@
-**Asia Asset Finance PLC Website Revamp**
+🌐 Asia Asset Finance PLC – Website Revamp
 
-_Overview_
+Welcome to the revamped corporate website of Asia Asset Finance PLC, a project built with a modern tech stack to deliver a seamless user experience, multilingual support, and dynamic content management.
 
-Welcome to the source code repository for the revamped Asia Asset Finance PLC corporate website. This project is designed to deliver a modern, user-friendly experience while showcasing the company’s products and services effectively.
+This project reflects my ability to design, develop, and deploy full-stack applications with a focus on performance, scalability, and maintainability.
 
-Visit www.asiaassetfinance.com to view the live site.
+👉 Visit the live site: www.asiaassetfinance.com
 
-_Features_
+✨ Key Features
 
-Modern UI/UX: Built using React and Tailwind CSS for a seamless user experience.
+🎨 Modern UI/UX – Built with React (Vite) + Tailwind CSS for clean, responsive, and scalable designs.
 
-Multilingual Support: Easily switch between languages.
+🌍 Multilingual Support – Integrated react-i18next for easy language switching (English, Sinhala, Tamil).
 
-Dynamic Content Management: Integrated CMS for effortless content updates.
+🗂️ Dynamic CMS Integration – Admin-friendly content management system (Node.js backend + MySQL).
 
-Branch Geolocation Mapping: Interactive map displaying all branch locations.
+📍 Branch Geolocation Mapping – Interactive map showcasing all branch locations.
 
-Responsive Design: Optimized for all devices.
+📱 Fully Responsive – Optimized across desktops, tablets, and mobile devices.
 
-_Technologies Used_
+⚡ Fast Development Workflow – Powered by Vite with Hot Module Replacement (HMR).
 
-Frontend: React with Vite for fast development and hot module replacement (HMR).
+🛠️ Tech Stack
 
-Styling: Tailwind CSS for efficient and scalable designs.
+Frontend:
 
-Backend: Node.js for the CMS. (still on process)
+React (Vite)
 
-Database: MongoDB for storing dynamic content and branch data. (still on process)
+Tailwind CSS
 
-Hosting: GoDaddy.
+Backend (CMS):
 
-_Installation_
+Node.js (Express) – in progress
 
-Follow these steps to set up the project locally:
+Database:
+
+MongoDB – in progress
+
+Hosting:
+
+GoDaddy (Production)
+
+🚀 Installation & Setup
 
 Clone the repository:
 
 git clone https://github.com/BrayanJay/aaf-corporate-website-revamp.git
 
-Navigate to the project directory:
+
+Navigate into the project folder:
 
 cd aaf-corporate-website-revamp
+
 
 Install dependencies:
 
 npm install
 
-Start the development server:
+
+Run the development server:
 
 npm run dev
 
-Open your browser and visit:
 
-http://localhost:5000
+Open your browser at:
+👉 http://localhost:5000
 
-_Deployment_
+📦 Deployment
 
-This project is hosted on GoDaddy.
+The production build is hosted on GoDaddy, ensuring reliability and scalability for corporate-level traffic.
 
-_Contributions_
+🤝 Contributions
 
-We welcome contributions to enhance this project. Please follow the steps below:
+Contributions are welcome! 🚀
 
-Fork the repository.
+Fork the repo
 
-Create a feature branch:
+Create your feature branch:
 
 git checkout -b feature-name
+
 
 Commit your changes:
 
 git commit -m "Add feature description"
 
-Push the changes:
+
+Push to your branch:
 
 git push origin feature-name
 
-Open a pull request.
 
-_License_
+Open a Pull Request
 
-This project is the property of Asia Asset Finance PLC. All rights reserved.
+📌 About Me
 
-_Contact_
+👋 Hi, I’m Brayan Jayawardana, a Full Stack Web Developer & UI/UX Designer.
+This project highlights my skills in:
 
-For questions or support, please contact:
+Frontend Development: React, Angular, Tailwind CSS, Bootstrap
 
-Email: wmbk.jayawardana1@gmail.com
+Backend Development: Node.js, Express, MySQL, MongoDB
+
+CMS Development: Building scalable admin systems for corporate websites
+
+UI/UX Design: Creating wireframes and prototypes in Figma
+
+Deployment & Hosting: Vercel, GoDaddy, Railway, Render
+
+I specialize in building modern, scalable, multilingual, and responsive applications with a focus on clean code and user experience.
+
+📬 Contact
+
+For inquiries, collaborations, or opportunities:
+
+📧 Email: wmbk.jayawardana1@gmail.com
+
+💼 LinkedIn: linkedin.com/in/brayanjay
+
+🌍 Portfolio: https://www.brayanjay.web.lk
+
+⚡ This project is the property of Asia Asset Finance PLC. All rights reserved.
