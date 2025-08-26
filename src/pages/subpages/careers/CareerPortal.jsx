@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import banner from '../../../media/CareersPage/careersPgBanner.webp'
 import Title from '../../../components/careers/Title'
 //import Vacancies from '../../../components/careers/Vacancies'
 
@@ -11,7 +10,7 @@ const CareerPortal = () => {
   const data = t("careersBanner", { returnObjects: true });
 
   const image = {
-    src: banner,
+    src: `${import.meta.env.VITE_API_BASE_URL}/media/CareersPage/careersPgBanner.webp`,
     title: data.title,
   };
   return (

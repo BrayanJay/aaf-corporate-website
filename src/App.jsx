@@ -6,6 +6,7 @@ import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 
 //Components
 import Navbar from './components/Navbar';
@@ -18,7 +19,6 @@ import SocialMediaIcons from './components/SocialMediaIcons';
 //Pages
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
-//import ProductsAndServicesPage from './pages/ProductsAndServicesPage';
 import InvesterRelationsPage from './pages/InvesterRelationsPage';
 import CareerPortal from './pages/subpages/careers/CareerPortal';
 import Downloads from './pages/Downloads';
@@ -35,8 +35,6 @@ import MortgagePage from './pages/subpages/products/Mortgage';
 import ForeignExchangePage from './pages/subpages/products/ForeignExchange';
 import LuckewalletPage from './pages/subpages/products/LuckewalletPage';
 
-// import JobDescription from './pages/subpages/careers/JobDescription';
-// import ApplicationForm from './pages/subpages/careers/ApplicationForm';
 import Loader from './components/Loader';
 import Promotions from './pages/Promotions';
 import { useTranslation } from 'react-i18next';
@@ -51,14 +49,12 @@ import LeadForm from './components/Leadwave/LeadForm';
 
 import NotFound from './pages/NotFound';
 
-//import PopupWrapper from './components/temporary/PopupWrapper';
-//import Popup from './test-components/Popup';
-
 function App() {
   const { t } = useTranslation();
   const fdPage = t("fdPage", { returnObjects: true });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPopupBannerOpen, setIsPopupBannerOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -67,32 +63,36 @@ function App() {
     });
   }, []); // The empty array ensures the effect runs only once when the component mounts.
 
-
-  {/*useEffect(() => {
-    // Check local storage for modal state
-    const hasModalBeenShown = localStorage.getItem("hasModalBeenShown");
-
-    if (!hasModalBeenShown) {
-      setIsModalOpen(true);
-      localStorage.setItem("hasModalBeenShown", "true");
-    }
-  }, []);
-
+  // Fetch popup status from API
   useEffect(() => {
-    // Check if the modal has been shown before using localStorage
-    const hasModalBeenShown = localStorage.getItem("hasModalBeenShown");
+    const fetchPopupStatus = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/data/popup/status`);
+        const data = response.data;
+        
+        if (data.success && data.data.status === 'enabled') {
+          // Check if popup has been shown in this session
+          const hasPopupBeenShown = sessionStorage.getItem("hasPopupBannerBeenShown");
+          
+          if (!hasPopupBeenShown) {
+            // Add a small delay before showing the popup
+            setTimeout(() => {
+              setIsPopupBannerOpen(true);
+              sessionStorage.setItem("hasPopupBannerBeenShown", "true");
+            }, 2000); // Show popup after 3 seconds
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching popup status:', error);
+      }
+    };
 
-    if (!hasModalBeenShown) {
-      setIsModalOpen(true);
-      localStorage.setItem("hasModalBeenShown", "true"); // Store in localStorage
-    }
+    fetchPopupStatus();
   }, []);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };*/}
-
-
+  const handleClosePopupBanner = () => {
+    setIsPopupBannerOpen(false);
+  };
 
   const socialMediaIcons = [
     <span key="facebook" className="rounded-full  w-10 h-10 flex justify-center items-center cursor-pointer ">
@@ -112,12 +112,6 @@ function App() {
           <FontAwesomeIcon icon={['fab', 'linkedin']} className="text-blue-500 hover:text-blue-700 text-2xl lg:text-4xl"/>
         </a>
     </span>,
-  
-    /*<span key="youtube" className="rounded-full  w-10 h-10 flex justify-center items-center cursor-pointer ">
-    <a href="https://www.youtube.com/@asiaassetfinance5308" target="_blank" rel="noopener noreferrer" className="">
-          <FontAwesomeIcon icon={['fab', 'youtube']} className="text-rose-700 hover:text-rose-900 text-2xl lg:text-4xl"/>
-        </a>
-    </span>,*/
 
     <span key="tiktok" className="rounded-full  w-10 h-10 flex justify-center items-center cursor-pointer ">
     <a href="https://www.tiktok.com/@asia_asset_finance" target="_blank" rel="noopener noreferrer" className="">
@@ -126,9 +120,8 @@ function App() {
     </span>,
 
     <span key="branch-network" className="rounded-md w-10 h-10 flex justify-center items-center cursor-pointer">
-    <HashLink smooth to="/about/#branches">
-          {/*<FontAwesomeIcon icon={['fas', 'location-dot']} className="text-green-500 hover:text-green-600 text-2xl lg:text-4xl"/>*/}
-          <img src='../src/media/icons/map_icon.png'/>
+    <HashLink smooth to="/branchnetwork">
+          <img src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/map_icon.png`}/>
           </HashLink>
     </span>,
 
@@ -163,6 +156,33 @@ function App() {
           
         </div>
       </Modal>
+
+      {/* Popup Banner Modal */}
+      <Modal
+        isOpen={isPopupBannerOpen}
+        onClose={handleClosePopupBanner}
+        className="max-w-[800px] mx-10"
+      >
+        <div className="">
+          <div className="flex gap-2 items-center">
+            <button
+              className="text-white/60 hover:text-white/80 bg-rose-800 hover:bg-rose-700 transition-colors duration-300 ease-in-out p-2 ml-auto"
+              onClick={handleClosePopupBanner}
+            >
+              <FontAwesomeIcon icon={['fas', 'times']} className="text-xl"/>
+            </button>
+          </div>
+          <img 
+            src={`${import.meta.env.VITE_API_BASE_URL}/media/uploads/popup.webp`} 
+            alt="Promotional Banner"
+            className="w-full h-auto rounded-lg"
+            onError={(e) => {
+              console.error('Popup banner image failed to load');
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      </Modal>
     </span>,
 
     <span key="loan calculator" className="rounded-md w-10 h-10 flex justify-center items-center cursor-pointer">
@@ -177,8 +197,6 @@ function App() {
     <Router>
       <Loader duration={2000}/>
       
-      {/* <Popup/> */}
-
       <div className=''>
       
         <ScrollToTop/>
@@ -191,7 +209,6 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage/>}/>
           <Route path='/about' element={<AboutPage/>}/>
-          {/*<Route path='/products' element={<ProductsAndServicesPage/>}/>*/}
           <Route path='/ir' element={<InvesterRelationsPage/>}/>
           <Route path="/profile/bod/:profileId" element={<PersonalProfile type="bod" />} />
           <Route path="/profile/coop/:profileId" element={<PersonalProfile type="coop" />} />
@@ -205,8 +222,6 @@ function App() {
           <Route path="/luckewallet" element={<LuckewalletPage />} />
 
           <Route path="/careers" element={<CareerPortal />} />
-          {/* <Route path="/careers/job-description/:jobId" element={<JobDescription />} />
-          <Route path="/careers/application-form" element={<ApplicationForm />} /> */}
           
           <Route path='/contacts' element={<Contacts/>}/>
           <Route path='/downloads' element={<Downloads/>}/>
@@ -214,15 +229,14 @@ function App() {
           <Route path='/downloads/customer-information' element={<CustomerInformation/>}/>
           <Route path='/downloads/luckewallet-guidelines' element={<LuckewalletTutues/>}/>
           <Route path='/downloads/privacy-policy' element={<PrivacyPolicy/>}/>
-          <Route path='/app-privacy-policy' element={<PrivacyPolicy/>}/> {/*Duplicated route coz the old version support*/}
+          <Route path='/app-privacy-policy' element={<PrivacyPolicy/>}/>
 
-          <Route path='contacts/complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the old version support*/}
-          <Route path='/customer-complaints' element={<Contacts formType='complaint'/>}/> {/*Duplicated route coz the KYD document*/}
+          <Route path='contacts/complaints' element={<Contacts formType='complaint'/>}/>
+          <Route path='/customer-complaints' element={<Contacts formType='complaint'/>}/>
 
           <Route path='/test/leadWave/login' element={<Login />} />
           <Route path='/test/leadWave/leadForm' element={<LeadForm />} />
 
-          {/* 404 Page - Catch all unmatched routes */}
           <Route path='*' element={<NotFound />} />
 
         </Routes>

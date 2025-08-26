@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Astore from '../media/icons/appStoreBtn.webp';
-import Pstore from '../media/icons/playStoreBtn.webp';
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types';
@@ -74,8 +72,8 @@ const Luckewallet = ({MobilePic, logo}) => {
 
             </div>
             <div className='flex gap-5 pt-10'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Download on the App Store'/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Donload on the Play Store'/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/appStoreBtn.webp`} alt='Download on the App Store'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/playStoreBtn.webp`} alt='Donload on the Play Store'/></a>
 
             </div>
         </div>
@@ -86,8 +84,8 @@ const Luckewallet = ({MobilePic, logo}) => {
             <img src={MobilePic} className='' alt='LuckEWallet Image'/>
         </div>
         <div className='sm:hidden flex gap-5 pt-10'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Download on the App Store'/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Donload on the Play Store'/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/appStoreBtn.webp`} alt='Download on the App Store'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/playStoreBtn.webp`} alt='Donload on the Play Store'/></a>
 
             </div>
     </div>

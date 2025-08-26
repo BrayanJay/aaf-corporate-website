@@ -1,19 +1,18 @@
 import { useTranslation } from 'react-i18next';
 
-//bankers logoes
-import bank1 from '../media/bankers/boc.svg'
-import bank2 from '../media/bankers/combank.svg'
-import bank3 from '../media/bankers/dfcc.svg'
-import bank4 from '../media/bankers/indian-bank.svg'
-import bank5 from '../media/bankers/ndb.svg'
-import bank6 from '../media/bankers/panasia.svg'
-import bank7 from '../media/bankers/peoples.svg'
-import bank8 from '../media/bankers/sampath.svg'
-import bank9 from '../media/bankers/seylan.svg'
-import bank10 from '../media/bankers/ntb.svg'
-
 //logoes array
-const logos = [bank8, bank10, bank2, bank3, bank4, bank5, bank6, bank7, bank9, bank1, ]
+const logos = [
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/boc.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/combank.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/dfcc.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/indian-bank.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/ndb.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/panasia.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/peoples.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/sampath.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/seylan.svg`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/bankers/ntb.svg`,
+];
 
 const CorporateInformation = () => {
     const { t } = useTranslation();

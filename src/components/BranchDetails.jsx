@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
-import map from '../media/landingPage/map.svg';
 import { HashLink } from 'react-router-hash-link';
 
 // Branch images
@@ -30,7 +29,7 @@ const BranchDetails = () => {
       <div className="absolute inset-0 bg-white bg-opacity-80"></div>
       {/* Map Image - Left Section */}
       <div className="hidden lg:block lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-        <HashLink smooth to="/branchnetwork"><img src={map} alt="Map Image" /></HashLink>
+        <HashLink smooth to="/branchnetwork"><img src={`${import.meta.env.VITE_API_BASE_URL}/media/landingPage/map.svg`} alt="Map Image" /></HashLink>
       </div>
       {/* Contents - Right Section */}
       <div className="lg:basis-1/2 z-10" data-aos="fade-up">
@@ -69,7 +68,7 @@ const BranchDetails = () => {
 
           {/* Map image for smaller screens */}
           <div className="lg:hidden lg:basis-1/2 pt-10 md:pt-0 z-10" data-aos="zoom-in">
-          <HashLink smooth to="/branchnetwork"><img src={map} alt="Branch Map Image" /></HashLink>
+          <HashLink smooth to="/branchnetwork"><img src={`${import.meta.env.VITE_API_BASE_URL}/media/landingPage/map.svg`} alt="Branch Map Image" /></HashLink>
           </div>
           
         </div>

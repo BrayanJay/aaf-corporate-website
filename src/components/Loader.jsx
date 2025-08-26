@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import logo from '../media/logos/logo.webp'
 import PropTypes from 'prop-types';
 
 const Loader = ({ duration }) => {
@@ -22,7 +21,7 @@ const Loader = ({ duration }) => {
         <div className="absolute w-36 h-36 rounded-full bg-blue-100 animate-blink"></div>
         {/* Logo with zoom-in-out effect */}
         <img
-          src={logo}
+          src={`${import.meta.env.VITE_API_BASE_URL}/media/logos/logo.webp`}
           alt="Logo"
           className="max-w-48 animate-zoomInOut"
         />

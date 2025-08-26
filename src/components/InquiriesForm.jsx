@@ -268,7 +268,7 @@ Popup.propTypes = {
           <div className="mb-4">
             <label className="after:ml-0.5 after:text-red block mb-1 text-sm font-medium text-slate-700">{inquiryForm.label12}</label>
             <select name="language" className={inputClasses} value={formData.language} onChange={handleChange}>
-              <option value={inquiryForm.field12}></option>
+              <option value="">Select Language</option>
               <option value="1">English</option>
               <option value="2">සිංහල</option>
               <option value="3">தமிழ்</option>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../media/logos/logo.webp';
 
 export default function Login() {
   const [employeeNumber, setEmployeeNumber] = useState('');
@@ -31,7 +30,7 @@ export default function Login() {
     <div className="flex items-center justify-center min-h-screen bg-cover bg-center relative bg-leadwaveBg px-10 py-10 lg:px-40">
         <div className='absolute inset-0 bg-white/40 bg-cover'></div>
       <div className="bg-white p-8 rounded-3xl shadow-lg max-w-md w-full text-center z-10">
-        <img src={logo} alt="Logo" className="mx-auto mb-6 w-max-60 h-20" />
+        <img src={`${import.meta.env.VITE_API_BASE_URL}/media/logos/logo.webp`} alt="Logo" className="mx-auto mb-6 w-max-60 h-20" />
         <h2 className="text-2xl font-bold text-blue-600">Lead Submission Portal</h2>
         <p className="text-gray-500 mt-1 mb-6">Please enter your Employee Number to continue.</p>
 

@@ -1,5 +1,4 @@
 import { useEffect } from 'react'; //import useState if the subcription sector connect
-import logo from '../media/logos/footer_logo.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from 'react-router-dom';
@@ -103,7 +102,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-16 py-10 border-b border-white">
         {/* Left Section */}
         <div className="md:basis-1/4 text-center md:text-left">
-          <Link to="/" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={logo} alt="Logo" data-aos="fade-up" data-aos-once="true"/></Link>
+          <Link to="/" onClick={scrolltoTop}><img className="max-w-48 mx-auto md:mx-0" src={`${import.meta.env.VITE_API_BASE_URL}/media/logos/footer_logo.webp`} alt="Logo" data-aos="fade-up" data-aos-once="true"/></Link>
           <p className="mt-4 mb-6 text-sm leading-relaxed text-white/80" aria-label={data.intro} data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
             {data.intro}
           </p>

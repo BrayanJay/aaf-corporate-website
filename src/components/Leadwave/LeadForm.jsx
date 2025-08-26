@@ -164,12 +164,14 @@ const Form = () => {
     }
   }
   // Filtered lists for search
-  const filteredLocations = locations.filter(location =>
+  const filteredLocations = locations && locations.length > 0 ? locations.filter(location =>
+    location && location.CityName && location.DisName && 
     `${location.CityName}, ${location.DisName}`.toLowerCase().startsWith(locationSearch.toLowerCase())
-  );
-  const filteredOccupations = occupations.filter(occupation =>
+  ) : [];
+  const filteredOccupations = occupations && occupations.length > 0 ? occupations.filter(occupation =>
+    occupation && occupation.OccupationDesc && 
     occupation.OccupationDesc.toLowerCase().includes(occupationSearch.toLowerCase())
-  );
+  ) : [];
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -412,7 +414,7 @@ const Form = () => {
                           required
                       >
                           <option value="">Select Channel</option>
-                          {channels.map(channel => (
+                          {channels && channels.map(channel => (
                           <option
                           key={channel.ChannelId}
                           value={channel.ChannelId}
@@ -436,7 +438,7 @@ const Form = () => {
                         required
                     >
                         <option value="">Select Product</option>
-                        {products.map(product => (
+                        {products && products.map(product => (
                         <option
                         key={product.productId}
                         value={product.productId}
@@ -462,7 +464,7 @@ const Form = () => {
                             required
                         >
                             <option value="">Select Branch</option>
-                            {branches.map(branch => (
+                            {branches && branches.map(branch => (
                             <option 
                             key={branch.Code}
                             value={branch.Code}
@@ -586,7 +588,7 @@ const Form = () => {
                                 setLocationSearch('');
                               }}
                             >
-                              {location.PostalCode} | {location.CityName}
+                              {location.PostalCode || 'N/A'} | {location.CityName || 'Unknown City'}
                             </div>
                           ))}
                         </div>
@@ -696,7 +698,7 @@ const Form = () => {
                         required
                     >
                         <option value="">Select Language</option>
-                        {languages.map(lang => (
+                        {languages && languages.map(lang => (
                         <option 
                         key={lang.Id || lang.DESCRIPTION} 
                         value={lang.Id}
@@ -720,7 +722,7 @@ const Form = () => {
                         required
                     >
                         <option value="">Select Lead Source</option>
-                        {leadSources.map(source => (
+                        {leadSources && leadSources.map(source => (
                         <option key={source.Id} value={source.Id}>{source.DESCRIPTION}</option>
                         ))}
                     </select>
@@ -734,7 +736,7 @@ const Form = () => {
                         onChange={e => setSelectedCampaign(e.target.value)}
                     >
                         <option value="">Select Campaign</option>
-                        {campaigns.map(campaign => (
+                        {campaigns && campaigns.map(campaign => (
                         <option key={campaign.CampaignId} value={campaign.CampaignId}>{campaign.CampaignName}</option>
                         ))}
                     </select>

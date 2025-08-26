@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Astore from '../media/icons/appStoreBtn.webp';
-import Pstore from '../media/icons/playStoreBtn.webp';
 import { useTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 
@@ -57,8 +55,8 @@ const Luckewallet = ({MobilePic, logo}) => {
             <div className='flex flex-col pt-10'>
                 <div className='font-bold text-blue-950'>{luckewallet.download_now}</div>
             <div className='flex gap-5'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Click here to Download'/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Click Here to Download'/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/appStoreBtn.webp`} alt='Click here to Download'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-36 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/playStoreBtn.webp`} alt='Click Here to Download'/></a>
             </div>
             </div>
         </div>
@@ -69,8 +67,8 @@ const Luckewallet = ({MobilePic, logo}) => {
             <img src={MobilePic} className='lg:h-[100vh]' alt='Luckewallet User Interface'/>
         </div>
         <div className='sm:hidden flex gap-5 pt-10'>
-                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Astore} alt='Click here to download'/></a>
-                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={Pstore} alt='Click here to download'/></a>
+                <a href='https://apps.apple.com/lk/app/asia-asset-luckewallet/id1637028447'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/appStoreBtn.webp`} alt='Click here to download'/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.AsiaAsset.luckewallet&pli=1'><img className='w-24 hover:cursor-pointer hover:shadow-lg' src={`${import.meta.env.VITE_API_BASE_URL}/media/icons/playStoreBtn.webp`} alt='Click here to download'/></a>
 
             </div>
     </div>

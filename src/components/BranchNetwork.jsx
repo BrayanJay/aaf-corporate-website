@@ -8,39 +8,97 @@ const BranchNetwork = () => {
   const [branchesData, setBranchesData] = useState([]);
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedRegionId, setSelectedRegionId] = useState(null); // Track region by ID instead of name
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
   const apiBaseUrl = `${import.meta.env.VITE_API_BASE_URL}/branch/branches`;
 
-  // Fetch all regions based on language
+  // Fetch all branches and extract unique regions based on language
   useEffect(() => {
     const fetchRegions = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/getBranchDetails/${i18n.language}`);
-        setRegions(response.data);
+        const response = await axios.get(`${apiBaseUrl}/lang/${i18n.language}`);
+        const branches = response.data;
         
-        // Set default to "All Regions"
-        setSelectedRegion(t("branchNetworktext.all_tab"));
+        // Extract unique regions from branches data
+        const uniqueRegions = branches.reduce((acc, branch) => {
+          const existingRegion = acc.find(region => region.region_id === branch.region_id);
+          if (!existingRegion) {
+            acc.push({
+              region_id: branch.region_id,
+              region_name: branch.region_name
+            });
+          }
+          return acc;
+        }, []);
+        
+        setRegions(uniqueRegions);
+        
+        // Maintain selected region across language changes
+        if (selectedRegionId !== null) {
+          // Find the region name in the new language for the selected region ID
+          const currentRegion = uniqueRegions.find(region => region.region_id === selectedRegionId);
+          if (currentRegion) {
+            setSelectedRegion(currentRegion.region_name);
+          } else {
+            // If region not found, default to "All Regions"
+            setSelectedRegion(t("branchNetworktext.all_tab"));
+            setSelectedRegionId(null);
+          }
+        } else if (selectedRegion && selectedRegion !== t("branchNetworktext.all_tab")) {
+          // Handle case where a region was selected but we lost the ID reference
+          // Try to find the region by checking if current selectedRegion matches any previous language version
+          setSelectedRegion(t("branchNetworktext.all_tab"));
+        } else {
+          // Update "All Regions" text if that's what's selected, or set default on initial load
+          setSelectedRegion(t("branchNetworktext.all_tab"));
+        }
       } catch (error) {
         console.error("Error fetching regions:", error);
       }
     };
 
     fetchRegions();
-  }, [i18n.language]);
+  }, [i18n.language, apiBaseUrl, t, selectedRegionId, selectedRegion]);
 
   // Fetch branches based on selected region
   useEffect(() => {
     const fetchBranches = async () => {
       setLoading(true);
       try {
-        const url = selectedRegion === t("branchNetworktext.all_tab")
-          ? `${apiBaseUrl}/getBranchDetails/${i18n.language}`
-          : `${apiBaseUrl}/getBranchDetails/${selectedRegion}/${i18n.language}`;
+        let url;
+        let responseData;
+        
+        if (selectedRegion === t("branchNetworktext.all_tab")) {
+          // Fetch all branches by language
+          url = `${apiBaseUrl}/lang/${i18n.language}`;
+          const response = await axios.get(url);
+          responseData = response.data;
+        } else {
+          // Find the region_id for the selected region name
+          const selectedRegionData = regions.find(region => region.region_name === selectedRegion);
+          if (selectedRegionData) {
+            // Fetch by region and then filter for language-specific fields
+            url = `${apiBaseUrl}/region/${selectedRegionData.region_id}`;
+            const response = await axios.get(url);
+            
+            // Transform the data to match language-specific format
+            responseData = response.data.map(branch => ({
+              ...branch,
+              branch_name: branch[`branch_name_${i18n.language}`] || branch.branch_name_en,
+              branch_address: branch[`branch_address_${i18n.language}`] || branch.branch_address_en,
+              region_name: branch[`region_name_${i18n.language}`] || branch.region_name_en
+            }));
+          } else {
+            // Fallback to all branches if region not found
+            url = `${apiBaseUrl}/lang/${i18n.language}`;
+            const response = await axios.get(url);
+            responseData = response.data;
+          }
+        }
   
-        const response = await axios.get(url);
-        setBranchesData(Array.isArray(response.data) ? response.data : []);
+        setBranchesData(Array.isArray(responseData) ? responseData : []);
       } catch (error) {
         console.error("Error fetching branch details:", error);
         setBranchesData([]);
@@ -49,8 +107,10 @@ const BranchNetwork = () => {
       }
     };
   
-    fetchBranches();
-  }, [selectedRegion, i18n.language]);
+    if (selectedRegion) {
+      fetchBranches();
+    }
+  }, [selectedRegion, i18n.language, regions, apiBaseUrl, t]);
   
   // Format phone number for display
   const formatPhoneNumber = (phoneNumber) => {
@@ -74,12 +134,33 @@ const BranchNetwork = () => {
     return `+94${phoneNumber.toString().replace(/\D/g, "").replace(/^0/, "")}`;
   };
 
-  const uniqueRegionNames = [...new Set(regions.map(region => region.region_name)), t("branchNetworktext.all_tab")];
+  // Helper function to generate image filename from branch name
+  const getBranchImageName = (branchNameEn) => {
+    if (!branchNameEn) return "temp.webp";
+    // Convert to lowercase and remove spaces
+    return `${branchNameEn.toLowerCase().replace(/\s+/g, "")}.webp`;
+  };
+
+  const uniqueRegionNames = [t("branchNetworktext.all_tab"), ...new Set(regions.map(region => region.region_name))];
+
+  // Handle region selection
+  const handleRegionSelect = (regionName) => {
+    setSelectedRegion(regionName);
+    
+    if (regionName === t("branchNetworktext.all_tab")) {
+      setSelectedRegionId(null);
+    } else {
+      const regionData = regions.find(region => region.region_name === regionName);
+      if (regionData) {
+        setSelectedRegionId(regionData.region_id);
+      }
+    }
+  };
 
   // Filter branches based on search query
   const filteredBranches = branchesData.filter((branch) =>
     branch?.branch_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    branch?.address?.toLowerCase().includes(searchQuery.toLowerCase())
+    branch?.branch_address?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -111,7 +192,7 @@ const BranchNetwork = () => {
         {uniqueRegionNames.map((regionName) => (
           <button
             key={regionName}
-            onClick={() => setSelectedRegion(regionName)}
+            onClick={() => handleRegionSelect(regionName)}
             className={`py-2 px-4 rounded-lg ${selectedRegion === regionName ? "bg-bluegradient text-white" : "bg-gray-200"}`}
           >
             {regionName}
@@ -128,19 +209,30 @@ const BranchNetwork = () => {
         ) : filteredBranches.length > 0 ? (
           filteredBranches.map((branch, index) => (
             <div key={index} className="flex flex-col p-4 bg-white shadow-lg rounded-lg justify-center items-center hover:scale-110 transition-all duration-300 ease-in-out">
-              {branch.picture && (
-                  <img 
-                    src={`../src/${branch.picture}`}
-                    alt={branch.branch_name || "Branch"} 
-                    className="max-w-32 max-h-32 lg:max-w-48 lg:max-h-48 w-fit h-fit object-cover"
-                  />
-              )}
+              <div className="w-32 h-32 lg:w-48 lg:h-48 flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden">
+                <img 
+                  src={`${import.meta.env.VITE_API_BASE_URL}/media/branches/${getBranchImageName(branch.branch_name_en)}`}
+                  alt={branch.branch_name || "Branch"} 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    if (!e.target.src.includes('temp.webp')) {
+                      e.target.src = `${import.meta.env.VITE_API_BASE_URL}/media/branches/temp.webp`;
+                    } else {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }
+                  }}
+                />
+                <div className="w-full h-full flex items-center justify-center text-gray-400" style={{ display: 'none' }}>
+                  <FontAwesomeIcon icon={['fas', 'building']} className="text-4xl lg:text-6xl" />
+                </div>
+              </div>
               <div className="text-blue-900 text-base lg:text-lg font-bold mt-2 text-center">
                 {branch.branch_name || "Unknown Branch"}
               </div>
               <div className="text-black/60 flex items-center text-xs lg:text-sm text-center gap-2 mt-2">
                 <FontAwesomeIcon icon={['fas', 'location-dot']} className="text-xs text-blue-800" /> 
-                <span>{branch.address || "No address available"}</span>
+                <span>{branch.branch_address || "No address available"}</span>
               </div>
               {branch.contact_number && (
                   <div className="text-black/60 flex items-center text-xs lg:text-sm text-center gap-2">
@@ -149,9 +241,9 @@ const BranchNetwork = () => {
                   </div>
               )}
               <div className="flex flex-row gap-1 md:gap-2">
-              {branch.latitude && branch.longitude && (
+              {branch.coordinates_latitude && branch.coordinates_longitude && (
                 <a 
-                  href={`https://maps.google.com/?q=${branch.latitude},${branch.longitude}`}
+                  href={`https://maps.google.com/?q=${branch.coordinates_latitude},${branch.coordinates_longitude}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-full text-xs font-medium"

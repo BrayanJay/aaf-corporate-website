@@ -9,32 +9,32 @@ const CustomerInformation = () => {
     {
       idx: 1,
       title: "Finance Business Act, No. 42 OF 2011",
-      url: "/src/media/attachments/customerInformation/finance_business_act_no_42_of_2011.pdf",
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/finance_business_act_no_42_of_2011.pdf`,
     },
     {
       idx: 2,
       title: "AAF - Finance Business Licence",
-      url: "/src/media/attachments/customerInformation/finance_business_licence_aaf.pdf",
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/finance_business_licence_aaf.pdf`,
     },
     {
       idx: 3,
       title: "Directions, Rules, Determinations, Notices, and Guidelines",
-      url: "/src/media/attachments/customerInformation/lfc_s_direction_book.pdf",
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/lfc_s_direction_book.pdf`,
     },
     {
       idx: 4,
       title: "Finance Leasing Lisence",
-      url: "/src/media/attachments/customerInformation/finance_leasing_lisence.pdf"
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/finance_leasing_lisence.pdf`
     },
     {
       idx: 5,
       title: "Customer Complaint Handling Procedure",
-      url: "/src/media/attachments/customerInformation/CustomerComplaintHandlingProcedure.pdf",
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/CustomerComplaintHandlingProcedure.pdf`,
     },
     {
       idx: 6,
       title: "Financial Consumer Protection",
-      url: "/src/media/attachments/customerInformation/FinancialConsumerProtectionPolicy.pdf",
+      url: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/customerInformation/FinancialConsumerProtectionPolicy.pdf`,
     },
 
     // Add more documents here

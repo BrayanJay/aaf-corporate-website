@@ -1,19 +1,17 @@
 import Carousel from '../../../components/Carousel'
-import banner from '../../../media/products/fePgBanner.webp'
 import Description from '../../../components/Description';
-//import fdUpload from '../../../media/uploads/fe13112024.webp'
 import { useTranslation } from "react-i18next";
-
-import muthoot from '../../../media/products/forex/muthoot_global.png'
-import moneygram from '../../../media/products/forex/moneygram.png'
-import w_union from '../../../media/products/forex/western_union.png'
-import ria from '../../../media/products/forex/ria.png'
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const logos = [moneygram, w_union, muthoot, ria]
+const logos = [
+  `${import.meta.env.VITE_API_BASE_URL}/media/products/forex/moneygram.png`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/products/forex/western_union.png`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/products/forex/muthoot_global.png`,
+  `${import.meta.env.VITE_API_BASE_URL}/media/products/forex/ria.png`
+]
 
 const ForeignExchange = () => {
   const { i18n } = useTranslation();
@@ -38,7 +36,7 @@ const ForeignExchange = () => {
   if (!data) return <p>Loading...</p>;
 
 const image = {
-  src: banner,
+  src: `${import.meta.env.VITE_API_BASE_URL}/media/products/fePgBanner.webp`,
   title: data.title,
 };
   return (
@@ -60,9 +58,6 @@ const image = {
       </div>
       <div className='flex justify-center gap-5 bg-white'>
       <Link to="/downloads/customer-information"><div className='px-3 py-1.5 border-2 border-blue-500 text-xs sm:text-base text-blue-500 hover:text-white text-center hover:bg-bluegradient transition-colors ease-in-out duration-200 font-medium cursor-pointer rounded-xl items-center justify-center' aria-label={data.btn_1}>{data.btn_1}</div></Link>
-      </div>
-      <div className='flex justify-center p-10 bg-white'>
-          {/*<img className='p-10' src={fdUpload}/>*/}
       </div>
 
       <div className='px-20 py-5 text-center'>

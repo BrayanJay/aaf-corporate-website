@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
-import gold_ellipse from '../media/aboutPage/goldellipse.webp';
-import blue_ellipse from '../media/aboutPage/blueellipse.webp';
 import ProfileCard from './ProfileCard'; // Re-usable component
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -52,7 +50,7 @@ const BOD = () => {
 
       {/* Chairman Section */}
       <div className="flex flex-row md:gap-40" data-aos="fade-right">
-        <img src={gold_ellipse} className="h-72 md:h-96" />
+        <img src={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/goldellipse.webp`} className="h-72 md:h-96" />
         <div className="absolute pl-10 sm:pl-20">
           <img
             src={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/bod/1.webp`}  // Fallback if missing
@@ -124,7 +122,7 @@ const BOD = () => {
             </div>
           </div>
         </div>
-        <img src={blue_ellipse} className="h-72 md:h-96" />
+        <img src={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/blueellipse.webp`} className="h-72 md:h-96" />
         <div className="absolute pr-10 sm:pr-20">
           <img
             src={`${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/bod/2.webp`}  // Fallback if missing

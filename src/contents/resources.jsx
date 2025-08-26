@@ -1,49 +1,6 @@
 //MAIN SOURCE OF TEXT CONTENTS - ALL THE CHANGES SHOULD BE DONE IN HERE
 
-//Landing Page Banners
-import banner1 from '../media/landingPage/bannerimg1.webp'; 
-import banner2 from '../media/landingPage/bannerimg2.webp';
-import banner3 from '../media/landingPage/bannerimg3.webp';
-
-//About Page Banners
-import bannerAbout from '../media/aboutPage/bannerAbout.webp';
-
-//Investor Relations Page Banners
-import bannerIR from '../media/investorRelations/irPgBanner.webp';
-
-//Landing Page Products Overview Images
-import FixedDeposits from '../media/landingPage/fd.webp';
-import Forex from '../media/landingPage/forex.webp';
-import GoldLoan from '../media/landingPage/gloan.webp';
-import Mortgage from '../media/landingPage/mortgage.webp';
-import Leasing from '../media/landingPage/leasing.webp';
-import Luckewallet from '../media/landingPage/luckewallet.webp';
-
 import { faUsers, faBriefcase, faBuilding, faClock } from '@fortawesome/free-solid-svg-icons'; // Import suitable icons
-
-//BOD Profile Pictures
-import mrPrasanth from '../media/aboutPage/bod/vap.webp';
-import mrRajiv from '../media/aboutPage/bod/rja.webp';
-import mrAlexandra from '../media/aboutPage/bod/gm.webp';
-import mrBijimon from '../media/aboutPage/bod/kr.webp';
-import mrPillai from '../media/aboutPage/bod/kgk.webp';
-import mrRajitha from '../media/aboutPage/bod/rab.webp';
-import mrJayasekara from '../media/aboutPage/bod/jpdr.webp';
-import mrRoshan from '../media/aboutPage/bod/rds.webp';
-import mrKumarasiri from '../media/aboutPage/bod/tcd.webp';
-
-//COM Profile Pictures
-import mrThiru from '../media/aboutPage/com/tn.webp';
-import mrMahesh from '../media/aboutPage/com/mk.webp';
-import mrJayantha from '../media/aboutPage/com/jw.webp';
-import mrSameera from '../media/aboutPage/com/sw.webp';
-import msGeethika from '../media/aboutPage/com/ge.webp';
-import mrSajith from '../media/aboutPage/com/sa.webp';
-import mrInditha from '../media/aboutPage/com/ij.webp';
-import mrPraveen from '../media/aboutPage/com/pp.webp';
-
-//Products Selector Images
-import FD from '../media/products/fdPgBanner.webp';
 
 //branches photos
 //import branchSample from '../media/branches/temp.webp';
@@ -111,21 +68,21 @@ const resources = {
       carouselLandingPage: [
         
         {
-          src: banner1,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg1.webp`,
           title: "Innovative Solutions for Your Financial Future",
           intro: "Empowering Your Financial Future",
           description:
             "At Asia Asset Finance, we believe in the power of innovation to drive financial success. Our commitment to providing tailored financial solutions has positioned us as a leader in the Sri Lankan finance industry. Whether you’re looking to invest, save, or finance your next big project, we’re here to support your journey with trust and transparency.",
         },
         {
-          src: banner2,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg2.webp`,
           title: "Where Dreams Meet Financial Solutions",
           intro: "Innovative Finance, Inspiring Growth",
           description:
             "We are more than just a financial institution; we are your partners in progress. Our innovative approach to finance is designed to empower individuals and businesses across Sri Lanka. By combining cutting-edge technology with personalized service, we deliver financial solutions that are not only efficient but also effective in helping you achieve your goals.",
         },
         {
-          src: banner3,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg3.webp`,
           title: "Leading the Way in Sri Lankan Finance",
           intro: "Your Trust, Your Commitment",
           description:
@@ -173,12 +130,12 @@ const resources = {
     description: "At Asia Asset Finance, we provide a diverse range of financial products tailored to meet your unique needs. Whether you're looking to grow your savings, secure a loan, or explore investment opportunities, our offerings are designed with your financial well-being in mind. Choose from our secure Fixed Deposits, flexible Gold Loans, and supportive Micro Mortgage Loans to find the right fit for you. With our innovative E-Saving accounts, competitive Foreign Exchange services, and convenient Leasing options, we ensure that every aspect of your financial journey is covered. Trust us to deliver reliable, personalized solutions that empower your financial success.",
   },
   productsOverviewLandingPage: [
-    { title: "Fixed Deposits", image: FixedDeposits, description: "Secure your savings with fixed returns.", link: "/fixed-deposit" },
-  { title: "Gold Loan", image: GoldLoan, description: "Grow your wealth with flexible savings.", link: "/gold-loan" },
-  { title: "Mortgage", image: Mortgage, description: "Affordable loans for your every need.", link: "/mortgage" },
-  { title: "Leasing", image: Leasing, description: "Convenient spending with low-interest rates.", link: "/leasing" },
-  { title: "E - Savings", image: Luckewallet, description: "Comprehensive protection for peace of mind.", link: "/luckewallet" },
-  { title: "Forex", image: Forex, description: "Maximize your returns with diverse options.", link: "/foreign-exchange" },
+    { title: "Fixed Deposits", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/fd.webp`, description: "Secure your savings with fixed returns.", link: "/fixed-deposit" },
+  { title: "Gold Loan", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/gloan.webp`, description: "Grow your wealth with flexible savings.", link: "/gold-loan" },
+  { title: "Mortgage", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/mortgage.webp`, description: "Affordable loans for your every need.", link: "/mortgage" },
+  { title: "Leasing", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/leasing.webp`, description: "Convenient spending with low-interest rates.", link: "/leasing" },
+  { title: "E - Savings", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/eSavings.webp`, description: "Comprehensive protection for peace of mind.", link: "/luckewallet" },
+  { title: "Forex", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/forex.webp`, description: "Maximize your returns with diverse options.", link: "/foreign-exchange" },
 ],
 testimonialsText: {
   title: "What Our Clients Say",
@@ -287,7 +244,7 @@ inquiryForm: {
 
   //About Page Components
   bannerAbout:{
-    src: bannerAbout,
+    src: `${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/bannerAbout.webp`,
     title: "About us",
     intro: "Empowering Your Financial Future ",
     specialnote: "since 1970",
@@ -320,16 +277,7 @@ category: "goal",
     description: ""
   }
 },
-  bodProfilesAbout: [
-    { imgSrc: mrAlexandra, name: 'G M Alexander', title: 'Non - Independent Non - Executive Director' },
-    { imgSrc: mrBijimon, name: 'K R Bijimon', title: 'Non - Independent Non - Executive Director' },
-    { imgSrc: mrPillai, name: 'K G K Pillai', title: 'Non - Independent Non - Executive Director' },
-    { imgSrc: mrRajitha, name: 'R A B Basnayake', title: 'Independent Non - Executive Director' },
-    { imgSrc: mrJayasekara, name: 'J P D R Jayasekara', title: 'Independent Non - Executive Director' },
-    { imgSrc: mrKumarasiri, name: 'T C D Kumarasiri', title: 'Independent Non - Executive Director' },
-    { imgSrc: mrRoshan, name: 'R D S Gunasekara', title: 'Executive Director / Chief Operating Officer' },
-    { imgSrc: mrThiru, name: 'M Thiruneelakandan', title: 'Non-Independent Executive Director / General Manager' },
-  ],
+
  bodTextsAbout: {
     title1: "Board of ",
     title2: "Directors",
@@ -350,21 +298,6 @@ category: "goal",
     subtitle: "Comprehensive Solutions for Secure Financial Growth",
     description: "At Asia Asset Finance, our corporate management team is composed of seasoned professionals who bring a wealth of experience and insight to the table. Their strategic leadership and commitment to excellence drive our company’s success, ensuring we remain at the forefront of Sri Lanka’s financial services industry.",
   },
-  comProfilesAbout: [ 
-    { imgSrc: mrRajiv, name: 'Rajiv Gunawardena', title: 'Executive Director / Chief Executive Officer' },
-    { imgSrc: mrRoshan, name: 'Roshan Gunasekara', title: 'Executive Director / Chief Operating Officer' },
-    { imgSrc: mrThiru, name: 'M. Thiruneelakandan', title: 'Non-Independent Executive Director / General Manager' },
-    { imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Chief Financial Officer' },
-    //{ imgSrc: msGeethika, name: 'Geethika Elwalage', title: 'Deputy General Manager - Finance' },
-    { imgSrc: mrJayantha, name: 'Jayantha Weerappulige', title: 'General Manager - Operation' },
-    //{ imgSrc: mrJayantha, name: 'Jayantha Weerappulige', title: 'Deputy General Manager - Operation' },
-    { imgSrc: mrMahesh, name: 'Mahesh Kumar', title: 'Deputy General Manager - Credit & Recovery' },
-    { imgSrc: mrSameera, name: 'Samira Weveladeniya', title: 'Deputy General Manager - Fixed Deposits' },
-    { imgSrc: mrSajith, name: 'Sajith Atapattu', title: 'Deputy General Manager - Risk' },
-    { imgSrc: mrInditha, name: 'Inditha Jayathilaka', title: 'Deputy General Manager - IT' },
-    { imgSrc: mrPraveen, name: 'Praveen Peiris', title: 'Deputy General Manager - Treasury' },
-    
-  ],
   branchNetworktext: {
     title1: "Our",
     title2: "Branch Network",
@@ -388,164 +321,10 @@ category: "goal",
     viewOnMapBtn: "View On Map",
     callNowBtn: "Call Now"
   },
-  branchesData: {
-    head_office: {
-      title: "Head Office",
-      branches: [
-        { name: "Head Office", location: "No.76, Park Street, Colombo 02.", contact: "011 769 9000", tp: "+94117699000", image: "/src/media/branches/headoffice.webp", lat: "6.915119", lng: "79.859896" },
-      ]
-    },
-    western: {
-      title: "Western Region",
-      branches: [
-        { name: "Negombo", location: "No.295, Main Street, Negombo.", contact: "031 769 9020", image: "/src/media/branches/negombo.webp", lat: "7.212791", lng: "79.841551" },
-        { name: "Gampaha", location: "No.69, Colombo Road, Gampaha.", contact: "033 769 9010", image: "/src/media/branches/gampaha.webp", lat: "79.841551", lng: "79.995027" },
-        { name: "Kalutara", location: "No.344, Maha Veediya, Kalutara South.", contact: "034 769 9013", image: "/src/media/branches/kaluthara.webp", lat: "6.57007", lng: "79.966094" },
-        { name: "Moratuwa", location: "No.16, New De Soysa Road, Rawathawatta, Moratuwa.", contact: "011 768 1511", image: "/src/media/branches/moratuwa.webp", lat: "6.788091", lng: "79.878066" },
-        { name: "Wellawatta", location: "No.344, Galle Road, Wellawatte.", contact: "011 768 1530", image: "/src/media/branches/wellawatte.webp", lat: "6.867254", lng: "79.86071" },
-        { name: "Mathugama", location: "K & W Centre, No.5, Gamini Mawatha, Aluthgama Road, Mathugama.", contact: "034 769 9022", image: "/src/media/branches/mathugama.webp", lat: "6.521474", lng: "80.113428" },
-        { name: "Kotahena", location: "No.31, Kotahena Street, Colombo 13.", contact: "011 769 9109", image: "/src/media/branches/kotahena.webp", lat: "6.948532", lng: "79.862381" },
-        { name: "Panadura", location: "No.114, D S Senanayake Mawatha, Panadura.", contact: "038 769 9010", image: "/src/media/branches/panadura.webp", lat: "6.7141", lng: "79.907744" },
-        { name: "Mattakkuliya", location: "No.3/810, Farm Road, Mattakkuliya.", contact: "011 769 9480", image: "/src/media/branches/mattakkuliya.webp", lat: "6.9778477", lng: "79.8762375" },
-        { name: "Grandpass", location: "No.428, Madampitiya Road, Colombo 14.", contact: "011 768 1502", image: "/src/media/branches/grandpass.webp", lat: "6.957149", lng: "79.876909" },
-        { name: "Elakanda", location: "No.327, Thimbirigasyaya, Handala, Wattala.", contact: "011 769 9446", image: "/src/media/branches/elakanda.webp", lat: "6.99472", lng: "79.875671" },
-        { name: "Homagama", location: "No.486, Homagama Town, Homagama.", contact: "011 769 9415", image: "/src/media/branches/homagama.webp", lat: "6.8412732", lng: "80.0038472" },
-      ]
-      
-    },
-    eastern: {
-      title: "Eastern Region",
-      branches: [
-        { name: "Batticaloa", location: "No.187, Trinco Road, Batticaloa.", contact: "065 769 9010", image: "/src/media/branches/batticaloa.webp", lat: "7.718111", lng: "81.6985" },
-        { name: "Chenkalady", location: "New Market Road, Chenkalady.", contact: "065 769 9020", image: "/src/media/branches/chenkalady.webp", lat: "7.783481", lng: "81.593214" },
-        { name: "Kalmunai", location: "No.69, Main Road, Kalmunai.", contact: "067 769 9020", image: "/src/media/branches/kalmunai.webp", lat: "6.915119", lng: "79.859896" },
-        { name: "Sammanthurai", location: "No.120, Ampara Road, Karuvaddukal-02, Sammanthurai.", contact: "067 769 9025", image: "/src/media/branches/sammanthurai.webp", lat: "7.357484", lng: "81.795105" },
-        { name: "Akkaraipattu", location: "No.155, Ampara Road, Akkaraipattu.", contact: "067 769 9010", image: "/src/media/branches/akkaraipattu.webp", lat: "7.219392", lng: "81.849757" },
-        { name: "Valaichchenai", location: "Main Street, Valachchenai.", contact: "065 769 9040", image: "/src/media/branches/valaichchenai.webp", lat: "7.921328", lng: "81.524671" },
-        { name: "Trincomalee", location: "No.285, Central Road, Trincomalee.", contact: "026 769 9021", image: "/src/media/branches/trincomalee.webp", lat: "8.579646", lng: "81.230833" },
-        { name: "Kinniya", location: "No.88, Main Street , Sinna Kinniya, Kinniya 03.", contact: "026 769 9032", image: "/src/media/branches/kinniya.webp", lat: "6.915119", lng: "79.859896" },
-        { name: "Kaluwanchikudy", location: "No.172, Main Street, Kalawanchikudy.", contact: "065 769 9032", image: "/src/media/branches/kalawanchikuddy.webp", lat: "7.517246", lng: "81.786933" },
-        { name: "Pottuvil", location: "Main Street, Pottuvil.", contact: "063 769 9011", image: "/src/media/branches/pottuvil.webp", lat: "6.875271", lng: "81.830633" },
-        { name: "Kanthale", location: "No.137, Main Street, Kantale.", contact: "026 769 9010", image: "/src/media/branches/kanthale.webp", lat: "8.351263", lng: "81.006993" },
-        { name: "Thirukkovil", location: "Main Street, Thirikkovil.", contact: "067 769 9040", image: "/src/media/branches/thirukkovil.webp", lat: "7.1158776", lng: "81.8520391" },
-        { name: "Nintavur", location: "42/11, Main Street, Ninthavur.", contact: "067 769 9052", image: "/src/media/branches/ninthavur.webp", lat: "7.356912", lng: "81.84545" },
-        { name: "Serunuwara", location: "No.44, A.R.B.03, Serunuwara.", contact: "026 769 9050", image: "/src/media/branches/serunuwara.webp", lat: "8.325101", lng: "81.300209" },
-        { name: "Mutur", location: "Batticoca Road, Alim Nagar, Mutur.", contact: "026 769 9040", image: "/src/media/branches/muthur.webp", lat: "8.44294", lng: "81.263283" },
-        { name: "Ampara", location: "No.451, D S Senanayaka Road, Ampara.", contact: "063 769 9020", image: "/src/media/branches/ampara.webp", lat: "7.2917359", lng: "81.6803183" },
-        { name: "Kokkadicholai", location: "No 10, Main Street, Kokkadicholai.", contact: "065 769 9060", image: "/src/media/branches/kokkadicholai.webp", lat: "7.609681591789088", lng: "81.7121303580231" },
-        { name: "Kiran", location: "Main Street, Kiran.", contact: "065 769 9050", image: "/src/media/branches/kiran.webp", lat: "7.865244496822327", lng: "81.53848100905222" }
-      ]
-
-    },
-    southern: {
-      title: "Southern Region",
-      branches: [
-        { name: "Galle", location: "No.170/172, Kadaveediya,Main Street, Galle.", contact: "091 769 9002", image: "/src/media/branches/galle.webp", lat: "6.035643578305275", lng: "80.22053327164475" },
-        { name: "Matara", location: "79, Anagarika Dharmapala Mawatha, Matara.", contact: "041 769 9012", image: "/src/media/branches/matara.webp", lat: "5.949379105734931", lng: "80.54374826944834" },
-        { name: "Beruwala", location: "No.199, Totamune South, Beruwala.", contact: "034 769 9030", image: "/src/media/branches/beruwala.webp", lat: "6.472090864359676", lng: "79.9847138819168" },
-        { name: "Ambalantota", location: "No.55, Maha Veediya, Ambalantota.", contact: "047 769 9000", image: "/src/media/branches/ambalantota.webp", lat: "6.122573584370459", lng: "81.02260975452502" },
-        { name: "Elpitiya", location: "No.14, Ambalangoda road, Elpitiya.", contact: "091 769 9010", image: "/src/media/branches/elpitiya.webp", lat: "6.289347277839291", lng: "80.16750838481774" },
-        { name: "Deniyaya", location: "No.196, Main Street, Deniyaya.", contact: "041 769 9020", image: "/src/media/branches/deniyaya.webp", lat: "6.3445203771652094", lng: "80.56016068020213" }
-      ]
-    },
-    northern: {
-      title: "Northern Region",
-      branches: [
-        { name: "Jaffna", location: "No.109, Kasthriyar Road, Jaffna.", contact: "021 769 9050", image: "/src/media/branches/jaffna.webp", lat: "9.668439", lng: "80.011014" },
-        { name: "Chavakachcheri", location: "No.05, Kandy Road, Chavakachcheri.", contact: "021 769 9040", image: "/src/media/branches/chavakachcheri.webp", lat: "9.659811", lng: "80.160394" },
-        { name: "Point Pedro", location: "No.374, Rajina Building complex, Point Pedro.", contact: "021 769 9080", image: "/src/media/branches/pointpedro.webp", lat: "9.821597", lng: "80.236677" },
-        { name: "Chunnakam", location: "No.15, Station Road, Chunnakam.", contact: "021 769 9005", image: "/src/media/branches/chunnakam.webp", lat: "9.737563", lng: "80.024505" },
-        { name: "Nelliady", location: "No.82, Point Pedro Road, Nelliadi.", contact: "021 769 9070", image: "/src/media/branches/nelliady.webp", lat: "9.800487", lng: "80.203238" },
-        { name: "Changani", location: "Mahan Thanga Plaza, Main Street, Chankani.", contact: "021 769 9030", image: "/src/media/branches/changanai.webp", lat: "9.747417", lng: "79.972524" },
-        { name: "Velanai", location: "Vagalavadi, Velani.", contact: "021 769 9021", image: "/src/media/branches/velanai.webp", lat: "9.63615", lng: "79.900869" },
-        { name: "Achchuveli", location: "No.53, Avarangal Road, Achchuveli.", contact: "021 769 9010", image: "/src/media/branches/achchuveli.webp", lat: "9.77819", lng: "80.115729" },
-        { name: "Manipay", location: "No.260, Manipay Road, Manipay.", contact: "021 769 9115", image: "/src/media/branches/manipay.webp", lat: "9.716558", lng: "79.996658" },
-        { name: "Urumpirai", location: "Palay Road, Urumpurai.", contact: "021 769 9090", image: "/src/media/branches/urumpirai.webp", lat: "9.7145833", lng: "80.0436667" },
-        { name: "Kilinochchi", location: "Near Murugan Temple, A9 road, Killinochchi.", contact: "021 769 9062", image: "/src/media/branches/kilinochchi.webp", lat: "9.399455", lng: "80.407774" },
-        { name: "Pudukuduirippu", location: "No.02, Paranthan Road, Puthukkudiyiruppu, Mullaitivu.", contact: "021 769 9085", image: "/src/media/branches/puthukudiyirippu.webp", lat: "9.314812", lng: "80.700415" },
-        { name: "Mullaitivu", location: "No.38, Main Street, Mullaitivu.", contact: "021 769 9065", image: "/src/media/branches/mullaitivu.webp", lat: "9.399264", lng: "80.408414" },
-        { name: "Vavuniya", location: "No.27, 2nd Cross Street, Vauniya.", contact: "024 769 9010", image: "/src/media/branches/vavuniya.webp", lat: "8.7523859", lng: "80.4970501" },
-        { name: "Oddusuddan", location: "Mullaitivu, Main Street, Vidyapuram, Oddusuddan.", contact: "021 769 9075", image: "/src/media/branches/oddusuddan.webp", lat: "9.153868", lng: "80.649731" },
-        { name: "Mannar", location: "No.05, First Cross Street, Petha, Mannar.", contact: "023 769 9010", image: "/src/media/branches/mannar.webp", lat: "8.979832", lng: "79.911538" },
-        { name: "Cheddikulam", location: "Main Street , Cheddikulam.", contact: "024 769 9020", image: "/src/media/branches/cheddikulam.webp", lat: "8.6598809", lng: "80.3126001" },
-        { name: "Mulankavil", location: "Mannar Road, Mulankavil.", contact: "023 769 9020", image: "/src/media/branches/mulankavil.webp", lat: "9.2541944", lng: "80.1419722" },
-        { name: "Mallavi", location: "Thunnukai Road, Mallavi, Mullaitivu.", contact: "021 769 9095", image: "/src/media/branches/mallavi.webp", lat: "9.1343697", lng: "80.3114889" },
-        { name: "Visuvamadu", location: "Chundikkulam Junction,Visuvamadu,Mullaitiveu.", contact: "0247699030", image: "/src/media/branches/visuvamadu.webp", lat: "9.398447279520965", lng: "80.5381797667411" },
-        { name: "Pallai", location: "A9 Road Palai Town,Palai.", contact: "0217699111", image: "/src/media/branches/pallai.webp", lat: "9.608956493958125", lng: "80.33094899999998" },
-        { name: "pesalai", location: "8th Ward Pesalai Thalimannar Road,Mannar.", contact: "0237699040", image: "/src/media/branches/pesalai.webp", lat: "9.085049036054754", lng: "79.82747541349308" },
-      ]
-    },
-    central: {
-      title: "Central Region",
-      branches: [
-        { name: "Digana", location: "J/2005 11/02. Rajawella Digana.", contact: "081 769 9030", image: "/src/media/branches/digana.webp", lat: "7.29628", lng: "80.733276" },
-        { name: "Hatton", location: "No.14/A, Ground Floor , New Road, Hatton.", contact: "051 769 9001", image: "/src/media/branches/hatton.webp", lat: "6.891629", lng: "80.598299" },
-        { name: "Thalawakele", location: "No.8/3, Main Street, Thalawakele.", contact: "052 769 9035", image: "/src/media/branches/thalawakale.webp", lat: "6.936579585212912", lng: "80.66140425561336" },
-        { name: "Nawalapitiya", location: "No.75, Ambagamuwa Road, Nawalapitiya.", contact: "081 769 9041", image: "/src/media/branches/nawalapitiya.webp", lat: "7.054935", lng: "80.530689" },
-        { name: "Gampola", location: "No.63, Nuwara Eliya Road, Gampola.", contact: "081 769 9002", image: "/src/media/branches/gampola.webp", lat: "7.162700628169831", lng: "80.57133039244944" },
-        { name: "Ragala", location: "No.67, Main Street, Ragala.", contact: "052 769 9033", image: "/src/media/branches/ragala.webp", lat: "7.019814", lng: "80.866563" },
-        { name: "Matale", location: "No.242, Main Street, Matale.", contact: "066 769 9020", image: "/src/media/branches/matale.webp", lat: "7.47154", lng: "80.624389" },
-        { name: "Pundaluoya", location: "No.244/59, lhala Kade Veediya, Pundaluoya.", contact: "051 769 9032", image: "/src/media/branches/pundaluoya.webp", lat: "7.013128", lng: "80.66321" },
-        { name: "Maskeliya", location: "No.244, Main Street, Maskeliya.", contact: "052 769 9010", image: "/src/media/branches/maskeliya.webp", lat: "6.831457", lng: "80.571781" },
-        { name: "Katugastota", location: "No.144, Kurunegala Road, Katugasthota.", contact: "081 769 9010", image: "/src/media/branches/katugastota.webp", lat: "7.30731", lng: "80.63371" },
-        { name: "Naula", location: "No.26, Dambulla Road, Naula.", contact: "066 769 9010", image: "/src/media/branches/naula.webp", lat: "7.705474", lng: "80.652596" },
-        { name: "Bogawantalawa", location: "No.90, Bridwell Bazaar, Bogawanthalawa.", contact: "052 769 9020", image: "/src/media/branches/bogawantalawa.webp", lat: "6.796685", lng: "80.675497" },
-        { name: "Pussellawa", location: "No.305, Nuwara Eliya Road, Pussellawa.", contact: "081 769 9020", image: "/src/media/branches/pussellawa.webp", lat: "7.107993", lng: "80.635625" },
-        { name: "Wattegama", location: "No.55, Main Street, Wattegama", contact: "081 769 9025", image: "/src/media/branches/wattegama.webp", lat: "7.350414", lng: "80.689989" },
-        { name: "Agarapatana", location: "No.34, Main Street, Agarapathana.", contact: "051 769 9011", image: "/src/media/branches/agarapathana.webp", lat: "6.863127", lng: "80.707834" },
-        { name: "Hawa Eliya", location: "No.26, Udapussellawa Road, Hawaeliya.", contact: "052 769 9115", image: "/src/media/branches/hawaeliya.webp", lat: "6.9710467", lng: "80.7825" },
-        { name: "Kotagala", location: "No.179/1, Main Street, Kotagala.", contact: "051 769 9022", image: "/src/media/branches/kotagala.webp", lat: "6.9254354", lng: "80.6081992" },
-        { name: "Hanguranketha", location: "No.16, Ragala Road, Rikillagaskada.", contact: "081 769 9050", image: "/src/media/branches/hanguranketha.webp", lat: "7.145825491", lng: "80.78396477" },
-        { name: "Dayagama", location: ". No.B/1. Dayagama Bazaar, Dayagama.", contact: "051 769 9041", image: "/src/media/branches/dayagama.webp", lat: "6.855923", lng: "80.748098" },
-        { name: "Hapugastalawa", location: "Halgolla, No.01, Hapugastalawa, Nawalapitiya.", contact: "054 769 9000", image: "/src/media/branches/hapugastalawa.webp", lat: "7.0550222", lng: "80.5728854" }
-      ]
-    },
-    northwestern: {
-      title: "North-Western Region",
-      branches: [
-        { name: "Kurunegala", location: "No.30, Surathissa Mawatha, Kurunegala.", contact: "037 769 9002", image: "/src/media/branches/kurunegala.webp", lat: "7.488387", lng: "80.36335" },
-        { name: "Wennappuwa", location: "224/3A, Colombo Road, Wennappuwa.", contact: "031 769 9010", image: "/src/media/branches/wennappuwa.webp", lat: "7.369178", lng: "79.829695" },
-        { name: "Chilaw", location: "39, Colombo Road, Chilaw.", contact: "032 769 9015", image: "/src/media/branches/chilaw.webp", lat: "7.5744739", lng: "79.7967103" },
-        { name: "Udappuwa", location: "No.75, Division No 2, Udappuwa.", contact: "032 769 9032", image: "/src/media/branches/udappuwa.webp", lat: "7.744912", lng: "79.791637" },
-        { name: "Puttalam", location: "No.61, Kurunegala Road, Puttalam.", contact: "032 769 9010", image: "/src/media/branches/puttalam.webp", lat: "8.040791", lng: "79.839386" },
-        { name: "Kalpitiya", location: "No.120, Puttalam Road, Kalpitiya.", contact: "032 769 9020", image: "/src/media/branches/kalpitiya.webp", lat: "8.234329", lng: "79.763146" },
-        { name: "Wariyapola", location: "No.52, Chilaw Road, Wariyapola", contact: "037 769 9010", image: "/src/media/branches/wariyapola.webp", lat: "7.619711533495288", lng: "80.24139544308905" },
-        { name: "Dankotuwa", location: "No.07, Naththandiya Road, Dankotuwa.", contact: "031 769 9030", image: "/src/media/branches/dankotuwa.webp", lat: "7.2975774", lng: "79.8819854" }
-      ]
-    },
-    uva: {
-      title: "Uva Region",
-      branches: [
-        { name: "Monaragala", location: "No.141, 1st Lane, Wellawaya Road, Monaragala.", contact: "055 769 9021", image: "/src/media/branches/monaragala.webp", lat: "6.871657", lng: "81.349056" },
-        { name: "Mahiyanganaya", location: "No.23, New Town, Mahiyanganaya.", contact: "055 769 9030", image: "/src/media/branches/mahiyanganaya.webp", lat: "7.337864", lng: "80.989453" },
-        { name: "Badulla", location: "No.49, Cocowatta Road, Badulla.", contact: "055 769 9011", image: "/src/media/branches/badulla.webp", lat: "6.986059", lng: "81.058621" },
-        { name: "Haputale", location: "No.27, Main Street, Haputale.", contact: "057 769 9010", image: "/src/media/branches/haputale.webp", lat: "6.765414", lng: "80.952566" },
-        { name: "Welimada", location: "No.51, Nuwara Eliya Road, Welimada.", contact: "057 769 9015", image: "/src/media/branches/welimada.webp", lat: "6.901907", lng: "80.907925" },
-        { name: "Bibila", location: "No.6, Opposite Hospital, Batticaloa Road, Bibile.", contact: "055 769 9050", image: "/src/media/branches/bibile.webp", lat: "7.163275", lng: "81.225672" },
-        { name: "Boralanda", location: "Oluganthota, Boralanda.", contact: "057 769 9020", image: "/src/media/branches/boralanda.webp", lat: "6.82825", lng: "80.8943889" },
-        { name: "Girandurukotte", location: "No.04, New Town, Girandurukotte.", contact: "027 769 9000", image: "/src/media/branches/girandurukotte.webp", lat: "7.4716381", lng: "81.016923" },
-        { name: "Lunugala", location: "No.156, Main Street, Lunugala.", contact: "055 769 9060", image: "/src/media/branches/lunugala.webp", lat: "7.0403865", lng: "81.2014486" },
-        { name: "Passara", location: "No.289, Main Road, Passara.", contact: "055 769 9041", image: "/src/media/branches/passara.webp", lat: "6.935118", lng: "81.1559392" }
-      ]
-    },
-    sabaragamuwa: {
-      title: "Sabaragamuwa Region",
-      branches: [
-        { name: "Mawanella", location: "No.246, Kandy Road, Mawanella.", contact: "035 769 9011", image: "/src/media/branches/mawanella.webp", lat: "7.251167", lng: "80.449528" },
-        { name: "Ruwanwella", location: "No.104, Main Street, Ruwanwella.", contact: "036 769 9001", image: "/src/media/branches/ruwanwella.webp", lat: "7.043524", lng: "80.254517" },
-        { name: "Balangoda", location: "No.16, Reset House Approach Road, Balangoda.", contact: "045 769 9000", image: "/src/media/branches/balangoda.webp", lat: "6.650399", lng: "80.698601" },
-        { name: "Rakwana", location: "No.29, Main street, Rakwana", contact: "045 769 9011", image: "/src/media/branches/rakwana.webp", lat: "6.474218", lng: "80.610933" },
-        { name: "Eheliyagoda", location: "No.36, Main Street, Ehaliyagoda.", contact: "036 769 9011", image: "/src/media/branches/eheliyagoda.webp", lat: "6.850315", lng: "80.264785" },
-        { name: "Deraniyagala", location: "No.78, Main street, Deraniyagala.", contact: "036 769 9015", image: "/src/media/branches/deraniyagala.webp", lat: "6.9282651", lng: "80.3373352" },
-        { name: "Kuruwita", location: "No.71/C/1, Colombo Road, Kuruwita.", contact: "045 769 9015", image: "/src/media/branches/kuruvita.webp", lat: "6.779073", lng: "80.3608329" },
-        { name: "Kahawatta", location: "No.31/A, Rakwana Main Road, Kahawatte.", contact: "045 769 9020", image: "/src/media/branches/kahawatta.webp", lat: "6.5773611", lng: "80.575" }
-      ]      
-    }
-  },
 
     //Investor Relations Page Components
     bannerIR:{
-      src: bannerIR,
+      src: `${import.meta.env.VITE_API_BASE_URL}/media/investorRelations/irPgBanner.webp`,
       title: "Investor Relations",
       intro: "Building Wealth with Trust and Vision ",
       specialnote: "since 1970",
@@ -721,7 +500,7 @@ category: "goal",
 
     productsSelector: { 
       'Fixed Deposit': {
-        images: [FD, FD],
+        images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
         name: "Fixed Deposits",
         features: [
           { title: "High Interest Rate", description: "Earn a higher interest rate than regular savings accounts." },
@@ -817,7 +596,7 @@ category: "goal",
       btn_2: "FD Rates",
       btn_3: "Customer Information Documents",
       btn_4: "Collection Bank Accounts",
-      collectionAccounts: "/src/media/uploads/fd_collection_accounts.webp",
+      collectionAccounts: `${import.meta.env.VITE_API_BASE_URL}/media/attachments/products/fixedDeposit/accounts/fd_collection_accounts.webp`,
       hotline: "Hotline",
       note: "Note: These values are indicative and may change time to time*",
       fdRates: "/src/media/uploads/en_fd_rates.webp",
@@ -897,207 +676,6 @@ category: "goal",
       card6title: "Hotline",
       card6Body: "1369",
     },
-
-    profileDetails: [
-      {
-        id: "1",
-        name: "V A Prasanth",
-        src: mrPrasanth,
-        designation: "Chairman",
-        description : ["Mr. V. A. Prasanth, is a commercial banker with over 37 years of all-round exposure in Retail and Corporate banking, Treasury Operations, and Information Security. Formerly he worked with the Indian Bank as General Manager and Chief Information Officer. During this time, he was in-charge of Information Technology and Digital Banking.",
-          "He served as the Chief Financial Officer at Indian Bank. In earlier assignments he headed two prominent zones of the Bank as Zonal Manger. He has over two decades of experience in Financial Markets – as the Head of Forex Dealing Room at Mumbai during 1994- 1998, the Head of Singapore Treasury during 2001-2005, as the Head of Treasury Back Office during 2009-2011, and as the Administrator of Wealth Management Services for Indian Bank (WMS) between 2009 and 2011. ",
-          "He also collaborated with the “Institute for Development and Research in Banking Technology “ (IDRBT) Hyderabad, as Senior Domain Expert till March 2024.",
-          "Presently Mr. V. A. Prasanth is associated with “ Indian Institute of Banking & Finance” (IIBF), Mumbai as Subject Matter Expert ( SME). He was appointed as the Chairman of Asia Asset Finance PLC in June 2020.",
-        ]
-      },
-      {
-        id: "2",
-        name: "G M Alexander",
-        src: mrAlexandra,
-        designation: "Non - Independent Non - Executive Director",
-        description : ["Mr. Alexander holds a Master’s in Business Administration from the University of North Carolina – Kenan & Flagler Business School and earned his Bachelors’ Degree in Mechanical Engineering from the University of Kerala - TKM College of Engineering. He is currently functions as the Deputy Managing Director of Muthoot Finance and oversees operations across the states of Karnataka, Goa and Telangana in India. He has the additional responsibility of heading the global operations of The Muthoot Group in the U.S.A and serves on the board of three other group companies (Asia Asia Assets Finance PLC, Muthoot Insurance Brokers and Belstar Finance & Investments).",
-          "Muthoot Finance Limited is a Gold Loan NBFC (Non-Banking Finance Company) and is the flagship company of The Muthoot Group. It was listed in 2011 and is traded in BSE & NSE and currently is the largest gold loan company in India. Apart from Muthoot Finance Limited, The Muthoot group has 16 other divisions, such as hospitality, health care, equity & commodity trading, insurance broking etc. A family owned business, the group is established over four generations Mr. Alexander represents the fourth generation of the family. Prior to joining his family business, he was attached to ING & Kotak Mahindra Bank in India. ",
-          "He served as the chair for the Confederation of Indian Industries – Young Indians Bangalore Chapter in 2015. He was one among 10 Indians chosen to represent India for AIYD (Australia India Youth Dialogue) at Sydney and Melbourne in 2013 & 2022.He was the finance chair for the Entrepreneur’s Organization Bangalore from 2016-2018. He is presently serving on the Board of advisors at University of North Carolina’s – Kenan-Flagler Business School and on the board of XIME Business school Bangalore.",
-        ]
-      },
-      {
-        id: "3",
-        name: "K R Bijimon",
-        src: mrBijimon,
-        designation: "Non - Independent Non - Executive Director",
-        description : ["Bijimon is a Fellow Member of the Institute of Chartered Accountants of India, New Delhi, Associate of Indian Institute of Banking and Finance Mumbai and Fellow Member of Certified Management Accountants, Institute of Sri Lanka. He holds LLB degree from MG University and MBA from Cochin University,",
-          "He has over 28years of experience in the field of financial services and is employed in the Muthoot Finance Limited since inception. As Executive Director & COO of the Company he oversees credit, internal audit, marketing, Information technology, recovery and legal and vigilance departments of the Company.",
-          "He is the Chief Operating Officer for global operations of Muthoot Group (USA, UAE, UK, Nepal & Sri Lanka). He has been the driving force in Muthoot Group expanding its operations to USA, UK, Nepal and Sri Lanka.",
-          "Mr. K.R. Bijimon is Director in Muthoot Group Companies viz. Muthoot Home Fin (India) Ltd., Muthoot Securities Ltd., Muthoot Commodities Ltd., Muthoot Forex Ltd., Muthoot Finserv USA INC. Asia Asset Finance PLC Sri Lanka and Belstar Microfinance Ltd.",
-          "He is also a member of the Board of Governors of Muthoot Institute of Technology and Science (MITS).",
-        ]
-      },
-      {
-        id: "4",
-        name: "K G K Pillai",
-        src: mrPillai,
-        designation: "Non-Independent Non - Executive Director",
-        description : ["Mr. Kiran Pillai presently functions as the Head of the Internal Audit & Inspection Department of Muthoot Finance Limited. He graduated from the Kerala University with a Bachelors’ Degree in Science and Mathematics. He is also a Chartered Accountant from the Institute of Chartered Accountants, India. He presently functions as the Head of the Internal Audit & Inspection Department, which employs a team of 1000 auditors.",
-          "He possesses over 20 years of specialist experience in auditing with expertise in operational, financial, and regulatory compliance and has a proven track record and experience in strategic reporting on internal control to the Audit Committee, providing expertise in risk management techniques.",
-          "His expertise is also provided in coordinated workflows among risk, legal, surveillance, and vigilance departments. As an expert resources, he supports departments in their design, implementation and monitoring of activities across the organization.",
-        ]
-      },
-      {
-        id: "5",
-        name: "R A B Basnayake",
-        src: mrRajitha,
-        designation: "Independent Non - Executive Director",
-        description : ["An Independent Management and ICT Consultant with over thirty five years of extensive experience in ICT and Business Management, Mr. Basnayake provided leadership to mission critical ICT and Business Process Transformation projects enabling business strategies for a wide variety of industry sectors predominantly encompassing Financial services, Digital Entertainment, FMCG/ consumer durables, Retailing / Distribution and Food & Beverage manufacturing /Distribution, Hospitality and Information Technology solution delivery.",
-          "He currently serves on the Board of Asia Asset Finance PLC as Independent Non-Executive Director and also as Chairman of Evoke International Ltd, leader in Digital Entertainment industry Sri Lanka. Furthermore he functions as Senior Management Consultant at Latex Green (Pvt) Ltd, the regional leader in Natural Latex Foam industry.",
-          "He brings extensive experience in Business Consultancy services as Director Advisory Services of Ernst & Young Sri Lanka providing Business Advisory and ICT Advisory solutions for mission critical private and public sector projects in Sri Lanka and overseas. He was project Director/ subject matter expert for key strategy, Effectiveness/adequacy assessments,Process Improvement and Core Business Systems implementation/ review initiatives of leading Sri Lankan corporates covering Manufacturing, Retailing / Distribution, Automotive, Banking Public/Private sector, Insurance and Overseas projects involving African Continent, Maldives and UAE.",
-          "He has played a pivotal role as subject matter expert in Strategy, Process transformation projects involving ADB,UNIDO,ICTA, eGovernment Initiatives in Transportation, Judicial System and Education in Sri Lanka. His EY experience spans across IT Advisory, Business Advisory and Auditing working /managing teams with EY Australia, EY India and EY Malaysia. He was also a trainer for EY Tools and Frameworks.",
-          "During his career he has spearheaded mission critical ICT operations of Asia Capital Group a highly diversified conglomerate into capital markets, non banking finance, insurance, digital entertainment, tea packaging, Leisure and Technology as Group Chief Information Officer. He held key Senior Management positions in ICT at The Lion Brewery Ceylon Ltd as Head of Information Technology and at Richard Pieris Distributors Ltd as Manager Information Systems.He was a visiting lecturer/examiner for MSc in Information Technology study program conducted by Informatics Institute of Technology in collaboration with Keele University UK.",
-          "Mr. Basnayake, a Chartered Member (CITP) of British Computer Society UK, holds a Master Degree in IT with Distinction from Keele University UK, Executive Diploma in Business Administration with Distinction from University of Colombo and the British and Australian Professional IT qualifications.",
-        ]
-      },
-      {
-        id: "6",
-        name: "J P D R Jayasekara",
-        src: mrJayasekara,
-        designation: "Independent Non - Executive Director",
-        description : ["Mr. Jayasekara Jayasekara Pathirannehalage Danasiri Rupakumara Jayasekara holds a BA (Special) Degree in Economics with a second-class upper division. He possesses over 33 years of progressive experience in taxation, ICT and banking and finance. He assumed office as an Assessor to the Department of Inland Revenue in 1984 and thereafter held the positions of Senior Assessor in 1994, Deputy Commissioner in 2005, Commissioner and to Senior Commissioner and Deputy Commissioner General (ICT Administration and Tax Operation Support) in 2015.",
-          "He was a pioneer member, positioned as Senior Additional Project Director of Revenue Administration Management Information System (RAMIS), a system which is now in operation in the department. At the time of retirement, he performed duties as Deputy Commissioner General (Information Technology) of the Department of Inland Revenue",
-          "During his tenure in office, Mr. Jayasekera participated in several overseas taxation programs including Workshop on Tax Modeling in Austria in 2001, a training program on Advancing Management Potential (Senior Course) held in United Kingdom in 2003, a specialized training program on Audit Management in India in 2007, and a program on Post due diligence relating to the customs expansion modernization held in Angola in 2012.",
-          "He has also received valued exposure in double taxation treaty negotiations Sri Lanka signed with Seychelles and Saudi Arabia. He had participated in strategic level forums as a delegate to conferences such as ‘OECD Global Forum on VAT’ held in France in 2012 and the ‘Fourth IMF – Japan High Level Tax Conference for Asian Countries’ in Tokyo, Japan in 2013, Ministerial workshop on Blue Economy and Maritime Silk Road in China.",
-          "He was a team member of the team that worked on Negotiation of the proposed Trade agreement with China in 2014. He was one of the Members of the Saluation committee in preparation of Due Diligence Reports in respect of RAMIS project, visiting Singapore and Angola for this reason.",
-          "Mr. Jayasekera holds a membership of APFA (Association of Public Finance Accountants of Sri Lanka) and is an active member of China Sri Lanka Society. An active philanthropist he is a member of several societies and association that are actively involved in community service.",
-        ]
-      },
-      {
-        id: "7",
-        name: "T C D Kumarasiri",
-        src: mrKumarasiri,
-        designation: "Independent Non - Executive Director",
-        description : ["Mr. Chaaminda Kumarasiri is a Senior Chartered Accountant, Management Consultant, Keynote Speaker, Business Advisor and a Corporate Trainer with a proven track record, holding senior leadership positions in leading local entities and multinationals.",
-                      "He is the Founder/President of Asia Pacific Institute of Money and Entrepreneurship Development, the Founder/CEO of the Human Capital Partner, the Chairman/Principal Consultant of H C P Consulting (Pvt.) Ltd. He serves as an Independent Non-Executive Director at Sanasa Development Bank PLC and an advisor/consultant to a few leading Organizations both in the Private Sector and Public Sector. He also serves on the International Panel on Accounting Education (IPAE), as the only representative from the entire South Asia. He has served on the Governing Council of CA Sri Lanka for two consecutive terms and currently serves as the Vice Chairman of ACCA Sri Lanka Member Network Panel.",
-                      "Mr. Kumarasiri possesses an array of professional and academic qualifications with numerous awards and medallions. He is a Fellow member of The Institute of Chartered Accountants of Sri Lanka, The Association of Chartered Certified Accountants – UK, The Association of Accounting Technician of Sri Lanka and The Institute of Certified Management Accountants of Sri Lanka. He has obtained a B.Sc. Accountancy (Special) degree with a First Class honors from the University of Sri Jayewardenepura and holds an MBA in Finance from the University of Colombo. As a leading Corporate Trainer he has profoundly inspired countless individuals both in Sri Lanka and overseas. As a pivotal figure in the Entrepreneurial Ecosystem, Chaaminda is frequently featured across various public forums, national TV/Radio channels, and prominent YouTube channels. He is sought after as a guest speaker and a panelist at business forums and entrepreneurship-related events.",
-                      "He has been bestowed with ACCA National Advocate of the Year Award - 2022 for his exceptional commitment and dedication to promote the accountancy profession and its values."
-        ]
-      },
-      {
-        id: "8",
-        name: "R D S Gunasekara",
-        src: mrRoshan,
-        designation: "Executive Director / Chief Operating Officer",
-        description : ["Mr. Roshan De Silva Gunasekera serves as the Executive Director and Chief Operating Officer, bringing a wealth of experience and expertise to his role. He was appointed to the Board of Directors as an Executive Director in 2023, having initially joined the company in April 2010. Over the years, he has demonstrated exceptional leadership and a deep understanding of both Asia Asset Finance PLC and the larger financial services industry",
-          "Mr. Gunasekera’s career in the finance sector spans an impressive 30 years, beginning in 1994 when he took on the role of Credit Officer at Commercial Leasing Company Limited, which has since merged with LOLC Finance PLC. His extensive post-qualifying experience has been pivotal in shaping his strategic vision and operational acumen, making Significant contributions to the company’s growth and stability.",
-          "Educationally, Mr. Gunasekera is well-equipped with a robust academic background. He holds a Bachelor of Science degree in Business Administration (Special) from the University of Sri Jayewardenepura and an MBA from the University of Colombo. Additionally, he has completed part qualifications from the Chartered Institute of Management Accountants (CIMA) in the UK, further enhancing his financial expertise.",
-          "Beyond his professional and academic achievements, Mr. Gunasekera is a respected member of the Association for Overseas Technical Senior Management Scholarship (AOTS) in Japan. His commitment to education is also evident through his role as a visiting lecturer in Financial Services Marketing at the University of Colombo, where he shares his knowledge and experience with aspiring finance professionals. He is a sought-after resource person at various knowledge-sharing forums, contributing to the broader financial services community.",
-          "Currently, Mr. Gunasekera is pursuing a Doctor of Business Administration (DBA) at the University of Colombo, reflecting his dedication to continuous learning and professional development. His ongoing academic pursuits underscore his commitment to staying at the forefront of industry trends and best practices.",
-          "Roshan De Silva Gunasekera’s blend of practical experience, academic prowess, and dedication to knowledge dissemination makes him a pivotal figure in the financial services sector. His leadership at Asia Asset Finance PLC continues to drive innovation and excellence, ensuring the company’s ongoing success in a competitive industry landscape.",
-        ]
-      },
-      {
-        id: "9",
-        name: "M Thiruneelakandan",
-        src: mrThiru,
-        designation: "Non-Independent Executive Director / General Manager",
-        description : ["Mr. Thiruneelakandan, General Manager, joined AAF PLC in the year 2003 and is a professional banker with more than four decades of experience in Developing Banking including Project Financing, Credit Management, Foreign Exchange Management, Business and Financial transformation and diversification. His ability to convince others with his persuasive consultancy skills and pleasing personality, led him to build up a massive high end corporate and individual clientele with over 2000 clients at AAF PLC. He plays a leading role in providing leadership to young professionals who join the Company lacking the banking experience and managing credit and lending. He loves to build high performing teams which will lead to developing a variety of programs at AAF for highly potential staff. He believes in authentic leadership and is deeply passionate and committed to do well by doing good and has led to develop programs at AAF for high potential talent.",
-
-        ]
-      },
-      {
-        id: "10",
-        name: "R J A Gunawardena",
-        src: mrRajiv,
-        designation: "Executive Director / Chief Executive Officer",
-        description : ["Mr. Rajiv Gunawardena is the Chief Executive Officer / Director of Asia Asset Finance PLC.",
-          "He was appointed to the Board in December 2009 and is responsible for setting and implementing the organisation’s vision and strategy and delivering value through the Company’s overall operations and performance",
-          "He holds a Bachelor of Science in Business and Information Systems from the United Kingdom and has completed his Masters of Professional Accounting at Monash University Australia.",
-          "Prior to joining Asia Asset Finance, he has worked in the capacity of Senior Investment Analyst at Asia Capital PLC. He was a lecturer in Accounting at the Australian College of Business and Technology.",
-        ]
-      },
-      //need to translate below
-      {
-        id: "11",
-        name: "R D S Gunasekara",
-        src: mrRoshan,
-        designation: "Executive Director / Chief Operating Officer",
-        description : ["Mr. Roshan De Silva Gunasekera serves as the Executive Director and Chief Operating Officer, bringing a wealth of experience and expertise to his role. He was appointed to the Board of Directors as an Executive Director in 2023, having initially joined the company in April 2010. Over the years, he has demonstrated exceptional leadership and a deep understanding of both Asia Asset Finance PLC and the larger financial services industry",
-          "Mr. Gunasekera’s career in the finance sector spans an impressive 30 years, beginning in 1994 when he took on the role of Credit Officer at Commercial Leasing Company Limited, which has since merged with LOLC Finance PLC. His extensive post-qualifying experience has been pivotal in shaping his strategic vision and operational acumen, making Significant contributions to the company’s growth and stability.",
-          "Educationally, Mr. Gunasekera is well-equipped with a robust academic background. He holds a Bachelor of Science degree in Business Administration (Special) from the University of Sri Jayewardenepura and an MBA from the University of Colombo. Additionally, he has completed part qualifications from the Chartered Institute of Management Accountants (CIMA) in the UK, further enhancing his financial expertise.",
-          "Beyond his professional and academic achievements, Mr. Gunasekera is a respected member of the Association for Overseas Technical Senior Management Scholarship (AOTS) in Japan. His commitment to education is also evident through his role as a visiting lecturer in Financial Services Marketing at the University of Colombo, where he shares his knowledge and experience with aspiring finance professionals. He is a sought-after resource person at various knowledge-sharing forums, contributing to the broader financial services community.",
-          "Currently, Mr. Gunasekera is pursuing a Doctor of Business Administration (DBA) at the University of Colombo, reflecting his dedication to continuous learning and professional development. His ongoing academic pursuits underscore his commitment to staying at the forefront of industry trends and best practices.",
-          "Roshan De Silva Gunasekera’s blend of practical experience, academic prowess, and dedication to knowledge dissemination makes him a pivotal figure in the financial services sector. His leadership at Asia Asset Finance PLC continues to drive innovation and excellence, ensuring the company’s ongoing success in a competitive industry landscape.",
-        ]
-      },
-      {
-        id: "12",
-        name: "M Thiruneelakandan",
-        src: mrThiru,
-        designation: "Non-Independent Executive Director / General Manager",
-        description : ["Mr. Thiruneelakandan, General Manager, joined AAF PLC in the year 2003 and is a professional banker with more than four decades of experience in Developing Banking including Project Financing, Credit Management, Foreign Exchange Management, Business and Financial transformation and diversification. His ability to convince others with his persuasive consultancy skills and pleasing personality, led him to build up a massive high end corporate and individual clientele with over 2000 clients at AAF PLC. He plays a leading role in providing leadership to young professionals who join the Company lacking the banking experience and managing credit and lending. He loves to build high performing teams which will lead to developing a variety of programs at AAF for highly potential staff. He believes in authentic leadership and is deeply passionate and committed to do well by doing good and has led to develop programs at AAF for high potential talent.",
-
-        ]
-      },
-      {
-        id: "13",
-        name: "Geethika Elwalage",
-        src: msGeethika,
-        designation: "Chief Financial Officer",
-        //designation: "Deputy General Manager - Finance",
-        description : ["Ms. Geethika Elwalage has varied exposure of over 16 years in the financial services sector. She is a Fellow Member of the Institute of Chartered Accountants of Sri Lanka. She has additional experience of three years in the audit sector, having worked at BDO Partners. Further, she holds a Master’s Degree in Business Administration from the University of Sri Jayewardenepura.",
-        ]
-      },
-      {
-        id: "14",
-        name: "Jayantha Weerappulige",
-        src: mrJayantha,
-        //designation: "Deputy General Manager - Operation",
-        designation: "General Manager - Operation",
-        description : ["Mr. Jayantha Weerappulige joined Asia Asset Finance PLC in 2008. Currently he serves as the GM - Operation, initially he served in the capacity of Senior Manager Lending for 3 years before hew was promoted as AGM grade and in 2022 he was promoted to DGM position. Mr. Jayantha Weerappulige holds a B. Com (Special) degree in Business Administration and MBA from the University of Colombo. He counts over 23 years of working experience in Marketing, Credit, Operations, Accounts of which 20 years were spent in the Finance sector and he also has the experience in the banking sector in his previous employment with Peoples Merchant Bank during the period from 2003 to 2008. He holds more than 15 years of experience in the top management of Asia Asset Finance PLC.",
-          "He is responsible for overlooking the entire branch network as well as overall operations of the branches which comprises of Marketing, Credit, Administrations & Recoveries. He is further responsible for product & business development, strategic planning & implementation.",
-        ]
-      },
-      {
-        id: "15",
-        name: "Mahesh Kumar",
-        src: mrMahesh,
-        designation: "Deputy General Manager - Credit & Recovery",
-        description : ["Mr. Mahesh Kumara received his BBA (Accounting) Degree from the University of Colombo in 2001 while working in industry from 1999. Subsequently, he gained experience in key finance sectors attached to several leading Finance companies as a member of the Senior Management. Mr. Kumara Presently holds the position of Deputy General Manager – Credit & Recovery with an industrial experience of over 24 years.",]
-      },
-      {
-        id: "16",
-        name: "Samira Weveldeniya",
-        src: mrSameera,
-        designation: "Deputy General Manager - Fixed Deposits",
-        description : ["Mr. Samira Weveldeniya joined AAF in June 2006 as the Negombo Branch Manager and was appointed to the post of Regional Manager - Fixed Deposit in 2009 followed by a subsequent appointment as the Senior Manager - Fixed Deposits in 2011. He was promoted as Assistant General Manager - Marketing in 2014. He has over 22 years of experience in Deposit Marketing in the Finance Sector and is currently working in the capacity of DGM-Fixed Deposits and contributes to the fund mobilization and branch development of the company. Prior to joining AAF, Mr. Weveldeniya worked at the Ceylinco Development Bank where he was awarded many times for his achievements in marketing. Mr. Weveldeniya holds an MBA from the Buckinghamshire New University in the UK and was conferred the Postgraduate professional status of Certified Professional Marketer- Asia (CPM - Asia) by The Asia Marketing Federation (AMF). He is also an Associate Member of The Certified Management Accountants – Australia (AMA-Australia). Apart from that he is also a certified member of Sri Lanka Institute of Marketing (SLIM).",
-
-        ]
-      },
-      {
-        id: "17",
-        name: "Sajith Atapattu",
-        src: mrSajith,
-        designation: "Deputy General Manager - Risk",
-        description : ["Mr. Sajith Atapattu joined Asia Asset Finance PLC in 2010 and currently holds the position of Deputy General Manager - Risk. Throughout this extensive period of 14 years, Mr. Atapattu has taken various roles and assumed increasing responsibilities, from Credit and Recovery to Operations, Administration and Risk, where he has amassed a wealth of experience in key areas of the organization. He has gained a comprehensive understanding of the interplay between different departments and the importance of aligning their efforts to achieve overarching organizational goals. Mr. Sajith Atapattu began his career at London Mutual Credit Union (UK), an organization dedicated to promoting financial inclusion. During his tenure at LMCU, he has gained valuable insights into the intricacies of the financial sector and developed a deep understanding of the importance of providing accessible financial services to all individuals. He holds a bachelor’s degree from the University of Keele - UK.",
-
-        ]
-      },
-      {
-        id: "18",
-        name: "Inditha Jayathilaka",
-        src: mrInditha,
-        designation: "Deputy General Manager - Information Technology",
-        description : ["Mr. Inditha Jayathilaka is the mastermind solution provider for all IT related tasks at Asia Asset Finance PLC. He has more than 12 years of experience in banking and finance solution development and implementation. He received his BSc in MIS from the University College of Dublin. Over the course of his career, he gained experience from various sectors, ultimately specialising in the financial sector by providing mission-critical software and infrastructure solutions. At present, he oversees the Information Technology department by providing IT related infrastructure, software and security service.",
-
-        ]
-      },
-      {
-        id: "19",
-        name: "Praveen Peiris",
-        src: mrPraveen,
-        designation: "Deputy General Manager - Treasury",
-        description : ["Mr. Praveen Peiris joined Asia Asset Finance PLC in 2014 and has over 20 years of Financial and Treasury experience. He started his career at a Global Audit Firm in 2004 and joined the Non-Banking Financial Sector in 2008. Prior to joining Asia Asset Finance PLC, he worked as Manager – Treasury in a listed finance company. He has expertise in Treasury Management including Strategic Risk Management, Asset – Liability Management and Cash Management. He is Competent in Operational Management and has the capacity to handle financing of high-value projects. Mr. Peiris holds an MBA from the University of Wales, U.K and is a Finalist at the Chartered Institute of Management Accountants, U.K ",
-
-        ]
-      },
-  ],
     },
   },
   si: {
@@ -1161,21 +739,21 @@ category: "goal",
       carouselLandingPage: [
         
         {
-          src: banner1,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg1.webp`,
           title: "ඔබේ මූල්‍ය අනාගතය සඳහා නව්‍ය විසඳුම්",
           intro: "ඔබේ මූල්‍ය අනාගතය සවිබල ගැන්වීම",
           description:
             "අපි ඒෂියා ඇසට් ෆිනෑන්ස් හි මූල්‍ය සාර්ථකත්වය සඳහා නවෝත්පාදනය තුලින් සිදුවන බලපෑම පිලිබද විශ්වාස කරන්නෙමු. ගැලපෙන මුල්‍ය විසඳුම් ලබාදීම වෙනුවෙන් අපගේ ඇති කැපවීම ශ්‍රී ලංකාවේ මුල්‍ය ක්ෂේත්‍රය තුල ප්‍රමුඛයා ලෙස අපව ස්ථානගත කර ඇත. ඔබ ආයෝජනය කිරීමට, ඉතිරි කිරීමට හෝ ඔබේ මීළඟ විශාල ව්‍යාපෘතිය මූල්‍යකරණය කිරීමට බලාපොරොත්තු වන්නේද ? , එසේනම් අපි විශ්වාසයෙන් සහ විනිවිදභාවයෙන් යුතුව ඔබේ ගමනට සහාය වීමට බලා සිටින්නෙමු.",
         },
         {
-          src: banner2,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg2.webp`,
           title: "සිහින සැබෑ වෙන මුල්‍ය විසඳුම් හමුවන තැන",
           intro: "මුල්‍ය නවෝත්පාදනය සහා ප්‍රබෝධමත් වර්ධනය ",
           description:
             "අපි හුදෙක් මූල්‍ය ආයතනයක් නොවන්නෙමු; අපි ඔබේ ප්‍රගතියේ හවුල්කරුවන් වෙමු. මූල්‍ය සඳහා වන අපගේ නව්‍ය ප්‍රවේශය ශ්‍රී ලංකාව පුරා සිටින පුද්ගලයන් සහ ව්‍යාපාර සවිබල ගැන්වීම සඳහා නිර්මාණය කර ඇත. පුද්ගලාරෝපිත සේවාවක් සමඟ අති නවීන තාක්‍ෂණය ඒකාබද්ධ කිරීමෙන්, අපි කාර්යක්ෂම පමණක් නොව, ඔබේ ඉලක්ක සපුරා ගැනීමට උපකාරී වන ඵලදායී මූල්‍ය විසඳුම් ලබා දෙන්නෙමු.",
         },
         {
-          src: banner3,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg3.webp`,
           title: "ශ්‍රී ලංකා මූල්‍ය ක්ෂේත්‍රයේ ප්‍රමුඛයා",
           intro: "ඔබේ විශ්වාසය, අපගේ කැපවීම",
           description:
@@ -1223,12 +801,12 @@ category: "goal",
 },  
   
   productsOverviewLandingPage: [
-    { title: "ස්ථාවර තැන්පතු", image: FixedDeposits, description: "ස්ථාවර ප්‍රතිලාභ සමඟ ඔබේ ඉතුරුම් සුරක්ෂිත කරගන්න." },
-    { title: "රන් ණය", image: GoldLoan, description: "නම්‍යශීලී ඉතුරුම් සමඟ ඔබේ වත්කම් වර්ධනය කරගන්න." },
-    { title: "ක්ෂුද්‍ර ණය", image: Mortgage, description: "ඔබේ සෑම අවශ්‍යතාවක් සඳහාම අඩු පොලී අනුපාතවලින් ණය ලබාගන්න." },
-    { title: "ලීසිං", image: Leasing, description: "අඩු පොලී අනුපාත සමඟ පහසු වියදම්." },
-    { title: "විද්‍යුත් ඉතුරුම් ගිණුම", image: Luckewallet, description: "පුළුල් ආරක්ෂාවක් සහිත විද්‍යුත් ගිණුම්." },
-    { title: "විදේශ විනිමය හුවමාරුව", image: Forex, description: "විවිධ විකල්ප සමඟින් ඔබේ ප්‍රතිලාභ උපරිම කරගන්න." },
+    { title: "ස්ථාවර තැන්පතු", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/fd.webp`, description: "ස්ථාවර ප්‍රතිලාභ සමඟ ඔබේ ඉතුරුම් සුරක්ෂිත කරගන්න." },
+    { title: "රන් ණය", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/gold_loan.webp`, description: "නම්‍යශීලී ඉතුරුම් සමඟ ඔබේ වත්කම් වර්ධනය කරගන්න." },
+    { title: "ක්ෂුද්‍ර ණය", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/mortgage.webp`, description: "ඔබේ සෑම අවශ්‍යතාවක් සඳහාම අඩු පොලී අනුපාතවලින් ණය ලබාගන්න." },
+    { title: "ලීසිං", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/leasing.webp`, description: "අඩු පොලී අනුපාත සමඟ පහසු වියදම්." },
+    { title: "විද්‍යුත් ඉතුරුම් ගිණුම", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/luckewallet.webp`, description: "පුළුල් ආරක්ෂාවක් සහිත විද්‍යුත් ගිණුම්." },
+    { title: "විදේශ විනිමය හුවමාරුව", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/forex.webp`, description: "විවිධ විකල්ප සමඟින් ඔබේ ප්‍රතිලාභ උපරිම කරගන්න." },
 ],
 testimonialsText: {
   title: "අපගේ ගනුදෙනුකරුවන් පවසන දේ",
@@ -1336,7 +914,7 @@ inquiryForm: {
 
 //About Page Components
 bannerAbout: {
-  src: bannerAbout,
+  src: `${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/bannerAbout.webp`,
   title: "අප ගැන",
   intro: "1970 සිට ",
   specialnote: "ඔබේ මූල්‍ය අනාගතය සවිබල ගැන්වීම",
@@ -1369,16 +947,6 @@ missionVisionGoal: {
     description: "",
   }
 },
-bodProfilesAbout: [
-  { imgSrc: mrAlexandra, name: 'ජී එම් අලෙක්සැන්ඩර් මහතා', title: 'ස්වාධීන නොවන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrBijimon, name: 'කේ ආර් බිජිමොන් මහතා', title: 'ස්වාධීන නොවන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrPillai, name: 'කේ ජී කේ පිල්ලේ මහතා', title: 'ස්වාධීන නොවන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrRajitha, name: 'ආර් ඒ බී බස්නායක මහතා', title: 'ස්වාධීන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrJayasekara, name: 'ජේ පී ඩී ආර් ජයසේකර මහතා', title: 'ස්වාධීන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrKumarasiri, name: 'ටී සී ඩී කුමාරසිරි මහතා', title: 'ස්වාධීන විධායක නොවන අධ්‍යක්ෂ' },
-  { imgSrc: mrRoshan, name: 'ආර් ඩී එස් ගුණසේකර මහතා', title: 'විධායක අධ්‍යක්ෂ / ප්‍රධාන මෙහෙයුම් නිලධාරී' },
-  { imgSrc: mrThiru, name: 'එම් තිරුනීලකන්දන්', title: 'ස්වාධීන නොවන විධායක අධ්‍යක්ෂ / සමාන්‍යාධිකාරී' },
-],
 bodTextsAbout: {
   title1: "සමාගමේ අධ්‍යක්ෂ මණ්ඩලය",
   title2: "",
@@ -1399,21 +967,6 @@ comTextsAbout: {
   subtitle: "ආරක්ෂිත මූල්‍ය වර්ධනය සඳහා සම්පුර්ණ විසඳුම්",  
   description: "ඒෂියා ඇසට් ෆිනෑන්ස් හි, අපගේ ආයතනික කළමනාකරණ කණ්ඩායම සමන්විත වන්නේ අත්දැකීම් සම්භාරයක් සහ තීක්ෂ්ණ බුද්ධියක්  සහිත පළපුරුදු වෘත්තිකයන්ගෙන් ය. ඔවුන්ගේ උපායමාර්ගික නායකත්වය සහ විශිෂ්ටත්වය සඳහා වූ කැපවීම අපගේ සමාගමේ සාර්ථකත්වයට හේතු වන අතර, අපි ශ්‍රී ලංකාවේ මූල්‍ය සේවා කර්මාන්තයේ ඉදිරියෙන්ම සිටින බව සහතික කරමු."  
 },  
-
-comProfilesAbout: [ 
-  { imgSrc: mrRajiv, name: 'රජීව් ගුණවර්ධන', title: 'විධායක අධ්‍යක්ෂ / ප්‍රධාන විධායක නිලධාරී' },
-  { imgSrc: mrRoshan, name: 'රොෂාන් ගුණසේකර', title: 'විධායක අධ්‍යක්ෂ / ප්‍රධාන මෙහෙයුම් නිලධාරි' },
-  { imgSrc: mrThiru, name: 'එම්. තිරුනීලකන්දන්', title: 'ස්වාධීන නොවන විධායක අධ්‍යක්ෂ / සමාන්‍යාධිකාරී' },
-  { imgSrc: msGeethika, name: 'ගීතිකා එල්වලගේ', title: 'ප්‍රධාන මූල්‍ය නිලධාරි' },
-  //{ imgSrc: msGeethika, name: 'ගීතිකා එල්වලගේ', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - මූල්‍ය' },
-  { imgSrc: mrJayantha, name: 'ජයන්ත වීරප්පුලිගෙ', title: 'සමාන්‍යාධිකාරී - මෙහෙයුම්' },
-  //{ imgSrc: mrJayantha, name: 'ජයන්ත වීරප්පුලිගෙ', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - මෙහෙයුම්' },
-  { imgSrc: mrMahesh, name: 'මහේෂ් කුමාර්', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - ණය සහ නැවත අයකර ගැනීම්' },
-  { imgSrc: mrSameera, name: 'සමිර වේවැල්දෙණිය', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - ස්ථාවර තැන්පතු' },
-  { imgSrc: mrSajith, name: 'සජිත් අතපත්තු', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - අවදානම් කළමනාකරණය' },
-  { imgSrc: mrInditha, name: 'ඉන්දිත ජයතිලක', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - තොරතුරු තාක්ෂණ' },
-  { imgSrc: mrPraveen, name: 'ප්‍රවීන් පීරිස්', title: 'නියෝජ්‍ය සමාන්‍යාධිකාරී - භාණ්ඩාගාරය' }
-],
 
 branchNetworktext: {
   title1: "අපගේ ",
@@ -1438,166 +991,10 @@ branchNetworktext: {
   viewOnMapBtn: "සිතියම මත බලන්න",
   callNowBtn: "අමතන්න"
 },
-branchesData: {
-  head_office: {
-    title: "ප්‍රධාන කාර්යාලය",
-    branches: [
-      { name: "ප්‍රධාන කාර්යාලය", location: "අංක 76, උද්‍යාන වීදිය, කොළඹ 02.", contact: "011 769 9000", image: "/src/media/branches/headoffice.webp", lat: "6.915119", lng: "79.859896" },
-
-    ]
-  },
-  western: {
-    title: "බස්නාහිර කලාපය",
-    branches: [
-      { name: "මීගමුව", location: "අංක 295, ප්‍රධාන වීදිය, මීගමුව.", contact: "031 769 9020", image: "/src/media/branches/negombo.webp", lat: "7.212791", lng: "79.841551" },
-      { name: "ගම්පහ", location: "අංක 69, කොළඹ පාර, ගම්පහ.", contact: "033 769 9010", image: "/src/media/branches/gampaha.webp", lat: "79.841551", lng: "79.995027" },
-      { name: "කළුතර", location: "අංක 344, මහ වීදිය, කළුතර දකුණ.", contact: "034 769 9013", image: "/src/media/branches/kaluthara.webp", lat: "6.57007", lng: "79.966094" },
-      { name: "මොරටුව", location: "අංක 16, නව ද සොයිසා පාර, රාවතාවත්ත, මොරටුව.", contact: "011 768 1511", image: "/src/media/branches/moratuwa.webp", lat: "6.788091", lng: "79.878066" },
-      { name: "වැල්ලවත්ත", location: "අංක 344, ගාලු පාර, වැල්ලවත්ත.", contact: "011 768 1530", image: "/src/media/branches/wellawatte.webp", lat: "6.867254", lng: "79.86071" },
-      { name: "මතුගම", location: "K & W මධ්‍යස්ථානය, අංක 5, ගාමිණී මාවත, අලුත්ගම පාර, මතුගම.", contact: "034 769 9022", image: "/src/media/branches/mathugama.webp", lat: "6.521474", lng: "80.113428" },
-      { name: "කොටහේන", location: "අංක 31, කොටහේන වීදිය, කොළඹ 13.", contact: "011 769 9109 ", image: "/src/media/branches/kotahena.webp", lat: "6.948532", lng: "79.862381" },
-      { name: "පානදුර", location: "අංක 114, ඩී එස් සේනානායක මාවත, පානදුර.", contact: "038 769 9010", image: "/src/media/branches/panadura.webp", lat: "6.7141", lng: "79.907744" },
-      { name: "මට්ටක්කුලිය", location: "අංක 3/810, ෆාම් පාර, මට්ටක්කුලිය.", contact: "011 769 9480", image: "/src/media/branches/mattakkuliya.webp", lat: "6.9778477", lng: "79.8762375" },
-      { name: "ග්‍රෑන්ඩ් පාස් ", location: "අංක 428, මාදම්පිටිය පාර, කොළඹ 14.", contact: "011 768 1502", image: "/src/media/branches/grandpass.webp", lat: "6.957149", lng: "79.876909" },
-      { name: "ඇලකන්ද", location: "අංක 327, තිඹිරිගස්යාය, හැඳල, වත්තල.", contact: "011 769 9446", image: "/src/media/branches/elakanda.webp", lat: "6.99472", lng: "79.875671" },
-      { name: "හෝමාගම", location: "අංක 486, හෝමාගම නගරය, හෝමාගම.", contact: "011 769 9415", image: "/src/media/branches/homagama.webp", lat: "6.8412732", lng: "80.0038472" },
-
-    ]
-  },
-  eastern: {
-    title: "නැගෙනහිර කලාපය",
-    branches: [
-      { name: "මඩකලපුව", location: "අංක 187, ත්‍රිකුණාමලය පාර, මඩකලපුව.", contact: "065 769 9010", image: "/src/media/branches/batticaloa.webp", lat: "7.718111", lng: "81.6985" },
-      { name: "චෙන්කලඩි", location: "නව මාර්කට් පාර, චෙන්කලඩි.", contact: "065 769 9020", image: "/src/media/branches/chenkalady.webp", lat: "7.783481", lng: "81.593214" },
-      { name: "කල්මුණේ", location: "අංක 69, ප්‍රධාන පාර, කල්මුණේ.", contact: "067 769 9020", image: "/src/media/branches/kalmunai.webp", lat: "6.915119", lng: "79.859896" },
-      { name: "සම්මන්තුරේ", location: "අංක 120, අම්පාර පාර, කරුවාඩ්ඩුකල්-02, සම්මන්තුරේ.", contact: "067 769 9025", image: "/src/media/branches/sammanthurai.webp", lat: "7.357484", lng: "81.795105" },
-      { name: "අක්කරපත්තුව", location: "අංක 155, අම්පාර පාර, අක්කරපත්තුව.", contact: "067 769 9010", image: "/src/media/branches/akkaraipattu.webp", lat: "7.219392", lng: "81.849757" },
-      { name: "වාලච්චේන", location: "ප්‍රධාන වීදිය, වාලච්චේන.", contact: "065 769 9040", image: "/src/media/branches/valaichchenai.webp", lat: "7.921328", lng: "81.524671" },
-      { name: "ත්‍රිකුණාමලය", location: "අංක 285, මධ්‍යම පාර, ත්‍රිකුණාමලය.", contact: "026 769 9021", image: "/src/media/branches/trincomalee.webp", lat: "8.579646", lng: "81.230833" },
-      { name: "කින්නියා", location: "අංක 88, ප්‍රධාන වීදිය, සින්න කින්නියා, කින්නියා 03.", contact: "026 769 9032", image: "/src/media/branches/kinniya.webp", lat: "6.915119", lng: "79.859896" },
-      { name: "කලවංචිකුඩි", location: "අංක 172, ප්‍රධාන වීදිය, කලවංචිකුඩි.", contact: "065 769 9032", image: "/src/media/branches/kalawanchikuddy.webp", lat: "7.517246", lng: "81.786933"  },
-      { name: "පොතුවිල්", location: "ප්‍රධාන වීදිය, පොතුවිල්.", contact: "063 769 9011", image: "/src/media/branches/pottuvil.webp", lat: "6.875271", lng: "81.830633" },
-      { name: "කන්තලේ", location: "අංක 137, ප්‍රධාන වීදිය, කන්තලේ.", contact: "026 769 9010", image: "/src/media/branches/kanthale.webp", lat: "8.351263", lng: "81.006993"  },
-      { name: "තිරුක්කෝවිල්", location: "ප්‍රධාන වීදිය, තිරුක්කෝවිල්.", contact: "067 769 9040", image: "/src/media/branches/thirukkovil.webp", lat: "7.1158776", lng: "81.8520391" },
-      { name: "නින්දවූර්", location: "42/11, ප්‍රධාන වීදිය, නින්දවූර්.", contact: "067 769 9052", image: "/src/media/branches/ninthavur.webp", lat: "7.356912", lng: "81.84545" },
-      { name: "සේරුනුවර", location: "අංක 44, A.R.B.03, සේරුනුවර.", contact: "026 769 9050", image:  "/src/media/branches/serunuwara.webp", lat: "8.325101", lng: "81.300209" },
-      { name: "මුතූර්", location: "මඩකලපු පාර, අලිම් නගර්, මුතූර්.", contact: "026 769 9040", image:  "/src/media/branches/muthur.webp", lat: "8.44294", lng: "81.263283" },
-      { name: "අම්පාර", location: "අංක 451, D.S සේනානායක පාර, අම්පාර.", contact: "063 769 9020", image: "/src/media/branches/ampara.webp", lat: "7.2917359", lng: "81.6803183"  },
-      { name: "කොක්කඩිචෝලයි", location: "අංක 10, ප්‍රධාන වීදිය, කොක්කඩිචෝලයි", contact: "065 769 9060", image: "/src/media/branches/kokkadicholai.webp", lat: "7.609681591789088", lng: "81.7121303580231" },
-      { name: "කිරාන්", location: "ප්‍රධාන වීදිය, කිරාන්.", contact: "065 769 9050", image: "/src/media/branches/kiran.webp", lat: "7.865244496822327", lng: "81.53848100905222" }
-
-    ]
-  },
-  southern: {
-    title: "දකුණු කලාපය",
-    branches: [
-      { name: "ගාල්ල", location: "අංක 170/172, කඩවීදිය, ප්‍රධාන වීදිය, ගාල්ල.", contact: "091 769 9002", image: "/src/media/branches/galle.webp", lat: "6.035643578305275", lng: "80.22053327164475" },
-      { name: "මාතර", location: "79, අනගාරික ධර්මපාල මාවත, මාතර.", contact: "041 769 9012", image: "/src/media/branches/matara.webp", lat: "5.949379105734931", lng: "80.54374826944834" },
-      { name: "බේරුවල", location: "අංක 199, තොටමුනේ දකුණ, බේරුවල.", contact: "034 769 9030", image: "/src/media/branches/beruwala.webp", lat: "6.472090864359676", lng: "79.9847138819168" },
-      { name: "අම්බලන්තොට", location: "අංක 55, මහ වීදිය, අම්බලන්තොට.", contact: "047 769 9000", image: "/src/media/branches/ambalantota.webp", lat: "6.122573584370459", lng: "81.02260975452502" },
-      { name: "ඇල්පිටිය", location: "අංක 14, අම්බලන්ගොඩ පාර, ඇල්පිටිය.", contact: "091 769 9010", image: "/src/media/branches/elpitiya.webp", lat: "6.289347277839291", lng: "80.16750838481774" },
-      { name: "දෙනියාය", location: "අංක 196, ප්‍රධාන වීදිය, දෙනියාය.", contact: "041 769 9020", image: "/src/media/branches/deniyaya.webp", lat: "6.3445203771652094", lng: "80.56016068020213" }
-    ]
-  },
-  northern: {
-    title: "උතුරු කලාපය",
-    branches: [
-      { name: "යාපනය", location: "අංක 109, කස්ත්‍රියාර් පාර, යාපනය.", contact: "021 769 9050", image: "/src/media/branches/jaffna.webp", lat: "9.668439", lng: "80.011014" },
-      { name: "චාවකච්චේරිය", location: "අංක 05, නුවර පාර, චාවකච්චේරි.", contact: "021 769 9040", image: "/src/media/branches/chavakachcheri.webp", lat: "9.659811", lng: "80.160394" },
-      { name: "පේදුරුතුඩුව", location: "අංක 374, රැජින ගොඩනැගිලි සංකීර්ණය, පේදුරුතුඩුව.", contact: "021 769 9080", image: "/src/media/branches/pointpedro.webp", lat: "9.821597", lng: "80.236677" },
-      { name: "චුන්නාකම්", location: "අංක 15, ස්ටේෂන් පාර, චුන්නාකම්.", contact: "021 769 9005", image: "/src/media/branches/chunnakam.webp", lat: "9.737563", lng: "80.024505" },
-      { name: "නෙල්ලියඩි ", location: "අංක 82, පේදුරුතුඩුව පාර, නෙල්ලියඩි .", contact: "021 769 9070", image: "/src/media/branches/nelliady.webp", lat: "9.800487", lng: "80.203238" },
-      { name: "චංගනී", location: "මහන් තංග ප්ලාසා, ප්‍රධාන වීදිය, චංගනී.", contact: "021 769 9030", image: "/src/media/branches/changanai.webp", lat: "9.747417", lng: "79.972524" },
-      { name: "වේලනයි", location: "වාගලවාඩි, වේලනයි.", contact: "021 769 9021", image: "/src/media/branches/velanai.webp", lat: "9.63615", lng: "79.900869" },
-      { name: "අච්චුවේලි", location: "අංක 53, අවරංගල් පාර, අච්චුවේලි.", contact: "021 769 9010", image: "/src/media/branches/achchuveli.webp", lat: "9.77819", lng: "80.115729" },
-      { name: "මනිපායි", location: "අංක 260, මනිපායි පාර, මනිපායි.", contact: "021 769 9115", image: "/src/media/branches/manipay.webp", lat: "9.716558", lng: "79.996658"  },
-      { name: "උරුම්පිරායි", location: "පලායි පාර, උරුම්පිරායි.", contact: "021 769 9090", image: "/src/media/branches/urumpirai.webp", lat: "9.7145833", lng: "80.0436667" },
-      { name: "කිලිනොච්චිය", location: "මුරුගන් පන්සල අසල, A9 මාර්ගය, කිලිනොච්චිය.", contact: "021 769 9062", image: "/src/media/branches/kilinochchi.webp", lat: "9.399455", lng: "80.407774" },
-      { name: "පුදුකුඩිඉරිප්පු", location: "අංක 02, පරන්තන් පාර, පුදුකුඩිඉරිප්පු, මුලතිව්.", contact: "021 769 9085", image: "/src/media/branches/puthukudiyirippu.webp", lat: "9.314812", lng: "80.700415" },
-      { name: "මුලතිව්", location: "අංක 38, ප්‍රධාන වීදිය, මුලතිව්.", contact: "021 769 9065", image: "/src/media/branches/mullaitivu.webp", lat: "9.399264", lng: "80.408414" },
-      { name: "වවුනියාව", location: "අංක, 27, දෙවන හරස් වීදිය, වවුනියාව.", contact: "024 769 9010", image:  "/src/media/branches/vavuniya.webp", lat: "8.7523859", lng: "80.4970501" },
-      { name: "ඔඩ්ඩුසුඩාන්", location: "මුලතිව්, ප්‍රධාන වීදිය, විද්‍යාපුරම්, ඔඩ්ඩුසුඩාන්.", contact: "021 769 9075", image: "/src/media/branches/oddusuddan.webp", lat: "9.153868", lng: "80.649731" },
-      { name: "මන්නාරම", location: "අංක 05, පළමු හරස් වීදිය, පිටකොටුව, මන්නාරම.", contact: "023 769 9010", image: "/src/media/branches/mannar.webp", lat: "8.979832", lng: "79.911538" },
-      { name: "චෙඩ්ඩිකුලම්", location: "ප්‍රධාන වීදිය, චෙඩ්ඩිකුලම්.", contact: "024 769 9020", image: "/src/media/branches/cheddikulam.webp", lat: "8.6598809", lng: "80.3126001" },
-      { name: "මුලංකාවිල්", location: "මන්නාරම පාර, මුලන්කාවිල්.", contact: "023 769 9020", image: "/src/media/branches/mulankavil.webp", lat: "9.2541944", lng: "80.1419722" },
-      { name: "මල්ලාවි", location: "තුන්නුකායි පාර, මල්ලාවි, මුලටිව්.", contact: "021 769 9095", image: "/src/media/branches/mallavi.webp", lat: "9.1343697", lng: "80.3114889" },
-      { name: "විශ්වමඩු", location: "චුන්ඩිකුලම් හංදිය, විශ්වමඩුව, මුලතිව්", contact: "0247699030", image: "/src/media/branches/visuvamadu.webp", lat: "9.398447279520965", lng: "80.5381797667411" },
-      { name: "පල්ලෙයි", location: "A9 පාර, පල්ලෙයි නගරය, පල්ලෙයි", contact: "0217699111", image: "/src/media/branches/pallai.webp", lat: "9.608956493958125", lng: "80.33094899999998" },
-      { name: "පෙසාලය", location: "වෝර්ඩ් අංක 8, පේසාලය - තලෙයිමන්නාරම පාර, මන්නාරම", contact: "0237699040", image: "/src/media/branches/pesalai.webp", lat: "9.085049036054754", lng: "79.82747541349308" },
-    ]
-  },
-  central: {
-    title: "මධ්‍යම කලාපය",
-    branches: [
-      { name: "දිගන", location: "J/2005 11/02. රජවැල්ල දිගන.", contact: "081 769 9030", image: "/src/media/branches/digana.webp", lat: "7.29628", lng: "80.733276" },
-      { name: "හැටන්", location: "අංක 14/ඒ, බිම් මහල, නව පාර, හැටන්.", contact: "051 769 9001", image: "/src/media/branches/hatton.webp", lat: "6.891629", lng: "80.598299" },
-      { name: "තලවකැලේ", location: "අංක 8/3, ප්‍රධාන වීදිය, තලවකැලේ.", contact: "052 769 9035", image: "/src/media/branches/thalawakale.webp", lat: "6.936579585212912", lng: "80.66140425561336" },
-      { name: "නාවලපිටිය", location: "අංක 75, අඹගමුව පාර, නාවලපිටිය.", contact: "081 769 9041", image: "/src/media/branches/nawalapitiya.webp", lat: "7.054935", lng: "80.530689" },
-      { name: "ගම්පොල", location: "අංක 63, නුවරඑළිය පාර, ගම්පොල.", contact: "081 769 9002", image: "/src/media/branches/gampola.webp", lat: "7.162701958808442", lng: "80.57131966361379" },
-      { name: "රාගල", location: "අංක 67, ප්‍රධාන වීදිය, රාගල.", contact: "052 769 9033", image: "/src/media/branches/ragala.webp", lat: "7.019814", lng: "80.866563" },
-      { name: "මාතලේ", location: "අංක 242, ප්‍රධාන වීදිය, මාතලේ.", contact: "066 769 9020", image: "/src/media/branches/matale.webp", lat: "7.47154", lng: "80.624389" },
-      { name: "පුණ්ඩළුඔය", location: "අංක 244/59, ලා කඩේ වීදිය, පුණ්ඩළුඔය.", contact: "051 769 9032", image: "/src/media/branches/pundaluoya.webp", lat: "7.013128", lng: "80.66321" },
-      { name: "මස්කෙළිය", location: "අංක 244, ප්‍රධාන වීදිය, මස්කෙළිය.", contact: "052 769 9010", image: "/src/media/branches/maskeliya.webp", lat: "6.831457", lng: "80.571781" },
-      { name: "කටුගස්තොට", location: "අංක 144, කුරුණෑගල පාර, කටුගස්තොට.", contact: "081 769 9010", image:  "/src/media/branches/katugastota.webp", lat: "7.30731", lng: "80.63371" },
-      { name: "නාඋල", location: "අංක 26, දඹුල්ල පාර, නාඋල.", contact: "066 769 9010", image: "/src/media/branches/naula.webp", lat: "7.705474", lng: "80.652596" },
-      { name: "බොගවන්තලාව", location: "අංක 90, බ්‍රිඩ්වෙල් බසාර්, බොගවන්තලාව.", contact: "052 769 9020", image:  "/src/media/branches/bogawantalawa.webp", lat: "6.796685", lng: "80.675497" },
-      { name: "පුස්සැල්ලාව", location: "අංක 305, නුවරඑළිය පාර, පුස්සැල්ලාව.", contact: "081 769 9020", image: "/src/media/branches/pussellawa.webp", lat: "7.107993", lng: "80.635625" },
-      { name: "වත්තේගම", location: "අංක 55, ප්‍රධාන වීදිය, වත්තේගම.", contact: "081 769 9025", image: "/src/media/branches/wattegama.webp", lat: "7.350414", lng: "80.689989" },
-      { name: "අගරපතන", location: "අංක 34, ප්‍රධාන වීදිය, අගරපතන.", contact: "051 769 9011", image: "/src/media/branches/agarapathana.webp", lat: "6.863127", lng: "80.707834" },
-      { name: "හාවා එළිය", location: "අංක 26, උඩපුස්සැල්ලාව පාර, හාවා එළිය.", contact: "052 769 9115", image: "/src/media/branches/hawaeliya.webp", lat: "6.9710467", lng: "80.7825" },
-      { name: "කොටගල", location: "අංක 179/1, ප්‍රධාන වීදිය, කොටගල.", contact: "051 769 9022", image: "/src/media/branches/kotagala.webp", lat: "6.9254354", lng: "80.6081992" },
-      { name: "හඟුරන්කෙත", location: "අංක 16, රාගල පාර, රිකිල්ලගස්කඩ.", contact: "081 769 9050", image: "/src/media/branches/hanguranketha.webp", lat: "7.145825491", lng: "80.78396477"  },
-      { name: "ඩයගම", location: ". No.B/1. ඩයගම බසාර්, ඩයගම.", contact: "051 769 9041", image: "/src/media/branches/dayagama.webp", lat: "6.855923", lng: "80.748098" },
-      { name: "හපුගස්තලාව", location: "හල්ගොල්ල, අංක 01, හපුගස්තලාව, නාවලපිටිය.", contact: "054 769 9000", image: "/src/media/branches/hapugastalawa.webp", lat: "7.0550222", lng: "80.5728854" }
-    ]
-  },
-  northwestern: {
-    title: "වයඹ කලාපය",
-    branches: [
-      { name: "කුරුණෑගල", location: "අංක 30, සුරතිස්ස මාවත, කුරුණෑගල.", contact: "037 769 9002", image: "/src/media/branches/kurunegala.webp", lat: "7.488387", lng: "80.36335" },
-      { name: "වෙන්නප්පුව", location: "224/3A, කොළඹ පාර, වෙන්නප්පුව.", contact: "031 769 9010", image: "/src/media/branches/wennappuwa.webp", lat: "7.369178", lng: "79.829695" },
-      { name: "හලාවත ", location: "39, කොළඹ පාර, හලාවත.", contact: "032 769 9015", image: "/src/media/branches/chilaw.webp", lat: "7.5744739", lng: "79.7967103" },
-      { name: "උඩප්පුව", location: "අංක 75, කොට්ඨාශ අංක 2, උඩප්පුව.", contact: "032 769 9032", image: "/src/media/branches/udappuwa.webp", lat: "7.744912", lng: "79.791637" },
-      { name: "පුත්තලම", location: "අංක 61, කුරුණෑගල පාර, පුත්තලම.", contact: "032 769 9010", image: "/src/media/branches/puttalam.webp", lat: "8.040791", lng: "79.839386" },
-      { name: "කල්පිටිය", location: "අංක 120, පුත්තලම පාර, දකුණ, කල්පිටිය.", contact: "032 769 9020", image: "/src/media/branches/kalpitiya.webp", lat: "8.234329", lng: "79.763146" },
-      { name: "වාරියපොල", location: "අංක 52, හලාවත පාර, වාරියපොල", contact: "037 769 9010", image: "/src/media/branches/wariyapola.webp", lat: "7.619711533495288", lng: "80.24139544308905" },
-      { name: "දංකොටුව", location: "අංක 07, නාත්තන්ඩිය පාර, දංකොටුව.", contact: "031 769 9030", image: "/src/media/branches/dankotuwa.webp", lat: "7.2975774", lng: "79.8819854" },
-
-    ]
-  },
-  uva: {
-    title: "ඌව කලාපය",
-    branches: [
-      { name: "මොනරාගල", location: "අංක 141,1 වැනි පටුමග, වැල්ලවාය පාර, මොනරාගල.", contact: "055 769 9021", image: "/src/media/branches/monaragala.webp", lat: "6.871657", lng: "81.349056" },
-      { name: "මහියංගනය", location: "අංක 23, නව නගරය, මහියංගනය.", contact: "055 769 9030", image: "/src/media/branches/mahiyanganaya.webp", lat: "7.337864", lng: "80.989453"  },
-      { name: "බදුල්ල", location: "අංක 49, කොකෝවත්ත පාර, බදුල්ල.", contact: "055 769 9011", image: "/src/media/branches/badulla.webp", lat: "6.986059", lng: "81.058621" },
-      { name: "හපුතලේ", location: "අංක 27, ප්‍රධාන වීදිය, හපුතලේ.", contact: "057 769 9010", image: "/src/media/branches/haputale.webp", lat: "6.765414", lng: "80.952566" },
-      { name: "වැලිමඩ", location: "අංක 51, නුවරඑළිය පාර, වැලිමඩ.", contact: "057 769 9015", image: "/src/media/branches/welimada.webp", lat: "6.901907", lng: "80.907925" },
-      { name: "බිබිල", location: "අංක 6, රෝහල ඉදිරිපිට, මඩකලපුව පාර, බිබිල.", contact: "055 769 9050", image: "/src/media/branches/bibile.webp", lat: "7.163275", lng: "81.225672"  },
-      { name: "බොරලන්ද", location: "ඔළුගන්තොට, බොරලන්ද.", contact: "057 769 9020", image: "/src/media/branches/boralanda.webp", lat: "6.82825", lng: "80.8943889" },
-      { name: "ගිරාඳුරුකෝට්ටේ", location: "අංක 4, නව නගරය, ගිරාදුරුකෝට්ටේ.", contact: "027 769 9000", image: "/src/media/branches/girandurukotte.webp", lat: "7.4716381", lng: "81.016923" },
-      { name: "ලුණුගල", location: "අංක 156, ප්‍රධාන වීදිය, ලුණුගල.", contact: "055 769 9060", image: "/src/media/branches/lunugala.webp", lat: "7.0403865", lng: "81.2014486" },
-      { name: "පස්සර", location: "අංක 289, ප්‍රධාන පාර, පස්සර.", contact: "055 769 9041", image: "/src/media/branches/passara.webp", lat: "6.935118", lng: "81.1559392" },
-    ]
-  },
-  sabaragamuwa: {
-    title: "සබරගමුව කලාපය",
-    branches: [
-      { name: "මාවනැල්ල", location: "අංක 246, නුවර පාර, මාවනැල්ල.", contact: "035 769 9011", image: "/src/media/branches/mawanella.webp", lat: "7.251167", lng: "80.449528" },
-      { name: "රුවන්වැල්ල", location: "අංක 104. ප්‍රධාන වීදිය, රුවන්වැල්ල.", contact: "036 769 9001", image: "/src/media/branches/ruwanwella.webp", lat: "7.043524", lng: "80.254517" },
-      { name: "බලංගොඩ", location: "අංක 16, රීසෙට් හවුස් ප්‍රවේශ පාර, බලංගොඩ.", contact: "045 769 9000", image: "/src/media/branches/balangoda.webp", lat: "6.650399", lng: "80.698601" },
-      { name: "රක්වාන", location: "අංක 29, ප්‍රධාන වීදිය, රක්වාන.", contact: "045 769 9011", image: "/src/media/branches/rakwana.webp", lat: "6.474218", lng: "80.610933" },
-      { name: "ඇහැලියගොඩ", location: "අංක 36, ප්‍රධාන වීදිය, ඇහැලියගොඩ.", contact: "036 769 9011", image:  "/src/media/branches/eheliyagoda.webp", lat: "6.850315", lng: "80.264785" },
-      { name: "දැරණියගල", location: "අංක 78, ප්‍රධාන වීදිය, දැරණියගල.", contact: "036 769 9015", image: "/src/media/branches/deraniyagala.webp", lat: "6.9282651", lng: "80.3373352" },
-      { name: "කුරුවිට", location: "අංක 71/C/1, කොළඹ පාර, කුරුවිට.", contact: "045 769 9015", image:  "/src/media/branches/kuruvita.webp", lat: "6.779073", lng: "80.3608329" },
-      { name: "කහවත්ත", location: "අංක 31/ඒ, රක්වාන ප්‍රධාන පාර, කහවත්ත.", contact: "045 769 9020", image: "/src/media/branches/kahawatta.webp", lat: "6.5773611", lng: "80.575" }
-    ]
-  }	
-},
 
   //Investor Relations Page Components
   bannerIR: {
-    src: bannerIR,
+    src: `${import.meta.env.VITE_API_BASE_URL}/media/investorRelations/irPgBanner.webp`,
     title: "අප ගැන",
     intro: "විශ්වාසයෙන් සහ දැක්මෙන් ධනය ගොඩනැඟීම",
     specialnote: "1970 සිට",
@@ -1784,7 +1181,7 @@ branchesData: {
 
     productsSelector: { 
       'Fixed Deposit': {
-        images: [FD, FD],
+        images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
         name: "ස්ථාවර තැන්පතු",
         features: [
           { title: "ඉහළ පොලී අනුපාතය", description: "සාමාන්‍ය ඉතිරිකිරීම් ගිණුම්වලට වඩා වැඩි පොලී අනුපාතයක් ලබාගන්න." },
@@ -1965,191 +1362,7 @@ branchesData: {
       card5Body: "077 79 99 922",
       card6title: "ක්ෂණික ඇමතුම්",
       card6Body: "1369",
-    }, 
-    
-    //Personal Profile page
-    profileDetails: [
-      {
-        id: "1",
-        name: "වී ඒ ප්‍රශාන්ත්",
-        src: mrPrasanth,
-        designation: "සභාපති",
-        description : ["වි ඒ ප්‍රශාන්ත මහතා මූල්‍ය බැංකු ක්ෂේත්‍රයේ 37 වසරක පළපුරුද්දක් ඇති පාරිභෝගික බැංකු සේවා හා කෝපරේට් බැංකු සේවා, භාණ්ඩාගාර මෙහෙයුම් ක්‍රියාකාරීත්වය සහ තොරතුරු ආරක්ෂාව පිළිබඳව විවිධ අත්දැකීම් ලබා ගත් මූල්‍ය බැංකු සේවා විශේෂඥයෙකි. එවක් ඔහු ඉන්දියානු බැංකුවේ – ඉන්දියාවේ ප්‍රසිද්ධම රාජ්‍ය කටයුතු බැංකුවක් ලෙස සම්මානය ලැබූ – සාමාන්‍යාධිකාරී සහ  තොරතුරු තාක්‍ෂණ ප්‍රධානි වශයෙන් ලෙස සේවය කළේය. මෙම කාලය තුල, ඔහු තොරතුරු තාක්‍ෂණ හා ඩිජිටල් බැංකු සේවා වල ප්‍රධානියා වශයෙන් ද කටයුතු කලේය. වි ඒ ප්‍රශාන්ත මහතා ඉන්දියානු බැංකුවේ ප්‍රධාන මූල්‍ය නිලධාරී ලෙස ද වරක පත් විය. එමෙන්ම, ඔහු බැංකුවේ ප්‍රමුඛ කලාප දෙකක කලාප කළමනාකරු ලෙස ද කටයුතු කරන ලදී. ඔහුට මූල්‍ය වෙළඳපොළවල දශක දෙකකට වැඩි පළපුරුද්දක් ඇති අතර – 1994-1998 කාලය තුළ මුම්බායි හි විදේශ විනිමය ගනුදෙනු කිරීම් අංශයේ ප්‍රධානියා ලෙසද, 2001-2005 කාලය තුල සිංගප්පූරු මූල්‍ය අංශයේ ප්‍රධානියා වශයෙන් ද , 2009-2011 කාලය තුල මූල්‍ය අංශයේ මෙහෙයුම් කාර්යාල ප්‍රධානි වශයෙන් ද, 2009-2011 කාලයේ ඉන්දියන් බැංකුවේ මූල්‍ය කළමණාකරණ සේවා (WMS) පරිපාලකයෙකු වශයෙන් ද සේවය කලේය. වි ඒ ප්‍රශාන්ත මහතා දැනට හයිද්‍රාබාද් හි පිහිටි බැංකු තාක්‍ෂණ පර්යේෂණ සහ සංවර්ධන ආයතනයේ (IDRBT) ජ්‍යේෂ්ඨ ක්ෂේත්‍ර විශේෂඥයෙකු ලෙස සේවය කරයි. 2020 ජූනි මාසයේ දී ඔහු ඒෂියා ඇසට් ෆිනෑන්ස් හි සභාපති ලෙස පත් විය.",
-
-        ]
-      },
-      {
-        id: "2",
-        name: "ජෝර්ජ් මුත්තූට් ඇලෙක්සැන්ඩර්",
-        src: mrAlexandra,
-        designation: "විධායක නොවන අධ්‍යක්ෂ",
-        description : ["ඇලෙක්සැන්ඩර් මහතා උතුරු කැරොලිනා විශ්ව විද්‍යාලයේ - කෙනන් සහ ෆ්ලැග්ලර් ව්‍යාපාරික පාසලෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ ශාස්ත්‍රපති උපාධියක් ලබා ඇති අතර කේරළ විශ්ව විද්‍යාලය - TKM ඉංජිනේරු විද්‍යාලයෙන් යාන්ත්‍රික ඉංජිනේරු විද්‍යාව පිළිබඳ ඔහුගේ උපාධිය ලබා ඇත. ඔහු දැනට මුතූට් ෆිනෑන්ස් හි නියෝජ්‍ය කළමනාකාර අධ්‍යක්ෂ ලෙස කටයුතු කරන අතර ඉන්දියාවේ කර්නාටක, ගෝවා සහ තෙලන්ගානා ප්‍රාන්තවල මෙහෙයුම් අධීක්ෂණය කරයි. එක්සත් ජනපදයේ මුතූට් සමූහ ව්‍යාපාරයේ ගෝලීය මෙහෙයුම් ප්‍රධානියා වීමේ අමතර වගකීම ඔහුට ඇති අතර තවත් කණ්ඩායම් සමාගම් තුනක (Asia Asia Assets Finance PLC, Muthoot Insurance Brokers සහ Belstar Finance & Investments) අධ්‍යක්ෂ මණ්ඩලයේ සේවය කරයි. Muthoot Finance Limited යනු රන් ණය NBFC (බැංකු නොවන මූල්‍ය සමාගම) වන අතර එය මුතූට් සමූහයේ ප්‍රමුඛ සමාගම වේ. එය 2011 දී ලැයිස්තුගත කර ඇති අතර BSE සහ NSE හි වෙළඳාම් කරන අතර දැනට ඉන්දියාවේ විශාලතම රන් ණය සමාගම වේ. Muthoot Finance Limited හැරුණු විට, Muthoot සමූහයට ආගන්තුක සත්කාර, සෞඛ්‍ය සේවා, කොටස් සහ භාණ්ඩ වෙළඳාම, රක්ෂණ තැරැව්කරණය වැනි තවත් අංශ 16 ක් ඇත. පවුල්  ව්‍යාපාරයක් වන අතර, සමූහය පරම්පරා හතරක් පුරා ස්ථාපිත කර ඇත, ඇලෙක්සැන්ඩර් මහතා නියෝජනය කරන්නේ පවුලේ සිව්වන පරම්පරාවයි. ඔහුගේ පවුලේ ව්‍යාපාරයට සම්බන්ධ වීමට පෙර ඔහු ඉන්දියාවේ ING & Kotak Mahindra බැංකුවට අනුයුක්තව සිටියේය. ඔහු ඉන්දියානු සම්මේලනයේ සභාපතිවරයා ලෙස කටයුතු කළේය කර්මාන්ත – තරුණ ඉන්දියානුවන් බැංගලෝර් පරිච්ඡේදය 2015. ඔහු AIYD සඳහා ඉන්දියාව නියෝජනය කිරීමට තෝරාගත් ඉන්දියානුවන් 10 දෙනාගෙන් කෙනෙකි (ඕස්ට්‍රේලියා ඉන්දියා තරුණ සංවාදය) සිඩ්නි සහ මෙල්බර්න් හිදී 2013 සහ 2022. ඔහු ව්‍යවසායකයන්ගේ මුල්‍ය සභාපති විය. 2016-2018 සිට බැංගලෝර් සංවිධානය. ඔහු දැනට උතුරු Carolina’s – Kenan-Flagler Business School  විශ්ව විද්‍යාලයේ  සහ  බැංගලෝර් XIME ව්‍යාපාරික පාසලේ උපදේශක මණ්ඩලයේ සේවය කරයි .",
-
-        ]
-      },
-      {
-        id: "3",
-        name: "කුට්ටිකට්ටු රාජප්පන් බිජිමෝන්",
-        src: mrBijimon,
-        designation: "විධායක නොවන අධ්‍යක්ෂ",
-        description : ["බිජිමොන් මහතා ඉන්දියාවේ වරලත් ගණකාධිකාරීවරුන්ගේ ආයතනය, නවදිල්ලියේ, ඉන්දියානු බැංකු සහ මූල්‍ය ආයතනයේ සහකාර සාමාජිකයෙකු වන මුම්බායි සහ ශ්‍රී ලංකා ආයතනයේ සහතික කළ කළමනාකරණ ගණකාධිකාරීවරුන්ගේ සෙසු සාමාජිකයෙකි. ඔහු MG විශ්ව විද්‍යාලයෙන් LLB උපාධියක් සහ Cochin විශ්ව විද්‍යාලයෙන් MBA උපාධියක් ලබා ඇත, ඔහු මූල්‍ය සේවා ක්ෂේත්‍රයේ වසර 28 කට වැඩි පළපුරුද්දක් ඇති අතර ආරම්භයේ සිටම Muthoot Finance Limited හි සේවය කරයි. සමාගමේ විධායක අධ්‍යක්ෂ සහ COO ලෙස ඔහු සමාගමේ ණය, අභ්‍යන්තර විගණනය, අලෙවිකරණය, තොරතුරු තාක්ෂණය, ප්‍රතිසාධනය සහ නීතිමය සහ සුපරීක්ෂාකාරී දෙපාර්තමේන්තු අධීක්ෂණය කරයි. ඔහු Muthoot සමූහයේ (USA, UAE, UK, Nepal & Sri Lanka) ගෝලීය මෙහෙයුම් සඳහා ප්‍රධාන මෙහෙයුම් නිලධාරියා වේ. ඔහු Muthoot  සමූහ ව්‍යාපාරයේ ගාමක බලවේගය වී ඇති අතර එහි මෙහෙයුම් ඇමරිකා එක්සත් ජනපදය, එක්සත් රාජධානිය, නේපාලය සහ ශ්‍රී ලංකාව දක්වා ව්‍යාප්ත කර ඇත. කේ.ආර්. Bijimon Muthoot සමූහ සමාගම්වල අධ්‍යක්ෂවරයා වේ එනම්. Muthoot Home Fin (India) Ltd., Muthoot Securities Ltd., Muthoot Commodities Ltd., Muthoot Forex Ltd., Muthoot Finserv USA INC. Asia Asset Finance PLC Sri Lanka සහ Belstar Microfinance Ltd. ඔහු Muthoot තාක්ෂණ හා විද්‍යා ආයතනය (MITS)හි පාලක මණ්ඩලයේ ද සාමාජිකයෙකි.",
-
-        ]
-      },
-      {
-        id: "4",
-        name: "කිරන් ගෝපාල ක්‍රිෂ්ණා පිල්ලේ",
-        src: mrPillai,
-        designation: "විධායක නොවන අධ්‍යක්ෂ",
-        description : ["කිරන් පිල්ලේ මහතා දැනට Muthoot Finance Limited හි අභ්‍යන්තර විගණන සහ පරීක්ෂණ දෙපාර්තමේන්තුවේ ප්‍රධානියා ලෙස කටයුතු කරයි. ඔහු කේරළ විශ්ව විද්‍යාලයෙන් විද්‍යාව සහ ගණිතය පිළිබඳ උපාධියක් ලබා ඇත. ඔහු ඉන්දියාවේ වරලත් ගණකාධිකාරී ආයතනයේ වරලත් ගණකාධිකාරීවරයෙකි. ඔහු දැනට අභ්‍යන්තර විගණන සහ පරීක්ෂණ දෙපාර්තමේන්තුවේ ප්‍රධානියා ලෙස කටයුතු කරන අතර එහි විගණකවරුන් 1000ක කණ්ඩායමක් සේවය කරයි.  මෙහෙයුම්, මූල්‍ය සහ නියාමන අනුකූලතාව පිළිබඳ විශේෂඥ දැනුමක් සහිත විගණනය පිළිබඳ වසර 20කට වැඩි විශේෂඥ පළපුරුද්දක් ඔහු සතු වන අතර, අවදානම් කළමනාකරණ ශිල්පීය ක්‍රම පිළිබඳ විශේෂඥ දැනුමක් ද අභ්‍යන්තර පාලනය පිළිබඳ උපාය මාර්ගික වාර්තා විගණන කමිටුවට ලබා දීම පිළිබඳව ද මනා පළපුරුද්දක් මොහු සතුව ඇත. අවදානම්, නෛතික, නිරීක්ෂණ සහ සුපරීක්ෂාකාරී දෙපාර්තමේන්තු අතර සම්බන්ධීකරණ කාර්ය ප්‍රවාහයන් තුළ ඔහුගේ ප්‍රවීණත්වය ද සපයනු ලැබේ. විශේෂඥයෙකු වශයෙන් ඔහු වෙනත් දෙපාර්තමේන්තු හී ද සැලසුම් කිරීම්, ක්‍රියාත්මක කිරීම් සහ අධීක්ෂණය කිරීම් සඳහා ද සහාය දක්වයි.",
-
-        ]
-      },
-      {
-        id: "5",
-        name: "රජිත ආනන්ද බණ්ඩාර බස්නායක",
-        src: mrRajitha,
-        designation: "ස්වාධීන විධායක නොවන අධ්‍යක්ෂ",
-        description : ["බස්නායක මහතා ICT සහ ව්‍යාපාර කළමණාකරණයේ 30 වසරකට අධික පළපුරුද්දක් ඇති ස්වාධීන කළමණාකරණ සහ ICT උපදේශකයකු වන අතර  මූල්‍ය සේවා, විද්‍යුත් විනෝදාස්වාද, FMCG, විකුණුම්, ආහාර පාන, හෝටල් ක්ෂේත්‍රය සහ තොරතුරු තාක්ෂණය යනා දී ක්ශේත්‍රයන් තුල  විශාල පරිමාණ ICT සහ ව්‍යාපාර මෙහෙයුම් පරිවර්තන ව්‍යාපෘති සදහා නායකත්වය ලබා දී ඇත. ඔහු අර්න්ස්ට් සහ යන්ග්, ශ්‍රී ලංකා හි උපදේශන සේවා අධ්‍යක්ෂවරයා ලෙස පෞද්ගලික සහ රාජ්‍ය අංශයේ ව්‍යාපෘති (ADB සහ UNIDO ඇතුලුව) සදහා ICT සහ ව්‍යාපාර උපදේශන ලබා දී ඇත.",
-          "ඔහු වර්තමානයේ ඒෂියා ඇසට් ෆිනෑන්ස් PLC හි ජ්‍යෙෂ්ඨ ස්වාධීන විධායක නොවන අධ්‍යක්ෂ,  ඉවෝක් අන්තර්ජාතික (පෞද්ගලික) සමාගමෙහි (Evoke International (Pvt) Ltd) සභාපති ,  සහ Latex Green (පෞද්ගලික) සමාගමේ ජ්‍යෙෂ්ඨ කළමණාකරණ උපදේශකවරයා ලෙස කටයුතු කරයි.",
-          "ඔහුගේ ව්‍යාපෘති පෝට්ෆෝලියෝවට Ernst & Young Sri Lanka හි බාහිර උපදේශකයෙකු වශයෙන් සිදුකල තොරතුරු තාක්ෂණ උපාය මාර්ග සහ ව්‍යාපාර ක්‍රියාවලි ප්‍රති-ඉංජිනේරු ව්‍යාපෘති ඇතුළත් වේ. මීට පෙර, ඔහු Asia Capital Group, The Lion Brewery Ceylon Ltd, සහ Richard Pieris Distributors Ltd හි ජ්‍යෙෂ්ඨ ICT නායකත්ව තනතුරු දැරීය. බස්නායක මහතා Keele University, UK හි ශාස්ත්‍රපති උපාධියක් (විශිෂ්ට සාමාර්ථ) සහා University of Colombo හි ව්‍යාපාර කළමණාකරණ විධායක  ඩිප්ලෝමාවක් ලබා ඇත. ඔහු එක්සත් රාජධානියේ Keele  විශ්ව විද්‍යාලය සමඟ එක්ව Informatics Institute of Technology විසින් පවත්වනු ලබන තොරතුරු තාක්ෂණ අධ්‍යයන වැඩසටහන සඳහා බාහිර කථිකාචාර්යවරයෙකු ද විය.",
-
-        ]
-      },
-      {
-        id: "6",
-        name: "ජේ පී ඩී ආර් ජයසේකර",
-        src: mrJayasekara,
-        designation: "ස්වාධීන විධායක නොවන අධ්‍යක්ෂ",
-        description : ["ජයසේකර පතිරන්නැහැලගේ දනසිරි රූපකුමාර ජයසේකර මහතා ආර්ථික විද්‍යාව පිළිබඳ දෙවන පන්තියේ ඉහළ සාමාර්ථයක් සහිත විශේෂ උපාධියක් (BA Special) ඇති අයෙකි. ඔහුට බදු, තොරතුරු තාක්ෂණය , බැංකු සහ මූල්‍ය ක්ෂේත්‍රයන්හි වසර 33 ක අඛණ්ඩ පළපුරුද්දක් ඇත. 1984 වසරේ අභ්‍යන්තර ආදායම් දෙපාර්තමේන්තුවේ තක්සේරුකරුවෙකු ලෙස කාර්යභාරය ඇරඹූ ඔහු 1994 වසරේ ජ්‍යෙෂ්ඨ තක්සේරු තනතුරට උසස් කරන ලදී. 2005 වසරේදී නියෝජ්‍ය කොමසාරිස් තනතුරට උසස් කරන ලද ඔහු, පසුව කොමසාරිස් සහ ජ්‍යෙෂ්ඨ කොමසාරිස් තනතුරු ද දැරීය.",
-          "2015 ජූලි මාසයෙන් පසු, ආදායම් පරිපාලන කළමණාකරණ තොරතුරු පද්ධතිය (RAMIS) නම් තොරතුරු තාක්ෂණ ව්‍යාපෘතියේ ජ්‍යෙෂ්ඨ අතිරේක ව්‍යාපෘති අධ්‍යක්ෂවරයා ලෙස කාර්යභාරය ඉටු කළේය. මෙම ව්‍යාපෘතියේ අරමුණ නම් අභ්‍යන්තර ආදායම් දෙපාර්තමේන්තුවේ සියළු IRD  බදු ක්‍රියාදාමයන් ස්වයංක්‍රීය කිරීමය. විශ්‍රාම යන විට ඔහු තොරතුරු තාක්ෂණ නියෝජ්‍ය කොමසාරිස් ජනරාල් ලෙස කටයුතු කළේය.",
-          "ජයසේකර මහතා IRD හි සේවා කාලය තුල විවිධ පුහුණු වැඩසටහන් සහ ජාත්‍යන්තර සම්මන්තරණවලට සහභාගීවීමෙන් විදෙස් පළපුරුද්ද ලබා ගෙන ඇත. ඔහුට බදු ක්ෂේත්‍රයේ විවිධ කරුණු පිළිබඳ ඔස්ට්‍රියාව, ඉන්දියාව සහ එක්සත් රාජධානියේ පුහුණු වැඩසටහන් හදාරන්නට අවස්ථාව හිමිවිය. එමෙන්ම, සීශෙල්ස් සහ සවුදි අරාබියාවේ ප්‍රායෝගික වැඩසටහන් හරහා ද්විත්ව බදුකරණය ගිවිසුම් පිළිබඳ වටිනා අත්දැකීම් ලබා ගෙන ඇත.",
-          "ඔහු ප්‍රංශයේ පැවති ‘OECD Global Forum on VAT’ සහ ජපානයේ ටෝකියෝ නගරයේ පැවති ‘Fourth IMF – Japan High Level Tax Conference for Asian Countries’ යන සම්මන්ත්‍රණ සදහා නියෝජිතයකු ලෙස ද සහභාගී විය. තවද, චීනයේ පැවති Blue Economy සහ Maritime Silk Road පිළිබඳ අමාත්‍යාංශීය කටයුතු මණ්ඩලයේ වැඩමුළුවකට සහභාගී වී ඇත. RAMIS ව්‍යාපෘතියේ ‘Due Diligence Reports’ සකස් කිරීමට අදාළ සිංගප්පූරුව සහ ඇන්ගෝලා යන රටවල් වෙත ගමන් කල ඇගයීම් කමිටුවේ සාමාජිකයෙකු ලෙස ද ඔහු කටයුතු කළේය.",
-          "ජයසේකර මහතා APFA (ශ්‍රී ලංකා පොදු මූල්‍ය ගිණුම්කරුන්ගේ සංගමය) හි සාමාජිකයකු වන අතර, චීන-ශ්‍රී ලංකා සංගමයේ සක්‍රීය සාමාජිකයෙකු ලෙසද කටයුතු කරයි. එමෙන්ම, ඔහු සමාජ සහ සංගම් කිහිපයක තනතුරු සහ සාමාජිකත්වය දරණ  ක්‍රියාකාරී සමාජ සේවකයෙකි.",
-
-        ]
-      },
-      {
-        id: "7",
-        name: "ටී.සී.ඩී.කුමාරසිරි",
-        src: mrKumarasiri,
-        designation: "ස්වාධීන විධායක නොවන අධ්‍යක්ෂ",
-        description : ["කුමාරසිරි මහතා ජ්‍යෙෂ්ඨ වරලත් ගණකාධිකාරීවරයෙකු, කළමනාකරණ උපදේශකයෙකු, ප්‍රධාන දේශකයෙකු, ව්‍යාපාර උපදේශකයෙකු සහ ආයතනික පුහුණුකරුවෙකු ද වන අතර ප්‍රමුඛ පෙළේ දේශීය ආයතනවල සහ බහුජාතික සමාගම්වල ජ්‍යෙෂ්ඨ නායක තනතුරු දරා ඇත. ",
-          "ඔහු ආසියා පැසිෆික් මුදල් සහ ව්‍යවසායකත්ව සංවර්ධන ආයතනයේ නිර්මාතෘ/සභාපති, මානව ප්‍රාග්ධන සහකාර ආයතනයෙහි නිර්මාතෘ/ප්‍රධාන විධායක නිලධාරී, සහ H C P Consulting (Pvt.) Ltd හි සභාපති/ප්‍රධාන උපදේශක වේ. ඔහු සණස සංවර්ධන බැංකුවේ ස්වාධීන විධායක නොවන අධ්‍යක්ෂවරයෙකු ලෙස සහ පෞද්ගලික/ රාජ්‍ය අංශයන්හි ප්‍රමුඛ පෙළේ ආයතන කිහිපයක උපදේශකයෙකු ලෙස සේවය කරයි. ඔහු සමස්ත දකුණු ආසියාවේ එකම නියෝජිතයා ලෙස ගිණුම්කරණ අධ්‍යාපනය පිළිබඳ ජාත්‍යන්තර මණ්ඩලයේ (IPAE) ද සේවය කරයි. ඔහු අඛණ්ඩව වාර දෙකක දී CA ශ්‍රී ලංකා හි පාලක මණ්ඩලයේ සේවය කර ඇති අතර දැනට ACCA ශ්‍රී ලංකා සාමාජික ජාලයේ උප සභාපති ලෙස කටයුතු කරයි.",
-          "කුමාරසිරි මහතාට සම්මාන රැසක් මෙන්ම වෘත්තීය සහ අධ්‍යයන සුදුසුකම් රාශියක් ද ඇත. ඔහු ශ්‍රී ලංකා වරලත් ගණකාධිකාරීවරුන්ගේ ආයතනයේ ද, එක්සත් රාජධානියේ වරලත් ගණකාධිකාරීවරුන්ගේ සංගමයේ ද, ශ්‍රී ලංකා ගිණුම්කරණ කාර්මිකයන්ගේ සංගමයේ ද සහ ශ්‍රී ලංකා සහතික කළ කළමනාකරණ ගණකාධිකාරීවරුන්ගේ ආයතනයේ ද  සාමාජිකයෙකි. ඔහු ශ්‍රී ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් පළමු පන්තියේ ගෞරව සහිතව B.Sc ගණකාධිකාරී (විශේෂ) උපාධියක් ලබා ඇති අතර කොළඹ විශ්වවිද්‍යාලයෙන් මූල්‍ය පිළිබඳ ශාස්ත්‍රපති උපාධියක් ද ලබා ඇත. ප්‍රමුඛ පෙළේ ආයතනික පුහුණුකරුවෙකු ලෙස ඔහු ශ්‍රී ලංකාවේ සහ එතෙර සිටින විශාල පුද්ගලයින් ප්‍රමාණයක් දිරිගන්වා ඇත. ව්‍යවසායකයින් අතර ප්‍රමුඛ චරිතයක් ලෙස, විවිධ පොදු සංසද, ජාතික රූපවාහිනී/ගුවන්විදුලි නාලිකා සහ ප්‍රමුඛ YouTube නාලිකා හරහා ඔහු  නිරන්තරයෙන් වැඩසටහන් වලට සහභාගී වී ඇත. ගණකාධිකාරී වෘත්තිය සහ එහි වටිනාකම් ප්‍රවර්ධනය කිරීම සඳහා ඔහුගේ සුවිශේෂී කැපවීම වෙනුවෙන් ඔහුට 2022 වසරේ ACCA ජාතික උපදේශක සම්මානය ද පිරිනමා ඇත."
-        ]
-      },
-      {
-        id: "8",
-        name: "රොෂාන් ද සිල්වා ගුණසේකර",
-        src: mrRoshan,
-        designation: "විධායක අධ්යක්ෂක / ප්‍රධාන මෙහෙයුම් නිලධාරි",
-        description : ["රොෂාන් ද සිල්වා ගුණසේකර මහතා විධායක අධ්‍යක්ෂ සහ ප්‍රධාන මෙහෙයුම් නිලධාරී ලෙස කටයුතු කරමින් අත්දැකීම් සම්භාරයක් සහ විශේෂඥ දැනුමක් තම  භූමිකාවට ගෙන එයි. ඔහු 2023 වසරේ විධායක අධ්‍යක්ෂවරයෙකු ලෙස අධ්‍යක්ෂ මණ්ඩලයට පත් කරන ලද අතර, මුලින් 2010 අප්‍රේල් මාසයේදී සමාගමට සම්බන්ධ විය. වසර ගණනාවක් පුරා, ඔහු Asia Asset Finance PLC මෙන්ම විශාල මූල්‍ය සේවා කර්මාන්තය යන දෙකෙහිම සුවිශේෂී නායකත්වයක් සහ ගැඹුරු අවබෝධයක් ඇති බව පෙන්නුම් කර ඇත.LOLC Finance PLC සමඟ ඒකාබද්ධ වූ කොමර්ෂල් ලීසිං කම්පැනි ලිමිටඩ් හි ක්‍රෙඩිට් ඔෆිසර් තනතුර භාරගැනීමත් සමග 1994 දී ආරම්භ වූ ගුණසේකර මහතාගේ මුල්‍ය අංශ වෘත්තීය ජීවිතය වසර 30ක් පුරාවට දිව යයි. සමාගමේ වර්ධනයට සහ ස්ථාවරත්වයට සැලකිය යුතු දායකත්වයක් ලබා දෙමින් ඔහුගේ උපායමාර්ගික දැක්ම සහ මෙහෙයුම් තීක්ෂ්ණ බුද්ධිය හැඩගැස්වීමේදී ඔහුගේ පුළුල් පශ්චාත්-සුදුසුකම් පළපුරුද්ද වැදගත් වේ. ඔහු ශ්‍රී ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය (විශේෂ) පිළිබඳ විද්‍යාවේදී උපාධියක් සහ කොළඹ විශ්වවිද්‍යාලයෙන් MBA උපාධියක් ලබා ඇත. මීට අමතරව, ඔහු එක්සත් රාජධානියේ කළමනාකරණ ගණකාධිකාරීවරුන්ගේ වරලත් ආයතනයෙන් (CIMA) අර්ධ සුදුසුකම් සම්පූර්ණ කර ඇති අතර, ඔහුගේ මූල්‍ය ප්‍රවීණත්වය තවදුරටත් වැඩි දියුණු කර ඇත. ඔහු වෘත්තීය සහ අධ්‍යාපනික ජයග්‍රහණවලින් ඔබ්බට යමින් ගුණසේකර මහතා ජපානයේ විදේශීය තාක්ෂණික ජ්‍යෙෂ්ඨ කළමනාකරණ ශිෂ්‍යත්ව සංගමයේ ද (AOTS) ගෞරවනීය සාමාජිකයෙකු ලෙස ක්‍රියාකරයි. කොළඹ විශ්වවිද්‍යාලයේ මූල්‍ය සේවා අලෙවිකරණය පිළිබඳ බාහිර කථිකාචාර්යවරයකු ලෙස කටයුතු කිරීම තුළින් අධ්‍යාපනය සඳහා වූ ඔහුගේ කැපවීම ද පැහැදිලි වන අතර එහිදී ඔහු තම දැනුම සහ අත්දැකීම් එය අපේක්ෂා කරන මුල්‍ය වෘත්තිකයන් සමඟ බෙදාගැනීමට ද කටයුතු කලේය. ඔහු පුළුල් මූල්‍ය සේවා ප්‍රජාවට දායක වෙමින් විවිධ දැනුම බෙදාගැනීමේ සංසදවල සම්පත් දායකයෙකු ද ලෙස සිටී. දැනට, ගුණසේකර මහතා කොළඹ විශ්වවිද්‍යාලයේ ව්‍යාපාර පරිපාලනය පිළිබඳ ආචාර්ය උපාධියක් (DBA) හදාරමින් සිටින අතර, එමගින් ඔහුගේ අඛණ්ඩ ඉගෙනීම සහ වෘත්තීය සංවර්ධනය සඳහා වූ කැපවීම පිළිබිඹු කරයි. ගුණසේකර මහතාගේ ප්‍රායෝගික අත්දැකීම් සම්මිශ්‍රණය, ශාස්ත්‍රීය දක්‍ෂතාවය සහ දැනුම ව්‍යාප්ත කිරීම සඳහා වූ කැපවීම ඔහු මූල්‍ය සේවා අංශයේ කැපී පෙනෙන චරිතයක් බවට පත් කරයි. ඔහුගේ නායකත්වය තරඟකාරී ක්ෂේත්‍රයක් තුල සමගමේ අඛණ්ඩ සාර්ථකත්වය සහතික කරමින් නව්‍යකරණය සහ විශිෂ්ටත්වය කරා අඛණ්ඩව මෙහෙයවනු ලබයි.",
-
-        ]
-      },
-      {
-        id: "9",
-        name: "එම් තිරුනීලකන්දන්",
-        src: mrThiru,
-        designation: "ස්වාධීන නොවන විධායක අධ්යක්ෂක / සාමාන්‍යාධිකාරී",
-        description : ["සාමාන්‍යාධිකාරී තිරුනීලකන්දන් මහතා 2003 වර්ෂයේදී AAF PLC හා සම්බන්ධ වූ අතර ව්‍යාපෘති මූල්‍යකරණය, ණය කළමනාකරණය, විදේශ විනිමය කළමනාකරණය, ව්‍යාපාර සහ මූල්‍ය පරිවර්තනය සහ විවිධාංගීකරණය ඇතුළු බැංකුකරණය සංවර්ධනය කිරීමේ දශක හතරකට වැඩි පළපුරුද්දක් ඇති වෘත්තීය බැංකුකරුවෙකි. ඔහුගේ උපදේශන කුසලතා සහ ප්‍රසන්න පෞරුෂය සමඟ අන් අයව ඒත්තු ගැන්වීමට ඔහුට ඇති හැකියාව සමගින්, AAF PLC හි ගනුදෙනුකරුවන් 2000 කට අධික සංඛ්‍යාවක් සමඟ දැවැන්ත ඉහළ මට්ටමේ ආයතනික සහ තනි ගනුදෙනුකරුවන් ගොඩනැගීමට ඔහුට මඟ පෑදීය. ඔහු බැංකු අත්දැකීම්, ණය කළමනාකරණය සහ ණය යන විශයන් හි අත්දැකීම් නොමැතිව සමාගමට සම්බන්ධ වන තරුණ වෘත්තිකයන්ට නායකත්වය සැපයීමේදී ප්‍රමුඛ කාර්යභාරයක් ඉටු කරයි. ඔහු ඉහළ කාර්යසාධනයක් සහිත කණ්ඩායම් ගොඩනැගීමට ප්‍රිය කරන අතර එමඟින් ඉහළ විභව කාර්ය මණ්ඩලයක් ඇතිකිරීම සඳහා AAF හි විවිධ වැඩසටහන් සංවිධානය කිරීමට සිය නායකත්වය සපයයි.",
-
-        ]
-      },
-      {
-        id: "10",
-        name: "රජීව් ජේම්ස් අබේවික්‍රම ගුණවර්ධන",
-        src: mrRajiv,
-        designation: "විධායක අධ්‍යක්ෂ/ප්‍රධාන විධායක නිලධාරී",
-        description : [" රජීව් ගුණවර්ධන මහතා. Asia Asset Finance PLC හි ප්‍රධාන විධායක නිලධාරී / අධ්‍යක්ෂවරයා වේ. ඔහු 2009 දෙසැම්බර් මාසයේදී අධ්‍යක්ෂ මණ්ඩලයට පත් කරන ලද අතර  මොහු සංවිධානයේ දැක්ම, උපාය මාර්ග සැකසීම සහ ක්‍රියාත්මක කිරීම මෙන්ම සංවිධානයේ මෙහෙයුම් පාලනය කිරීම සඳහා වගකිව යුතු දූරදර්ශී නායකයෙකු ලෙස කටයුතු කරයි. ඔහු එක්සත් රාජධානියේ ව්‍යාපාර සහ තොරතුරු පද්ධති පිළිබඳ විද්‍යාවේදී උපාධියක් ලබා ඇති අතර ඕස්ට්‍රේලියාවේ මොනෑෂ් විශ්ව විද්‍යාලයේ වෘත්තීය ගිණුම්කරණය පිළිබඳ ශාස්ත්‍රපති උපාධිය සම්පූර්ණ කර ඇත. Asia Asset Finance හා සම්බන්ධ වීමට පෙර ඔහු Asia Capital PLC හි ජ්‍යෙෂ්ඨ ආයෝජන විශ්ලේෂක තනතුරේ සේවය කර ඇත. ඔහු Australian College of Business and Technology හි ගිණුම්කරණය පිළිබඳ කථිකාචාර්යවරයෙකි.",
-
-        ]
-      },
-      {
-        id: "11",
-        name: "රොෂාන් ද සිල්වා ගුණසේකර",
-        src: mrRoshan,
-        designation: "විධායක අධ්යක්ෂක / ප්‍රධාන මෙහෙයුම් නිලධාරි",
-        description : ["රොෂාන් ද සිල්වා ගුණසේකර මහතා විධායක අධ්‍යක්ෂ සහ ප්‍රධාන මෙහෙයුම් නිලධාරී ලෙස කටයුතු කරමින් අත්දැකීම් සම්භාරයක් සහ විශේෂඥ දැනුමක් තම  භූමිකාවට ගෙන එයි. ඔහු 2023 වසරේ විධායක අධ්‍යක්ෂවරයෙකු ලෙස අධ්‍යක්ෂ මණ්ඩලයට පත් කරන ලද අතර, මුලින් 2010 අප්‍රේල් මාසයේදී සමාගමට සම්බන්ධ විය. වසර ගණනාවක් පුරා, ඔහු Asia Asset Finance PLC මෙන්ම විශාල මූල්‍ය සේවා කර්මාන්තය යන දෙකෙහිම සුවිශේෂී නායකත්වයක් සහ ගැඹුරු අවබෝධයක් ඇති බව පෙන්නුම් කර ඇත.LOLC Finance PLC සමඟ ඒකාබද්ධ වූ කොමර්ෂල් ලීසිං කම්පැනි ලිමිටඩ් හි ක්‍රෙඩිට් ඔෆිසර් තනතුර භාරගැනීමත් සමග 1994 දී ආරම්භ වූ ගුණසේකර මහතාගේ මුල්‍ය අංශ වෘත්තීය ජීවිතය වසර 30ක් පුරාවට දිව යයි. සමාගමේ වර්ධනයට සහ ස්ථාවරත්වයට සැලකිය යුතු දායකත්වයක් ලබා දෙමින් ඔහුගේ උපායමාර්ගික දැක්ම සහ මෙහෙයුම් තීක්ෂ්ණ බුද්ධිය හැඩගැස්වීමේදී ඔහුගේ පුළුල් පශ්චාත්-සුදුසුකම් පළපුරුද්ද වැදගත් වේ. ඔහු ශ්‍රී ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය (විශේෂ) පිළිබඳ විද්‍යාවේදී උපාධියක් සහ කොළඹ විශ්වවිද්‍යාලයෙන් MBA උපාධියක් ලබා ඇත. මීට අමතරව, ඔහු එක්සත් රාජධානියේ කළමනාකරණ ගණකාධිකාරීවරුන්ගේ වරලත් ආයතනයෙන් (CIMA) අර්ධ සුදුසුකම් සම්පූර්ණ කර ඇති අතර, ඔහුගේ මූල්‍ය ප්‍රවීණත්වය තවදුරටත් වැඩි දියුණු කර ඇත. ඔහු වෘත්තීය සහ අධ්‍යාපනික ජයග්‍රහණවලින් ඔබ්බට යමින් ගුණසේකර මහතා ජපානයේ විදේශීය තාක්ෂණික ජ්‍යෙෂ්ඨ කළමනාකරණ ශිෂ්‍යත්ව සංගමයේ ද (AOTS) ගෞරවනීය සාමාජිකයෙකු ලෙස ක්‍රියාකරයි. කොළඹ විශ්වවිද්‍යාලයේ මූල්‍ය සේවා අලෙවිකරණය පිළිබඳ බාහිර කථිකාචාර්යවරයකු ලෙස කටයුතු කිරීම තුළින් අධ්‍යාපනය සඳහා වූ ඔහුගේ කැපවීම ද පැහැදිලි වන අතර එහිදී ඔහු තම දැනුම සහ අත්දැකීම් එය අපේක්ෂා කරන මුල්‍ය වෘත්තිකයන් සමඟ බෙදාගැනීමට ද කටයුතු කලේය. ඔහු පුළුල් මූල්‍ය සේවා ප්‍රජාවට දායක වෙමින් විවිධ දැනුම බෙදාගැනීමේ සංසදවල සම්පත් දායකයෙකු ද ලෙස සිටී. දැනට, ගුණසේකර මහතා කොළඹ විශ්වවිද්‍යාලයේ ව්‍යාපාර පරිපාලනය පිළිබඳ ආචාර්ය උපාධියක් (DBA) හදාරමින් සිටින අතර, එමගින් ඔහුගේ අඛණ්ඩ ඉගෙනීම සහ වෘත්තීය සංවර්ධනය සඳහා වූ කැපවීම පිළිබිඹු කරයි. ගුණසේකර මහතාගේ ප්‍රායෝගික අත්දැකීම් සම්මිශ්‍රණය, ශාස්ත්‍රීය දක්‍ෂතාවය සහ දැනුම ව්‍යාප්ත කිරීම සඳහා වූ කැපවීම ඔහු මූල්‍ය සේවා අංශයේ කැපී පෙනෙන චරිතයක් බවට පත් කරයි. ඔහුගේ නායකත්වය තරඟකාරී ක්ෂේත්‍රයක් තුල සමගමේ අඛණ්ඩ සාර්ථකත්වය සහතික කරමින් නව්‍යකරණය සහ විශිෂ්ටත්වය කරා අඛණ්ඩව මෙහෙයවනු ලබයි.",
-
-        ]
-      },
-      {
-        id: "12",
-        name: "එම් තිරුනීලකන්දන්",
-        src: mrThiru,
-        designation: "ස්වාධීන නොවන විධායක අධ්යක්ෂක / සාමාන්‍යාධිකාරී",
-        description : ["සාමාන්‍යාධිකාරී තිරුනීලකන්දන් මහතා 2003 වර්ෂයේදී AAF PLC හා සම්බන්ධ වූ අතර ව්‍යාපෘති මූල්‍යකරණය, ණය කළමනාකරණය, විදේශ විනිමය කළමනාකරණය, ව්‍යාපාර සහ මූල්‍ය පරිවර්තනය සහ විවිධාංගීකරණය ඇතුළු බැංකුකරණය සංවර්ධනය කිරීමේ දශක හතරකට වැඩි පළපුරුද්දක් ඇති වෘත්තීය බැංකුකරුවෙකි. ඔහුගේ උපදේශන කුසලතා සහ ප්‍රසන්න පෞරුෂය සමඟ අන් අයව ඒත්තු ගැන්වීමට ඔහුට ඇති හැකියාව සමගින්, AAF PLC හි ගනුදෙනුකරුවන් 2000 කට අධික සංඛ්‍යාවක් සමඟ දැවැන්ත ඉහළ මට්ටමේ ආයතනික සහ තනි ගනුදෙනුකරුවන් ගොඩනැගීමට ඔහුට මඟ පෑදීය. ඔහු බැංකු අත්දැකීම්, ණය කළමනාකරණය සහ ණය යන විශයන් හි අත්දැකීම් නොමැතිව සමාගමට සම්බන්ධ වන තරුණ වෘත්තිකයන්ට නායකත්වය සැපයීමේදී ප්‍රමුඛ කාර්යභාරයක් ඉටු කරයි. ඔහු ඉහළ කාර්යසාධනයක් සහිත කණ්ඩායම් ගොඩනැගීමට ප්‍රිය කරන අතර එමඟින් ඉහළ විභව කාර්ය මණ්ඩලයක් ඇතිකිරීම සඳහා AAF හි විවිධ වැඩසටහන් සංවිධානය කිරීමට සිය නායකත්වය සපයයි.",
-
-        ]
-      },
-      {
-        id: "13",
-        name: "ගීතිකා එල්වලගේ",
-        src: msGeethika,
-        designation: "ප්‍රධාන මූල්‍ය නිලධාරි",
-        //designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - මූල්‍ය",
-        description : ["ගීතිකා එල්වලගේ මහත්මිය වසර 16 කට වැඩි කාලයක් මුල්‍ය සේවා අංශයේ විවිධ වූ අත්දැකීම් ලබා ඇත. ඇය ශ්‍රී ලංකා වරලත් ගණකාධිකාරී ආයතනයේ සාමාජිකාවකි. BDO Partners හි සේවය කර ඇති ඇයට විගණන අංශයේ වසර තුනක අමතර පළපුරුද්දක් ඇත. තවද, ඇය ශ්‍රී ජයවර්ධනපුර විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ ශාස්ත්‍රපති උපාධියක් ද ලබා ඇත.",
-
-        ]
-      },
-      {
-        id: "14",
-        name: "ජයන්ත වීරප්පුලිගෙ",
-        src: mrJayantha,
-        designation: "සමාන්‍යාධිකාරී - මෙහෙයුම්",
-        //designation: "නියෝජ්‍ය සමාන්‍යාධිකාරී - මෙහෙයුම්",
-        description : ["ජයන්ත වීරප්පුලිගේ මහතා 2008 වසරේ Asia Asset Finance PLC හා සම්බන්ධ විය. දැනට, වීරපුල්ලිගේ මහතා ඒෂියා ඇසට් ෆිනෑන්ස් හි සාමාන්‍යාධිකාරී - මෙහෙයුම් ලෙස සේවය කරයි., මුලදී ඔහු AGM ශ්‍රේණිය ලෙස උසස් වීමට පෙර වසර 3ක් ජ්‍යෙෂ්ඨ කළමනාකාර ණය දීමේ තනතුරේ සේවය කළ අතර 2022 දී ඔහු DGM තනතුරට උසස් කරන ලදී. . ජයන්ත වීරප්පුලිගේ මහතා කොළඹ විශ්වවිද්‍යාලයෙන් ව්‍යාපාර පරිපාලනය පිළිබඳ B. Com (විශේෂ) උපාධියක් සහ MBA උපාධියක් ලබා ඇත. මූල්‍ය අංශයේ වසර 20ක් ගත කළ අලෙවිකරණය, ණය, මෙහෙයුම්, ගිණුම් පිළිබඳ වසර 23කට වැඩි සේවා පළපුරුද්දක් ඇති ඔහු 2003 සිට පීපල්ස් මර්චන්ට් බැංකුවේ මීට පෙර කළ රැකියාවේදී බැංකු ක්ෂේත්‍රයේ පළපුරුද්ද ද ඇත. 2008. ඔහු Asia Asset Finance PLC හි ඉහළ කළමනාකාරිත්වයේ වසර 15 කට වැඩි පළපුරුද්දක් දරයි. අලෙවිකරණය, ණය, පරිපාලනය සහ ප්‍රතිසාධන වලින් සමන්විත ශාඛාවල ක්‍රියාකාරිත්වය මෙන්ම සමස්ත ශාඛා ජාලයම මෙහෙයවීම සඳහා ඔහු වගකිව යුතුය.  නිෂ්පාදන සහ ව්‍යාපාර සංවර්ධනය, උපායමාර්ගික සැලසුම් සහ ක්‍රියාත්මක කිරීම සඳහා ඔහු තවදුරටත් වගකිව යුතුය.",
-
-        ]
-      },
-      {
-        id: "15",
-        name: "මහේෂ් කුමාර්",
-        src: mrMahesh,
-        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - ණය සහ නැවත අයකර ගැනීම්",
-        description : ["මහේෂ් කුමාර් මහතා කොළඹ විශ්වවිද්‍යාලයෙන් ගිණුම්කරණ ශාස්ත්‍රවේදී උපාධියක් ලබා ඇත. 1999 වසරේ සහකාර ගණකාධිකාරීවරයෙකු ලෙස ඔහු ක්ෂේත්‍රයට පිවිස ඇත. 2009 වසරේ ඒෂියා ඇසට් ආයතනය හා සම්බන්ධ වීමට පෙර ඔහු විවිධ මූල්‍ය සමාගම්වල ජ්‍යෙෂ්ඨ කළමනාකාරීත්වයේ සේවය කිරීමෙන් ලබාගත් පුළුල් ක්ශේත්‍ර අත්දැකීම් සමුදායකින් සන්නද්ධ වේ. මේ වන විට මෙම කුමාර් මහතා සහකාර සාමාන්‍යාධිකාරී - ණය සහ නැවත අයකර ගැනීම් තනතුර දරයි.",
-        ]
-      },
-      {
-        id: "16",
-        name: "සමිර වේවැල්දෙණිය",
-        src: mrSameera,
-        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - ස්ථාවර තැන්පතු",
-        description : ["සමිර වේවැල්දෙණිය මහතා 2006 ජුනි මාසයේදී මීගමුව ශාඛා කළමනාකාරවරයා ලෙස AAF වෙත සම්බන්ධ වූ අතර 2009 දී ප්‍රාදේශීය කළමනාකරු - ස්ථාවර තැන්පතු තනතුරට පත් කරන ලද අතර පසුව 2011 දී ස්ථාවර තැන්පතු ජ්‍යෙෂ්ඨ කළමනාකරු ලෙස පත්වීමක් ලැබීය. ඔහු සහකාර සාමාන්‍යාධිකාරී ලෙස උසස් කරන ලදී. - 2014 දී අලෙවිකරණය. ඔහුට වසර 22 කට වැඩි පළපුරුද්දක් ඇත මූල්‍ය අංශයේ තැන්පතු අලෙවිකරණය සහ දැනට DGM-ස්ථිර තැන්පතුවල ධාරිතාවයෙන් කටයුතු කරන අතර සමාගමේ අරමුදල් බලමුලු ගැන්වීමට සහ ශාඛා සංවර්ධනයට දායක වේ. AAF හා සම්බන්ධ වීමට පෙර වේවැල්දෙණිය මහතා සෙලින්කෝ සංවර්ධන බැංකුවේ සේවය කළ අතර එහිදී අලෙවිකරණයේ ඔහුගේ ජයග්‍රහණ වෙනුවෙන් ඔහුට සම්මාන රැසක් හිමි විය. වේවැල්දෙණිය මහතා එක්සත් රාජධානියේ බකිංහැම්ෂයර් නව විශ්වවිද්‍යාලයෙන් MBA උපාධියක් ලබා ඇති අතර ඒෂියා අලෙවිකරණ සම්මේලනය (AMF) විසින් සහතික කළ වෘත්තීය අලෙවිකරු-ආසියාවේ (CPM - Asia) පශ්චාත් උපාධි වෘත්තීය තත්ත්වය ඔහුට පිරිනමන ලදී. ඔහු ඔස්ට්‍රේලියාවේ (AMA-Australia) සහතික කළ කළමනාකරණ ගණකාධිකාරීවරුන්ගේ සහකාර සාමාජිකයෙකි. ඊට අමතරව ඔහු ශ්‍රී ලංකා අලෙවිකරණ ආයතනයේ (SLIM) සහතිකලත් සාමාජිකයෙකි.",
-
-        ]
-      },
-      {
-        id: "17",
-        name: "සජිත් අතපත්තු",
-        src: mrSajith,
-        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - අවදානම් කළමනාකරණ",
-        description : ["සජිත් අතපත්තු මහතා 2010 වසරේ Asia Asset Finance PLC හා සම්බන්ධ වූ අතර දැනට නියෝජ්‍ය සාමාන්‍යාධිකාරී - අවදානම් තනතුර දරයි. මෙම වසර 14ක විස්තීර්ණ කාලසීමාව පුරාවට අතපත්තු මහතා විවිධ කාර්ය භාරයන් ඉටු කර ඇති අතර ණය සහ ප්‍රතිසාධනයේ සිට මෙහෙයුම්, පරිපාලනය සහ අවදානම් දක්වා විවිධ වගකීම් භාරගෙන ඇති අතර එහිදී ඔහු සංවිධානයේ ප්‍රධාන ක්ෂේත්‍රවල අත්දැකීම් සම්භාරයක් රැස් කර ඇත. විවිධ දෙපාර්තමේන්තු අතර අන්තර් ක්‍රියාකාරිත්වය සහ පුළුල් ආයතනික අරමුණු සාක්ෂාත් කර ගැනීම සඳහා ඔවුන්ගේ උත්සාහයන් පෙළගැස්වීමේ වැදගත්කම පිළිබඳව ඔහු පුළුල් අවබෝධයක් ලබා ඇත. සජිත් අතපත්තු මහතා මූල්‍ය ඇතුළත් කිරීම් ප්‍රවර්ධනය කිරීම සඳහා කැප වූ සංවිධානයක් වන London Mutual Credit Union (UK) හි සිය වෘත්තීය ජීවිතය ආරම්භ කළේය. LMCU හි ඔහුගේ සේවා කාලය තුළ, ඔහු මූල්‍ය අංශයේ සංකීර්ණතා පිළිබඳව මෙන්ම සියලු පුද්ගලයන්ට ප්‍රවේශ විය හැකි මූල්‍ය සේවා සැපයීමේ වැදගත්කම පිළිබඳව ද ගැඹුරු අවබෝධයක් ලබාගෙන ඇත. ඔහු එක්සත් රාජධානියේ Keele විශ්ව විද්‍යාලයෙන් සිය උපාධිය ලබාගෙන ඇත.",
-
-        ]
-      },
-      {
-        id: "18",
-        name: "ඉන්දිත ජයතිලක",
-        src: mrInditha,
-        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - තොරතුරු තාක්ෂණ",
-        description : ["ඉන්දිත ජයතිලක මහතා ඒෂියා ඇසට් ෆිනෑන්ස් ආයතනයෙහි සියලුම තොරතුරු තාක්ෂණ ආශ්‍රිත කාර්යයන් සඳහා විසඳුම් සපයනු ලබන අතර ඔහුට බැංකු සහ මූල්‍ය විසඳුම් සංවර්ධනය සහ ක්‍රියාත්මක කිරීම සම්බන්ධයෙන් වසර 12 කට වැඩි පළපුරුද්දක් ඇත. ඔහු සිය කළමනාකරණ තොරතුරු පද්ධති පිළිබඳ ශාස්ත්‍රවේදී උපාධිය  ඩබ්ලන් විශ්ව විද්‍යාලයෙන් ලබාගන්නා ලදී.",
-          "ඔහුගේ වෘත්තීය කාලය තුළ, ඔහු විවිධ අංශවලින් ඔහුගේ අත්දැකීම් ලබා ගත් අතර, මූල්‍ය ක්ශේත්‍රය තුල අත්‍යාවශ්‍ය මෘදුකාංග ඇතුලු අනෙකුත් තොරතුරු තාක්ශණික විසඳුම් ලබාදෙන විශේෂඥ පුද්ගලයෙක් බවට පත්විය. දැනට, ඔහු තොරතුරු තාක්ෂණය හා සම්බන්ධ මෘදුකාංග , ආරක්ෂක සේවා ඇතුලු සියලුම ක්‍රියාවලීන් සිදු කරමින් තොරතුරු තාක්ෂණ දෙපාර්තමේන්තුව අධීක්ෂණය කරනු ලබයි.",
-        ]
-      },
-      {
-        id: "19",
-        name: "ප්‍රවීන් පීරිස්",
-        src: mrPraveen,
-        designation: "නියෝජ්‍ය සාමාන්‍යාධිකාරී - භාණ්ඩාගාර",
-        description : ["ප්‍රවීන් පීරිස් මහතා 2014 වසරේදී Asia Asset Finance PLC හා සම්බන්ධ වූ අතර වසර 20කට අධික මූල්‍ය හා භාණ්ඩාගාර අත්දැකීම් ඇත. ඔහු 2004 දී ගෝලීය විගණන සමාගමකින් සිය වෘත්තීය ජීවිතය ආරම්භ කළ අතර 2008 දී බැංකු නොවන මූල්‍ය අංශයට සම්බන්ධ විය. Asia Asset Finance PLC හා සම්බන්ධ වීමට පෙර ඔහු ලැයිස්තුගත මූල්‍ය සමාගමක භාණ්ඩාගාර කළමනාකරු ලෙස සේවය කළේය. ඔහුට උපාය මාර්ගික අවදානම් කළමනාකරණය, වත්කම් වගකීම් කළමනාකරණය සහ මුදල් කළමනාකරණය ඇතුළු භාණ්ඩාගාර කළමනාකරණය පිළිබඳ විශේෂඥ දැනුමක් ඇත. ඔහු මෙහෙයුම් කළමනාකරණය පිළිබඳ නිපුණයෙකු වන අතර ඉහළ වටිනාකමක් ඇති ව්‍යාපෘති සඳහා මූල්‍යකරණය හැසිරවීමේ හැකියාව ඇත. පීරිස් මහතා එක්සත් රාජධානියේ වේල්ස් විශ්ව විද්‍යාලයෙන් MBA උපාධියක් ලබා ඇති අතර U.K හි කළමනාකරණ ගණකාධිකාරීවරුන්ගේ වරලත් ආයතනයේ අවසන් තරඟකරුවෙකි.",
-
-        ]
-      },
-    ],
-    
+    } 
     },
   },
   ta: {
@@ -2212,20 +1425,20 @@ branchesData: {
       carouselLandingPage: [
         
         {
-          src: banner1,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg1.webp`,
           title: "உங்கள் நிதி எதிர்காலத்திற்கு புதிய தீர்வுகள்",
           intro: "உங்கள் நிதி எதிர்காலத்தை சக்திவாய்ந்ததாக ஆக்குதல்",
           description: "ஏசியா எசட் பைனான்ஸ் நிறுவனத்தில், நிதி வெற்றியைத் தூண்டும் புதுமையின் சக்தியை நாங்கள் நம்புகிறோம். பொருத்தமான நிதித் தீர்வுகளை வழங்குவதில் எங்களின் அர்ப்பணிப்பு இலங்கையின் நிதித்துறையில் முன்னணியில் எங்களை நிலைநிறுத்தியுள்ளது. உங்களின் அடுத்த பெரிய திட்டத்தில் முதலீடு செய்ய, சேமிக்க அல்லது நிதியுதவி செய்ய நீங்கள் விரும்பினாலும், நம்பிக்கையுடனும் வெளிப்படைத்தன்மையுடனும் உங்கள் பயணத்தை ஆதரிக்க நாங்கள் இங்கு இருக்கிறோம்.",
         },
         {
-          src: banner2,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg2.webp`,
           title: "கனவுகளுக்கான நிதி தீர்வுகள் சந்திக்கும் இடம்",
           intro: "புதுப்பிக்கப்பட்ட நிதி முன்னுதாரண வளர்ச்சி ",
           description:
             "நாங்கள் ஒரு நிதி நிறுவனம் அல்ல, நாங்கள் உங்கள் பங்காளிகள். நிதிக்கான எங்களின் புதுமையான அணுகுமுறையானது இலங்கை முழுவதிலும் உள்ள தனிநபர்கள் மற்றும் வணிகங்களை மேம்படுத்துவதற்காக வடிவமைக்கப்பட்டுள்ளது. தனிப்பயனாக்கப்பட்ட சேவையுடன் அதிநவீன தொழில்நுட்பத்தை இணைப்பதன் மூலம், உங்கள் இலக்குகளை அடைய உங்களுக்கு உதவுவதில் திறமையானவை மட்டுமல்ல, பயனுள்ள நிதித் தீர்வுகளையும் நாங்கள் வழங்குகிறோம்.",
         },
         {
-          src: banner3,
+          src: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/bannerimg3.webp`,
           title: "இலங்கை நிதித்துறையில் முன்னோடியாக முன்னேறி செல்கிறோம் ",
           intro: "உங்கள் நம்பிக்கை எமது பொறுப்பு ",
           description:
@@ -2273,12 +1486,12 @@ branchesData: {
 },  
 
   productsOverviewLandingPage: [
-    { title: "நிலையான வைப்பு", image: FixedDeposits, description: "நிலையான வருவாயுடன் உங்கள் சேமிப்புகளைப் பாதுகாக்கவும்." },
-    { title: "தங்கக்கடன்", image: GoldLoan, description: "நெகிழ்வான சேமிப்புடன் உங்கள் செல்வத்தை வளர்த்துக் கொள்ளுங்கள்." },
-    { title: "அடைமானம்", image: Mortgage, description: "உங்கள் ஒவ்வொரு தேவைக்கும் மலிவு கடன்." },
-    { title: "குத்தகை", image: Leasing, description: "குறைந்த வட்டி விகிதங்களுடன் வசதியான செலவினம்." },
-    { title: "E - சேமிப்பு", image: Luckewallet, description: "மன அமைதிக்கான விரிவான பாதுகாப்பு." },
-    { title: "வெளிநாட்டு நாணய மாற்று", image: Forex, description: "பல்வேறு விருப்பங்களுடன் உங்கள் வருமானத்தை அதிகரிக்கவும்." },
+    { title: "நிலையான வைப்பு", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/fd.webp`, description: "நிலையான வருவாயுடன் உங்கள் சேமிப்புகளைப் பாதுகாக்கவும்." },
+    { title: "தங்கக்கடன்", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/gold_loan.webp`, description: "நெகிழ்வான சேமிப்புடன் உங்கள் செல்வத்தை வளர்த்துக் கொள்ளுங்கள்." },
+    { title: "அடைமானம்", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/mortgage.webp`, description: "உங்கள் ஒவ்வொரு தேவைக்கும் மலிவு கடன்." },
+    { title: "குத்தகை", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/leasing.webp`, description: "குறைந்த வட்டி விகிதங்களுடன் வசதியான செலவினம்." },
+    { title: "E - சேமிப்பு", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/luckewallet.webp`, description: "மன அமைதிக்கான விரிவான பாதுகாப்பு." },
+    { title: "வெளிநாட்டு நாணய மாற்று", image: `${import.meta.env.VITE_API_BASE_URL}/media/landingPage/forex.webp`, description: "பல்வேறு விருப்பங்களுடன் உங்கள் வருமானத்தை அதிகரிக்கவும்." },
 ],
 testimonialsText: {  
   title: "எமது வாடிக்கையாளர்கள் எம்மை பற்றி தெரிவித்த கருத்துக்கள்",  
@@ -2377,7 +1590,7 @@ inquiryForm: {
 
 //About Page Components
 bannerAbout: {
-  src: bannerAbout,
+  src: `${import.meta.env.VITE_API_BASE_URL}/media/aboutPage/bannerAbout.webp`,
   title: "எங்களைப் பற்றி",
   intro: "உங்கள் நிதி எதிர்காலத்தை வலுவடிக்கச் செய்கிறோம்",
   specialnote: "1970 முதல்",
@@ -2410,16 +1623,6 @@ missionVisionGoal: {
     description: "இலங்கையில் ஒரு முதன்மையான நிதி நிறுவனமாக மாற.",
   }
 },
-bodProfilesAbout: [
-  { imgSrc: mrAlexandra, name: 'ஜி எம் அலெக்சாண்டர்', title: 'நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்' },
-  { imgSrc: mrBijimon, name: 'கே ஆர் பிஜிமொன்', title: 'நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்' },
-  { imgSrc: mrPillai, name: 'கே ஜி கே பிள்ளை', title: 'நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்' },
-  { imgSrc: mrRajitha, name: 'ஆர் ஏ பி பஸ்நாயக்கே', title: 'சுயாதீன நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்' },
-  { imgSrc: mrJayasekara, name: 'ஜே பி டி ஆர் ஜயசேகர', title: 'சுயாதீன நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்' },
-  { imgSrc: mrKumarasiri, name: 'டி சி டி குமாரசிறி', title: 'நான்-நிறுவன இயக்குனர்' },
-  { imgSrc: mrRoshan, name: 'ஆர் டி எஸ் குணசேகர', title: 'நிறைவேற்று பணிப்பாளர் / பிரதான செயட்பாடு அதிகாரி' },
-  { imgSrc: mrThiru, name: 'எம் திருநீலகண்டன்', title: 'நிறைவேற்று  பணிப்பாளர் / பொது முகாமையாளர்' },
-],
 bodTextsAbout: {
   title1: "ஆலோசகர் குழு",
   title2: "",
@@ -2439,23 +1642,7 @@ comTextsAbout: {
   title2: "நிர்வாகம்",  
   subtitle: "பாதுகாப்பான நிதி வளர்ச்சிக்கான முழுமையான தீர்வுகள்",  
   description: "ஏசியா எசட் பைனான்ஸ், எங்கள் காப்பக மேலாண்மை குழு அனுபவமிக்க நிபுணர்களால் அமைக்கப்பட்டுள்ளது, அவர்கள் தங்களுடைய அனுபவமும் ஆழமான பார்வையும் கொண்டு வருகின்றனர். அவர்களின் மூலோபாயமான முன்னேற்றம் மற்றும் சிறந்ததுவதை நிலைநிறுத்துவதற்கான கடமையுடன் எங்கள் நிறுவனம் வெற்றியுடன் முன்னேறி, இலங்கையின் நிதி சேவைத் துறையில் முன்னணியில் இருக்க எங்களுடைய முன்னணி நிலையை உறுதி செய்கின்றனர்."  
-},  
-
-
-comProfilesAbout: [ 
-  { imgSrc: mrRajiv, name: 'ரஜீவ் குணவர்தன', title: 'நிறுவன இயக்குனர் / நிறைவேற்று பணிப்பாளர் / பிரதான நிறைவேற்று அதிகாரி' },
-  { imgSrc: mrRoshan, name: 'ரோஷன் குணசேகர', title: 'நிறைவேற்று பணிப்பாளர் / பிரதான செயட்பாடு அதிகாரி' },
-  { imgSrc: mrThiru, name: 'எம். திருநீலகண்டன்', title: 'நிறைவேற்று  பணிப்பாளர் / பொது முகாமையாளர்' },
-  { imgSrc: msGeethika, name: 'கீதிகா எல்வாலகே', title: 'முதன்மை நிதி அதிகாரி' },
-  //{ imgSrc: msGeethika, name: 'கீதிகா எல்வாலகே', title: 'துணை பொது முகாமையாளர் - நிதி' },
-  { imgSrc: mrJayantha, name: 'ஜயந்த வீரப்புலிகே', title: 'பொது முகாமையாளர் - செயல்பாடு' },
-  //{ imgSrc: mrJayantha, name: 'ஜயந்த வீரப்புலிகே', title: 'துணை பொது முகாமையாளர் - செயல்பாடு' },
-  { imgSrc: mrMahesh, name: 'மஹேஷ் குமார்', title: 'துணை பொது முகாமையாளர் - கடன் மற்றும் மீட்பு' },
-  { imgSrc: mrSameera, name: 'சமீரா வெவெல்தெனிய', title: 'துணை பொது முகாமையாளர் - நிலையான வைப்பு' },
-  { imgSrc: mrSajith, name: 'சஜித் அடபத்து', title: 'துணை பொது முகாமையாளர் - இடர் மேலாண்மை' },
-  { imgSrc: mrInditha, name: 'இந்தித ஜயதிலக', title: 'துணை பொது முகாமையாளர்- தகவல் தொழில்நுட்பம்' },
-  { imgSrc: mrPraveen, name: 'பிரவீன் பீரிஸ்', title: 'துணை பொது முகாமையாளர் - திறைசேரி' }
-],
+},
 
 branchNetworktext: {
   title1: "எங்கள் ",
@@ -2470,164 +1657,10 @@ branchNetworktext: {
   viewOnMapBtn: "வரைபடத்தில் பார்க்க",
   callNowBtn: "அழைப்பு"
 },
-branchesData: {
-  head_office: {
-    title: "தலைமையகம்",
-    branches: [
-      { name: "தலைமையகம்", location: "எண் 76, பார்க் தெரு, கொழும்பு 02.", contact: "011 769 9000", image: "/src/media/branches/headoffice.webp", lat: "6.915119", lng: "79.859896" },
-
-    ]
-  },
-  western: {
-    title: "மேற்கு  வலயம்",
-    branches: [
-      { name: "நீர்கொழும்பு", location: "இல. 295, பிரதான வீதி, நீர்கொழும்பு.", contact: "031 769 9020", image: "/src/media/branches/negombo.webp", lat: "7.212791", lng: "79.841551" },
-      { name: "கம்பஹா", location: "இல. 69, கொழும்பு வீதி, கம்பஹா.", contact: "033 769 9010", image: "/src/media/branches/gampaha.webp", lat: "79.841551", lng: "79.995027" },
-      { name: "களுத்துறை", location: "இல. 344, மகா வீதி, களுத்துறை தெற்கு.", contact: "034 769 9013", image: "/src/media/branches/kaluthara.webp", lat: "6.57007", lng: "79.966094" },
-      { name: "மொரட்டுவ", location: "இல. 16, புதிய டி சொய்சா வீதி, ராவத்தவத்தை. மொரட்டுவ.", contact: "011 768 1511", image: "/src/media/branches/moratuwa.webp", lat: "6.788091", lng: "79.878066" },
-      { name: "வெள்ளவத்தை", location: "இல. 344, காலி வீதி, வெள்ளவத்தை.", contact: "011 768 1530", image: "/src/media/branches/wellawatte.webp", lat: "6.867254", lng: "79.86071" },
-      { name: "மத்துகம", location: "K & W மையம், No.5, காமினி மாவத்தை, அளுத்கம வீதி, மத்துகம.", contact: "034 769 9022", image: "/src/media/branches/mathugama.webp", lat: "6.521474", lng: "80.113428" },
-      { name: "கொட்டாஞ்சேனை", location: "இல. 31, கொட்டாஞ்சேனை வீதி, கொழும்பு 13.", contact: "- ", image:  "/src/media/branches/kotahena.webp", lat: "6.948532", lng: "79.862381" },
-      { name: "பாணந்துறை", location: "இல. 114, D S சேனநாயக்க மாவத்தை, பாணந்துறை.", contact: "038 769 9010", image: "/src/media/branches/panadura.webp", lat: "6.7141", lng: "79.907744" },
-      { name: "மட்டக்குளி", location: "இல. 3/810, பண்ணை வீதி, மட்டக்குளி.", contact: "011 769 9480", image: "/src/media/branches/mattakkuliya.webp", lat: "6.9778477", lng: "79.8762375" },
-      { name: "கிராண்ட்பாஸ்", location: "இல. 428, மாதம்பிடிய வீதி, கொழும்பு 14.", contact: "011 768 1502", image: "/src/media/branches/grandpass.webp", lat: "6.957149", lng: "79.876909" },
-      { name: "எலகந்தை", location: "இல. 327, திம்பிரிகஸ்யாய, ஹந்தல, வத்தளை.", contact: "011 769 9446", image: "/src/media/branches/elakanda.webp", lat: "6.99472", lng: "79.875671" },
-      { name: "ஹோமாகம", location: "இல. 486, ஹோமாகம நகரம், ஹோமாகம.", contact: "011 769 9415", image: "/src/media/branches/homagama.webp", lat: "6.8412732", lng: "80.0038472" },
-    ]
-  },
-  eastern: {
-    title: "கிழக்கு  வலயம்",
-    branches: [
-      { name: "மட்டக்களப்பு", location: "இல. 187, திருகோண வீதி, மட்டக்களப்பு.", contact: "065 769 9010", image: "/src/media/branches/batticaloa.webp", lat: "7.718111", lng: "81.6985" },
-      { name: "செங்கலடி", location: "புதிய சந்தை சாலை, செங்கலடி.", contact: "065 769 9020", image: "/src/media/branches/chenkalady.webp", lat: "7.783481", lng: "81.593214" },
-      { name: "கல்முனை", location: "இல. 69, பிரதான வீதி, கல்முனை.", contact: "067 769 9020", image: "/src/media/branches/kalmunai.webp", lat: "6.915119", lng: "79.859896" },
-      { name: "சம்மாந்துறை", location: "இல. 120, அம்பாறை வீதி, கருவாட்டுகல்-02, சம்மாந்துறை.", contact: "067 769 9025", image: "/src/media/branches/sammanthurai.webp", lat: "7.357484", lng: "81.795105" },
-      { name: "அக்கரைப்பற்று", location: "இல. 155, அம்பாறை வீதி, அக்கரைப்பற்று.", contact: "067 769 9010", image: "/src/media/branches/akkaraipattu.webp", lat: "7.219392", lng: "81.849757" },
-      { name: "வாழைச்சேனை", location: "பிரதான வீதி, வாழைச்சேனை", contact: "065 769 9040", image: "/src/media/branches/valaichchenai.webp", lat: "7.921328", lng: "81.524671" },
-      { name: "திருகோணமலை", location: "இல. 285, மத்திய வீதி, திருகோணமலை.", contact: "026 769 9021", image: "/src/media/branches/trincomalee.webp", lat: "8.579646", lng: "81.230833" },
-      { name: "கிண்ணியா", location: "இல. 88, பிரதான வீதி, சின்ன கிண்ணியா, கிண்ணியா 03.", contact: "026 769 9032", image: "/src/media/branches/kinniya.webp", lat: "6.915119", lng: "79.859896" },
-      { name: "களுவாஞ்சிகுடி", location: "இல.172, பிரதான வீதி, களுவாஞ்சிகுடி.", contact: "065 769 9032", image: "/src/media/branches/kalawanchikuddy.webp", lat: "7.517246", lng: "81.786933"   },
-      { name: "பொத்துவில்", location: "பிரதான வீதி, பொத்துவில்.", contact: "063 769 9011", image: "/src/media/branches/pottuvil.webp", lat: "6.875271", lng: "81.830633" },
-      { name: "கந்தளாய்", location: "இல. 137, பிரதான வீதி, கந்தளாய்.", contact: "026 769 9010", image: "/src/media/branches/kanthale.webp", lat: "8.351263", lng: "81.006993" },
-      { name: "திருக்கோவில்", location: "பிரதான வீதி, திருக்கோவில்", contact: "067 769 9040", image: "/src/media/branches/thirukkovil.webp", lat: "7.1158776", lng: "81.8520391" },
-      { name: "நிந்தவூர்", location: "42/11, பிரதான வீதி, நிந்தவூர்.", contact: "067 769 9052", image: "/src/media/branches/ninthavur.webp", lat: "7.356912", lng: "81.84545" },
-      { name: "சேருநுவர", location: "இல. 44, A.R.B.03, சேருநுவர.", contact: "026 769 9050", image: "/src/media/branches/serunuwara.webp", lat: "8.325101", lng: "81.300209" },
-      { name: "மூதூர்", location: "மட்டக்களப்பு வீதி, ஆலிம் நகர், மூதூர்.", contact: "026 769 9040", image: "/src/media/branches/muthur.webp", lat: "8.44294", lng: "81.263283" },
-      { name: "அம்பாறை", location: "இல. 451, D.S சேனநாயக்க வீதி, அம்பாறை.", contact: "063 769 9020", image: "/src/media/branches/ampara.webp", lat: "7.2917359", lng: "81.6803183" },
-      { name: "கொக்கட்டிச்சோலை", location: "இல. 10, பிரதான வீதி, கொக்கட்டிச்சோலை.", contact: "065 769 9060", image: "/src/media/branches/kokkadicholai.webp", lat: "7.609681591789088", lng: "81.7121303580231" },
-      { name: "கிரான்", location: "பிரதான வீதி, கிரான்.", contact: "065 769 9050", image: "/src/media/branches/kiran.webp", lat: "7.865244496822327", lng: "81.53848100905222" }
-
-    ]
-  },
-  southern: {
-    title: "தெற்கு  வலயம்",
-    branches: [
-      { name: "காலி", location: "இல. 170/172, கடவீதிய, பிரதான வீதி, காலி.", contact: "091 769 9002", image: "/src/media/branches/galle.webp", lat: "6.035643578305275", lng: "80.22053327164475" },
-      { name: "மாத்தறை", location: "79, அனகாரிக தர்மபால மாவத்தை, மாத்தறை.", contact: "041 769 9012", image: "/src/media/branches/matara.webp", lat: "5.949379105734931", lng: "80.54374826944834" },
-      { name: "பேருவளை", location: "இல. 199, தொட்டமுனே தெற்கு பேருவளை பத்தே, பேருவளை.", contact: "034 769 9030", image: "/src/media/branches/beruwala.webp", lat: "6.472090864359676", lng: "79.9847138819168" },
-      { name: "அம்பலாந்தோட்டை", location: "இல. 55, மஹா தெரு, அம்பலாந்தோட்டை.", contact: "047 769 9000", image: "/src/media/branches/ambalantota.webp", lat: "6.122573584370459", lng: "81.02260975452502" },
-      { name: "எல்பிட்டிய", location: "இல. 14, அம்பலாங்கொட வீதி, எல்பிட்டிய.", contact: "091 769 9010", image: "/src/media/branches/elpitiya.webp", lat: "6.289347277839291", lng: "80.16750838481774" },
-      { name: "தெனியாய", location: "இல. 196, பிரதான வீதி, தெனியாய.", contact: "041 769 9020", image: "/src/media/branches/deniyaya.webp", lat: "6.3445203771652094", lng: "80.56016068020213" },
-    ]
-  },
-  northern: {
-    title: "வடக்கு  வலயம்",
-    branches: [
-      { name: "யாழ்ப்பாணம்", location: "இல. 109, கஸ்திரியார் சாலை, யாழ்ப்பாணம்.", contact: "021 769 9050", image: "/src/media/branches/jaffna.webp", lat: "9.668439", lng: "80.011014" },
-      { name: "சாவகச்சேரி", location: "இல. 05, கண்டி வீதி, சாவகச்சேரி.", contact: "021 769 9040", image: "/src/media/branches/chavakachcheri.webp", lat: "9.659811", lng: "80.160394" },
-      { name: "பருத்தித்துறை", location: "இல. 374, ரஜினா கட்டிட வளாகம், பருத்தித்துறை.", contact: "021 769 9080", image: "/src/media/branches/pointpedro.webp", lat: "9.821597", lng: "80.236677" },
-      { name: "சுன்னாகம்", location: "இல. 15, நிலைய வீதி, சுன்னாகம்.", contact: "021 769 9005", image: "/src/media/branches/chunnakam.webp", lat: "9.737563", lng: "80.024505"  },
-      { name: "நெல்லியடி", location: "இல.82, பருத்தித்துறை வீதி, நெல்லியடி.", contact: "021 769 9070", image: "/src/media/branches/nelliady.webp", lat: "9.800487", lng: "80.203238" },
-      { name: "சங்கணை", location: "மகான் தங்க பிளாசா, பிரதான தெரு, சங்கணை.", contact: "021 769 9030", image: "/src/media/branches/changanai.webp", lat: "9.747417", lng: "79.972524" },
-      { name: "வேலணை", location: "வகலவாடி, வேலணை.", contact: "021 769 9021", image: "/src/media/branches/velanai.webp", lat: "9.63615", lng: "79.900869" },
-      { name: "அச்சுவேலி", location: "இல.53, ஆவரங்கால் வீதி, அச்சுவேலி.", contact: "021 769 9010", image: "/src/media/branches/achchuveli.webp", lat: "9.77819", lng: "80.115729" },
-      { name: "மானிப்பாய்", location: "இல. 260, மானிப்பாய் வீதி, மானிப்பாய்.", contact: "021 769 9115", image: "/src/media/branches/manipay.webp", lat: "9.716558", lng: "79.996658" },
-      { name: "உரும்பிராய்", location: "பாளை வீதி, உரும்பிராய்.", contact: "021 769 9090", image: "/src/media/branches/urumpirai.webp", lat: "9.7145833", lng: "80.0436667" },
-      { name: "கிளிநொச்சி", location: "முருகன் கோவிலுக்கு அருகில், ஏ9 வீதி, கிளிநொச்சி.", contact: "021 769 9062", image: "/src/media/branches/kilinochchi.webp", lat: "9.399455", lng: "80.407774" },
-      { name: "புதுக்குடியிருப்பு", location: "இல. 02, பரந்தன் வீதி, புதுக்குடியிருப்பு, முல்லைத்தீவு.", contact: "021 769 9085", image: "/src/media/branches/puthukudiyirippu.webp", lat: "9.314812", lng: "80.700415" },
-      { name: "முல்லைத்தீவு", location: "இல. 38, பிரதான வீதி, முல்லைத்தீவு.", contact: "021 769 9065", image: "/src/media/branches/mullaitivu.webp", lat: "9.399264", lng: "80.408414" },
-      { name: "வவுனியா", location: "இல. 27, 2வது குறுக்குத் தெரு, வவுனியா.", contact: "024 769 9010", image: "/src/media/branches/vavuniya.webp", lat: "8.7523859", lng: "80.4970501" },
-      { name: "ஒட்டுசுட்டான்", location: "முல்லைத்தீவு, பிரதான வீதி, வித்யாபுரம், ஒட்டுசுட்டான்.", contact: "021 769 9075", image: "/src/media/branches/oddusuddan.webp", lat: "9.153868", lng: "80.649731" },
-      { name: "மன்னார்", location: "இல. 05, முதல் குறுக்குத் தெரு, பேத்தா, மன்னார்.", contact: "023 769 9010", image: "/src/media/branches/mannar.webp", lat: "8.979832", lng: "79.911538" },
-      { name: "செட்டிகுளம்", location: "பிரதான வீதி, செட்டிகுளம்.", contact: "024 769 9020", image: "/src/media/branches/cheddikulam.webp", lat: "8.6598809", lng: "80.3126001" },
-      { name: "முழங்காவில்", location: "மன்னார் வீதி, முழங்காவில்.", contact: "023 769 9020", image: "/src/media/branches/mulankavil.webp", lat: "9.2541944", lng: "80.1419722" },
-      { name: "மல்லாவி", location: "துன்னுகை சாலை, மல்லாவி, முலேட்டிவ்.", contact: "021 769 9095", image: "/src/media/branches/mallavi.webp", lat: "9.1343697", lng: "80.3114889" },
-      { name: "விசுவமடு", location: "சுண்டிக்குளம் சந்தி, விஸ்வமடுவ, முல்லைத்தீவு", contact: "0247699030", image: "/src/media/branches/visuvamadu.webp", lat: "9.398447279520965", lng: "80.5381797667411" },
-      { name: "பளை", location: "A9 சாலை, பள்ளை டவுன், பள்ளை", contact: "0217699111", image: "/src/media/branches/pallai.webp", lat: "9.608956493958125", lng: "80.33094899999998" },
-      { name: "பேசாலை", location: "வார்டு 8, பேசாலை தலைமன்னார் வீதி, மன்னார்.", contact: "0237699040", image: "/src/media/branches/pesalai.webp", lat: "9.085049036054754", lng: "79.82747541349308" },
-    ]
-  },
-  central: {
-    title: "மத்திய  வலயம்",
-    branches: [
-      { name: "திகன", location: "ஜே/2005 11/02. ராஜவெல்ல திகன.", contact: "081 769 9030", image: "/src/media/branches/digana.webp", lat: "7.29628", lng: "80.733276" },
-      { name: "ஹட்டன்", location: "இல. 14/A, தரை தளம், புதிய வீதி, ஹட்டன்.", contact: "051 769 9001", image: "/src/media/branches/hatton.webp", lat: "6.891629", lng: "80.598299" },
-      { name: "தலவாக்கலை", location: "இல. 8/3, பிரதான வீதி, தலவாக்கலை.", contact: "052 769 9035", image: "/src/media/branches/thalawakale.webp", lat: "6.936579585212912", lng: "80.66140425561336" },
-      { name: "நாவலப்பிட்டி", location: "இல. 75, அம்பகமுவ வீதி, நாவலப்பிட்டி.", contact: "081 769 9041", image: "/src/media/branches/nawalapitiya.webp", lat: "7.054935", lng: "80.530689" },
-      { name: "கம்பளை", location: "இல. 63, நுவரெலியா வீதி, கம்பளை.", contact: "081 769 9002", image: "/src/media/branches/gampola.webp", lat: "7.162701958808442", lng: "80.57131966361379" },
-      { name: "ராகலை", location: "இல. 67, பிரதான வீதி, ராகலை.", contact: "052 769 9033", image: "/src/media/branches/ragala.webp", lat: "7.019814", lng: "80.866563" },
-      { name: "மாத்தளை", location: "இல. 242, பிரதான வீதி, மாத்தளை.", contact: "066 769 9020", image: "/src/media/branches/matale.webp", lat: "7.47154", lng: "80.624389" },
-      { name: "பூண்டலுஓயா", location: "இல. 244/59, ழல கட வீதி, பூண்டலுஓயா.", contact: "051 769 9032", image: "/src/media/branches/pundaluoya.webp", lat: "7.013128", lng: "80.66321" },
-      { name: "மஸ்கெலியா", location: "இல. 244, பிரதான வீதி, மஸ்கெலியா.", contact: "052 769 9010", image: "/src/media/branches/maskeliya.webp", lat: "6.831457", lng: "80.571781" },
-      { name: "கடுகஸ்தோட்டை", location: "இல. 144, குருநாகல் வீதி, கடுகஸ்தோட்டை.", contact: "081 769 9010", image: "/src/media/branches/katugastota.webp", lat: "7.30731", lng: "80.63371" },
-      { name: "நாவுல", location: "இல. 26, தம்புள்ளை வீதி, நாவுல.", contact: "066 769 9010", image: "/src/media/branches/naula.webp", lat: "7.705474", lng: "80.652596" },
-      { name: "பொகவந்தலாவ", location: "இல. 90, பிரிட்வெல் பஜார், பொகவந்தலாவ.", contact: "052 769 9020", image: "/src/media/branches/bogawantalawa.webp", lat: "6.796685", lng: "80.675497" },
-      { name: "புஸ்ஸல்லாவா", location: "இல. 305, நுவரெலியா வீதி, புஸ்ஸல்லாவ.", contact: "081 769 9020", image: "/src/media/branches/pussellawa.webp", lat: "7.107993", lng: "80.635625" },
-      { name: "வத்தேகம", location: "இல. 55, பிரதான வீதி, வத்தேகம.", contact: "081 769 9025", image: "/src/media/branches/wattegama.webp", lat: "7.350414", lng: "80.689989" },
-      { name: "அகரபத்தனை", location: "இல. 34, பிரதான வீதி, அகரபத்தனை.", contact: "051 769 9011", image: "/src/media/branches/agarapathana.webp", lat: "6.863127", lng: "80.707834" },
-      { name: "ஹவாலியா", location: "இல. 26, உடபுஸ்ஸல்லாவ வீதி, ஹவாலியா.", contact: "052 769 9115", image: "/src/media/branches/hawaeliya.webp", lat: "6.9710467", lng: "80.7825" },
-      { name: "கொட்டகலை", location: "இல. 179/1, பிரதான வீதி, கொட்டகலை.", contact: "051 769 9022", image: "/src/media/branches/kotagala.webp", lat: "6.9254354", lng: "80.6081992" },
-      { name: "ஹங்குரன்கெத", location: "இல. 16, ராகலா சாலை, ரிகில்லகஸ்கட.", contact: "081 769 9050", image: "/src/media/branches/hanguranketha.webp", lat: "7.145825491", lng: "80.78396477" },
-      { name: "டயகம", location: "இல. பி/1, டயகம பஜார், டயகம.", contact: "051 769 9041", image: "/src/media/branches/dayagama.webp", lat: "6.855923", lng: "80.748098" },
-      { name: "ஹபுகஸ்தலாவ", location: "ஹல்கொல்ல, இல. 01, ஹபுகஸ்தலாவ, நாவலப்பிட்டி.", contact: "054 769 9000", image: "/src/media/branches/hapugastalawa.webp", lat: "7.0550222", lng: "80.5728854" }
-    ]
-  },
-  northwestern: {
-    title: "வட மேற்கு  வலயம்",
-    branches: [
-      { name: "குருநாகல்", location: "இல. 30, சுரதிஸ்ஸ மாவத்தை, குருநாகல்.", contact: "037 769 9002", image: "/src/media/branches/kurunegala.webp", lat: "7.488387", lng: "80.36335" },
-      { name: "வென்னப்புவ", location: "224/3A, கொழும்பு வீதி, வென்னப்புவ.", contact: "031 769 9010", image: "/src/media/branches/wennappuwa.webp", lat: "7.369178", lng: "79.829695" },
-      { name: "சிலாபம்", location: "39, கொழும்பு வீதி, சிலாபம்.", contact: "032 769 9015", image: "/src/media/branches/chilaw.webp", lat: "7.5744739", lng: "79.7967103" },
-      { name: "உடப்புவ", location: "இல. 75, பிரிவு இலக்கம் 2, உடப்புவ.", contact: "032 769 9032", image: "/src/media/branches/udappuwa.webp", lat: "7.744912", lng: "79.791637" },
-      { name: "புத்தளம்", location: "இல. 61, குருநாகல் வீதி, புத்தளம்.", contact: "032 769 9010", image:  "/src/media/branches/puttalam.webp", lat: "8.040791", lng: "79.839386" },
-      { name: "கல்பிட்டி", location: "இல. 120, புத்தளம் வீதி, தெற்கு, கல்பிட்டி.", contact: "032 769 9020", image: "/src/media/branches/kalpitiya.webp", lat: "8.234329", lng: "79.763146" },
-      { name: "வாரியபொல", location: "இல. 52, சிலாபம் வீதி, வாரியபொல.", contact: "037 769 9010", image: "/src/media/branches/wariyapola.webp", lat: "7.619711533495288", lng: "80.24139544308905" },
-      { name: "தங்கொடுவ", location: "இல. 07, நாத்தாண்டிய வீதி, தங்கொடுவ.", contact: "031 769 9030", image: "/src/media/branches/dankotuwa.webp", lat: "7.2975774", lng: "79.8819854" },
-    ]
-  },
-  uva: {
-    title: "ஊவா மாகாணம்",
-    branches: [
-      { name: "மொனராகலை", location: "இல. 141, 1வது லேன், வெல்லவாய வீதி, மொனராகலை.", contact: "055 769 9021", image: "/src/media/branches/monaragala.webp", lat: "6.871657", lng: "81.349056" },
-      { name: "மஹியங்கனை", location: "இல. 23, புதிய நகரம், மஹியங்கனை.", contact: "055 769 9030", image: "/src/media/branches/mahiyanganaya.webp", lat: "7.337864", lng: "80.989453" },
-      { name: "பதுளை", location: "இல. 49, கொக்கோவத்தை வீதி, பதுளை.", contact: "055 769 9011", image: "/src/media/branches/badulla.webp", lat: "6.986059", lng: "81.058621" },
-      { name: "ஹப்புத்தளை", location: "இல. 27, பிரதான வீதி, ஹப்புத்தளை.", contact: "057 769 9010", image: "/src/media/branches/haputale.webp", lat: "6.765414", lng: "80.952566" },
-      { name: "வெலிமடை", location: "இல. 51, நுவரெலியா வீதி, வெலிமடை.", contact: "057 769 9015", image: "/src/media/branches/welimada.webp", lat: "6.901907", lng: "80.907925" },
-      { name: "பிபிலை", location: ".  இல. 06, வைத்தியசாலைக்கு எதிரில், மட்டக்களப்பு வீதி, பிபிலை.", contact: "055 769 9050", image: "/src/media/branches/bibile.webp", lat: "7.163275", lng: "81.225672" },
-      { name: "பொரலந்த", location: "ஒலுகந்தோட்டை, பொரலந்த.", contact: "057 769 9020", image: "/src/media/branches/boralanda.webp", lat: "6.82825", lng: "80.8943889" },
-      { name: "கிரந்துருகோட்டே", location: "இல. 04, புதிய நகரம், கிராதுருகோட்டே.", contact: "027 769 9000", image: "/src/media/branches/girandurukotte.webp", lat: "7.4716381", lng: "81.016923" },
-      { name: "லுனுகல", location: "இல. 156, பிரதான வீதி, லுனுகல.", contact: "055 769 9060", image: "/src/media/branches/lunugala.webp", lat: "7.0403865", lng: "81.2014486" },
-      { name: "பசறை", location: "இல. 289, பிரதான சாலை, பசறை.", contact: "055 769 9041", image: "/src/media/branches/passara.webp", lat: "6.935118", lng: "81.1559392" },
-    ]
-  },
-sabaragamuwa: {
-    title: "சப்ரகமுவ மாகாணம்",
-    branches: [
-      { name: "மாவனல்லை", location: "இல. 246, கண்டி வீதி, மாவனல்லை.", contact: "035 769 9011", image: "/src/media/branches/kegalle.webp", lat: "7.251167", lng: "80.449528" },
-      { name: "ருவன்வெல்ல", location: "இல. 104. பிரதான வீதி, ருவன்வெல்ல.", contact: "036 769 9001", image: "/src/media/branches/ruwanwella.webp", lat: "7.043524", lng: "80.254517" },
-      { name: "பலாங்கொடை", location: "இல. 16, ரீசெட் ஹவுஸ் அப்ரோச் வீதி, பலாங்கொடை.", contact: "045 769 9000", image: "/src/media/branches/balangoda.webp", lat: "6.650399", lng: "80.698601" },
-      { name: "ரக்வானா", location: ". . எண். 29 ரக்வானா பிரதான வீதி", contact: "045 769 9011", image: "/src/media/branches/rakwana.webp", lat: "6.474218", lng: "80.610933" },
-      { name: "எஹலியகொட", location: "இல. 36 பிரதான வீதி, எஹலியகொட.", contact: "036 769 9011", image: "/src/media/branches/eheliyagoda.webp", lat: "6.850315", lng: "80.264785" },
-      { name: "தெரணியகல", location: "இல. 78, பிரதான வீதி, தெரணியகல.", contact: "036 769 9015", image: "/src/media/branches/deraniyagala.webp", lat: "6.9282651", lng: "80.3373352" },
-      { name: "குருவிட்ட", location: "இல. 71/C/1, கொழும்பு வீதி, குருவிட்ட.", contact: "045 769 9015", image: "/src/media/branches/kuruvita.webp", lat: "6.779073", lng: "80.3608329" },
-      { name: "கஹவத்தை", location: "இல. 31/A, ரக்வான பிரதான வீதி, கஹவத்தை.", contact: "045 769 9020", image: "/src/media/branches/kahawatta.webp", lat: "6.5773611", lng: "80.575" }
-    ]
-  }
-},
 
   //Investor Relations Page Components
   bannerIR: {
-    src: bannerIR,
+    src: `${import.meta.env.VITE_API_BASE_URL}/media/investorRelations/irPgBanner.webp`,
     title: "எங்களைப் பற்றி",
     intro: "நம்பிக்கையுடன் மற்றும் பார்வையுடன் செல்வத்தை உருவாக்குவது",
     specialnote: "1970 முதல்",
@@ -2721,45 +1754,6 @@ sabaragamuwa: {
       intro5: "ஆவணத்தைப் பார்க்க அதை அழுத்தவும்.",
     },
 
-    /*privacyPolicy: {
-      title: "தனியுரிமைக் கொள்கை",
-      description: [
-        "",
-        "",
-        "",
-        "",
-    ],
-    
-    information_collection: "தகவல் சேகரிப்பு மற்றும் பயன்பாடு",
-    ic_description: [
-      "சிறந்த அனுபவத்தைப் பெற, எங்கள் சேவையைப் பயன்படுத்தும் போது, ​​தனிப்பட்ட முறையில் அடையாளம் காணக்கூடிய சில தகவல்களை எங்களுக்கு வழங்குமாறு நாங்கள் கோரலாம். நாங்கள் கோரும் தகவல்கள் எங்களால் தக்கவைக்கப்படும் மற்றும் இந்த தனியுரிமைக் கொள்கையில் விவரிக்கப்பட்டுள்ளபடி பயன்படுத்தப்படும்.",
-      "உங்களை அடையாளம் காணப் பயன்படுத்தப்படும் தகவலைச் சேகரிக்கும் மூன்றாம் தரப்புச் சேவைகளைப் பயன்பாடு பயன்படுத்துகிறது.",
-    ],
-    ic_description_2 : "நீங்கள் எங்கள் சேவையைப் பயன்படுத்தும் போதெல்லாம், பயன்பாட்டில் பிழை ஏற்பட்டால், பதிவு தரவு எனப்படும் உங்கள் தொலைபேசியில் தரவு மற்றும் தகவலை (மூன்றாம் தரப்பு தயாரிப்புகள் மூலம்) நாங்கள் சேகரிக்கிறோம் என்பதை உங்களுக்குத் தெரிவிக்க விரும்புகிறோம். இந்த பதிவுத் தரவு உங்கள் சாதனத்தின் இணைய நெறிமுறை (“IP”) முகவரி, சாதனத்தின் பெயர், இயக்க முறைமை பதிப்பு, எங்கள் சேவையைப் பயன்படுத்தும் போது பயன்பாட்டின் உள்ளமைவு, நீங்கள் சேவையைப் பயன்படுத்தும் நேரம் மற்றும் தேதி மற்றும் பிற புள்ளிவிவரங்கள் போன்ற தகவல்களை உள்ளடக்கியிருக்கலாம்.",
-    cookies: "குக்கீகள்",
-    cookies_text: "இந்தச் சேவையானது இந்த 'குக்கீகளை' வெளிப்படையாகப் பயன்படுத்துவதில்லை. இருப்பினும், 'குக்கீகளை' பயன்படுத்தும் மூன்றாம் தரப்புக் குறியீடு மற்றும் நூலகங்களைப் பயன்பாடு தகவல்களைச் சேகரிக்கவும், அவற்றின் சேவைகளை மேம்படுத்தவும் பயன்படுத்தலாம். இந்தக் குக்கீகளை ஏற்கவோ மறுக்கவோ உங்களுக்கு விருப்பம் உள்ளது. உங்கள் சாதனத்திற்கு குக்கீ எப்போது அனுப்பப்படுகிறது என்பதை அறியவும். எங்கள் குக்கீகளை மறுக்க நீங்கள் தேர்வுசெய்தால், இந்தச் சேவையின் சில பகுதிகளை உங்களால் பயன்படுத்த முடியாமல் போகலாம்.",
-    service_providers: "சேவை வழங்குபவர்கள்",
-    service_providers_text_1: "பின்வரும் காரணங்களுக்காக நாங்கள் மூன்றாம் தரப்பு நிறுவனங்களையும் தனிநபர்களையும் வேலைக்கு அமர்த்தலாம்:",
-    service_providers_points: [
-      "எங்கள் சேவையை எளிதாக்குவதற்கு",
-      "எங்கள் சார்பாக சேவையை வழங்க",
-      "சேவை தொடர்பான சேவைகளைச் செய்ய",
-      "எங்கள் சேவை எவ்வாறு பயன்படுத்தப்படுகிறது என்பதை பகுப்பாய்வு செய்வதில் எங்களுக்கு உதவ",
-    ],
-    service_providers_text_2: "இந்த மூன்றாம் தரப்பினருக்கு உங்கள் தனிப்பட்ட தகவலை அணுகலாம் என்பதை இந்தச் சேவையின் பயனர்களுக்குத் தெரிவிக்க விரும்புகிறோம். காரணம், அவர்களுக்கு ஒதுக்கப்பட்ட பணிகளை நம் சார்பாகச் செய்வதுதான். இருப்பினும், வேறு எந்த நோக்கத்திற்காகவும் தகவலை வெளியிடவோ பயன்படுத்தவோ கூடாது என்று அவர்கள் கடமைப்பட்டுள்ளனர்.",
-    security: "பாதுகாப்பு",
-    security_text: "உங்களின் தனிப்பட்ட தகவலை எங்களுக்கு வழங்குவதில் உள்ள உங்கள் நம்பிக்கையை நாங்கள் மதிக்கிறோம், எனவே அதைப் பாதுகாப்பதற்கான வணிக ரீதியாக ஏற்றுக்கொள்ளக்கூடிய வழிகளைப் பயன்படுத்த நாங்கள் முயற்சி செய்கிறோம். ஆனால் இணையத்தில் பரிமாற்றம் செய்யும் எந்த முறையும் அல்லது மின்னணு சேமிப்பக முறையும் 100% பாதுகாப்பானது மற்றும் நம்பகமானது அல்ல என்பதை நினைவில் கொள்ளுங்கள், மேலும் அதன் முழுமையான பாதுகாப்பை நாங்கள் உத்தரவாதம் செய்ய முடியாது.",
-    links_to_other_sites: "பிற தளங்களுக்கான இணைப்புகள்",
-    links_to_other_sites_text: "இந்தச் சேவையில் பிற தளங்களுக்கான இணைப்புகள் இருக்கலாம். நீங்கள் மூன்றாம் தரப்பு இணைப்பைக் கிளிக் செய்தால், நீங்கள் அந்த தளத்திற்கு அனுப்பப்படுவீர்கள். இந்த வெளிப்புற தளங்கள் எங்களால் இயக்கப்படவில்லை என்பதை நினைவில் கொள்ளவும். எனவே, இந்த இணையதளங்களின் தனியுரிமைக் கொள்கையை மதிப்பாய்வு செய்யுமாறு நாங்கள் கடுமையாக அறிவுறுத்துகிறோம். எந்தவொரு மூன்றாம் தரப்பு தளங்கள் அல்லது சேவைகளின் உள்ளடக்கம், தனியுரிமைக் கொள்கைகள் அல்லது நடைமுறைகள் மீது எங்களுக்கு எந்தக் கட்டுப்பாடும் இல்லை மற்றும் பொறுப்பேற்க மாட்டோம்.",
-    children_privacy: "குழந்தைகளின் தனியுரிமை",
-    children_privacy_text: "இந்தச் சேவைகள் 13 வயதுக்குட்பட்ட எவரையும் தொடர்புகொள்வதில்லை. 13 வயதுக்குட்பட்ட குழந்தைகளிடமிருந்து தனிப்பட்ட முறையில் அடையாளம் காணக்கூடிய தகவல்களை நாங்கள் தெரிந்தே சேகரிப்பதில்லை. 13 வயதுக்குட்பட்ட குழந்தை எங்களுக்குத் தனிப்பட்ட தகவலை வழங்கியிருப்பதைக் கண்டறிந்தால், அதை உடனடியாக எங்கள் சேவையகங்களிலிருந்து நீக்குவோம். நீங்கள் பெற்றோராகவோ அல்லது பாதுகாவலராகவோ இருந்தால், உங்கள் குழந்தை எங்களுக்குத் தனிப்பட்ட தகவலை வழங்கியிருப்பது உங்களுக்குத் தெரிந்தால், தயவுசெய்து எங்களைத் தொடர்பு கொள்ளவும், இதனால் நாங்கள் தேவையான நடவடிக்கைகளைச் செய்ய முடியும்.",
-    changes_to_this_privacy: "இந்த தனியுரிமை கொள்கையில் மாற்றங்கள்",
-    changes_to_this_privacy_text_1: "எங்களின் தனியுரிமைக் கொள்கையை அவ்வப்போது புதுப்பிக்கலாம். எனவே, ஏதேனும் மாற்றங்களுக்கு இந்தப் பக்கத்தை அவ்வப்போது மதிப்பாய்வு செய்யுமாறு அறிவுறுத்தப்படுகிறீர்கள். இந்தப் பக்கத்தில் புதிய தனியுரிமைக் கொள்கையை இடுகையிடுவதன் மூலம் ஏதேனும் மாற்றங்கள் இருந்தால் உங்களுக்கு அறிவிப்போம்.",
-    changes_to_this_privacy_text_2: "இந்தக் கொள்கை 2021-08-01 முதல் அமலுக்கு வரும்",
-    contact_us: "எங்களை தொடர்பு கொள்ள",
-    contact_us_text: "எங்கள் தனியுரிமைக் கொள்கை பற்றி ஏதேனும் கேள்விகள் அல்லது பரிந்துரைகள் இருந்தால், info@asiassetfinance.lk. இல் எங்களைத் தொடர்புகொள்ள தயங்க வேண்டாம்.",
-  },*/
-
   privacyPolicy: {
     title: "Privacy Policy",
     description: [
@@ -2815,7 +1809,7 @@ sabaragamuwa: {
     
     productsSelector: { 
       'Fixed Deposit': {
-        images: [FD, FD],
+        images: ["https://via.placeholder.com/250x400", "https://via.placeholder.com/250x400"],
         name: "நிலையான வைப்பு",
         features: [
           { title: "உயர் வட்டி விகிதம்", description: "இயல்பான சேமிப்பு கணக்குகளை விட அதிக வட்டியுடன் ஈட்டுங்கள்." },
@@ -2995,183 +1989,6 @@ sabaragamuwa: {
       card6title: "துரித எண்",
       card6Body: "1369",
     },    
-    
-    //Personal Profile page
-    profileDetails: [
-      {
-        id: "1",
-        name: "வி ஏ பிரசாந்த்",
-        src: mrPrasanth,
-        designation: "தலைவர்",
-        description : ["திரு. வி. ஏ. பிரசாந்த், தனிப்பட்ட மற்றும் பெருநிறுவன வங்கியியல், திறைசேரி செயல்பாடுகள் மற்றும் தகவல் பாதுகாப்பு ஆகியவற்றில் 37 ஆண்டுகளுக்கும் மேலான அனைத்து வகையான அனுபவத்தை  கொண்ட வணிக வங்கியாளர் ஆவார். முன்பு இந்தியன் வங்கியில் பொது மேலாளராகவும், தலைமை தகவல் அதிகாரியாகவும் பணியாற்றினார். இந்த நேரத்தில், அவர் தகவல் தொழில்நுட்பம் மற்றும் டிஜிட்டல் வங்கியின் பொறுப்பாளராக இருந்தார். இந்தியன் வங்கியில் தலைமை நிதி அதிகாரியாக பணியாற்றினார். முந்தைய பணிகளில் அவர் வங்கியின் இரண்டு முக்கிய வலயங்களுக்கு வலய மேலாளராக தலைமை வகித்தார். 1994- 1998 ஆம் ஆண்டு மும்பையில் உள்ள அந்நிய செலாவணி வர்த்தக அறையின் தலைவராகவும், 2001-2005 ஆம் ஆண்டு சிங்கப்பூர் திறைசேரியின் தலைவராகவும், 2009-2011 ஆம் ஆண்டில் திறைசேரி பின் அலுவலகத் தலைவராகவும், நிதிச் சந்தைகளில் இரண்டு தசாப்தங்களுக்கும் மேலாக அனுபவம் பெற்றவர். 2009 மற்றும் 2011 இடையே இந்தியன் வங்கியின் (WMS) செல்வ மேலாண்மை சேவைகளின் நிர்வாகி . அவர் மார்ச் 2024 வரை மூத்த டொமைன் நிபுணராக ஹைதராபாத்தில் 'வங்கி தொழில்நுட்பத்தில் வளர்ச்சி மற்றும் ஆராய்ச்சிக்கான நிறுவனம்' (IDRBT) உடன் இணைந்து பணியாற்றினார். தற்போது திரு. வி. ஏ. பிரசாந்த் 'இந்திய வங்கி மற்றும் நிதி நிறுவனம்' (IIBF) உடன் தொடர்புடையவர். மும்பை பொருள் நிபுணராக (SME). அவர் ஜூன் 2020 இல் Asia Asset Finance PLC இன் தலைவராக நியமிக்கப்பட்டார்",
-
-        ]
-      },
-      {
-        id: "2",
-        name: "ஜார்ஜ் முத்தூட் அலெக்சாண்டர்",
-        src: mrAlexandra,
-        designation: "நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["திரு. அலெக்சாண்டர், நார்த் கரோலினா பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் முதுகலைப் பட்டம் பெற்றுள்ளார் - கெனான் & ஃபிளாக்லர் வணிகப் பள்ளியில் மற்றும் கேரளா பல்கலைக்கழகத்தில் - டிகேஎம் பொறியியல் கல்லூரியில் இயந்திரப் பொறியியலில் இளங்கலைப் பட்டம் பெற்றார். அவர் தற்போது முத்தூட் நிதியின் துணை நிர்வாக இயக்குநராக பணிபுரிகிறார் மற்றும் இந்தியாவில் கர்நாடகா, கோவா மற்றும் தெலுங்கானா மாநிலங்களில் செயல்பாடுகளை மேற்பார்வையிடுகிறார். அமெரிக்காவில் உள்ள முத்தூட் குழுமத்தின் உலகளாவிய செயல்பாடுகளுக்கு தலைமை தாங்கும் கூடுதல் பொறுப்பை அவர் கொண்டுள்ளார் மேலும் மூன்று குழு நிறுவனங்களின் (Asia Asia Assets Finance PLC, Muthoot Insurance Brokers மற்றும் Belstar Finance & Investments) குழுவில் பணியாற்றுகிறார். முத்தூட் ஃபைனான்ஸ் லிமிடெட் ஒரு தங்கக் கடன் NBFC (வங்கி அல்லாத நிதி நிறுவனம்) மற்றும் தி முத்தூட் குழுமத்தின் முதன்மை நிறுவனமாகும். இது 2011 இல் பட்டியலிடப்பட்டது மற்றும் BSE & NSE இல் வர்த்தகம் செய்யப்பட்டு தற்போது இந்தியாவின் மிகப்பெரிய தங்கக் கடன் நிறுவனமாகும். முத்தூட் ஃபைனான்ஸ் லிமிடெட் தவிர, முத்தூட் குழுமம் விருந்தோம்பல், சுகாதாரப் பாதுகாப்பு, ஈக்விட்டி & கமாடிட்டி டிரேடிங், இன்சூரன்ஸ் ப்ரோக்கிங் போன்ற 16 பிரிவுகளைக் கொண்டுள்ளது. குடும்பத்திற்குச் சொந்தமான வணிகம், நான்கு தலைமுறைகளாக நிறுவப்பட்ட இந்த குழுவானது நான்காவது தலைமுறையை பிரதிநிதித்துவப்படுத்துகிறார். குடும்பம். அவரது குடும்ப வணிகத்தில் சேருவதற்கு முன்பு, அவர் இந்தியாவில் உள்ள ING & Kotak Mahindra வங்கியில் இணைக்கப்பட்டார். இந்திய கூட்டமைப்பின் தலைவராக பணியாற்றினார் இண்டஸ்ட்ரீஸ் – யங் இந்தியன்ஸ் பெங்களூர் அத்தியாயம் 2015. அவர் AIYDக்காக இந்தியாவைப் பிரதிநிதித்துவப்படுத்தத் தேர்ந்தெடுக்கப்பட்ட 10 இந்தியர்களில் ஒருவர் (ஆஸ்திரேலியா இந்தியா இளைஞர் உரையாடல்) சிட்னி மற்றும் மெல்போர்னில் 2013 & 2022. அவர் தொழில்முனைவோரின் நிதித் தலைவராக இருந்தார். 2016-2018 வரை பெங்களூரு அமைப்பு. அவர் தற்போது இருக்கிறார் வடக்கு பல்கலைக்கழகத்தில் ஆலோசகர் குழுவில் பணியாற்றுகிறார் கரோலினாவின் - கெனன்-ஃபிளாக்லர் வணிகப் பள்ளி மற்றும் குழுவில் பெங்களூர் XIME வணிகப் பள்ளி.",
-
-        ]
-      },
-      {
-        id: "3",
-        name: "குட்டிக்கட்டு ராஜப்பன் பிஜிமோன்",
-        src: mrBijimon,
-        designation: "நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["பிஜிமோன், புது தில்லியில் உள்ள இந்திய பட்டயக் கணக்காளர்கள் நிறுவனத்தின் சக உறுப்பினர், மும்பை இந்தியன் இன்ஸ்டிடியூட் ஆஃப் பேங்கிங் அண்ட் ஃபைனான்ஸ் அசோசியேட் மற்றும் இலங்கை நிறுவனத்தின் சான்றளிக்கப்பட்ட மேலாண்மைக் கணக்காளர்களின் சக உறுப்பினர். அவர் எம்ஜி பல்கலைக்கழகத்தில் எல்எல்பி பட்டமும், கொச்சி பல்கலைக்கழகத்தில் எம்பிஏ பட்டமும் பெற்றவர், நிதிச் சேவைத் துறையில் 28 ஆண்டுகளுக்கும் மேலான அனுபவம் உள்ளவர் மற்றும் தொடக்கத்தில் இருந்து முத்தூட் ஃபைனான்ஸ் லிமிடெட் நிறுவனத்தில் பணிபுரிந்து வருகிறார். நிறுவனத்தின் நிர்வாக இயக்குனர் மற்றும் COO என்ற முறையில் அவர் கடன், உள் தணிக்கை, சந்தைப்படுத்தல், தகவல் தொழில்நுட்பம், மீட்பு மற்றும் நிறுவனத்தின் சட்ட மற்றும் கண்காணிப்பு துறைகளை மேற்பார்வையிடுகிறார். முத்தூட் குழுமத்தின் (அமெரிக்கா, ஐக்கிய அரபு எமிரேட்ஸ், யுகே, நேபாளம் மற்றும் இலங்கை) உலகளாவிய செயல்பாடுகளுக்கான தலைமை இயக்க அதிகாரி ஆவார். அமெரிக்கா, இங்கிலாந்து, நேபாளம் மற்றும் இலங்கை ஆகிய நாடுகளுக்கு தனது நடவடிக்கைகளை விரிவுபடுத்தும் முத்தூட் குழுமத்தின் உந்து சக்தியாக இருந்து வருகிறார். திரு. கே.ஆர். பிஜிமோன் முத்தூட் குழும நிறுவனங்களில் இயக்குநராக உள்ளார் அதாவது. முத்தூட் ஹோம் ஃபின் (இந்தியா) லிமிடெட், முத்தூட் செக்யூரிட்டீஸ் லிமிடெட், முத்தூட் கமாடிட்டிஸ் லிமிடெட், முத்தூட் ஃபாரெக்ஸ் லிமிடெட், முத்தூட் Finserv USA INC. Asia Asset Finance PLC Sri Lanka மற்றும் Belstar Microfinance Ltd. முத்தூட்டின் ஆட்சிக்குழு உறுப்பினராகவும் உள்ளார் தொழில்நுட்பம் மற்றும் அறிவியல் நிறுவனம் (MITS).",
-
-        ]
-      },
-      {
-        id: "4",
-        name: "கிரண் கோபால கிருஷ்ண பிள்ளை",
-        src: mrPillai,
-        designation: "நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["திரு. கிரண் பிள்ளை தற்போது முத்தூட் ஃபைனான்ஸ் லிமிடெட் இன் உள் தணிக்கை மற்றும் ஆய்வுத் துறையின் தலைவராகச் செயல்படுகிறார். அவர் கேரளா பல்கலைக்கழகத்தில் அறிவியல் மற்றும் கணிதத்தில் இளங்கலை பட்டம் பெற்றார். அவர் இந்தியாவின் பட்டயக் கணக்காளர் நிறுவனத்தில் பட்டயக் கணக்காளராகவும் உள்ளார். அவர் தற்போது உள் தணிக்கை மற்றும் ஆய்வுத் துறையின் தலைவராகச் செயல்படுகிறார், இதில் 1000 தணிக்கையாளர்கள் குழு உள்ளது. செயல்பாட்டு, நிதி மற்றும் ஒழுங்குமுறை இணக்கம் ஆகியவற்றில் நிபுணத்துவத்துடன் தணிக்கை செய்வதில் 20 ஆண்டுகளுக்கும் மேலான நிபுணத்துவ அனுபவத்தை அவர் பெற்றுள்ளார் மற்றும் ஆடிட் கமிட்டிக்கு உள் கட்டுப்பாடு பற்றிய மூலோபாய அறிக்கையிடல், இடர் மேலாண்மை நுட்பங்களில் நிபுணத்துவத்தை வழங்குவதில் நிரூபணமான சாதனை மற்றும் அனுபவத்தைப் பெற்றுள்ளார். இடர், சட்டம், கண்காணிப்பு மற்றும் விஜிலென்ஸ் துறைகளுக்கு இடையே ஒருங்கிணைந்த பணிப்பாய்வுகளிலும் அவரது நிபுணத்துவம் வழங்கப்படுகிறது. ஒரு நிபுணத்துவ வளமாக, அவர் துறைகளின் வடிவமைப்பு, செயல்படுத்துதல் மற்றும் அமைப்பு முழுவதும் செயல்பாடுகளை கண்காணிப்பதில் ஆதரிக்கிறார்.",
-
-        ]
-      },
-      {
-        id: "5",
-        name: "ரஜித ஆனந்த பண்டார பஸ்நாயக்க",
-        src: mrRajitha,
-        designation: "சுயாதீன நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["ICT மற்றும் வர்த்தக முகாமைத்துவத்தில் முப்பத்தைந்து வருடங்களுக்கும் மேலான விரிவான அனுபவமுள்ள ஒரு சுயாதீன முகாமைத்துவம் மற்றும் ICT ஆலோசகர், திரு. பஸ்நாயக்க முக்கியமான ICT மற்றும் வணிக செயல்முறை மாற்றத் திட்டங்களுக்கு தலைமைத்துவத்தை வழங்கினார், இது பல்வேறு வகையான தொழில்துறை துறைகளுக்கான வணிக உத்திகளை பிரதானமாக நிதி சேவைகள், டிஜிட்டல் ஆகியவற்றை உள்ளடக்கியது. பொழுதுபோக்கு, FMCG/ நுகர்வோர் பொருட்கள், சில்லறை விற்பனை / விநியோகம் மற்றும் உணவு & பான உற்பத்தி / விநியோகம், விருந்தோம்பல் மற்றும் தகவல் தொழில்நுட்ப தீர்வு விநியோகம். அவர் தற்போது ஆசியா அசெட் ஃபைனான்ஸ் பிஎல்சி வாரியத்தில் மூத்த சுயாதீன நிர்வாகமற்ற இயக்குனராகவும், இலங்கை டிஜிட்டல் என்டர்டெயின்மென்ட் துறையில் முன்னணியில் இருக்கும் Evoke International Ltd இன் தலைவராகவும் பணியாற்றுகிறார். மேலும் அவர் லேடெக்ஸ் கிரீன் (பிரைவேட்) லிமிடெட், நேச்சுரல் லேடெக்ஸ் ஃபோம் தொழில்துறையில் பிராந்திய முன்னணியில் மூத்த மேலாண்மை ஆலோசகராக செயல்படுகிறார். இலங்கையிலும் வெளிநாடுகளிலும் முக்கியமான தனியார் மற்றும் பொதுத்துறை திட்டங்களுக்கு வணிக ஆலோசனை மற்றும் ICT ஆலோசனை தீர்வுகளை வழங்கும் Ernst & Young Sri Lanka இன் பணிப்பாளர் ஆலோசனை சேவையாக வர்த்தக ஆலோசனை சேவைகளில் விரிவான அனுபவத்தை கொண்டு வருகிறார். உற்பத்தி, சில்லறை விற்பனை / விநியோகம், வாகனம், வங்கி பொது/தனியார் துறை, காப்புறுதி மற்றும் வெளிநாடுகளை உள்ளடக்கிய இலங்கையின் முன்னணி நிறுவனங்களின் முக்கிய மூலோபாயம், செயல்திறன்/தேவையான மதிப்பீடுகள், செயல்முறை மேம்பாடு மற்றும் முக்கிய வணிக அமைப்புகளை நடைமுறைப்படுத்துதல்/ மறுஆய்வு முயற்சிகள் ஆகியவற்றிற்கான திட்டப் பணிப்பாளர்/ பொருள் நிபுணராக இருந்தார். ஆப்பிரிக்க கண்டம், மாலைதீவு   மற்றும் ஐக்கிய அரபு எமிரேட்ஸ் சம்பந்தப்பட்ட திட்டங்கள். ADB, UNIDO, ICTA, இலங்கையில் போக்குவரத்து, நீதித்துறை அமைப்பு மற்றும் கல்வி ஆகியவற்றில் மின் அரசாங்க முன்முயற்சிகளை உள்ளடக்கிய மூலோபாயம், செயல்முறை மாற்றத் திட்டங்கள் ஆகியவற்றில் அவர் ஒரு முக்கிய பங்கைக் கொண்டிருந்தார். EY ஆஸ்திரேலியா, EY இந்தியா மற்றும் EY மலேசியா ஆகியவற்றுடன் IT ஆலோசனை, வணிக ஆலோசனை மற்றும் தணிக்கை பணி/நிர்வாகக் குழுக்களில் அவரது EY அனுபவம் பரவியுள்ளது. அவர் EY கருவிகள் மற்றும் கட்டமைப்புகளுக்கான பயிற்சியாளராகவும் இருந்தார். அவர் தனது தொழில் வாழ்க்கையின் போது, ​​மூலதனச் சந்தைகள், வங்கி அல்லாத நிதி, காப்பீடு, டிஜிட்டல் பொழுதுபோக்கு, தேநீர் பேக்கேஜிங், ஓய்வு மற்றும் தொழில்நுட்பம் ஆகியவற்றில் குழுமத்தின் தலைமை தகவல் அதிகாரியாக ஆசியா கேபிடல் குழுமத்தின் முக்கியமான ICT செயல்பாடுகளை வழிநடத்தினார். தி லயன் ப்ரூவரி சிலோன் லிமிடெட் நிறுவனத்தில் தகவல் தொழில்நுட்பத் தலைவராகவும், ரிச்சர்ட் பீரிஸ் டிஸ்ட்ரிபியூட்டர்ஸ் லிமிடெட் நிறுவனத்தில் தகவல் அமைப்புகளின் மேலாளராகவும் ICT இல் முக்கிய சிரேஷ்ட முகாமைத்துவப் பதவிகளை வகித்தார். இன்ஃபர்மேடிக்ஸ் இன்ஸ்டிடியூட் ஆஃப் டெக்னாலஜி நடத்திய MSc இன் தகவல் தொழில்நுட்ப ஆய்வுத் திட்டத்திற்கு வருகை தரும் விரிவுரையாளர்/ஆய்வாளர் ஆவார். கீல் பல்கலைக்கழகம் UK உடன் இணைந்து. பிரிட்டிஷ் கம்ப்யூட்டர் சொசைட்டி UK இன் பட்டய உறுப்பினரான (CITP) திரு. பஸ்நாயக்க, UK கீலே பல்கலைக்கழகத்தில் சிறப்புடன் IT இல் முதுகலைப் பட்டம், கொழும்பு பல்கலைக்கழகத்தில் சிறப்புடன் வணிக நிர்வாகத்தில் நிர்வாக டிப்ளோமா மற்றும் பிரிட்டிஷ் மற்றும் ஆஸ்திரேலிய தொழில்முறை IT தகுதிகளைப் பெற்றுள்ளார்.",
-
-        ]
-      },
-      {
-        id: "6",
-        name: "ஜேபிடிஆர் ஜயசேகர",
-        src: mrJayasekara,
-        designation: "சுயாதீன நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["திரு. ஜயசேகர ஜயசேகர பத்திரன்நெஹலகே தனசிறி ரூபகுமார ஜயசேகர இரண்டாம் தர உயர்தரப் பிரிவில் பொருளாதாரத்தில் BA (சிறப்பு) பட்டம் பெற்றுள்ளார். வரிவிதிப்பு, தகவல் தொழில்நுட்பம் மற்றும் வங்கி மற்றும் நிதி ஆகியவற்றில் 33 ஆண்டுகளுக்கும் மேலான முற்போக்கான அனுபவம் பெற்றவர். அவர் 1984 இல் உள்நாட்டு வருவாய்த் திணைக்களத்தின் மதிப்பீட்டாளராகப் பதவியேற்றார், அதன்பின் 1994 இல் மூத்த மதிப்பீட்டாளர், 2005 இல் துணை ஆணையர், ஆணையாளர் மற்றும் மூத்த ஆணையர் மற்றும் துணை ஆணையர் ஜெனரலாக (ICT நிர்வாகம் மற்றும் வரி செயல்பாட்டு ஆதரவு) பதவிகளை 2015 இல் வகித்தார். அவர் ஒரு முன்னோடி உறுப்பினராக இருந்தார், வருவாய்த்துறையின் மூத்த கூடுதல் திட்ட இயக்குனராக இருந்தார் நிர்வாக மேலாண்மை தகவல் அமைப்பு (RAMIS), இது துறையில் இப்போது செயல்பாட்டில் உள்ளது. ஓய்வுபெறும் போது, ​​அவர் உள்நாட்டு இறைவரித் திணைக்களத்தின் பிரதி ஆணையாளர் நாயகமாக (தகவல் தொழில்நுட்பம்) கடமையாற்றினார், திரு. 2003 இல் யுனைடெட் கிங்டமில் நடைபெற்ற மேம்பட்ட மேலாண்மை திறன் (மூத்த படிப்பு) பற்றிய ஒரு சிறப்புப் பயிற்சித் திட்டம் 2007 இல் இந்தியாவில் தணிக்கை முகாமைத்துவம், மற்றும் 2012 இல் அங்கோலாவில் நடைபெற்ற சுங்க விரிவாக்க நவீனமயமாக்கல் தொடர்பான பிந்தைய விடாமுயற்சி குறித்த நிகழ்ச்சி. செஷல்ஸ் மற்றும் சவூதி அரேபியாவுடன் இலங்கை கைச்சாத்திட்ட இரட்டை வரிவிதிப்பு ஒப்பந்தப் பேச்சுவார்த்தைகளிலும் அவர் மதிப்புமிக்க வெளிப்பாடுகளைப் பெற்றுள்ளார். அவர் 2012 இல் பிரான்சில் நடைபெற்ற 'OECD Global Forum on VAT' மற்றும் 2013 இல் ஜப்பானின் டோக்கியோவில் நடைபெற்ற 'ஆசிய நாடுகளுக்கான நான்காவது IMF - ஜப்பான் உயர்மட்ட வரி மாநாடு' போன்ற மாநாடுகளின் பிரதிநிதியாக மூலோபாய அளவிலான மன்றங்களில் பங்கேற்றார். சீனாவில் நீலப் பொருளாதாரம் மற்றும் கடல்சார் பட்டுப் பாதையில். அவர் 2014 இல் சீனாவுடன் முன்மொழியப்பட்ட வர்த்தக ஒப்பந்தத்தின் பேச்சுவார்த்தையில் பணிபுரிந்த குழுவின் உறுப்பினராக இருந்தார். RAMIS திட்டம் தொடர்பாக உரிய விடாமுயற்சி அறிக்கைகளைத் தயாரிப்பதில் வணக்கக் குழுவின் உறுப்பினர்களில் ஒருவராக இருந்தார், இதற்காக சிங்கப்பூர் மற்றும் அங்கோலாவுக்குச் சென்றார். காரணம். திரு. ஜெயசேகர APFA (இலங்கையின் பொது நிதிக் கணக்காளர்களின் சங்கம்) இல் உறுப்பினராக உள்ளார் மற்றும் சைனா ஸ்ரீலங்கா சொசைட்டியின் செயலில் உறுப்பினராக உள்ளார். சுறுசுறுப்பான பரோபகாரியான அவர் சமூக சேவையில் தீவிரமாக ஈடுபட்டுள்ள பல சங்கங்கள் மற்றும் சங்கங்களில் உறுப்பினராக உள்ளார்.",
-
-        ]
-      },
-      {
-        id: "7",
-        name: "டி சி டி குமாரசிறி",
-        src: mrKumarasiri,
-        designation: "நிறைவேற்று அதிகாரமற்ற பணிப்பாளர்",
-        description : ["திரு .சாமிந்த குமாரசிறி ஒரு மூத்த அங்கீகாரம் பெற்ற கணக்காளர், மேலாண்மை ஆலோசகர், முக்கியப் பேச்சாளர், வணிக ஆலோசகர் மற்றும் நிறுவனப் பயிற்றுநர் ஆவார். அவர் முன்னணி உள்ளூர் நிறுவனங்களிலும் பலநாட்டு நிறுவனங்களிலும் மூத்த தலைமை பதவிகளை வகித்து வருகிறார். அவர் ஆசியப் பெருங்கோள் பணமும் தொழில்முனைவோரை மேம்படுத்தும் நிறுவனம் (Asia Pacific Institute of Money and Entrepreneurship Development) என்ற நிறுவனத்தை நிறுவியவர் மற்றும் அதில் அதிபராக பணியாற்றுபவர், 'ஹ்யூமன் காப்பிட்டல் பாட்டர்னர்' என்ற நிறுவனத்தை நிறுவிய மற்றும் அதன் CEO ஆவார். 'எச்சி.பி. கன்சல்டிங் (பிரைவேட்) லிமிடெடின்' தலைவராகவும் முக்கிய ஆலோசகராகவும் உள்ளார். அவர் சனச வளர்ச்சி வங்கி பி.எல்.சி-இல் சுயதனிப்பட்ட அல்லாத நிர்வாக இயக்குநராக பணியாற்றுகிறார் மற்றும் பல முன்னணி தனியார் மற்றும் பொது துறைகள் நிறுவனங்களுக்கான ஆலோசகர் மற்றும் கன்சல்டனாகவும் பணியாற்றுகிறார். மேலும், உலகளாவிய கணக்கியல் கல்வி குழுவான 'International Panel on Accounting Education (IPAE)' - இல் தென் ஆசியாவிலிருந்து ஒரே பிரதிநிதியாக திகழ்கிறார். அவர் CA இலங்கையின் ஆட்சி மன்றத்தில் இரண்டு தொடர்ச்சியான காலங்கள் பணியாற்றி, தற்போது ACCA இலங்கையின் உறுப்பினர் நெட்வொர்க் மேலாண்மை துணைத் தலைவர் ஆவார். திரு. குமாரசிறி தொழில்முறை மற்றும் கல்வி தகுதிகளில் விசாலமான அனுபவம் மற்றும் பல்வேறு பரிசுகள் மற்றும் பதக்கங்களை பெற்றவர் ஆவார். அவர் இலங்கை சார்டர்ட் அக்கவுண்டன்ட் நிறுவனத்தின் (Institute of Chartered Accountants of Sri Lanka), பிரிட்டன் சார்டர்ட் சர்டிபைட் அக்கவுண்டன்ட் (Association of Chartered Certified Accountants – UK), இலங்கை கணக்கியல் தொழில்நுட்பிகள் சங்கம் (Association of Accounting Technicians of Sri Lanka) மற்றும் இலங்கை சான்றளிக்கப்பட்ட மேலாண்மை அக்கவுண்டன்ட் நிறுவனத்தின் (Institute of Certified Management Accountants of Sri Lanka) தேர்ச்சி பெற்ற உறுப்பினராக உள்ளார். அவர் ஸ்ரீ ஜெயவர்தனபுர பல்கலைக்கழகத்தில் முதல் நிலை பாராட்டுக்களுடன் கணக்கியல் (சிறப்பு) பட்டம் பெற்றவர் மற்றும் கோழும்பு பல்கலைக்கழகத்தில் நிதி துறையில் MBA (மாஸ்டர் ஆப் பிசினஸ் அட்மினிஸ்டிரேஷன்) பட்டம் பெற்றவர். ஒரு முன்னணி நிறுவனப் பயிற்றுநராக, அவர் இலங்கையும் வெளிநாடுகளிலும் எண்ணற்ற மனிதர்களுக்கு மிகுந்த முன்னேற்றத்தை வழங்கியுள்ளார். வணிக மண்டபங்கள் மற்றும் தொழில்முனைவோரை சார்ந்த நிகழ்ச்சிகளில் பேச்சாளர் மற்றும் பேனலிஸ்ட் ஆக frequently அழைக்கப்படுகிறார். அவர் தொழில்முனைவோர் சூழலில் முக்கியமான ஒரு பணியாளராக உள்ளார் மற்றும் பல தேசிய தொலைக்காட்சி/வானொலி சேனல்களிலும் பிரபலமான YouTube சேனல்களிலும் தன் கருத்துக்களை பகிர்ந்து வருகிறார். அவர் ACCA National Advocate of the Year Award - 2022 என்ற பரிசை பெற்றுள்ளார், இது கணக்கியல் தொழில்முறையை மேம்படுத்துவதிலும் அதன் மதிப்புகளை பரப்புவதிலும் அவரது உத்தேசமான அர்ப்பணிப்புக்கும் நம்பகத்தன்மைக்கும் வழங்கப்பட்டது.",
-        ]
-      },
-      {
-        id: "8",
-        name: "ரோஷன் டி சில்வா குணசேகர",
-        src: mrRoshan,
-        designation: "நிறைவேற்று பணிப்பாளர் / பிரதான செயட்பாடு அதிகாரி",
-        description : ["திரு. ரொஷான் டி சில்வா குணசேகர நிறைவேற்றுப் பணிப்பாளராகவும், பிரதம செயற்பாட்டு அதிகாரியாகவும் பணியாற்றுவதுடன், அனுபவத்தையும் நிபுணத்துவத்தையும் தனது பாத்திரத்திற்கு கொண்டு வந்துள்ளார். அவர் 2023 இல் நிர்வாக இயக்குநராக இயக்குநர்கள் குழுவில் நியமிக்கப்பட்டார், ஆரம்பத்தில் ஏப்ரல் 2010 இல் நிறுவனத்தில் சேர்ந்தார். பல ஆண்டுகளாக, அவர் விதிவிலக்கான தலைமைத்துவத்தையும், Asia Asset Finance PLC மற்றும் பெரிய நிதிச் சேவைத் துறையின் ஆழமான புரிதலையும் வெளிப்படுத்தியுள்ளார். திரு. குணசேகரவின் நிதித்துறையில் 30 வருடங்கள் நீடித்தது, 1994 ஆம் ஆண்டு அவர் கொமர்ஷல் லீசிங் கம்பனி லிமிடெட்டில் கிரெடிட் அதிகாரியாகப் பொறுப்பேற்றது முதல் LOLC ஃபினான்ஸ் பிஎல்சியுடன் இணைந்தது. அவரது விரிவான பிந்தைய தகுதி அனுபவம் அவரது மூலோபாய பார்வை மற்றும் செயல்பாட்டு புத்திசாலித்தனத்தை வடிவமைப்பதில் முக்கியமானது, இது நிறுவனத்தின் வளர்ச்சி மற்றும் ஸ்திரத்தன்மைக்கு குறிப்பிடத்தக்க பங்களிப்பைச் செய்கிறது. கல்வி ரீதியாக, திரு. குணசேகர ஒரு வலுவான கல்விப் பின்னணியுடன் நன்கு பொருத்தப்பட்டவர். அவர் ஸ்ரீ ஜயவர்தனபுர பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் இளங்கலை விஞ்ஞானப் பட்டம் (சிறப்பு) மற்றும் கொழும்பு பல்கலைக்கழகத்தில் MBA பட்டம் பெற்றுள்ளார். கூடுதலாக, அவர் இங்கிலாந்தில் உள்ள பட்டய மேலாண்மைக் கணக்காளர் நிறுவனத்தில் (CIMA) பகுதி தகுதிகளை முடித்துள்ளார், மேலும் அவரது நிதி நிபுணத்துவத்தை மேலும் மேம்படுத்தினார். அவரது தொழில்முறை மற்றும் கல்வி சாதனைகளுக்கு அப்பால், திரு. குணசேகர ஜப்பானில் உள்ள வெளிநாட்டு தொழில்நுட்ப மூத்த மேலாண்மை உதவித்தொகைக்கான சங்கத்தின் (AOTS) மதிப்பிற்குரிய உறுப்பினர் ஆவார். கொழும்புப் பல்கலைக்கழகத்தில் நிதிச் சேவைகள் சந்தைப்படுத்தலில் வருகை தரும் விரிவுரையாளராக அவர் கடமையாற்றுவதன் மூலம் கல்விக்கான அவரது அர்ப்பணிப்பு வெளிப்படுகிறது, அங்கு அவர் தனது அறிவையும் அனுபவத்தையும் ஆர்வமுள்ள நிதி நிபுணர்களுடன் பகிர்ந்து கொள்கிறார். அவர் பல்வேறு அறிவுப் பகிர்வு மன்றங்களில் தேடப்படும் வள நபராக உள்ளார், பரந்த நிதிச் சேவைகள் சமூகத்திற்கு பங்களிக்கிறார். தற்போது, ​​திரு. குணசேகர கொழும்பு பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தின் (DBA) முனைவர் பட்டத்தை தொடர்கிறார், இது தொடர்ச்சியான கற்றல் மற்றும் தொழில்முறை மேம்பாட்டிற்கான அவரது அர்ப்பணிப்பை பிரதிபலிக்கிறது. தொழில்துறை போக்குகள் மற்றும் சிறந்த நடைமுறைகளில் முன்னணியில் இருப்பதற்கான அவரது உறுதிப்பாட்டை அவரது தற்போதைய கல்வி நோக்கங்கள் அடிக்கோடிட்டுக் காட்டுகின்றன. ரொஷான் டி சில்வா குணசேகரவின் நடைமுறை அனுபவம், கல்வித் திறன் மற்றும் அறிவைப் பரப்புவதற்கான அர்ப்பணிப்பு ஆகியவற்றின் கலவையானது அவரை நிதிச் சேவைத் துறையில் ஒரு முக்கிய நபராக ஆக்குகிறது. ஏசியா அசெட் ஃபைனான்ஸ் பிஎல்சியின் தலைமைத்துவமானது, போட்டித் தொழில்துறை நிலப்பரப்பில் நிறுவனத்தின் தொடர்ச்சியான வெற்றியை உறுதிசெய்து, புதுமை மற்றும் சிறந்து விளங்குவதைத் தொடர்கிறது.",
-
-        ]
-      },
-      {
-        id: "9",
-        name: "மு. திருநீலகண்டன்",
-        src: mrThiru,
-        designation: "நிறைவேற்று  பணிப்பாளர் / பொது முகாமையாளர்",
-        description : ["திரு. திருநீலகண்டன், பொது முகாமையாளர், 2003 ஆம் ஆண்டில் AAF PLC இல் இணைந்தார். வங்கிகளை மேம்படுத்துவதில் நான்கு தசாப்தங்களுக்கும் மேலாக அனுபவமுள்ள ஒரு தொழில்சார் வங்கியாளர் ஆவார், மேலும் திட்ட நிதியளித்தல், கடன் மேலாண்மை, அந்நிய செலாவணி மேலாண்மை, வணிகம் , நிதி மாற்றம் மற்றும் வணிக பல்வகைப்படுத்தல் உள்ளிட்ட துறைகளில் அவரது துாண்டி இயக்கக்கூடிய ஆலோசனைத் திறன்கள் , கவர்ச்சியான ஆளுமை மற்றும் மற்றவர்களை நம்ப வைக்கும் அவரது திறன் என்பவை மூலம் AAF PLC இல் உயர்தர நிறுவன மற்றும் தனிப்பட்ட 2000 க்கும் மேற்பட்ட வாடிக்கையாளர்களுடன் ஒரு பெரிய வாடிக்கையாளர் திரட்டை உருவாக்க வழிவகுத்தது. வங்கி அனுபவம் இல்லாத நிறுவனத்தில் சேரும் இளம் தொழில் வல்லுநர்களுக்கு தலைமைத்துவத்தை வழங்குவதிலும், கடன் மற்றும் கடன் வழங்குவதை நிர்வகிப்பதிலும் அவர் முக்கிய பங்கு வகிக்கிறார். அவர் உயர் செயல்திறன் கொண்ட குழுக்களை உருவாக்க விரும்புகிறார், இது AAF இல் அதிக திறன் கொண்ட ஊழியர்களுக்காக பல்வேறு திட்டங்களை உருவாக்க வழிவகுக்கும். அவர் உண்மையான தலைமையை நம்புகிறார் மற்றும் ஆழ்ந்த ஆர்வமுள்ளவர் மற்றும் நல்லதைச் செய்வதன் மூலம் சிறப்பாகச் செய்ய அர்ப்பணிப்புடன் இருக்கிறார், மேலும் AAF இல் அதிக திறன் கொண்ட திறமைக்கான திட்டங்களை உருவாக்க வழிவகுத்துள்ளார்.",
-
-        ]
-      },
-      {
-        id: "10",
-        name: "ரஜீவ் ஜேம்ஸ் அபேவிக்ரம குணவர்தன",
-        src: mrRajiv,
-        designation: "நிறைவேற்று பணிப்பாளர் / பிரதான நிறைவேற்று அதிகாரி",
-        description : ["எம்.ஆர். ரஜீவ் குணவர்தன, Asia Asset Finance PLC இன் பிரதம நிறைவேற்று அதிகாரி / பணிப்பாளர் ஆவார். அவர் டிசம்பர் 2009 இல் வாரியத்திற்கு நியமிக்கப்பட்டார் மற்றும் நிறுவனத்தின் பார்வை மற்றும் மூலோபாயத்தை அமைப்பதற்கும் செயல்படுத்துவதற்கும் மற்றும் நிறுவனத்தின் ஒட்டுமொத்த செயல்பாடுகள் மற்றும் செயல்திறன் மூலம் மதிப்பை வழங்குவதற்கும் பொறுப்பானவர். அவர் ஐக்கிய இராச்சியத்தில் வணிகம் மற்றும் தகவல் அமைப்புகளில் இளங்கலை அறிவியல் பட்டம் பெற்றுள்ளார் மற்றும் ஆஸ்திரேலியாவின் மோனாஷ் பல்கலைக்கழகத்தில் தொழில்முறை கணக்கியல் முதுநிலைப் பட்டத்தை முடித்துள்ளார். ஏசியா அசெட் ஃபைனான்ஸ் நிறுவனத்தில் சேருவதற்கு முன்பு, அவர் ஏசியா கேபிடல் பிஎல்சியில் மூத்த முதலீட்டு ஆய்வாளராகப் பணியாற்றியுள்ளார். ஆஸ்திரேலிய வணிக மற்றும் தொழில்நுட்பக் கல்லூரியில் கணக்கியல் விரிவுரையாளராக இருந்தார்.",
-
-        ]
-      },
-      {
-        id: "11",
-        name: "ரோஷன் டி சில்வா குணசேகர",
-        src: mrRoshan,
-        designation: "நிறைவேற்று பணிப்பாளர் / பிரதான செயட்பாடு அதிகாரி",
-        description : ["திரு. ரொஷான் டி சில்வா குணசேகர நிறைவேற்றுப் பணிப்பாளராகவும், பிரதம செயற்பாட்டு அதிகாரியாகவும் பணியாற்றுவதுடன், அனுபவத்தையும் நிபுணத்துவத்தையும் தனது பாத்திரத்திற்கு கொண்டு வந்துள்ளார். அவர் 2023 இல் நிர்வாக இயக்குநராக இயக்குநர்கள் குழுவில் நியமிக்கப்பட்டார், ஆரம்பத்தில் ஏப்ரல் 2010 இல் நிறுவனத்தில் சேர்ந்தார். பல ஆண்டுகளாக, அவர் விதிவிலக்கான தலைமைத்துவத்தையும், Asia Asset Finance PLC மற்றும் பெரிய நிதிச் சேவைத் துறையின் ஆழமான புரிதலையும் வெளிப்படுத்தியுள்ளார். திரு. குணசேகரவின் நிதித்துறையில் 30 வருடங்கள் நீடித்தது, 1994 ஆம் ஆண்டு அவர் கொமர்ஷல் லீசிங் கம்பனி லிமிடெட்டில் கிரெடிட் அதிகாரியாகப் பொறுப்பேற்றது முதல் LOLC ஃபினான்ஸ் பிஎல்சியுடன் இணைந்தது. அவரது விரிவான பிந்தைய தகுதி அனுபவம் அவரது மூலோபாய பார்வை மற்றும் செயல்பாட்டு புத்திசாலித்தனத்தை வடிவமைப்பதில் முக்கியமானது, இது நிறுவனத்தின் வளர்ச்சி மற்றும் ஸ்திரத்தன்மைக்கு குறிப்பிடத்தக்க பங்களிப்பைச் செய்கிறது. கல்வி ரீதியாக, திரு. குணசேகர ஒரு வலுவான கல்விப் பின்னணியுடன் நன்கு பொருத்தப்பட்டவர். அவர் ஸ்ரீ ஜயவர்தனபுர பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் இளங்கலை விஞ்ஞானப் பட்டம் (சிறப்பு) மற்றும் கொழும்பு பல்கலைக்கழகத்தில் MBA பட்டம் பெற்றுள்ளார். கூடுதலாக, அவர் இங்கிலாந்தில் உள்ள பட்டய மேலாண்மைக் கணக்காளர் நிறுவனத்தில் (CIMA) பகுதி தகுதிகளை முடித்துள்ளார், மேலும் அவரது நிதி நிபுணத்துவத்தை மேலும் மேம்படுத்தினார். அவரது தொழில்முறை மற்றும் கல்வி சாதனைகளுக்கு அப்பால், திரு. குணசேகர ஜப்பானில் உள்ள வெளிநாட்டு தொழில்நுட்ப மூத்த மேலாண்மை உதவித்தொகைக்கான சங்கத்தின் (AOTS) மதிப்பிற்குரிய உறுப்பினர் ஆவார். கொழும்புப் பல்கலைக்கழகத்தில் நிதிச் சேவைகள் சந்தைப்படுத்தலில் வருகை தரும் விரிவுரையாளராக அவர் கடமையாற்றுவதன் மூலம் கல்விக்கான அவரது அர்ப்பணிப்பு வெளிப்படுகிறது, அங்கு அவர் தனது அறிவையும் அனுபவத்தையும் ஆர்வமுள்ள நிதி நிபுணர்களுடன் பகிர்ந்து கொள்கிறார். அவர் பல்வேறு அறிவுப் பகிர்வு மன்றங்களில் தேடப்படும் வள நபராக உள்ளார், பரந்த நிதிச் சேவைகள் சமூகத்திற்கு பங்களிக்கிறார். தற்போது, ​​திரு. குணசேகர கொழும்பு பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தின் (DBA) முனைவர் பட்டத்தை தொடர்கிறார், இது தொடர்ச்சியான கற்றல் மற்றும் தொழில்முறை மேம்பாட்டிற்கான அவரது அர்ப்பணிப்பை பிரதிபலிக்கிறது. தொழில்துறை போக்குகள் மற்றும் சிறந்த நடைமுறைகளில் முன்னணியில் இருப்பதற்கான அவரது உறுதிப்பாட்டை அவரது தற்போதைய கல்வி நோக்கங்கள் அடிக்கோடிட்டுக் காட்டுகின்றன. ரொஷான் டி சில்வா குணசேகரவின் நடைமுறை அனுபவம், கல்வித் திறன் மற்றும் அறிவைப் பரப்புவதற்கான அர்ப்பணிப்பு ஆகியவற்றின் கலவையானது அவரை நிதிச் சேவைத் துறையில் ஒரு முக்கிய நபராக ஆக்குகிறது. ஏசியா அசெட் ஃபைனான்ஸ் பிஎல்சியின் தலைமைத்துவமானது, போட்டித் தொழில்துறை நிலப்பரப்பில் நிறுவனத்தின் தொடர்ச்சியான வெற்றியை உறுதிசெய்து, புதுமை மற்றும் சிறந்து விளங்குவதைத் தொடர்கிறது.",
-
-        ]
-      },
-      {
-        id: "12",
-        name: "மு. திருநீலகண்டன்",
-        src: mrThiru,
-        designation: "நிறைவேற்று  பணிப்பாளர் / பொது முகாமையாளர்",
-        description : ["திரு. திருநீலகண்டன், பொது முகாமையாளர், 2003 ஆம் ஆண்டில் AAF PLC இல் இணைந்தார். வங்கிகளை மேம்படுத்துவதில் நான்கு தசாப்தங்களுக்கும் மேலாக அனுபவமுள்ள ஒரு தொழில்சார் வங்கியாளர் ஆவார், மேலும் திட்ட நிதியளித்தல், கடன் மேலாண்மை, அந்நிய செலாவணி மேலாண்மை, வணிகம் , நிதி மாற்றம் மற்றும் வணிக பல்வகைப்படுத்தல் உள்ளிட்ட துறைகளில் அவரது துாண்டி இயக்கக்கூடிய ஆலோசனைத் திறன்கள் , கவர்ச்சியான ஆளுமை மற்றும் மற்றவர்களை நம்ப வைக்கும் அவரது திறன் என்பவை மூலம் AAF PLC இல் உயர்தர நிறுவன மற்றும் தனிப்பட்ட 2000 க்கும் மேற்பட்ட வாடிக்கையாளர்களுடன் ஒரு பெரிய வாடிக்கையாளர் திரட்டை உருவாக்க வழிவகுத்தது. வங்கி அனுபவம் இல்லாத நிறுவனத்தில் சேரும் இளம் தொழில் வல்லுநர்களுக்கு தலைமைத்துவத்தை வழங்குவதிலும், கடன் மற்றும் கடன் வழங்குவதை நிர்வகிப்பதிலும் அவர் முக்கிய பங்கு வகிக்கிறார். அவர் உயர் செயல்திறன் கொண்ட குழுக்களை உருவாக்க விரும்புகிறார், இது AAF இல் அதிக திறன் கொண்ட ஊழியர்களுக்காக பல்வேறு திட்டங்களை உருவாக்க வழிவகுக்கும். அவர் உண்மையான தலைமையை நம்புகிறார் மற்றும் ஆழ்ந்த ஆர்வமுள்ளவர் மற்றும் நல்லதைச் செய்வதன் மூலம் சிறப்பாகச் செய்ய அர்ப்பணிப்புடன் இருக்கிறார், மேலும் AAF இல் அதிக திறன் கொண்ட திறமைக்கான திட்டங்களை உருவாக்க வழிவகுத்துள்ளார்.",
-
-        ]
-      },
-      {
-        id: "13",
-        name: "கீதிகா எல்வலகே",
-        src: msGeethika,
-        designation: "முதன்மை நிதி அதிகாரி",
-        //designation: "துணை பொது முகாமையாளர் - நிதி",
-        description : ["திருமதி. கீதிகா எல்வலகே நிதிச் சேவைத் துறையில் 16 ஆண்டுகளுக்கும் மேலாக பல்வேறு வெளிப்பாட்டைக் கொண்டுள்ளார். அவர் இலங்கை பட்டயக் கணக்காளர்கள் நிறுவனத்தின் சக உறுப்பினராவார். BDO பார்ட்னர்ஸில் பணிபுரிந்த தணிக்கைத் துறையில் மூன்று ஆண்டுகள் கூடுதல் அனுபவம் பெற்றவர். மேலும், அவர் ஸ்ரீ ஜயவர்தனபுர பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் முதுகலைப் பட்டம் பெற்றுள்ளார்.",
-
-        ]
-      },
-      {
-        id: "14",
-        name: "ஜயந்த வீரபுல்லிகே",
-        src: mrJayantha,
-        designation: "பொது முகாமையாளர் - செயல்பாடு",
-        //designation: "துணை பொது முகாமையாளர் - செயல்பாடு",
-        description : ["திரு. ஜயந்த வீரப்புலிகே 2008 இல் Asia Asset Finance PLC இல் இணைந்தார். தற்போது அவர் பொது முகாமையாளர் - செயல்பாடு அதிகாரியாக பணியாற்றுகிறார், ஆரம்பத்தில் அவர் AGM தரமாக உயர்த்தப்படுவதற்கு முன்னர் 3 வருடங்கள் மூத்த மேலாளர் கடன் வழங்குபவராக பணியாற்றினார் மற்றும் 2022 இல் DGM பதவிக்கு உயர்த்தப்பட்டார். . திரு. ஜயந்த வீரப்புலிகே கொழும்பு பல்கலைக்கழகத்தில் வணிக நிர்வாகத்தில் B. Com (சிறப்பு) பட்டம் மற்றும் MBA பட்டம் பெற்றவர். மார்கெட்டிங், கிரெடிட், ஆபரேஷன்ஸ், கணக்குகள் ஆகியவற்றில் 20 ஆண்டுகள் நிதித் துறையில் செலவழித்த 23 ஆண்டுகளுக்கும் மேலான பணி அனுபவத்தை அவர் கணக்கிடுகிறார், மேலும் 2003 முதல் பீப்பிள்ஸ் மெர்ச்சன்ட் வங்கியில் தனது முந்தைய வேலையில் வங்கித் துறையில் அனுபவம் பெற்றவர். 2008. ஆசியா அசெட் ஃபைனான்ஸ் பிஎல்சியின் உயர் நிர்வாகத்தில் 15 ஆண்டுகளுக்கும் மேலான அனுபவம் பெற்றவர். சந்தைப்படுத்தல், கடன், நிர்வாகம் மற்றும் மீட்டெடுப்புகளை உள்ளடக்கிய கிளைகளின் ஒட்டுமொத்த செயல்பாடுகள் மற்றும் ஒட்டுமொத்த கிளை நெட்வொர்க்கையும் கவனிப்பதற்கு அவர் பொறுப்பானவர். தயாரிப்பு மற்றும் வணிக மேம்பாடு, மூலோபாய திட்டமிடல் மற்றும் செயல்படுத்தல் ஆகியவற்றிற்கு அவர் மேலும் பொறுப்பானவர்.",
-
-        ]
-      },
-      {
-        id: "15",
-        name: "மகேஷ் குமார",
-        src: mrMahesh,
-        designation: "துணை பொது முகாமையாளர் - கடன் மற்றும் மீட்பு",
-        description : ["திரு. மகேஷ் குமார 1999 இல் தொழில்துறையில் பணிபுரியும் போது 2001 இல் கொழும்பு பல்கலைக்கழகத்தில் தனது BBA (கணக்கியல்) பட்டத்தைப் பெற்றார். அதைத் தொடர்ந்து, மூத்த நிர்வாகத்தின் உறுப்பினராக பல முன்னணி நிதி நிறுவனங்களுடன் இணைந்த முக்கிய நிதித் துறைகளில் அனுபவத்தைப் பெற்றார். திரு. குமார தற்போது 24 ஆண்டுகளுக்கும் மேலான தொழில்துறை அனுபவத்துடன் துணை பொது முகாமையாளர் - கடன் மற்றும் மீட்பு பதவியை வகிக்கிறார்.",
-
-        ]
-      },
-      {
-        id: "16",
-        name: "சமிரா வெவெல்தெனிய",
-        src: mrSameera,
-        designation: "துணை பொது முகாமையாளர் - நிலையான வைப்பு",
-        description : ["திரு. சமிர வெவெல்தெனிய 2006 ஆம் ஆண்டு ஜூன் மாதம் நீர்கொழும்பு கிளை முகாமையாளராக AAF இல் இணைந்தார் மற்றும் 2009 இல் பிராந்திய முகாமையாளர் - நிலையான வைப்புத் துறைக்கு நியமிக்கப்பட்டார், அதைத் தொடர்ந்து 2011 இல் நிலையான வைப்புத் துறையின் மூத்த மேலாளராக நியமிக்கப்பட்டார். அவர் உதவிப் பொது முகாமையாளராக பதவி உயர்வு பெற்றார். - 2014 இல் சந்தைப்படுத்தல். அவருக்கு 22 ஆண்டுகளுக்கும் மேலான அனுபவம் உள்ளது நிதித் துறையில் டெபாசிட் மார்க்கெட்டிங் மற்றும் தற்போது DGM- நிலையான வைப்புத் திறனில் பணிபுரிகிறார் மற்றும் நிறுவனத்தின் நிதி திரட்டல் மற்றும் கிளை வளர்ச்சிக்கு பங்களிக்கிறார். AAF இல் இணைவதற்கு முன்னர், திரு. வெவெல்தெனிய செலிங்கோ டெவலப்மெண்ட் வங்கியில் பணியாற்றினார். திரு. வெவெல்தெனிய இங்கிலாந்தில் உள்ள பக்கிங்ஹாம்ஷயர் நியூ பல்கலைக்கழகத்தில் எம்பிஏ பட்டம் பெற்றவர் மற்றும் தி ஆசியா மார்க்கெட்டிங் ஃபெடரேஷன் (ஏஎம்எஃப்) மூலம் சான்றளிக்கப்பட்ட நிபுணத்துவ சந்தைப்படுத்துபவர்-ஆசியா (சிபிஎம் - ஆசியா) முதுகலை தொழில்முறை அந்தஸ்தைப் பெற்றார். அவர் ஆஸ்திரேலியாவின் (AMA-Australia) சான்றளிக்கப்பட்ட மேலாண்மை கணக்காளர்களின் இணை உறுப்பினராகவும் உள்ளார். தவிர, அவர் இலங்கை சந்தைப்படுத்தல் நிறுவனத்தின் (SLIM) சான்றளிக்கப்பட்ட உறுப்பினராகவும் உள்ளார்.",
-
-        ]
-      },
-      {
-        id: "17",
-        name: "சஜித் அதபத்து",
-        src: mrSajith,
-        designation: "துணை பொது முகாமையாளர் - இடர் மேலாண்மை",
-        description : ["திரு. சஜித் அதபத்து 2010 இல் Asia Asset Finance PLC இல் இணைந்தார் மற்றும் தற்போது இடர் - பிரதி பொது முகாமையாளர் பதவியை வகிக்கிறார். இந்த 14 வருட காலப்பகுதியில், திரு. அதபத்து பல்வேறு பாத்திரங்களை ஏற்று, கடன் மற்றும் மீட்பு முதல் செயல்பாடுகள், நிர்வாகம் மற்றும் இடர் வரை பல்வேறு பொறுப்புகளை ஏற்றார், அங்கு அவர் அமைப்பின் முக்கிய துறைகளில் அனுபவச் செல்வத்தை குவித்துள்ளார். பல்வேறு துறைகளுக்கிடையேயான தொடர்பு மற்றும் நிறுவன இலக்குகளை அடைவதற்கான அவர்களின் முயற்சிகளை சீரமைப்பதன் முக்கியத்துவம் பற்றிய விரிவான புரிதலை அவர் பெற்றுள்ளார். திரு. சஜித் அதபத்து தனது வாழ்க்கையை லண்டன் மியூச்சுவல் கிரெடிட் யூனியனில் (யுகே) தொடங்கினார், இது நிதி உள்ளடக்கத்தை ஊக்குவிப்பதற்காக அர்ப்பணிக்கப்பட்டுள்ளது LMCU இல் அவர் பணியாற்றிய காலத்தில், நிதித் துறையின் நுணுக்கங்களைப் பற்றிய மதிப்புமிக்க நுண்ணறிவுகளைப் பெற்றுள்ளார் மற்றும் அனைத்து தனிநபர்களுக்கும் அணுகக்கூடிய நிதிச் சேவைகளை வழங்குவதன் முக்கியத்துவத்தைப் பற்றிய ஆழமான புரிதலை உருவாக்கினார். இங்கிலாந்தின் கீலே பல்கலைக்கழகத்தில் இளங்கலைப் பட்டம் பெற்றவர்.",
-
-        ]
-      },
-      {
-        id: "18",
-        name: "இந்தித ஜயதிலக",
-        src: mrInditha,
-        designation: "துணை பொது முகாமையாளர்- தகவல் தொழில்நுட்பம்",
-        description : ["திரு. இந்தித ஜயதிலக்க ஆசியா அசெட் ஃபைனான்ஸ் பிஎல்சியில் அனைத்து தகவல் தொழில்நுட்பம் தொடர்பான பணிகளுக்கும் தலைசிறந்த தீர்வு வழங்குநராக உள்ளார். வங்கி மற்றும் நிதி தீர்வு மேம்பாடு மற்றும் செயல்படுத்தலில் 12 ஆண்டுகளுக்கும் மேலான அனுபவம் கொண்டவர். டப்ளின் பல்கலைக்கழக கல்லூரியில் எம்ஐஎஸ்ஸில் பிஎஸ்சி பட்டம் பெற்றார். அவரது தொழில் வாழ்க்கையில், அவர் பல்வேறு துறைகளில் இருந்து அனுபவத்தைப் பெற்றார், இறுதியில் மிஷன்-கிரிட்டிகல் மென்பொருள் மற்றும் உள்கட்டமைப்பு தீர்வுகளை வழங்குவதன் மூலம் நிதித்துறையில் நிபுணத்துவம் பெற்றார். தற்போது, ​​தகவல் தொழில்நுட்பத் துறையை ஐடி தொடர்பான உள்கட்டமைப்பு, மென்பொருள் மற்றும் பாதுகாப்பு சேவைகளை வழங்குவதன் மூலம் அவர் மேற்பார்வையிடுகிறார்.",
-
-        ]
-      },
-      {
-        id: "19",
-        name: "பிரவீன் பீரிஸ்",
-        src: mrPraveen,
-        designation: "துணை பொது முகாமையாளர் - திறைசேரி",
-        description : ["திரு. பிரவீன் பீரிஸ் 2014 இல் Asia Asset Finance PLC இல் இணைந்தார் மற்றும் 20 வருடங்களுக்கும் மேலாக நிதி மற்றும் திறைசேரி அனுபவத்தைக் கொண்டுள்ளார். அவர் 2004 இல் ஒரு குளோபல் ஆடிட் நிறுவனத்தில் தனது வாழ்க்கையைத் தொடங்கினார் மற்றும் 2008 இல் வங்கி அல்லாத நிதித் துறையில் சேர்ந்தார். Asia Asset Finance PLC இல் சேருவதற்கு முன்பு, அவர் பட்டியலிடப்பட்ட நிதி நிறுவனத்தில் திறைசேரி - மேலாளராக பணியாற்றினார். மூலோபாய இடர் மேலாண்மை, சொத்து - பொறுப்பு மேலாண்மை மற்றும் பண மேலாண்மை உள்ளிட்ட திறைசேரி மேலாண்மையில் நிபுணத்துவம் பெற்றவர். அவர் செயல்பாட்டு நிர்வாகத்தில் திறமையானவர் மற்றும் அதிக மதிப்புள்ள திட்டங்களுக்கு நிதியளிக்கும் திறனைக் கொண்டவர். திரு. பீரிஸ் U.K, வேல்ஸ் பல்கலைக்கழகத்தில் MBA பட்டம் பெற்றவர் மற்றும் U.K., பட்டய மேலாண்மைக் கணக்காளர் நிறுவனத்தில் இறுதிப் போட்டியாளராக உள்ளார்.",
-
-        ]
-      },
-    ],
-
     },
   },
   // Additional language data omitted for brevity

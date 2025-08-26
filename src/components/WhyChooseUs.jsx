@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react'
 
-//Chamari's Picture
-import Wcu1 from '../media/landingPage/wcu1.webp'
-//Staff's Picture
-import Wcu2 from '../media/landingPage/wcu2.webp'
 import { useTranslation } from "react-i18next";
 
 const   WhyChooseUs = () => {
@@ -38,10 +34,10 @@ const   WhyChooseUs = () => {
         {/*WCU Images Section */}
         <div className='order-2 lg:order-1 grid grid-cols-2 grid-rows-1 grid-flow-row gap-2'>
         <div className=' rounded-tr-lg rounded-bl-lg p-2 md:p-5' data-aos={aosAnimation} data-aos-delay={aosAnimation === "fade-up" ? 300 : 0} > {/*Add delay only for small screens*/}
-            <img className="h-auto rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu1} aria-label='Image of our brand ambassador Ms. Chamari Athapaththu'/>
+            <img className="h-auto rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={`${import.meta.env.VITE_API_BASE_URL}/media/landingPage/wcu1.webp`} aria-label='Image of our brand ambassador Ms. Chamari Athapaththu'/>
         </div>
         <div className='rounded-tr-lg rounded-bl-lg p-2 md:p-5' data-aos={aosAnimation} data-aos-delay={aosAnimation === "fade-up" ? 300 : 0}>
-            <img className="rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={Wcu2} aria-label=''/>
+            <img className="rounded-tr-3xl rounded-bl-3xl shadow-lg shadow-black/20" src={`${import.meta.env.VITE_API_BASE_URL}/media/landingPage/wcu2.webp`} aria-label=''/>
         </div>
         </div>
 
